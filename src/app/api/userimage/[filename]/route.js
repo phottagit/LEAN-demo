@@ -3,7 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 export async function GET(request, { params }) {
-    const { filename } = params;
+    // Await params before accessing its properties
+    const filename = (await params).filename;
     
     try {
         // Define the path to your images directory
