@@ -13,6 +13,7 @@ function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const router = useRouter();
     const { data: session, status } = useSession();
@@ -26,6 +27,8 @@ function LoginPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
+        setError("");
 
         try {
             const res = await signIn("credentials", {
@@ -35,13 +38,17 @@ function LoginPage() {
             });
 
             if (res.error) {
-                setError("Invalid credentials");
+                setError("Invalid credentials or server error");
+                console.error("Login error:", res.error);
                 return;
             }
 
             router.replace("welcome");
         } catch (error) {
-            console.log(error);
+            console.error("Login exception:", error);
+            setError("An unexpected error occurred. Please try again.");
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -53,30 +60,34 @@ function LoginPage() {
                     <div className="w-[400px] shadow-xl p-10 mt-5 rounded-xl">
                         <h3 className="text-3xl">Login Page</h3>
                         <hr className="my-3" />
-                        {error && <p className="text-red-500 mb-2">{error}</p>}
+                        {error && (
+                            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                                {error}
+                            </div>
+                        )}
                         <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
                                 placeholder="Enter your email"
+                                disabled={isLoading}
                             />
                             <input
                                 type="password"
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
                                 placeholder="Enter your password"
+                                disabled={isLoading}
                             />
-                            <button type="submit" className="bg-green-500 text-white border py-2 px-3 rounded text-lg my-2 cursor-pointer">Sign In</button>
+                            <button 
+                                type="submit" 
+                                className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                disabled={isLoading}
+                            >
+                                {isLoading ? "Logging in..." : "Login"}
+                            </button>
                         </form>
-                        <hr className="my-3" />
-                        <p>
-                            Go to{" "}
-                            <Link href="/register" className="text-blue-500 hover:underline">
-                                Register
-                            </Link>{" "}
-                            Page
-                        </p>
                     </div>
                 </div>
             </div>
