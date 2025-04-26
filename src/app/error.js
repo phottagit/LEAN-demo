@@ -31,8 +31,4 @@ export default function Error({
       </div>
     </div>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c9776b180aba4eff33ea5f99516a8427d7b52102
