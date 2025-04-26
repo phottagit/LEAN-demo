@@ -10,8 +10,10 @@ const nextConfig = {
               pathname: '/api/userimage/**',
           },
       ],
+      unoptimized: true, // Add this for static image exports
   },
 };
 
 export default nextConfig;
+
 

@@ -68,7 +68,7 @@ export default function Home() {
                         <a href="/qcc">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
-                                <img src="2-QCC.jpg" alt="QCC" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow" />
+                                <img src="2-QCC.jpg" alt="QCC" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"/>
                                 </div>
                                 <h2 className="mt-2 text-center font-medium">Quality Control Circle</h2>
                             </div>
@@ -77,7 +77,11 @@ export default function Home() {
                         <a href="/ihaveanideas">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
-                                    <img src="ihaveanIdeas.JPG" alt="Ideas" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow" />
+                                    <img 
+                                        src="/ihaveanIdeas.jpg" 
+                                        alt="Ideas" 
+                                        className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"
+                                    />
                                 </div>   
                                     <h2 className="mt-2 text-center font-medium">Lean Suggestion</h2>
                                 </div>
