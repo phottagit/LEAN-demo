@@ -46,7 +46,8 @@ function RegisterPage() {
         try {
             const base64Img = await toBase64(img);
 
-            const res = await fetch("http://localhost:3000/api/register", {
+            // Update the API URL to use relative path instead of hardcoded localhost
+            const res = await fetch("/api/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -106,9 +107,9 @@ function RegisterPage() {
                                 />
                             )}
 
-                            <input type="text"  onChange={(e) => setName(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="ชื่อ-สกุล"/>
-                            <input type="empId" onChange={(e) => setEmpId(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="รหัสพนักงาน"/>
-                            
+                            <input type="text"  onChange={(e) => setName(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="ชื่อ-ส"/>
+                            <input type="empId" onChange={(e) => setEmpId(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder=""/>
+
                             <select onChange={(e) => setDepartment(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" value={departments}>
                                 <option value="" disabled>Select department</option>
                                 <option value="Lean Six Sigma">Lean Six Sigma</option>
@@ -119,9 +120,9 @@ function RegisterPage() {
                                 <option value="HR">HR</option>
                             </select>
 
-                            <input type="email" onChange={(e) => setEmail(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="อีเมล์"/>
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="รหัสผ่าน"/>
-                            <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="ยืนยันรหัสผ่าน"/>
+                            <input type="email" onChange={(e) => setEmail(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="์"/>
+                            <input type="password" onChange={(e) => setPassword(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="ผ่าน"/>
+                            <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="ผ่าน"/>
                             <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"/>
                             <button type="submit" className="bg-green-500 text-white border py-2 px-3 rounded text-lg my-2">Sign Up</button>
                         </form>

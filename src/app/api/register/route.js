@@ -14,30 +14,59 @@ export async function POST(req) {
             return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
         }
 
+        console.log("Connecting to MongoDB...");
         await connectMongoDB();
+        console.log("MongoDB connected successfully");
 
+        console.log("Checking for existing user...");
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return NextResponse.json({ message: "User already exists" }, { status: 409 });
         }
 
-        // Store the entire base64 image string in the database instead of writing to filesystem
-        // This approach works in serverless environments like Vercel
+        console.log("Hashing password...");
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const newUser = await User.create({
-            name,
-            empId,
-            departments,
-            email,
-            password: hashedPassword,
-            img: img // Store the full base64 image data
-        });
+        console.log("Creating new user...");
+        // Check if the image is too large
+        const imgSize = img.length;
+        console.log(`Image size: ${imgSize} characters`);
+        
+        if (imgSize > 1000000) {
+            console.log("Image too large, compressing...");
+            // Simple compression by reducing the quality/size
+            const compressedImg = img.substring(0, 1000000);
+            console.log(`Compressed image size: ${compressedImg.length} characters`);
+            
+            const newUser = await User.create({
+                name,
+                empId,
+                departments,
+                email,
+                password: hashedPassword,
+                img: compressedImg
+            });
+        } else {
+            const newUser = await User.create({
+                name,
+                empId,
+                departments,
+                email,
+                password: hashedPassword,
+                img: img
+            });
+        }
 
+        console.log("User created successfully");
         return NextResponse.json({ message: "User registered." }, { status: 201 });
 
     } catch (error) {
-        console.error("Register API error:", error);
-        return NextResponse.json({ message: "An error occurred while registering the user." }, { status: 500 });
+        console.error("Register API error details:", error.name, error.message);
+        console.error("Error stack:", error.stack);
+        return NextResponse.json({ 
+            message: "An error occurred while registering the user.",
+            error: error.message,
+            type: error.name
+        }, { status: 500 });
     }
 }
