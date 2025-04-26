@@ -3,7 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 export async function GET(request, { params }) {
-    const { filename } = params;
+    // Await params before accessing its properties
+    const filename = (await params).filename;
     
     try {
         // Define the path to your images directory
@@ -38,3 +39,5 @@ export async function GET(request, { params }) {
         return NextResponse.json({ error: 'Failed to serve image' }, { status: 500 });
     }
 }
+
+
