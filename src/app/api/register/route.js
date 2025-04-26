@@ -21,26 +21,8 @@ export async function POST(req) {
             return NextResponse.json({ message: "User already exists" }, { status: 409 });
         }
 
-        // Extract file extension
-        const matches = img.match(/^data:image\/([a-zA-Z]+);base64,/);
-        if (!matches || matches.length < 2) {
-            return NextResponse.json({ message: "Invalid image format" }, { status: 400 });
-        }
-
-        const extension = matches[1];
-        const imgName = `img_${Date.now()}.${extension}`;
-
-        // Create uploads directory if it doesn't exist
-        const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
-        if (!fs.existsSync(uploadsDir)) {
-            fs.mkdirSync(uploadsDir, { recursive: true });
-        }
-        
-        // Save the image to filesystem
-        const base64Data = img.replace(/^data:image\/\w+;base64,/, '');
-        const buffer = Buffer.from(base64Data, 'base64');
-        fs.writeFileSync(path.join(uploadsDir, imgName), buffer);
-
+        // Store the entire base64 image string in the database instead of writing to filesystem
+        // This approach works in serverless environments like Vercel
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = await User.create({
@@ -49,7 +31,7 @@ export async function POST(req) {
             departments,
             email,
             password: hashedPassword,
-            img: imgName // Only store the image name
+            img: img // Store the full base64 image data
         });
 
         return NextResponse.json({ message: "User registered." }, { status: 201 });

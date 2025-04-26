@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     departments: String,
     email: { type: String, unique: true },
     password: String,
-    img: String, // Must be a string if you're saving a URL or base64
+    img: { type: String, maxlength: 5000000 }, // Increased size limit for base64 images
 }, { timestamps: true });
 
 export default mongoose.models.User || mongoose.model('User', userSchema);

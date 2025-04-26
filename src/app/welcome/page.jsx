@@ -17,7 +17,13 @@ export default function Home() {
     
     useEffect(() => {
         if (session?.user?.img) {
-            setImageUrl(`/api/userimage/${session.user.img}`);
+            // Check if the image is a base64 string
+            if (session.user.img.startsWith('data:image/')) {
+                setImageUrl(session.user.img);
+            } else {
+                // Fall back to the API route for non-base64 images
+                setImageUrl(`/api/userimage/${session.user.img}`);
+            }
             setImageError(false);
         }
     }, [session]);
