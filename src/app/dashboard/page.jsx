@@ -100,13 +100,18 @@ function DashboardPage() {
                   body: formData,
                 });
                 
+                const result = await response.json();
+                
                 if (response.ok) {
+                  console.log('Upload successful:', result);
                   refreshImage(); // Refresh image after successful upload
                 } else {
-                  console.error('Failed to upload image');
+                  console.error('Upload failed:', result.error);
+                  alert('Failed to upload image: ' + (result.error || 'Unknown error'));
                 }
               } catch (error) {
                 console.error('Error uploading image:', error);
+                alert('Error uploading image. Please try again.');
               }
             }
           };
