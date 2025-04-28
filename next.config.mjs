@@ -1,19 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable strict mode for better error detection
+  reactStrictMode: true,
+  
+  // Configure image domains if needed
   images: {
-      domains: ['localhost'],
-      remotePatterns: [
-          {
-              protocol: 'http',
-              hostname: 'localhost',
-              port: '3000',
-              pathname: '/api/userimage/**',
-          },
-      ],
-      unoptimized: true, // Add this for static image exports
+    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.vercel.app',
+      },
+    ],
+  },
+  
+  // Add experimental features if needed
+  experimental: {
+    serverActions: true,
   },
 };
 
 export default nextConfig;
-
 

@@ -24,6 +24,8 @@ function RegisterPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError("");
+        setSuccess("");
 
         if (password !== confirmPassword) {
             setError("Passwords do not match!");
@@ -46,7 +48,10 @@ function RegisterPage() {
         try {
             const base64Img = await toBase64(img);
 
-            // Update the API URL to use relative path instead of hardcoded localhost
+            // Add loading state
+            setError("");
+            setSuccess("Processing registration...");
+
             const res = await fetch("/api/register", {
                 method: "POST",
                 headers: {
@@ -62,20 +67,28 @@ function RegisterPage() {
                 }),
             });
 
+            const data = await res.json();
+
             if (res.ok) {
                 setError("");
-                setSuccess("User registered successfully!");
+                setSuccess("User registered successfully! Redirecting to login...");
                 e.target.reset();
-                setDepartment("");  // resets dropdown
+                setDepartment("");
                 setImage(null);
                 
+                // Redirect to login after successful registration
+                setTimeout(() => {
+                    window.location.href = "/login";
+                }, 2000);
             } else {
-                const data = await res.json();
+                setSuccess("");
                 setError(data.message || "Registration failed.");
+                console.error("Registration error:", data);
             }
         } catch (error) {
-            console.log("Error during registration:", error);
-            setError("Unexpected error occurred.");
+            setSuccess("");
+            console.error("Error during registration:", error);
+            setError("Unexpected error occurred. Please try again.");
         }
     };
 
