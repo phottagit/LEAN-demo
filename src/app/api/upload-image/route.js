@@ -15,17 +15,29 @@ export async function POST(request) {
     const bytes = await image.arrayBuffer();
     const buffer = Buffer.from(bytes);
     
-    // Ensure the directory exists
-    const publicDir = path.join(process.cwd(), 'public');
-    if (!fs.existsSync(publicDir)) {
-      fs.mkdirSync(publicDir, { recursive: true });
+    // Ensure the uploads directory exists
+    const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
+    if (!fs.existsSync(uploadsDir)) {
+      fs.mkdirSync(uploadsDir, { recursive: true });
     }
     
-    // Save to public folder
-    const filePath = path.join(publicDir, 'DailyKPIs.jpg');
+    // Generate a unique filename with timestamp to prevent caching
+    const timestamp = Date.now();
+    const filename = `DailyKPIs_${timestamp}.jpg`;
+    const filePath = path.join(uploadsDir, filename);
+    
+    // Save to public/uploads folder
     await fsPromises.writeFile(filePath, buffer);
     
-    return NextResponse.json({ success: true });
+    // Also save a copy with the standard name for backward compatibility
+    const standardPath = path.join(process.cwd(), 'public', 'DailyKPIs.jpg');
+    await fsPromises.writeFile(standardPath, buffer);
+    
+    return NextResponse.json({ 
+      success: true,
+      filename: filename,
+      timestamp: timestamp
+    });
   } catch (error) {
     console.error('Error uploading image:', error);
     return NextResponse.json({ 
