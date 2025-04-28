@@ -13,36 +13,28 @@ export async function POST(request) {
     }
 
     const buffer = Buffer.from(await image.arrayBuffer());
+    const filename = 'DailyKPIs.jpg'; // Always use the same filename
     
     // In Vercel production environment, we can't write to the filesystem
-    // We need to handle this differently in production vs development
     if (process.env.VERCEL_ENV === 'production') {
-      // For production, we should use a storage service like S3, Cloudinary, etc.
-      // For now, let's return a mock success response
       console.log('In production: Would save image if this was development');
       return NextResponse.json({ 
         success: true,
-        path: `/DailyKPIs.jpg`,
+        path: `/${filename}`,
         note: 'Image upload simulated in production'
       });
     }
     
     // For development environment, save to filesystem
     try {
-      // Ensure uploads directory exists
+      // Ensure public directory exists
       const publicDir = path.join(process.cwd(), 'public');
-      const uploadsDir = path.join(publicDir, 'uploads');
       
       if (!fs.existsSync(publicDir)) {
         await mkdir(publicDir, { recursive: true });
       }
       
-      if (!fs.existsSync(uploadsDir)) {
-        await mkdir(uploadsDir, { recursive: true });
-      }
-      
-      // Save file
-      const filename = 'DailyKPIs.jpg';
+      // Save file directly to public directory with fixed name
       const filePath = path.join(publicDir, filename);
       await writeFile(filePath, buffer);
       
