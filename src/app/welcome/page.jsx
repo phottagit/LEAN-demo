@@ -121,7 +121,7 @@ export default function Home() {
                 <h2 className="text-2xl">แอฟของฉัน</h2>
                 <h2 className="mb-4"></h2>
 
-                  <a href="/dachboard" target="_blank" className="block w-100 cursor-pointer buttonbox hover:bg-gray-300 transition p-3 picture-box">
+                  <a href="/dashboard" target="_blank" className="block w-100 cursor-pointer buttonbox hover:bg-gray-300 transition p-3 picture-box">
                     <div>
                       <h2 className="font-semibold text-left">OBEYA Dashboard</h2>
                     </div>
