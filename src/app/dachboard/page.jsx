@@ -1,10 +1,21 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 function DashboardPage() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const [refreshKey, setRefreshKey] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Handle authentication in useEffect instead of conditional rendering
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.replace("/login");
+    }
+  }, [status, router]);
 
   const enterFullscreen = () => {
     const el = document.documentElement;
@@ -54,6 +65,15 @@ function DashboardPage() {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, []);
+
+  // Show loading state while checking authentication
+  if (status === "loading") {
+    return (
+      <div className="w-screen h-screen flex items-center justify-center bg-black">
+        <div className="text-white text-xl">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-screen h-screen flex items-center justify-center bg-black">
