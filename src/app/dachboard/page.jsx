@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 function DashboardPage() {
   const { data: session, status } = useSession();
@@ -48,8 +48,8 @@ function DashboardPage() {
     setImageTimestamp(Date.now());
     setRefreshKey(prev => prev + 1);
     
-    // Create a new image object to preload the fresh image
-    const img = new Image();
+    // Use the browser's Image constructor, not Next.js Image component
+    const img = new window.Image();
     img.onload = () => setIsLoading(false);
     img.onerror = () => setIsLoading(false);
     img.src = `/uploads/DailyKPIs_${imageTimestamp}.jpg?v=${Date.now()}`;
