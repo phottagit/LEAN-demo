@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import { promises as fsPromises } from 'fs';
+import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
+import fs from 'fs';
 
 export async function POST(request) {
   try {
@@ -12,25 +12,25 @@ export async function POST(request) {
       return NextResponse.json({ error: 'No image provided' }, { status: 400 });
     }
 
-    const bytes = await image.arrayBuffer();
-    const buffer = Buffer.from(bytes);
+    const buffer = Buffer.from(await image.arrayBuffer());
     
-    // Ensure the directory exists
-    const publicDir = path.join(process.cwd(), 'public');
-    if (!fs.existsSync(publicDir)) {
-      fs.mkdirSync(publicDir, { recursive: true });
+    // Ensure uploads directory exists
+    const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
+    if (!fs.existsSync(uploadsDir)) {
+      await mkdir(uploadsDir, { recursive: true });
     }
     
-    // Save to public folder
-    const filePath = path.join(publicDir, 'DailyKPIs.jpg');
-    await fsPromises.writeFile(filePath, buffer);
+    // Save file with timestamp to avoid caching issues
+    const filename = 'DailyKPIs.jpg';
+    const filePath = path.join(uploadsDir, filename);
+    await writeFile(filePath, buffer);
     
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ 
+      success: true,
+      path: `/uploads/${filename}`
+    });
   } catch (error) {
     console.error('Error uploading image:', error);
-    return NextResponse.json({ 
-      error: 'Failed to upload image', 
-      details: error.message 
-    }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
