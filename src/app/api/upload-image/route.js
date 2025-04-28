@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { writeFile } from 'fs/promises';
+import fs from 'fs';
+import { promises as fsPromises } from 'fs';
 import path from 'path';
-import fs from 'fs/promises';
 
 export async function POST(request) {
   try {
@@ -17,16 +17,13 @@ export async function POST(request) {
     
     // Ensure the directory exists
     const publicDir = path.join(process.cwd(), 'public');
-    try {
-      await fs.access(publicDir);
-    } catch (error) {
-      // Directory doesn't exist, create it
-      await fs.mkdir(publicDir, { recursive: true });
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
     }
     
     // Save to public folder
     const filePath = path.join(publicDir, 'DailyKPIs.jpg');
-    await writeFile(filePath, buffer);
+    await fsPromises.writeFile(filePath, buffer);
     
     return NextResponse.json({ success: true });
   } catch (error) {
