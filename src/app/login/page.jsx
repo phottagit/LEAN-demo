@@ -58,7 +58,7 @@ function LoginPage() {
             <div className="flex-grow">
                 <div className="flex justify-center items-center">
                     <div className="w-[400px] shadow-xl p-10 mt-5 rounded-xl">
-                        <h3 className="text-3xl">Login Page</h3>
+                        <h3 className="text-3xl">เข้าสู่ระบบ</h3>
                         <hr className="my-3" />
                         {error && (
                             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -68,17 +68,23 @@ function LoginPage() {
                         <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
+                                id="email"
+                                name="email"
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
                                 placeholder="Enter your email"
                                 disabled={isLoading}
+                                autoComplete="email"
                             />
                             <input
                                 type="password"
+                                id="password"
+                                name="password"
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
                                 placeholder="Enter your password"
                                 disabled={isLoading}
+                                autoComplete="current-password"
                             />
                             <button 
                                 type="submit" 

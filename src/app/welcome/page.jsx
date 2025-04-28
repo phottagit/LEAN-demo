@@ -21,7 +21,7 @@ export default function Home() {
             if (session.user.img.startsWith('data:image/')) {
                 setImageUrl(session.user.img);
             } else {
-                // Fall back to the API route for non-base64 images
+                // Use the API route for images stored as filenames
                 setImageUrl(`/api/userimage/${session.user.img}`);
             }
             setImageError(false);

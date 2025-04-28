@@ -4,43 +4,45 @@ import { connectMongoDB } from "../../../../../lib/mongodb";
 import User from "../../../../../models/user";
 import bcrypt from 'bcryptjs';
 
-const authOptions = {
+export const authOptions = {
     providers: [
         CredentialsProvider({
-          name: 'credentials',
-          credentials: {},
-          async authorize(credentials) {
-            const { email, password } = credentials;
+            name: "credentials",
+            credentials: {
+                email: { label: "Email", type: "text" },
+                password: { label: "Password", type: "password" }
+            },
+            async authorize(credentials) {
+                const { email, password } = credentials;
 
-            try {
-                await connectMongoDB();
-                const user = await User.findOne({ email });
+                try {
+                    await connectMongoDB();
+                    const user = await User.findOne({ email });
 
-                if (!user) {
+                    if (!user) {
+                        return null;
+                    }
+
+                    const passwordMatch = await bcrypt.compare(password, user.password);
+
+                    if (!passwordMatch) {
+                        return null;
+                    }
+
+                    // Return user without password
+                    const userObject = user.toObject();
+                    delete userObject.password;
+                    
+                    return userObject;
+                } catch(error) {
+                    console.log("Error in authorize:", error);
                     return null;
                 }
-
-                const passwordMatch = await bcrypt.compare(password, user.password);
-
-                if (!passwordMatch) {
-                    return null;
-                }
-
-                // Return user without password
-                const userObject = user.toObject();
-                delete userObject.password;
-                
-                return userObject;
-            } catch(error) {
-                console.log("Error in authorize:", error);
-                return null;
             }
-          }
         })
     ],
     session: {
         strategy: "jwt",
-        maxAge: 30 * 24 * 60 * 60, // 30 days
     },
     secret: process.env.NEXTAUTH_SECRET,
     pages: {

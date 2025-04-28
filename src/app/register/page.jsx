@@ -98,7 +98,7 @@ function RegisterPage() {
             <div className="flex-grow">
                 <div className="flex justify-center items-center">
                     <div className="w-[400px] shadow-xl p-10 mt-5 rounded-xl">
-                        <h3 className="text-3xl">Register Page</h3>
+                        <h3 className="text-3xl">ลงทะเบียน</h3>
                         <hr className="my-3" />
                         <form onSubmit={handleSubmit}>
                             {error && (
@@ -120,10 +120,33 @@ function RegisterPage() {
                                 />
                             )}
 
-                            <input type="text"  onChange={(e) => setName(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="ชื่อ"/>
-                            <input type="empId" onChange={(e) => setEmpId(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="สกุล"/>
+                            <input 
+                                type="text"  
+                                id="name"
+                                name="name"
+                                onChange={(e) => setName(e.target.value)} 
+                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" 
+                                placeholder="ชื่อ (name)"
+                                autoComplete="name"
+                            />
+                            <input 
+                                type="text" 
+                                id="empId"
+                                name="empId"
+                                onChange={(e) => setEmpId(e.target.value)} 
+                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" 
+                                placeholder="สกุล (Surname)"
+                                autoComplete="off"
+                            />
 
-                            <select onChange={(e) => setDepartment(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" value={departments}>
+                            <select 
+                                id="department"
+                                name="department"
+                                onChange={(e) => setDepartment(e.target.value)} 
+                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" 
+                                value={departments}
+                                autoComplete="off"
+                            >
                                 <option value="" disabled>Select department</option>
                                 <option value="Lean Six Sigma">Lean Six Sigma</option>
                                 <option value="Production">Production</option>
@@ -133,11 +156,42 @@ function RegisterPage() {
                                 <option value="HR">HR</option>
                             </select>
 
-                            <input type="email" onChange={(e) => setEmail(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="อีเมล์"/>
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="รหัสผ่าน"/>
-                            <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" placeholder="ยืนยันรหัสผ่าน"/>
-                            <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"/>
-                            <button type="submit" className="bg-green-500 text-white border py-2 px-3 rounded text-lg my-2">Sign Up</button>
+                            <input 
+                                type="email" 
+                                id="email"
+                                name="email"
+                                onChange={(e) => setEmail(e.target.value)} 
+                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" 
+                                placeholder="์อีเมล์ (Email)"
+                                autoComplete="อีเมล์"
+                            />
+                            <input 
+                                type="password" 
+                                id="password"
+                                name="password"
+                                onChange={(e) => setPassword(e.target.value)} 
+                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" 
+                                placeholder="รหัสผ่าน (Password)"
+                                autoComplete="new-password"
+                            />
+                            <input 
+                                type="password" 
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                onChange={(e) => setConfirmPassword(e.target.value)} 
+                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" 
+                                placeholder="ยืนยันรหัสผ่าน (Confirm password)"
+                                autoComplete="new-password"
+                            />
+                            <input 
+                                type="file" 
+                                id="profileImage"
+                                name="profileImage"
+                                accept="image/*" 
+                                onChange={(e) => setImage(e.target.files[0])} 
+                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
+                            />
+                            <button type="submit" className="bg-green-500 cursor-pointer text-white border py-2 px-3 rounded text-lg my-2">ลงทะเบียน</button>
                         </form>
                         <hr className="my-3" />
                         <p> Go to{" "} <Link href="/login" className="text-blue-500 hover:underline">Login</Link>{" "}Page</p>

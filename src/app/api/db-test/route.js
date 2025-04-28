@@ -1,24 +1,26 @@
 import { NextResponse } from 'next/server';
 import { connectMongoDB } from '../../../../lib/mongodb';
-import User from '../../../../models/user';
+import mongoose from 'mongoose';
 
 export async function GET() {
     try {
         await connectMongoDB();
         
-        // Count users in the database
-        const userCount = await User.countDocuments();
+        // Get all collections in the database
+        const collections = await mongoose.connection.db.listCollections().toArray();
+        const collectionNames = collections.map(c => c.name);
         
         return NextResponse.json({ 
             status: 'success', 
-            message: 'Database connection successful',
-            userCount: userCount
+            message: 'MongoDB connection successful',
+            database: mongoose.connection.db.databaseName,
+            collections: collectionNames
         });
     } catch (error) {
         console.error('Database test error:', error);
         return NextResponse.json({ 
             status: 'error', 
-            message: 'Database connection failed',
+            message: 'MongoDB connection failed',
             error: error.message
         }, { status: 500 });
     }
