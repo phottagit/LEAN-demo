@@ -21,7 +21,8 @@ function DashboardPage() {
     const el = document.documentElement;
     if (el.requestFullscreen) {
       el.requestFullscreen().catch(err => {
-        console.warn("Fullscreen request failed", err);
+        // Don't log this as an error since it's expected in some cases
+        console.info("Fullscreen not available:", err.message);
       });
     } else if (el.webkitRequestFullscreen) {
       el.webkitRequestFullscreen();
@@ -46,22 +47,19 @@ function DashboardPage() {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      if (e.clientY < 10) {
-        if (!document.fullscreenElement) {
-          enterFullscreen();
-        }
-      }
+      // Remove automatic fullscreen trigger on mouse move
+      // This was causing the permissions error
     };
 
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    // document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('fullscreenchange', handleFullscreenChange);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      // window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, []);
