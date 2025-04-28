@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import { promises as fsPromises } from 'fs';
+import { writeFile } from 'fs/promises';
 import path from 'path';
+import fs from 'fs/promises';
 
 export async function POST(request) {
   try {
@@ -15,29 +15,20 @@ export async function POST(request) {
     const bytes = await image.arrayBuffer();
     const buffer = Buffer.from(bytes);
     
-    // Ensure the uploads directory exists
-    const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true });
+    // Ensure the directory exists
+    const publicDir = path.join(process.cwd(), 'public');
+    try {
+      await fs.access(publicDir);
+    } catch (error) {
+      // Directory doesn't exist, create it
+      await fs.mkdir(publicDir, { recursive: true });
     }
     
-    // Generate a unique filename with timestamp to prevent caching
-    const timestamp = Date.now();
-    const filename = `DailyKPIs_${timestamp}.jpg`;
-    const filePath = path.join(uploadsDir, filename);
+    // Save to public folder
+    const filePath = path.join(publicDir, 'DailyKPIs.jpg');
+    await writeFile(filePath, buffer);
     
-    // Save to public/uploads folder
-    await fsPromises.writeFile(filePath, buffer);
-    
-    // Also save a copy with the standard name for backward compatibility
-    const standardPath = path.join(process.cwd(), 'public', 'DailyKPIs.jpg');
-    await fsPromises.writeFile(standardPath, buffer);
-    
-    return NextResponse.json({ 
-      success: true,
-      filename: filename,
-      timestamp: timestamp
-    });
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error uploading image:', error);
     return NextResponse.json({ 
