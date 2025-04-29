@@ -33,68 +33,60 @@ export async function POST(req) {
         // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
         
-        // Generate a short unique filename for the image
+        // Extract base64 data
+        const base64Data = img.split(';base64,').pop();
+        const buffer = Buffer.from(base64Data, 'base64');
+        
+        // Generate a unique filename
         const fileExt = 'jpg'; // Default extension
-        const randomName = crypto.randomBytes(8).toString('hex');
-        const filename = `${randomName}.${fileExt}`;
+        const timestamp = Date.now();
+        const filename = `user_${timestamp}.${fileExt}`;
         
-        // Save image to filesystem
-        let imageFilename;
+        // Save to a tracked directory that will be committed to GitHub
+        // Using 'public/user-images' which should be tracked in git
+        const publicDir = path.join(process.cwd(), 'public');
+        const userImagesDir = path.join(publicDir, 'user-images');
         
-        if (process.env.VERCEL_ENV === 'production') {
-            // In production, we can't write to filesystem
-            // Just store the short filename and handle this differently
-            imageFilename = filename;
-            console.log('In production: Would save image if this was development');
-        } else {
-            // For development, save to filesystem
-            try {
-                // Extract base64 data
-                const base64Data = img.split(';base64,').pop();
-                const buffer = Buffer.from(base64Data, 'base64');
-                
-                // Ensure uploads directory exists
-                const publicDir = path.join(process.cwd(), 'public');
-                const uploadsDir = path.join(publicDir, 'uploads');
-                
-                if (!fs.existsSync(publicDir)) {
-                    await mkdir(publicDir, { recursive: true });
-                }
-                
-                if (!fs.existsSync(uploadsDir)) {
-                    await mkdir(uploadsDir, { recursive: true });
-                }
-                
-                // Save file
-                const filePath = path.join(uploadsDir, filename);
-                await writeFile(filePath, buffer);
-                imageFilename = filename;
-                
-                console.log(`Image saved to: ${filePath}`);
-            } catch (fsError) {
-                console.error('Filesystem error:', fsError);
-                return NextResponse.json({ 
-                    error: 'Failed to save image to filesystem',
-                    details: fsError.message 
-                }, { status: 500 });
+        try {
+            // Ensure directories exist
+            if (!fs.existsSync(publicDir)) {
+                await mkdir(publicDir, { recursive: true });
             }
+            
+            if (!fs.existsSync(userImagesDir)) {
+                await mkdir(userImagesDir, { recursive: true });
+            }
+            
+            // Save file to the tracked directory
+            const filePath = path.join(userImagesDir, filename);
+            await writeFile(filePath, buffer);
+            
+            console.log(`Image saved to: ${filePath}`);
+            console.log(`Remember to commit this file to GitHub for Vercel deployment`);
+            
+        } catch (fsError) {
+            console.error('Filesystem error:', fsError);
+            return NextResponse.json({ 
+                error: 'Failed to save image to filesystem',
+                details: fsError.message 
+            }, { status: 500 });
         }
         
-        // Create user with the image filename instead of the full base64 string
+        // Create user with the image filename
         const userData = {
             name,
             empId,
             departments,
             email,
             password: hashedPassword,
-            img: imageFilename, // Store only the filename
+            img: `user-images/${filename}`, // Store relative path from public directory
             role: "user"
         };
         
         console.log("Creating user with data:", {
             ...userData,
             password: "[REDACTED]",
-            img: imageFilename
+            img: userData.img
         });
         
         const newUser = await User.create(userData);
@@ -102,9 +94,9 @@ export async function POST(req) {
 
         return NextResponse.json({ 
             message: "User registered successfully.", 
-            userId: newUser._id 
+            userId: newUser._id,
+            note: "Image saved locally. Remember to commit to GitHub for Vercel deployment."
         }, { status: 201 });
-
     } catch (error) {
         console.error("Register API error:", error);
         return NextResponse.json({ 

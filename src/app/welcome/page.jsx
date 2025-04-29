@@ -20,8 +20,11 @@ export default function Home() {
             // Check if the image is a base64 string
             if (session.user.img.startsWith('data:image/')) {
                 setImageUrl(session.user.img);
+            } else if (session.user.img.startsWith('user-images/')) {
+                // This is a path to an image in the public/user-images directory
+                setImageUrl(`/${session.user.img}`);
             } else {
-                // Use the API route for images stored as filenames
+                // For backward compatibility with older uploads
                 setImageUrl(`/api/userimage/${session.user.img}`);
             }
             setImageError(false);
