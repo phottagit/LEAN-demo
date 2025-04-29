@@ -126,7 +126,7 @@ function RegisterPage() {
                                 name="name"
                                 onChange={(e) => setName(e.target.value)} 
                                 className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" 
-                                placeholder="ชื่อ (name)"
+                                placeholder="ชื่อ-สกุล (name-surname)"
                                 autoComplete="name"
                             />
                             <input 
@@ -135,7 +135,7 @@ function RegisterPage() {
                                 name="empId"
                                 onChange={(e) => setEmpId(e.target.value)} 
                                 className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2" 
-                                placeholder="สกุล (Surname)"
+                                placeholder="รหัสพนักงาน (Employee ID)"
                                 autoComplete="off"
                             />
 

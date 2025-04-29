@@ -58,7 +58,7 @@ export default function Home() {
                     )}
 
                     <h3 className="text-5xl"> ยินดีต้อนรับ: {session?.user?.name}</h3>
-                    <p className="text-2xl mt-3">{session?.user?.email}</p>
+                    <p className="text-2xl mt-3 mb-4">{session?.user?.email}</p>
                 </div>
                 <div className="container mx-auto px-4 py-8 bg-white">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -117,22 +117,21 @@ export default function Home() {
                   <h2 className="mb-4"></h2>    
                 </div>  
 
-                <div className="container mx-auto px-4 py-8 bg-white">
+                <div className="container mx-auto px-4 py-4 bg-white">
                 <h2 className="text-2xl">แอฟของฉัน</h2>
-                <h2 className="mb-4"></h2>
-
-                  <a href="/dashboard" target="_blank" className="block w-100 cursor-pointer buttonbox hover:bg-gray-300 transition p-3 picture-box">
+                <div className="mt-4 space-y-2">
+                  <a href="/dashboard" target="_blank" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
                     <div>
                       <h2 className="font-semibold text-left">OBEYA Dashboard</h2>
                     </div>
                   </a>
-                <h2 className="mb-2"></h2>
-                  <a href="/six-sigma" className="block w-100 cursor-pointer buttonbox hover:bg-gray-300 transition p-3 picture-box">
+                  
+                  <a href="/six-sigma" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
                     <div>
                       <h2 className="font-semibold text-left">Lean Suggestion</h2>
                     </div>
                   </a>
-
+                </div>
                 </div>     
                 <Footer />
             </Container>
