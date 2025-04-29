@@ -38,7 +38,7 @@ function LoginPage() {
             });
 
             if (res.error) {
-                setError("Invalid credentials or server error");
+                setError("Username or password is incorrect."); //Invalid credentials or server error
                 console.error("Login error:", res.error);
                 return;
             }
