@@ -41,7 +41,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Make sure user-images directory is tracked
-!/public/user-images/
+# Don't ignore Upload directory
+!public/Upload/
+
+
+
 
 
