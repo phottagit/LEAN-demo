@@ -74,7 +74,7 @@ export default function Home() {
                             </div>
                         </a>
 
-                        <a href="/qcc">
+                        <a href="/qccs">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
                                 <img src="2-QCC.jpg" alt="QCC" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"/>
@@ -83,7 +83,7 @@ export default function Home() {
                             </div>
                         </a>
 
-                        <a href="/ihaveanideas">
+                        <a href="/suggestions">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
                                     <img 
@@ -96,7 +96,7 @@ export default function Home() {
                                 </div>
                         </a>
 
-                        <a href="/training">
+                        <a href="/trainings">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
                                     <img src="Training_program.jpg" alt="Training" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow" />
@@ -105,7 +105,7 @@ export default function Home() {
                             </div>   
                         </a>
 
-                        <a href="/activity">
+                        <a href="/activitys">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
                                     <img src="SMTActivity.jpg" alt="Activity" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow" />
