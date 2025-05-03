@@ -206,6 +206,15 @@ function SixSigmaPage() {
       <Container>
       <Navbar session={session} />
 
+      <div className='flex flex-col items-center bg-white p-2'>
+        <h3 className="w-full text-center font-bold text-4xl">
+          DAILY OBEYA DASHBOARD
+        </h3>
+        <h4 className="w-full text-center font-medium text-2xl">
+          (April 2025)
+        </h4>
+      </div>
+
       <div className="flex flex-col md:flex-row items-center justify-center py-4 gap-1">
         {/* Safety Chart     aspect-square cursor-pointer picture-box rounded-lg w-full */}
         <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
