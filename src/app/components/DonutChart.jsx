@@ -85,7 +85,7 @@ getColor(d) {
             )
             .attr('fill', d => this.getColor(d))
             .attr("stroke", "#fff")
-            .style("stroke-width", "2")
+            .style("stroke-width", "3")
             //.style("opacity", "0.8");
 
             // Add "S" in the middle of the chart
@@ -102,19 +102,20 @@ getColor(d) {
 
         // Legend group and legend name 
         svg
-            .selectAll('mySlices')
-            .data(data_ready)
-            .enter()
-            .append('g')
-            .attr("transform", d => `translate(${legendPosition.centroid(d)})`)
-            .attr("class", 'legend-g')
-            .style("user-select", "none")
-            .append('text')
-            .text(d => d.data.name)
-            .style("text-anchor", "middle")
-            .style("font-weight", 700)
-            .style("fill", '#FFFFFF')
-            .style("font-size", 30);
+  .selectAll('mySlices')
+  .data(data_ready)
+  .enter()
+  .append('g')
+  .attr("transform", d => `translate(${legendPosition.centroid(d)})`)
+  .attr("class", 'legend-g')
+  .style("user-select", "none")
+  .append('text')
+  .text(d => d.data.name)
+  .attr("dy", "0.35em")  // vertical centering
+  .style("text-anchor", "middle")
+  .style("font-weight", 700)
+  .style("fill", '#FFFFFF')
+  .style("font-size", 38);
 
         //Label for value - only show if value is not 10
         svg
