@@ -89,13 +89,16 @@ getColor(d) {
             //.style("opacity", "0.8");
 
             // Add "S" in the middle of the chart
-        svg.append("text")
-        .attr("text-anchor", "middle")
-        .attr("dominant-baseline", "middle")
-        .attr("font-size", "400px")
-        .attr("font-weight", "bold")
-        .attr("fill", "#333")
-        .text("S");
+            svg.append("text")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("text-anchor", "middle")
+            .attr("dominant-baseline", "central")
+            .attr("font-size", "420px")
+            .attr("font-weight", "bold")
+            .attr("font-family", "Avenir Next LT Pro, sans-serif")
+            .attr("fill", "#333")
+            .text("S");
 
         // Legend group and legend name 
         svg
