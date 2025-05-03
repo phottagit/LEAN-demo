@@ -50,6 +50,12 @@ getColor(d) {
         const height = width;
         const margin = 15;
         let radius = Math.min(width, height) / 2 - margin;
+        
+        // Calculate responsive font sizes based on chart size
+        const centerFontSize = Math.max(Math.min(radius * 2.9, 420), 40); // Between 40px and 80px
+        const labelFontSize = Math.max(Math.min(radius * 0.07, 38), 10); // Between 8px and 14px
+        const valueFontSize = Math.max(Math.min(radius * 0.05, 12), 6); // Between 6px and 12px
+        
         // legend Position
         let legendPosition = d3.arc().innerRadius(radius/1.75).outerRadius(radius);
 
@@ -88,13 +94,13 @@ getColor(d) {
             .style("stroke-width", "3")
             //.style("opacity", "0.8");
 
-            // Add "S" in the middle of the chart
-            svg.append("text")
+        // Add "Q" in the middle of the chart
+        svg.append("text")
             .attr("x", 0)
             .attr("y", 0)
             .attr("text-anchor", "middle")
             .attr("dominant-baseline", "central")
-            .attr("font-size", "420px")
+            .attr("font-size", `${centerFontSize}px`)
             .attr("font-weight", "bold")
             .attr("font-family", "Avenir Next LT Pro, sans-serif")
             .attr("fill", "#333")
@@ -102,20 +108,20 @@ getColor(d) {
 
         // Legend group and legend name 
         svg
-  .selectAll('mySlices')
-  .data(data_ready)
-  .enter()
-  .append('g')
-  .attr("transform", d => `translate(${legendPosition.centroid(d)})`)
-  .attr("class", 'legend-g')
-  .style("user-select", "none")
-  .append('text')
-  .text(d => d.data.name)
-  .attr("dy", "0.35em")  // vertical centering
-  .style("text-anchor", "middle")
-  .style("font-weight", 700)
-  .style("fill", '#FFFFFF')
-  .style("font-size", 38);
+            .selectAll('mySlices')
+            .data(data_ready)
+            .enter()
+            .append('g')
+            .attr("transform", d => `translate(${legendPosition.centroid(d)})`)
+            .attr("class", 'legend-g')
+            .style("user-select", "none")
+            .append('text')
+            .text(d => d.data.name)
+            .attr("dy", "0.35em")  // vertical centering
+            .style("text-anchor", "middle")
+            .style("font-weight", 700)
+            .style("fill", '#FFFFFF')
+            .style("font-size", `${labelFontSize}px`);
 
         //Label for value - only show if value is not 10
         svg
@@ -126,9 +132,9 @@ getColor(d) {
                 return d.data.value !== 10 ? d.data.value : '';
             })
             .style("fill", '#444')
-            .style("font-size", 12)
+            .style("font-size", `${valueFontSize}px`)
             .style("text-anchor", "middle")
-            .attr("y", 16);
+            .attr("y", labelFontSize + 2); // Position below the label text
     }
 
     render() {
@@ -139,5 +145,6 @@ getColor(d) {
 }
 
 export default DonutChart;
+
 
 
