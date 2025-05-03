@@ -98,7 +98,7 @@ getColor(d) {
             .attr("font-weight", "bold")
             .attr("font-family", "Avenir Next LT Pro, sans-serif")
             .attr("fill", "#333")
-            .text("S");
+            .text("Q");
 
         // Legend group and legend name 
         svg
