@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
-const colors = [
-  '#00B050', '#575756', '#FF0000', '#D9D9D9', '#27acaa', '#42c9c2', '#60e6e1', '#93f0e6', 
+// Define specific colors for different types
+const COLOR_MAPPING = {
+  'Upper': '#00B050',  // Green for Upper
+  'Lower': '#FF0000',  // Dark gray for Lower
+  'Holiday': '#575756', // Light gray for Holiday
+  '': '#FFFFFF' // Light gray for empty type
+};
+
+// Default color palette for other values
+const defaultColors = [
+  '#8ce8ad', '#57e188', '#34c768', '#2db757', '#27acaa', '#42c9c2', '#60e6e1', '#93f0e6', 
   '#87d3f2', '#4ebeeb', '#35a4e8', '#188ce5', '#542ea5', '#724bc3', '#9c82d4', '#c981b2', 
   '#b14891', '#ff6d00', '#ff810a', '#ff9831', '#ffb46a', '#ff9a91', '#ff736a', '#f95d54', 
   '#ff4136', '#c4c4cd'
@@ -18,6 +27,20 @@ class DonutChart extends Component {
     componentDidMount() {
         this.drawChart();
     }
+
+    // Get color based on data type
+getColor(d) {
+    // If the data has a type property and it's not empty, use the color mapping
+    if (d.data.type && d.data.type !== '' && COLOR_MAPPING[d.data.type]) {
+        return COLOR_MAPPING[d.data.type];
+    }
+    // For empty type or blank name, use light gray
+    if (!d.data.type || d.data.type === '' || !d.data.name || d.data.name === '') {
+        return '#FFFFFF';
+    }
+    // Otherwise use the default color palette
+    return defaultColors[d.index % defaultColors.length];
+}
 
     // DrawChart 
     drawChart() {
@@ -60,10 +83,19 @@ class DonutChart extends Component {
                 .innerRadius(radius / 1.75)  // This is the size of the donut hole
                 .outerRadius(radius)
             )
-            .attr('fill', (d) => colors[d.index])
+            .attr('fill', d => this.getColor(d))
             .attr("stroke", "#fff")
             .style("stroke-width", "2")
-            .style("opacity", "0.8");
+            //.style("opacity", "0.8");
+
+            // Add "S" in the middle of the chart
+        svg.append("text")
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("font-size", "400px")
+        .attr("font-weight", "bold")
+        .attr("fill", "#333")
+        .text("S");
 
         // Legend group and legend name 
         svg
@@ -78,8 +110,8 @@ class DonutChart extends Component {
             .text(d => d.data.name)
             .style("text-anchor", "middle")
             .style("font-weight", 700)
-            .style("fill", '#222')
-            .style("font-size", 14);
+            .style("fill", '#FFFFFF')
+            .style("font-size", 30);
 
         //Label for value - only show if value is not 10
         svg
@@ -103,4 +135,5 @@ class DonutChart extends Component {
 }
 
 export default DonutChart;
+
 
