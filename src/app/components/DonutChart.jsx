@@ -51,13 +51,16 @@ getColor(d) {
         const margin = 15;
         let radius = Math.min(width, height) / 2 - margin;
         
-        // Calculate responsive font sizes based on chart size
-        const centerFontSize = Math.max(Math.min(radius * 2.9, 420), 40); // Between 40px and 80px
-        const labelFontSize = Math.max(Math.min(radius * 0.07, 38), 10); // Between 8px and 14px
+        // Calculate the inner radius (donut hole size)
+        const innerRadius = radius / 1.75;
+        
+        // Calculate responsive font sizes based on the inner radius
+        const centerFontSize = Math.min(innerRadius * 2.5, 150); // Increased multiplier and max size
+        const labelFontSize = Math.max(Math.min(radius * 0.07, 14), 8); // Between 8px and 14px
         const valueFontSize = Math.max(Math.min(radius * 0.05, 12), 6); // Between 6px and 12px
         
         // legend Position
-        let legendPosition = d3.arc().innerRadius(radius/1.75).outerRadius(radius);
+        let legendPosition = d3.arc().innerRadius(innerRadius).outerRadius(radius);
 
         // Create SVG
         const svg = d3.select(this.chRef.current)
@@ -86,7 +89,7 @@ getColor(d) {
             .enter()
             .append('path')
             .attr('d', d3.arc()
-                .innerRadius(radius / 1.75)  // This is the size of the donut hole
+                .innerRadius(innerRadius)  // This is the size of the donut hole
                 .outerRadius(radius)
             )
             .attr('fill', d => this.getColor(d))
@@ -145,6 +148,8 @@ getColor(d) {
 }
 
 export default DonutChart;
+
+
 
 
 
