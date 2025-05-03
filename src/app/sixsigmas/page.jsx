@@ -11,7 +11,45 @@ function SixSigmaPage() {
   const { data: session } = useSession();
   
   // Sample data for the donut chart
-  const [chartData, setChartData] = useState([
+  const [chartData1, setChartData1] = useState([
+    { name: '17', value: 10, type: 'Holiday' },
+    { name: '18', value: 10, type: 'Upper' },
+    { name: '19', value: 10, type: 'Upper' },
+    { name: '20', value: 10, type: 'Holiday' },
+    { name: '21', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Holiday' },
+    { name: '23', value: 10, type: 'Upper' },
+    { name: '24', value: 10, type: 'Upper' },
+    { name: '25', value: 10, type: 'Upper' },
+    { name: '26', value: 10, type: 'Upper' },
+    { name: '27', value: 10, type: 'Holiday' },
+    { name: '28', value: 10, type: 'Upper' },
+    { name: '29', value: 10, type: 'Upper' },
+    { name: '30', value: 10, type: 'Upper' },
+    { name: '31', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '1', value: 10, type: 'Upper' },
+    { name: '2', value: 10, type: 'Upper' },
+    { name: '3', value: 10, type: 'Upper' },
+    { name: '4', value: 10, type: 'Upper' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Holiday' },
+    { name: '7', value: 10, type: 'Upper' },
+    { name: '8', value: 10, type: 'Upper' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Upper' },
+    { name: '11', value: 10, type: 'Upper' },
+    { name: '12', value: 10, type: 'Upper' },
+    { name: '13', value: 10, type: 'Holiday' },
+    { name: '14', value: 10, type: 'Holiday' },
+    { name: '15', value: 10, type: 'Holiday' },
+    { name: '16', value: 10, type: 'Holiday' }
+  ]);
+
+  const [chartData2, setChartData2] = useState([
     { name: '17', value: 10, type: 'Holiday' },
     { name: '18', value: 10, type: 'Lower' },
     { name: '19', value: 10, type: 'Upper' },
@@ -26,7 +64,7 @@ function SixSigmaPage() {
     { name: '28', value: 10, type: 'Upper' },
     { name: '29', value: 10, type: 'Upper' },
     { name: '30', value: 10, type: 'Upper' },
-    { name: '31', value: 10, type: 'Upper' },
+    { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -49,23 +87,202 @@ function SixSigmaPage() {
     { name: '16', value: 10, type: 'Holiday' }
   ]);
 
+  const [chartData3, setChartData3] = useState([
+    { name: '17', value: 10, type: 'Holiday' },
+    { name: '18', value: 10, type: 'Lower' },
+    { name: '19', value: 10, type: 'Lower' },
+    { name: '20', value: 10, type: 'Holiday' },
+    { name: '21', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Holiday' },
+    { name: '23', value: 10, type: 'Lower' },
+    { name: '24', value: 10, type: 'Lower' },
+    { name: '25', value: 10, type: 'Lower' },
+    { name: '26', value: 10, type: 'Upper' },
+    { name: '27', value: 10, type: 'Holiday' },
+    { name: '28', value: 10, type: 'Upper' },
+    { name: '29', value: 10, type: 'Upper' },
+    { name: '30', value: 10, type: 'Upper' },
+    { name: '31', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '1', value: 10, type: 'Upper' },
+    { name: '2', value: 10, type: 'Lower' },
+    { name: '3', value: 10, type: 'Lower' },
+    { name: '4', value: 10, type: 'Lower' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Holiday' },
+    { name: '7', value: 10, type: 'Lower' },
+    { name: '8', value: 10, type: 'Lower' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Lower' },
+    { name: '11', value: 10, type: 'Lower' },
+    { name: '12', value: 10, type: 'Lower' },
+    { name: '13', value: 10, type: 'Holiday' },
+    { name: '14', value: 10, type: 'Holiday' },
+    { name: '15', value: 10, type: 'Holiday' },
+    { name: '16', value: 10, type: 'Holiday' }
+  ]);
+
+  const [chartData4, setChartData4] = useState([
+    { name: '17', value: 10, type: 'Holiday' },
+    { name: '18', value: 10, type: 'Lower' },
+    { name: '19', value: 10, type: 'Lower' },
+    { name: '20', value: 10, type: 'Holiday' },
+    { name: '21', value: 10, type: 'Lower' },
+    { name: '22', value: 10, type: 'Upper' },
+    { name: '23', value: 10, type: 'Lower' },
+    { name: '24', value: 10, type: 'Lower' },
+    { name: '25', value: 10, type: 'Lower' },
+    { name: '26', value: 10, type: 'Lower' },
+    { name: '27', value: 10, type: 'Holiday' },
+    { name: '28', value: 10, type: 'Lower' },
+    { name: '29', value: 10, type: 'Lower' },
+    { name: '30', value: 10, type: 'Lower' },
+    { name: '31', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '1', value: 10, type: 'Lower' },
+    { name: '2', value: 10, type: 'Lower' },
+    { name: '3', value: 10, type: 'Lower' },
+    { name: '4', value: 10, type: 'Lower' },
+    { name: '5', value: 10, type: 'Lower' },
+    { name: '6', value: 10, type: 'Holiday' },
+    { name: '7', value: 10, type: 'Lower' },
+    { name: '8', value: 10, type: 'Lower' },
+    { name: '9', value: 10, type: 'Lower' },
+    { name: '10', value: 10, type: 'Lower' },
+    { name: '11', value: 10, type: 'Lower' },
+    { name: '12', value: 10, type: 'Lower' },
+    { name: '13', value: 10, type: 'Holiday' },
+    { name: '14', value: 10, type: 'Holiday' },
+    { name: '15', value: 10, type: 'Holiday' },
+    { name: '16', value: 10, type: 'Holiday' }
+  ]);
+
+  const [chartData5, setChartData5] = useState([
+    { name: '17', value: 10, type: 'Holiday' },
+    { name: '18', value: 10, type: 'Lower' },
+    { name: '19', value: 10, type: 'Lower' },
+    { name: '20', value: 10, type: 'Holiday' },
+    { name: '21', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Upper' },
+    { name: '23', value: 10, type: 'Upper' },
+    { name: '24', value: 10, type: 'Upper' },
+    { name: '25', value: 10, type: 'Upper' },
+    { name: '26', value: 10, type: 'Lower' },
+    { name: '27', value: 10, type: 'Holiday' },
+    { name: '28', value: 10, type: 'Lower' },
+    { name: '29', value: 10, type: 'Lower' },
+    { name: '30', value: 10, type: 'Lower' },
+    { name: '31', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '1', value: 10, type: 'Upper' },
+    { name: '2', value: 10, type: 'Upper' },
+    { name: '3', value: 10, type: 'Upper' },
+    { name: '4', value: 10, type: 'Upper' },
+    { name: '5', value: 10, type: 'Lower' },
+    { name: '6', value: 10, type: 'Holiday' },
+    { name: '7', value: 10, type: 'Lower' },
+    { name: '8', value: 10, type: 'Upper' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Lower' },
+    { name: '11', value: 10, type: 'Lower' },
+    { name: '12', value: 10, type: 'Lower' },
+    { name: '13', value: 10, type: 'Holiday' },
+    { name: '14', value: 10, type: 'Holiday' },
+    { name: '15', value: 10, type: 'Holiday' },
+    { name: '16', value: 10, type: 'Holiday' }
+  ]);
+
   return (
     <main>
       <Container>
-        <Navbar session={session} />
-        <div className="flex flex-col items-center justify-center py-10">
-          {/* Legend 
-          <h2 className="text-center font-medium text-3xl mb-8">Six Sigma Methodology</h2> */}
-          
-          <div className="flex flex-col justify-center py-10 w-full max-w-4xl bg-white rounded-lg shadow-md p-6 mb-8">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-5xl mb-4 max-w-full overflow-hidden text-ellipsis" style={{ fontFamily: 'Century, serif' }}>Quality</h3>
-            <div className="w-full h-auto">
-              <DonutChart data={chartData} rotation={-90} />
-            </div>
+      <Navbar session={session} />
+
+      <div className="flex flex-col md:flex-row items-center justify-center py-4 gap-1">
+        {/* Safety Chart     aspect-square cursor-pointer picture-box rounded-lg w-full */}
+        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+              style={{ 
+                fontFamily: 'Century, serif', 
+                fontWeight: 'bold',
+                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+              }}>
+            Safety
+          </h3>
+          <div className="w-full aspect-square">
+            <DonutChart data={chartData1} rotation={-90} centerText="S" />
           </div>
         </div>
-        <Footer />
-      </Container>
+
+        {/* Quality Chart */}
+        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+              style={{ 
+                fontFamily: 'Century, serif', 
+                fontWeight: 'bold',
+                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+              }}>
+            Quality
+          </h3>
+          <div className="w-full aspect-square">
+            <DonutChart data={chartData2} rotation={-90} centerText="Q" />
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+              style={{ 
+                fontFamily: 'Century, serif', 
+                fontWeight: 'bold',
+                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+              }}>
+            Delivery
+          </h3>
+          <div className="w-full aspect-square">
+            <DonutChart data={chartData3} rotation={-90} centerText="D" />
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+              style={{ 
+                fontFamily: 'Century, serif', 
+                fontWeight: 'bold',
+                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+              }}>
+            Environment
+          </h3>
+          <div className="w-full aspect-square">
+            <DonutChart data={chartData4} rotation={-90} centerText="E" />
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+              style={{ 
+                fontFamily: 'Century, serif', 
+                fontWeight: 'bold',
+                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+              }}>
+            Morale
+          </h3>
+          <div className="w-full aspect-square">
+            <DonutChart data={chartData5} rotation={-90} centerText="M" />
+          </div>
+        </div>
+
+      </div>
+      
+      <Footer />
+    </Container>
     </main>
   );
 }

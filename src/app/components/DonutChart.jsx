@@ -95,9 +95,10 @@ getColor(d) {
             )
             .attr('fill', d => this.getColor(d))
             .attr("stroke", "#fff")
-            .style("stroke-width", "3")
+            .style("stroke-width", "2")
             //.style("opacity", "0.8");
 
+        // Add "Q" in the middle of the chart
         // Add "Q" in the middle of the chart
         svg.append("text")
             .attr("x", 0)
@@ -108,7 +109,7 @@ getColor(d) {
             .attr("font-weight", "bold")
             .attr("font-family", "Avenir Next LT Pro, sans-serif")
             .attr("fill", "#333")
-            .text("Q");
+            .text(this.props.centerText || "Q"); // Use the centerText prop or default to "Q"
 
         // Legend group and legend name 
         svg
