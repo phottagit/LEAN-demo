@@ -58,7 +58,7 @@ function SixSigmaPage() {
           <h2 className="text-center font-medium text-3xl mb-8">Six Sigma Methodology</h2> */}
           
           <div className="flex flex-col justify-center py-10 w-full max-w-4xl bg-white rounded-lg shadow-md p-6 mb-8">
-            <h3 className="text-xl font-medium mb-4">Monthly Distribution</h3>
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-5xl mb-4 max-w-full overflow-hidden text-ellipsis" style={{ fontFamily: 'Century, serif' }}>Safety</h3>
             <div className="w-full h-auto">
               <DonutChart data={chartData} rotation={-90} />
             </div>
