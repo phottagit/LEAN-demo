@@ -254,335 +254,353 @@ function SixSigmaPage() {
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center bg-white-100 p-2">
-        {/* Safety Chart     aspect-square cursor-pointer picture-box rounded-lg w-full */}
-        <div className="flex flex-col justify-center py-2 w-full md:w-4/4 border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
-              style={{ 
-                fontFamily: 'Century, serif', 
-                fontWeight: 'bold',
-                fontSize: 'min(max(16pt, 5vw), 16pt)'
-              }}>
-            Safety
-          </h3>
-          <div className="w-full aspect-square">
-            <DonutChart data={chartData1} rotation={-90} centerText="S" />
-          </div>
-          <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (time/mWH)</h3>
-          </div>
-          <div className='bg-gray-200 mx-1'>
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-xs">
-                <thead>
-                  <tr>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">1</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">2</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">3</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">4</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">5</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">6</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">7</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">8</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">9</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">10</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">11</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">12</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">2.9</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">4.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">4.2</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.4</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                  </tr>
-                </tbody>
-              </table>
+        {/* Safety Chart */}
+        <div className="flex-1 min-w-0 px-1 py-2">
+          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+            <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
+                style={{ 
+                  fontFamily: 'Century, serif', 
+                  fontWeight: 'bold',
+                  fontSize: '10px'
+                }}>
+              Safety
+            </h3>
+            <div className="w-full aspect-square">
+              <DonutChart data={chartData1} rotation={-90} centerText="S" />
             </div>
-          </div>          
+            <div>
+              <h3 className="text-left font-bold text-[6px] p-1">Month (time/mWH)</h3>
+            </div>
+            <div className='bg-gray-200 mx-1'>
+              <div className="overflow-hidden">
+                <table className="w-full border-collapse text-[6px]">
+                  {/* Simplified table */}
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">2.9</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.2</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.4</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
         
         {/* Quality Chart */}
-        <div className="flex flex-col justify-center py-2 w-full md:w-4/4 border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
-              style={{ 
-                fontFamily: 'Century, serif', 
-                fontWeight: 'bold',
-                fontSize: 'min(max(16pt, 5vw), 16pt)'
-              }}>
-            Quality
-          </h3>
-          <div className="w-full aspect-square">
-            <DonutChart data={chartData2} rotation={-90} centerText="Q" />
-          </div>
-          <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (%)</h3>
-          </div>
-          <div className='bg-gray-200 mx-1'>
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-xs">
-                <thead>
-                  <tr>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">1</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">2</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">3</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">4</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">5</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">6</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">7</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">8</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">9</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">10</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">11</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">12</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div className="flex-1 min-w-0 px-1 py-2">
+          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+            <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
+                style={{ 
+                  fontFamily: 'Century, serif', 
+                  fontWeight: 'bold',
+                  fontSize: '10px'
+                }}>
+              Quality
+            </h3>
+            <div className="w-full aspect-square">
+              <DonutChart data={chartData2} rotation={-90} centerText="Q" />
             </div>
-          </div>          
+            <div>
+              <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
+            </div>
+            <div className='bg-gray-200 mx-1'>
+              <div className="overflow-hidden">
+                <table className="w-full border-collapse text-[6px]">
+                  {/* Simplified table */}
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Efficiency Chart */}
-        <div className="flex flex-col justify-center py-2 w-full md:w-4/4 border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
-              style={{ 
-                fontFamily: 'Century, serif', 
-                fontWeight: 'bold',
-                fontSize: 'min(max(16pt, 5vw), 16pt)'
-              }}>
-            Efficiency
-          </h3>
-          <div className="w-full aspect-square">
-            <DonutChart data={chartData3} rotation={-90} centerText="E" />
-          </div>
-          <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (%)</h3>
-          </div>
-          <div className='bg-gray-200 mx-1'>
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-xs">
-                <thead>
-                  <tr>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">1</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">2</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">3</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">4</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">5</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">6</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">7</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">8</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">9</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">10</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">11</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">12</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">84.8</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">83.5</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">80.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">79.2</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">85.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div className="flex-1 min-w-0 px-1 py-2">
+          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+            <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
+                style={{ 
+                  fontFamily: 'Century, serif', 
+                  fontWeight: 'bold',
+                  fontSize: '10px'
+                }}>
+              Efficiency
+            </h3>
+            <div className="w-full aspect-square">
+              <DonutChart data={chartData3} rotation={-90} centerText="E" />
             </div>
-          </div>          
+            <div>
+              <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
+            </div>
+            <div className='bg-gray-200 mx-1'>
+              <div className="overflow-hidden">
+                <table className="w-full border-collapse text-[6px]">
+                  {/* Simplified table */}
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">84.8</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">83.5</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">80.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">79.2</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">85.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col justify-center py-2 w-full md:w-4/4 border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
-              style={{ 
-                fontFamily: 'Century, serif', 
-                fontWeight: 'bold',
-                fontSize: 'min(max(16pt, 5vw), 16pt)'
-              }}>
-            Delivery
-          </h3>
-          <div className="w-full aspect-square">
-            <DonutChart data={chartData4} rotation={-90} centerText="D" />
-          </div>
-          <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (day)</h3>
-          </div>
-          <div className='bg-gray-200 mx-1'>
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-xs">
-                <thead>
-                  <tr>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">1</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">2</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">3</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">4</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">5</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">6</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">7</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">8</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">9</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">10</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">11</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">12</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">20.6</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">17.6</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">18.5</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">23.2</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">24.5</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div className="flex-1 min-w-0 px-1 py-2">
+          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+            <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
+                style={{ 
+                  fontFamily: 'Century, serif', 
+                  fontWeight: 'bold',
+                  fontSize: '10px'
+                }}>
+              Delivery
+            </h3>
+            <div className="w-full aspect-square">
+              <DonutChart data={chartData4} rotation={-90} centerText="D" />
             </div>
-          </div>          
+            <div>
+              <h3 className="text-left font-bold text-[6px] p-1">Month (day)</h3>
+            </div>
+            <div className='bg-gray-200 mx-1'>
+              <div className="overflow-hidden">
+                <table className="w-full border-collapse text-[6px]">
+                  {/* Simplified table */}
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">20.6</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">17.6</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">18.5</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">23.2</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">24.5</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col justify-center py-2 w-full md:w-4/4 border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
-              style={{ 
-                fontFamily: 'Century, serif', 
-                fontWeight: 'bold',
-                fontSize: 'min(max(16pt, 5vw), 16pt)'
-              }}>
-            Environment
-          </h3>
-          <div className="w-full aspect-square">
-            <DonutChart data={chartData5} rotation={-90} centerText="E" />
-          </div>
-          <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (mkWh)</h3>
-          </div>
-          <div className='bg-gray-200 mx-1'>
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-xs">
-                <thead>
-                  <tr>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">1</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">2</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">3</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">4</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">5</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">6</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">7</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">8</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">9</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">10</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">11</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">12</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.15</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.21</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.40</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.29</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">00.13</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div className="flex-1 min-w-0 px-1 py-2">
+          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+            <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
+                style={{ 
+                  fontFamily: 'Century, serif', 
+                  fontWeight: 'bold',
+                  fontSize: '10px'
+                }}>
+              Environment
+            </h3>
+            <div className="w-full aspect-square">
+              <DonutChart data={chartData5} rotation={-90} centerText="E" />
             </div>
-          </div>          
+            <div>
+              <h3 className="text-left font-bold text-[6px] p-1">Month (mkWh)</h3>
+            </div>
+            <div className='bg-gray-200 mx-1'>
+              <div className="overflow-hidden">
+                <table className="w-full border-collapse text-[6px]">
+                  {/* Simplified table */}
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.15</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.21</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.40</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.29</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">00.13</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col justify-center py-2 w-full md:w-4/4 border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
-              style={{ 
-                fontFamily: 'Century, serif', 
-                fontWeight: 'bold',
-                fontSize: 'min(max(16pt, 5vw), 16pt)'
-              }}>
-            Morale
-          </h3>
-          <div className="w-full aspect-square">
-            <DonutChart data={chartData6} rotation={-90} centerText="M" />
-          </div>
-          <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (%)</h3>
-          </div>
-          <div className='bg-gray-200 mx-1'>
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-xs">
-                <thead>
-                  <tr>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">1</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">2</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">3</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">4</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">5</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">6</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">7</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">8</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">9</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">10</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">11</th>
-                    <th className="border border-gray-300 px-0.5 py-0.5 text-[5px] font-medium text-gray-700">12</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">93.6</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">93.5</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">93.3</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">92.7</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">12.4</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div className="flex-1 min-w-0 px-1 py-2">
+          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+            <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
+                style={{ 
+                  fontFamily: 'Century, serif', 
+                  fontWeight: 'bold',
+                  fontSize: '10px'
+                }}>
+              Morale
+            </h3>
+            <div className="w-full aspect-square">
+              <DonutChart data={chartData6} rotation={-90} centerText="M" />
+            </div>
+            <div>
+              <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
+            </div>
+            <div className='bg-gray-200 mx-1'>
+              <div className="overflow-hidden">
+                <table className="w-full border-collapse text-[6px]">
+                  {/* Simplified table */}
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
+                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">93.6</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">93.5</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">93.3</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">92.7</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">12.4</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>          
         </div>
