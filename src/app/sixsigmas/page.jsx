@@ -272,10 +272,10 @@ function SixSigmaPage() {
               <h3 className="text-left font-bold text-[6px] p-1">Month (time/mWH)</h3>
             </div>
             <div className='bg-gray-200 mx-1'>
-              <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[5px]">
+              <div className="max-h-[60px] overflow-y-auto">
+                <table className="w-full border-collapse text-[6px]">
                   {/* Simplified table */}
-                  <thead>
+                  <thead className="sticky top-0 bg-gray-100">
                     <tr>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
@@ -296,7 +296,7 @@ function SixSigmaPage() {
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">2.9</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.0</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.2</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.4</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">3.1</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
@@ -331,10 +331,10 @@ function SixSigmaPage() {
               <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
             </div>
             <div className='bg-gray-200 mx-1'>
-              <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[5px]">
+              <div className="max-h-[60px] overflow-y-auto">
+                <table className="w-full border-collapse text-[6px]">
                   {/* Simplified table */}
-                  <thead>
+                  <thead className="sticky top-0 bg-gray-100">
                     <tr>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
@@ -390,10 +390,10 @@ function SixSigmaPage() {
               <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
             </div>
             <div className='bg-gray-200 mx-1'>
-              <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[5px]">
+              <div className="max-h-[60px] overflow-y-auto">
+                <table className="w-full border-collapse text-[6px]">
                   {/* Simplified table */}
-                  <thead>
+                  <thead className="sticky top-0 bg-gray-100">
                     <tr>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
@@ -448,10 +448,10 @@ function SixSigmaPage() {
               <h3 className="text-left font-bold text-[6px] p-1">Month (day)</h3>
             </div>
             <div className='bg-gray-200 mx-1'>
-              <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[5px]">
+              <div className="max-h-[60px] overflow-y-auto">
+                <table className="w-full border-collapse text-[6px]">
                   {/* Simplified table */}
-                  <thead>
+                  <thead className="sticky top-0 bg-gray-100">
                     <tr>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
@@ -506,10 +506,10 @@ function SixSigmaPage() {
               <h3 className="text-left font-bold text-[6px] p-1">Month (mkWh)</h3>
             </div>
             <div className='bg-gray-200 mx-1'>
-              <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[5px]">
+              <div className="max-h-[60px] overflow-y-auto">
+                <table className="w-full border-collapse text-[6px]">
                   {/* Simplified table */}
-                  <thead>
+                  <thead className="sticky top-0 bg-gray-100">
                     <tr>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
@@ -564,10 +564,10 @@ function SixSigmaPage() {
               <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
             </div>
             <div className='bg-gray-200 mx-1'>
-              <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[5px]">
+              <div className="max-h-[60px] overflow-y-auto">
+                <table className="w-full border-collapse text-[6px]">
                   {/* Simplified table */}
-                  <thead>
+                  <thead className="sticky top-0 bg-gray-100">
                     <tr>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
                       <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
