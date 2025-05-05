@@ -255,13 +255,13 @@ function SixSigmaPage() {
 
       <div className="flex flex-col md:flex-row items-center justify-center bg-white-100 p-2">
         {/* Safety Chart */}
-        <div className="flex-1 min-w-0 px-1 py-2">
+        <div className="flex-1 min-w-0 py-2">
           <div className="h-full border-2 border-gray-300 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
                   fontWeight: 'bold',
-                  fontSize: '10px'
+                  fontSize: 'min(max(16pt, 5vw), 16pt)'
                 }}>
               Safety
             </h3>
@@ -273,7 +273,7 @@ function SixSigmaPage() {
             </div>
             <div className='bg-gray-200 mx-1'>
               <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[6px]">
+                <table className="w-full border-collapse text-[5px]">
                   {/* Simplified table */}
                   <thead>
                     <tr>
@@ -314,13 +314,13 @@ function SixSigmaPage() {
         </div>
         
         {/* Quality Chart */}
-        <div className="flex-1 min-w-0 px-1 py-2">
+        <div className="flex-1 min-w-0 py-2">
           <div className="h-full border-2 border-gray-300 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
                   fontWeight: 'bold',
-                  fontSize: '10px'
+                  fontSize: 'min(max(16pt, 5vw), 16pt)'
                 }}>
               Quality
             </h3>
@@ -332,7 +332,7 @@ function SixSigmaPage() {
             </div>
             <div className='bg-gray-200 mx-1'>
               <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[6px]">
+                <table className="w-full border-collapse text-[5px]">
                   {/* Simplified table */}
                   <thead>
                     <tr>
@@ -373,13 +373,13 @@ function SixSigmaPage() {
         </div>
 
         {/* Efficiency Chart */}
-        <div className="flex-1 min-w-0 px-1 py-2">
+        <div className="flex-1 min-w-0 py-2">
           <div className="h-full border-2 border-gray-300 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
                   fontWeight: 'bold',
-                  fontSize: '10px'
+                  fontSize: 'min(max(16pt, 5vw), 16pt)'
                 }}>
               Efficiency
             </h3>
@@ -391,7 +391,7 @@ function SixSigmaPage() {
             </div>
             <div className='bg-gray-200 mx-1'>
               <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[6px]">
+                <table className="w-full border-collapse text-[5px]">
                   {/* Simplified table */}
                   <thead>
                     <tr>
@@ -431,13 +431,13 @@ function SixSigmaPage() {
           </div>
         </div>
 
-        <div className="flex-1 min-w-0 px-1 py-2">
+        <div className="flex-1 min-w-0 py-2">
           <div className="h-full border-2 border-gray-300 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
                   fontWeight: 'bold',
-                  fontSize: '10px'
+                  fontSize: 'min(max(16pt, 5vw), 16pt)'
                 }}>
               Delivery
             </h3>
@@ -449,7 +449,7 @@ function SixSigmaPage() {
             </div>
             <div className='bg-gray-200 mx-1'>
               <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[6px]">
+                <table className="w-full border-collapse text-[5px]">
                   {/* Simplified table */}
                   <thead>
                     <tr>
@@ -489,13 +489,13 @@ function SixSigmaPage() {
           </div>
         </div>
 
-        <div className="flex-1 min-w-0 px-1 py-2">
+        <div className="flex-1 min-w-0 py-2">
           <div className="h-full border-2 border-gray-300 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
                   fontWeight: 'bold',
-                  fontSize: '10px'
+                  fontSize: 'min(max(16pt, 5vw), 16pt)'
                 }}>
               Environment
             </h3>
@@ -507,7 +507,7 @@ function SixSigmaPage() {
             </div>
             <div className='bg-gray-200 mx-1'>
               <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[6px]">
+                <table className="w-full border-collapse text-[5px]">
                   {/* Simplified table */}
                   <thead>
                     <tr>
@@ -547,13 +547,13 @@ function SixSigmaPage() {
           </div>
         </div>
 
-        <div className="flex-1 min-w-0 px-1 py-2">
+        <div className="flex-1 min-w-0 py-2">
           <div className="h-full border-2 border-gray-300 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
                   fontWeight: 'bold',
-                  fontSize: '10px'
+                  fontSize: 'min(max(16pt, 5vw), 16pt)'
                 }}>
               Morale
             </h3>
@@ -565,7 +565,7 @@ function SixSigmaPage() {
             </div>
             <div className='bg-gray-200 mx-1'>
               <div className="overflow-hidden">
-                <table className="w-full border-collapse text-[6px]">
+                <table className="w-full border-collapse text-[5px]">
                   {/* Simplified table */}
                   <thead>
                     <tr>
@@ -602,7 +602,7 @@ function SixSigmaPage() {
                 </table>
               </div>
             </div>
-          </div>          
+          </div>
         </div>
 
       </div>
