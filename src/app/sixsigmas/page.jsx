@@ -240,7 +240,7 @@ function SixSigmaPage() {
   ]);
 
   return (
-    <main>
+    <main className="w-full">
       <Container>
       <Navbar session={session} />
 
@@ -253,10 +253,10 @@ function SixSigmaPage() {
         </h4>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center bg-white-100 p-2 overflow-x-hidden">
+      <div className="flex flex-col md:flex-row items-center justify-center bg-white-100 p-2">
         {/* Safety Chart     aspect-square cursor-pointer picture-box rounded-lg w-full */}
         <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-x-hidden text-ellipsis" 
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -312,7 +312,7 @@ function SixSigmaPage() {
         
         {/* Quality Chart */}
         <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-x-hidden text-ellipsis" 
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -368,7 +368,7 @@ function SixSigmaPage() {
 
         {/* Efficiency Chart */}
         <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-x-hidden text-ellipsis" 
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -423,7 +423,7 @@ function SixSigmaPage() {
         </div>
 
         <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-x-hidden text-ellipsis" 
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -478,7 +478,7 @@ function SixSigmaPage() {
         </div>
 
         <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-x-hidden text-ellipsis" 
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -533,7 +533,7 @@ function SixSigmaPage() {
         </div>
 
         <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-x-hidden text-ellipsis" 
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
