@@ -310,6 +310,12 @@ function SixSigmaPage() {
                 </table>
               </div>
             </div>
+            
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
+              <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IRF≤0.59 time/mWH</h3>
+          </div>
+
           </div>
         </div>
         
@@ -369,6 +375,12 @@ function SixSigmaPage() {
                 </table>
               </div>
             </div>
+
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
+              <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤3.0%%</h3>
+          </div>
+
           </div>
         </div>
 
@@ -428,6 +440,12 @@ function SixSigmaPage() {
                 </table>
               </div>
             </div>
+
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+              <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
+              <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency ≥80.5%</h3>
+          </div>
+
           </div>
         </div>
 
@@ -486,6 +504,12 @@ function SixSigmaPage() {
                 </table>
               </div>
             </div>
+
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
+              <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">MLT ≤19 days</h3>
+          </div>
+
           </div>
         </div>
 
@@ -544,6 +568,12 @@ function SixSigmaPage() {
                 </table>
               </div>
             </div>
+
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
+              <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Electricity ≤70,000 kWh</h3>
+          </div>
+
           </div>
         </div>
 
@@ -602,6 +632,12 @@ function SixSigmaPage() {
                 </table>
               </div>
             </div>
+
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
+              <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Attendence ≥92%</h3>
+          </div>
+
           </div>
         </div>
 
