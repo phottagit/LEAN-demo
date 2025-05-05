@@ -222,7 +222,7 @@ function SixSigmaPage() {
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
-                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+                fontSize: 'min(max(16pt, 5vw), 18pt)'
               }}>
             Safety
           </h3>
@@ -237,7 +237,7 @@ function SixSigmaPage() {
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
-                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+                fontSize: 'min(max(16pt, 5vw), 18pt)'
               }}>
             Quality
           </h3>
@@ -251,7 +251,7 @@ function SixSigmaPage() {
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
-                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+                fontSize: 'min(max(16pt, 5vw), 18pt)'
               }}>
             Delivery
           </h3>
@@ -265,7 +265,7 @@ function SixSigmaPage() {
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
-                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+                fontSize: 'min(max(16pt, 5vw), 18pt)'
               }}>
             Environment
           </h3>
@@ -279,7 +279,7 @@ function SixSigmaPage() {
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
-                fontSize: 'clamp(14pt, calc(14pt + 2vw), 22pt)'
+                fontSize: 'min(max(16pt, 5vw), 18pt)'
               }}>
             Morale
           </h3>
