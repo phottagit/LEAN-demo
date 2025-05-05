@@ -268,9 +268,9 @@ function SixSigmaPage() {
             <DonutChart data={chartData1} rotation={-90} centerText="S" />
           </div>
           <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (time/mWH)</h3>
+            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (time/mWH)</h3>
           </div>
-          <div className='bg-gray-200 mx-2'>
+          <div className='bg-gray-200 mx-1'>
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse text-xs">
                 <thead>
@@ -291,10 +291,10 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">2.9</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">4.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">4.2</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.4</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
@@ -324,9 +324,9 @@ function SixSigmaPage() {
             <DonutChart data={chartData2} rotation={-90} centerText="Q" />
           </div>
           <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (%)</h3>
+            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (%)</h3>
           </div>
-          <div className='bg-gray-200 mx-2'>
+          <div className='bg-gray-200 mx-1'>
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse text-xs">
                 <thead>
@@ -380,9 +380,9 @@ function SixSigmaPage() {
             <DonutChart data={chartData3} rotation={-90} centerText="E" />
           </div>
           <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (%)</h3>
+            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (%)</h3>
           </div>
-          <div className='bg-gray-200 mx-2'>
+          <div className='bg-gray-200 mx-1'>
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse text-xs">
                 <thead>
@@ -403,11 +403,11 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">84.8</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">83.5</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">80.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">79.2</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">85.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
@@ -435,9 +435,9 @@ function SixSigmaPage() {
             <DonutChart data={chartData4} rotation={-90} centerText="D" />
           </div>
           <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (day)</h3>
+            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (day)</h3>
           </div>
-          <div className='bg-gray-200 mx-2'>
+          <div className='bg-gray-200 mx-1'>
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse text-xs">
                 <thead>
@@ -458,11 +458,11 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">20.6</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">17.6</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">18.5</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">23.2</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">24.5</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
@@ -490,9 +490,9 @@ function SixSigmaPage() {
             <DonutChart data={chartData5} rotation={-90} centerText="E" />
           </div>
           <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (mkWh)</h3>
+            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (mkWh)</h3>
           </div>
-          <div className='bg-gray-200 mx-2'>
+          <div className='bg-gray-200 mx-1'>
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse text-xs">
                 <thead>
@@ -513,11 +513,11 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.15</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.21</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.40</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">1.29</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">00.13</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
@@ -545,9 +545,9 @@ function SixSigmaPage() {
             <DonutChart data={chartData6} rotation={-90} centerText="M" />
           </div>
           <div>
-            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (%)</h3>
+            <h3 className="text-left font-bold text-xs text-[8px] p-1">Month (%)</h3>
           </div>
-          <div className='bg-gray-200 mx-2'>
+          <div className='bg-gray-200 mx-1'>
             <div className="overflow-x-auto">
               <table className="min-w-full border-collapse text-xs">
                 <thead>
@@ -568,11 +568,11 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
-                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">93.6</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">93.5</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">93.3</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">92.7</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">12.4</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
                     <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[5px] text-center">0.0</td>
