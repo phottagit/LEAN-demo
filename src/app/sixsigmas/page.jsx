@@ -207,10 +207,10 @@ function SixSigmaPage() {
       <Navbar session={session} />
 
       <div className='flex flex-col items-center bg-white p-2'>
-        <h3 className="w-full text-center font-bold text-4xl">
+        <h3 className="w-full text-center font-bold text-3xl">
           DAILY OBEYA DASHBOARD
         </h3>
-        <h4 className="w-full text-center font-medium text-2xl">
+        <h4 className="w-full text-center font-medium text-1xl">
           (April 2025)
         </h4>
       </div>
