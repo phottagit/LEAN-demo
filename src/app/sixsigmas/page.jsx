@@ -256,7 +256,7 @@ function SixSigmaPage() {
       <div className="flex flex-col md:flex-row items-center justify-center bg-white-100 p-2">
         {/* Safety Chart */}
         <div className="flex-1 min-w-0 py-2">
-          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -316,12 +316,16 @@ function SixSigmaPage() {
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IRF≤0.59 time/mWH</h3>
           </div>
 
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Injury Frequency Rate (IFR)</h3>
+          </div>
+
           </div>
         </div>
         
         {/* Quality Chart */}
         <div className="flex-1 min-w-0 py-2">
-          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -381,12 +385,16 @@ function SixSigmaPage() {
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤3.0%%</h3>
           </div>
 
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap Rate (%)</h3>
+          </div>
+
           </div>
         </div>
 
         {/* Efficiency Chart */}
         <div className="flex-1 min-w-0 py-2">
-          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -446,11 +454,15 @@ function SixSigmaPage() {
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency ≥80.5%</h3>
           </div>
 
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency (%)</h3>
+          </div>
+
           </div>
         </div>
 
         <div className="flex-1 min-w-0 py-2">
-          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -510,11 +522,15 @@ function SixSigmaPage() {
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">MLT ≤19 days</h3>
           </div>
 
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">MLT (Carlendar day)</h3>
+          </div>
+
           </div>
         </div>
 
         <div className="flex-1 min-w-0 py-2">
-          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -574,11 +590,15 @@ function SixSigmaPage() {
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Electricity ≤70,000 kWh</h3>
           </div>
 
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Electricity (kWh.)</h3>
+          </div>
+
           </div>
         </div>
 
         <div className="flex-1 min-w-0 py-2">
-          <div className="h-full border-2 border-gray-300 rounded-lg p-1">
+          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -636,6 +656,10 @@ function SixSigmaPage() {
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Attendence ≥92%</h3>
+          </div>
+
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Attendence (%)</h3>
           </div>
 
           </div>
