@@ -12,193 +12,231 @@ function SixSigmaPage() {
   
   // Sample data for the donut chart
   const [chartData1, setChartData1] = useState([
-    { name: '17', value: 10, type: 'Holiday' },
-    { name: '18', value: 10, type: 'Upper' },
-    { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: 'Holiday' },
-    { name: '23', value: 10, type: 'Upper' },
-    { name: '24', value: 10, type: 'Upper' },
-    { name: '25', value: 10, type: 'Upper' },
-    { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: 'Holiday' },
-    { name: '28', value: 10, type: 'Upper' },
-    { name: '29', value: 10, type: 'Upper' },
-    { name: '30', value: 10, type: 'Upper' },
+    { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
+    { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
-    { name: '1', value: 10, type: 'Upper' },
+    { name: '1', value: 10, type: 'Holiday' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: 'Upper' },
-    { name: '5', value: 10, type: 'Upper' },
-    { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: 'Upper' },
-    { name: '10', value: 10, type: 'Upper' },
-    { name: '11', value: 10, type: 'Upper' },
-    { name: '12', value: 10, type: 'Upper' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Holiday' },
-    { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: 'Holiday' }
+    { name: '4', value: 10, type: 'Holiday' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
   ]);
 
   const [chartData2, setChartData2] = useState([
-    { name: '17', value: 10, type: 'Holiday' },
-    { name: '18', value: 10, type: 'Lower' },
-    { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: 'Holiday' },
-    { name: '23', value: 10, type: 'Lower' },
-    { name: '24', value: 10, type: 'Upper' },
-    { name: '25', value: 10, type: 'Upper' },
-    { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: 'Holiday' },
-    { name: '28', value: 10, type: 'Upper' },
-    { name: '29', value: 10, type: 'Upper' },
-    { name: '30', value: 10, type: 'Upper' },
+    { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
+    { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
-    { name: '1', value: 10, type: 'Lower' },
-    { name: '2', value: 10, type: 'Lower' },
-    { name: '3', value: 10, type: 'Lower' },
-    { name: '4', value: 10, type: 'Lower' },
-    { name: '5', value: 10, type: 'Lower' },
-    { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: 'Lower' },
-    { name: '9', value: 10, type: 'Lower' },
-    { name: '10', value: 10, type: 'Upper' },
-    { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Holiday' },
-    { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: 'Holiday' }
+    { name: '1', value: 10, type: 'Holiday' },
+    { name: '2', value: 10, type: 'Upper' },
+    { name: '3', value: 10, type: 'Upper' },
+    { name: '4', value: 10, type: 'Holiday' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
   ]);
 
   const [chartData3, setChartData3] = useState([
-    { name: '17', value: 10, type: 'Holiday' },
-    { name: '18', value: 10, type: 'Lower' },
-    { name: '19', value: 10, type: 'Lower' },
-    { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: 'Holiday' },
-    { name: '23', value: 10, type: 'Lower' },
-    { name: '24', value: 10, type: 'Lower' },
-    { name: '25', value: 10, type: 'Lower' },
-    { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: 'Holiday' },
-    { name: '28', value: 10, type: 'Upper' },
-    { name: '29', value: 10, type: 'Upper' },
-    { name: '30', value: 10, type: 'Upper' },
+    { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
+    { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
-    { name: '1', value: 10, type: 'Upper' },
-    { name: '2', value: 10, type: 'Lower' },
-    { name: '3', value: 10, type: 'Lower' },
-    { name: '4', value: 10, type: 'Lower' },
-    { name: '5', value: 10, type: 'Upper' },
-    { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: 'Lower' },
-    { name: '9', value: 10, type: 'Upper' },
-    { name: '10', value: 10, type: 'Lower' },
-    { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Holiday' },
-    { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: 'Holiday' }
+    { name: '1', value: 10, type: 'Holiday' },
+    { name: '2', value: 10, type: 'Upper' },
+    { name: '3', value: 10, type: 'Upper' },
+    { name: '4', value: 10, type: 'Holiday' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
   ]);
 
   const [chartData4, setChartData4] = useState([
-    { name: '17', value: 10, type: 'Holiday' },
-    { name: '18', value: 10, type: 'Lower' },
-    { name: '19', value: 10, type: 'Lower' },
-    { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Lower' },
-    { name: '22', value: 10, type: 'Upper' },
-    { name: '23', value: 10, type: 'Lower' },
-    { name: '24', value: 10, type: 'Lower' },
-    { name: '25', value: 10, type: 'Lower' },
-    { name: '26', value: 10, type: 'Lower' },
-    { name: '27', value: 10, type: 'Holiday' },
-    { name: '28', value: 10, type: 'Lower' },
-    { name: '29', value: 10, type: 'Lower' },
-    { name: '30', value: 10, type: 'Lower' },
+    { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
+    { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
-    { name: '1', value: 10, type: 'Lower' },
+    { name: '1', value: 10, type: 'Holiday' },
     { name: '2', value: 10, type: 'Lower' },
     { name: '3', value: 10, type: 'Lower' },
-    { name: '4', value: 10, type: 'Lower' },
-    { name: '5', value: 10, type: 'Lower' },
-    { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: 'Lower' },
-    { name: '9', value: 10, type: 'Lower' },
-    { name: '10', value: 10, type: 'Lower' },
-    { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Holiday' },
-    { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: 'Holiday' }
+    { name: '4', value: 10, type: 'Holiday' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
   ]);
 
   const [chartData5, setChartData5] = useState([
-    { name: '17', value: 10, type: 'Holiday' },
-    { name: '18', value: 10, type: 'Lower' },
-    { name: '19', value: 10, type: 'Lower' },
-    { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: 'Upper' },
-    { name: '23', value: 10, type: 'Upper' },
-    { name: '24', value: 10, type: 'Upper' },
-    { name: '25', value: 10, type: 'Upper' },
-    { name: '26', value: 10, type: 'Lower' },
-    { name: '27', value: 10, type: 'Holiday' },
-    { name: '28', value: 10, type: 'Lower' },
-    { name: '29', value: 10, type: 'Lower' },
-    { name: '30', value: 10, type: 'Lower' },
+    { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
+    { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
-    { name: '1', value: 10, type: 'Upper' },
+    { name: '1', value: 10, type: 'Holiday' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: 'Upper' },
-    { name: '5', value: 10, type: 'Lower' },
-    { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: 'Upper' },
-    { name: '10', value: 10, type: 'Lower' },
-    { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Holiday' },
-    { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: 'Holiday' }
+    { name: '4', value: 10, type: 'Holiday' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
+  ]);
+
+  const [chartData6, setChartData6] = useState([
+    { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
+    { name: '30', value: 10, type: '' },
+    { name: '31', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '1', value: 10, type: 'Holiday' },
+    { name: '2', value: 10, type: 'Lower' },
+    { name: '3', value: 10, type: 'Lower' },
+    { name: '4', value: 10, type: 'Holiday' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
   ]);
 
   return (
@@ -211,14 +249,14 @@ function SixSigmaPage() {
           DAILY OBEYA DASHBOARD
         </h3>
         <h4 className="w-full text-center font-medium text-1xl">
-          (April 2025)
+          (May 2025)
         </h4>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center py-4 gap-1">
+      <div className="flex flex-col md:flex-row items-center justify-center py-2">
         {/* Safety Chart     aspect-square cursor-pointer picture-box rounded-lg w-full */}
-        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+        <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-hidden text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -229,11 +267,52 @@ function SixSigmaPage() {
           <div className="w-full aspect-square">
             <DonutChart data={chartData1} rotation={-90} centerText="S" />
           </div>
+          <div>
+            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (time/mWH)</h3>
+          </div>
+          <div className='bg-gray-200 mx-2'>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse text-xs">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">1</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">2</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">3</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">4</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">5</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">6</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">7</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">8</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">9</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">10</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">11</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">12</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>          
         </div>
-
+        
         {/* Quality Chart */}
-        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+        <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-hidden text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -242,12 +321,109 @@ function SixSigmaPage() {
             Quality
           </h3>
           <div className="w-full aspect-square">
-            <DonutChart data={chartData2} rotation={-90} centerText="Q" />
+            <DonutChart data={chartData2} rotation={-90} centerText="S" />
           </div>
+          <div>
+            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (time/mWH)</h3>
+          </div>
+          <div className='bg-gray-200 mx-2'>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse text-xs">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">1</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">2</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">3</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">4</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">5</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">6</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">7</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">8</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">9</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">10</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">11</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">12</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>          
         </div>
 
-        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+        {/* Efficiency Chart */}
+        <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-hidden text-ellipsis" 
+              style={{ 
+                fontFamily: 'Century, serif', 
+                fontWeight: 'bold',
+                fontSize: 'min(max(16pt, 5vw), 16pt)'
+              }}>
+            Efficiency
+          </h3>
+          <div className="w-full aspect-square">
+            <DonutChart data={chartData3} rotation={-90} centerText="S" />
+          </div>
+          <div>
+            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (time/mWH)</h3>
+          </div>
+          <div className='bg-gray-200 mx-2'>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse text-xs">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">1</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">2</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">3</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">4</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">5</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">6</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">7</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">8</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">9</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">10</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">11</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">12</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>          
+        </div>
+
+        <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-hidden text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -256,12 +432,53 @@ function SixSigmaPage() {
             Delivery
           </h3>
           <div className="w-full aspect-square">
-            <DonutChart data={chartData3} rotation={-90} centerText="D" />
+            <DonutChart data={chartData4} rotation={-90} centerText="S" />
           </div>
+          <div>
+            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (time/mWH)</h3>
+          </div>
+          <div className='bg-gray-200 mx-2'>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse text-xs">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">1</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">2</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">3</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">4</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">5</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">6</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">7</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">8</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">9</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">10</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">11</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">12</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>          
         </div>
 
-        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+        <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-hidden text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -270,12 +487,53 @@ function SixSigmaPage() {
             Environment
           </h3>
           <div className="w-full aspect-square">
-            <DonutChart data={chartData4} rotation={-90} centerText="E" />
+            <DonutChart data={chartData5} rotation={-90} centerText="S" />
           </div>
+          <div>
+            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (time/mWH)</h3>
+          </div>
+          <div className='bg-gray-200 mx-2'>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse text-xs">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">1</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">2</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">3</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">4</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">5</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">6</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">7</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">8</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">9</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">10</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">11</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">12</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>          
         </div>
 
-        <div className="flex flex-col justify-center py-4 w-full max-w-4xl bg-white rounded-lg">
-          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-4 max-w-full overflow-hidden text-ellipsis" 
+        <div className="flex flex-col justify-center py-2 w-full max-w-4xl border-2 border-gray-300 rounded-lg">
+          <h3 className="text-center font-medium text-3xl md:text-4xl lg:text-4xl mb-1 max-w-full overflow-hidden text-ellipsis" 
               style={{ 
                 fontFamily: 'Century, serif', 
                 fontWeight: 'bold',
@@ -284,8 +542,49 @@ function SixSigmaPage() {
             Morale
           </h3>
           <div className="w-full aspect-square">
-            <DonutChart data={chartData5} rotation={-90} centerText="M" />
+            <DonutChart data={chartData6} rotation={-90} centerText="S" />
           </div>
+          <div>
+            <h3 className="text-left font-bold text-xs text-[8px] p-2">Month (time/mWH)</h3>
+          </div>
+          <div className='bg-gray-200 mx-2'>
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse text-xs">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">1</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">2</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">3</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">4</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">5</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">6</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">7</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">8</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">9</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">10</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">11</th>
+                    <th className="border border-gray-300 px-0.5 py-0.5 text-[6px] font-medium text-gray-700">12</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                    <td className="border border-gray-300 bg-white px-[0.01rem] py-[0.2rem] text-[6px] text-center">0.0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>          
         </div>
 
       </div>

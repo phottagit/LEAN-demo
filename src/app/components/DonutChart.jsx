@@ -36,7 +36,7 @@ getColor(d) {
     }
     // For empty type or blank name, use light gray
     if (!d.data.type || d.data.type === '' || !d.data.name || d.data.name === '') {
-        return '#FFFFFF';
+        return '#F0EEE4';
     }
     // Otherwise use the default color palette
     return defaultColors[d.index % defaultColors.length];
@@ -94,7 +94,7 @@ getColor(d) {
                 .outerRadius(radius)
             )
             .attr('fill', d => this.getColor(d))
-            .attr("stroke", "#fff")
+            .attr("stroke", d => (!d.data.name || d.data.name === '' || d.data.value === 0) ? 'transparent' : '#fff')
             .style("stroke-width", "2")
             //.style("opacity", "0.8");
 
