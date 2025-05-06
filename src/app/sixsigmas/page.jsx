@@ -1206,7 +1206,7 @@ function SixSigmaPage() {
                           textAnchor="end" 
                           fill="red"
                         >
-                          {target6.toFixed(2)}
+                          {target6.toFixed(1)}
                         </text>
                       );
                     }}
