@@ -424,7 +424,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={3}
+                            r={2}
                             fill={value <= 0.59 ? 'green' : 'red'}
                           />
                         );
@@ -574,7 +574,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={3}
+                            r={2}
                             fill={value <= 3.0 ? 'green' : 'red'}
                           />
                         );
@@ -723,7 +723,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={3}
+                            r={2}
                             fill={value <= 80.5 ? 'red' : 'green'}
                           />
                         );
@@ -742,7 +742,7 @@ function SixSigmaPage() {
                             textAnchor="middle"
                             fill="#000"
                           >
-                            {value.toFixed(2)}
+                            {value.toFixed(1)}
                           </text>
                         );
                       }}
@@ -762,7 +762,7 @@ function SixSigmaPage() {
                           textAnchor="end" 
                           fill="red"
                         >
-                          {target3.toFixed(2)}
+                          {target3.toFixed(1)}
                         </text>
                       );
                     }}
@@ -871,7 +871,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={3}
+                            r={2}
                             fill={value <= 19.0 ? 'green' : 'red'}
                           />
                         );
@@ -890,7 +890,7 @@ function SixSigmaPage() {
                             textAnchor="middle"
                             fill="#000"
                           >
-                            {value.toFixed(2)}
+                            {value.toFixed(1)}
                           </text>
                         );
                       }}
@@ -910,7 +910,7 @@ function SixSigmaPage() {
                           textAnchor="end" 
                           fill="red"
                         >
-                          {target4.toFixed(2)}
+                          {target4.toFixed(1)}
                         </text>
                       );
                     }}
@@ -1019,7 +1019,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={3}
+                            r={2}
                             fill={value <= 70.0 ? 'green' : 'red'}
                           />
                         );
@@ -1038,7 +1038,7 @@ function SixSigmaPage() {
                             textAnchor="middle"
                             fill="#000"
                           >
-                            {value.toFixed(2)}
+                            {value.toFixed(1)}
                           </text>
                         );
                       }}
@@ -1058,7 +1058,7 @@ function SixSigmaPage() {
                           textAnchor="end" 
                           fill="red"
                         >
-                          {target5.toFixed(2)}
+                          {target5.toFixed(1)}
                         </text>
                       );
                     }}
@@ -1167,7 +1167,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={3}
+                            r={2}
                             fill={value <= 92.0 ? 'green' : 'red'}
                           />
                         );
@@ -1186,7 +1186,7 @@ function SixSigmaPage() {
                             textAnchor="middle"
                             fill="#000"
                           >
-                            {value.toFixed(2)}
+                            {value.toFixed(1)}
                           </text>
                         );
                       }}
