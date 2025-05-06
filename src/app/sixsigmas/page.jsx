@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DonutChart from '../components/DonutChart';
 import Navbar from '../components/Navbar';
 import { useSession } from 'next-auth/react';
 import Container from '../components/Container';
 import Footer from '../components/Footer';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, LabelList } from 'recharts';
 
 function SixSigmaPage() {
   const { data: session } = useSession();
@@ -239,6 +240,79 @@ function SixSigmaPage() {
     { name: '16', value: 10, type: '' }
   ]);
 
+  const data1 = [
+    { name: "24/04/2025", value: 0 },
+    { name: "25/04/2025", value: 0 },
+    { name: "26/04/2025", value: 0 },
+    { name: "28/04/2025", value: 0 },
+    { name: "29/04/2025", value: 0 },
+    { name: "30/04/2025", value: 0 },
+    { name: "02/05/2025", value: 0 },
+    { name: "03/05/2025", value: 0 },
+  ];
+
+  const data2 = [
+    { name: "25/04/2025", value: 1.4 },
+    { name: "26/04/2025", value: 1.1 },
+    { name: "28/04/2025", value: 1.7 },
+    { name: "29/04/2025", value: 1.4 },
+    { name: "30/04/2025", value: 0.7 },
+    { name: "02/05/2025", value: 1.3 },
+    { name: "03/05/2025", value: 1.6 },
+    { name: "05/05/2025", value: 1.0 },
+  ];
+
+  const data3 = [
+    { name: "25/04/2025", value: 76.9 },
+    { name: "26/04/2025", value: 80.9 },
+    { name: "28/04/2025", value: 80.6 },
+    { name: "29/04/2025", value: 81.5 },
+    { name: "30/04/2025", value: 82.7 },
+    { name: "02/05/2025", value: 83.2 },
+    { name: "03/05/2025", value: 86.8 },
+    { name: "05/05/2025", value: 86.9 },
+  ];
+
+  const data4 = [
+    { name: "25/04/2025", value: 21.0 },
+    { name: "26/04/2025", value: 20.0 },
+    { name: "28/04/2025", value: 21.1 },
+    { name: "29/04/2025", value: 20.6 },
+    { name: "30/04/2025", value: 20.0 },
+    { name: "02/05/2025", value: 21.0 },
+    { name: "03/05/2025", value: 21.7 },
+    { name: "05/05/2025", value: 27.0 },
+  ];
+
+  const data5 = [
+    { name: "25/04/2025", value: 56.0 },
+    { name: "26/04/2025", value: 51.1 },
+    { name: "28/04/2025", value: 63.5 },
+    { name: "29/04/2025", value: 62.2 },
+    { name: "30/04/2025", value: 60.2 },
+    { name: "02/05/2025", value: 60.2 },
+    { name: "03/05/2025", value: 53.1 },
+    { name: "05/05/2025", value: 62.0 },
+  ];
+
+  const data6 = [
+    { name: "25/04/2025", value: 94.9 },
+    { name: "26/04/2025", value: 91.7 },
+    { name: "28/04/2025", value: 93.3 },
+    { name: "29/04/2025", value: 94.6 },
+    { name: "30/04/2025", value: 94.2 },
+    { name: "02/05/2025", value: 86.7 },
+    { name: "03/05/2025", value: 88.6 },
+    { name: "05/05/2025", value: 93.9 },
+  ];
+
+  const target1 = 0.59;
+  const target2 = 3.00;
+  const target3 = 80.5;
+  const target4 = 19.0;
+  const target5 = 70.0;
+  const target6 = 92;
+    
   return (
     <main className="w-full">
       <Container>
@@ -293,10 +367,10 @@ function SixSigmaPage() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">2.9</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.2</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">3.1</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
@@ -319,6 +393,87 @@ function SixSigmaPage() {
           <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Injury Frequency Rate (IFR)</h3>
           </div>
+
+          <div className="max-w-4xl mx-1">
+            <div className="bg-white p-0">
+              <div className="h-30 ">
+                <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data1} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="name"
+                      type="category"
+                      scale="point"
+                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
+                      tick={{ fontSize: 8 }} 
+                    />
+                    <YAxis width={20} domain={[0, 1.2]} tick={{ fontSize: 8 }} />
+                    <Tooltip
+                      contentStyle={{ fontSize: '8px' }} 
+                      labelStyle={{ fontSize: '8px' }}
+                      itemStyle={{ fontSize: '8px' }}
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#151515" 
+                      activeDot={{ r: 4 }}
+                      dot={(props) => {
+                        const { cx, cy, value } = props;
+                        return (
+                          <circle
+                            cx={cx}
+                            cy={cy}
+                            r={3}
+                            fill={value <= 0.59 ? 'green' : 'red'}
+                          />
+                        );
+                      }}
+                    >
+                    <LabelList
+                      dataKey="value"
+                      position="top"
+                      content={(props) => {
+                        const { x, y, value } = props;
+                        return (
+                          <text
+                            x={x}
+                            y={y - 4}  // shift upward a little
+                            fontSize={8}
+                            textAnchor="middle"
+                            fill="#000"
+                          >
+                            {value.toFixed(2)}
+                          </text>
+                        );
+                      }}
+                    />
+                    </Line>
+                  <ReferenceLine
+                      y={target1}
+                      stroke="red"
+                      strokeDasharray="3 3"
+                      label={({ viewBox }) => {
+                        const { x, width, y } = viewBox;
+                        return (
+                          <text 
+                            x={x + width} 
+                            y={y - 5} 
+                            fontSize={8} 
+                            textAnchor="end" 
+                            fill="red"
+                          >
+                            {target1}
+                          </text>
+                        );
+                      }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </div>
+
 
           </div>
         </div>
@@ -362,11 +517,11 @@ function SixSigmaPage() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">2.9</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.0</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.2</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">2.9</td>
+                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.4</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
                       <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
@@ -387,6 +542,86 @@ function SixSigmaPage() {
 
           <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap Rate (%)</h3>
+          </div>
+
+          <div className="max-w-4xl mx-1">
+            <div className="bg-white p-0">
+              <div className="h-30 ">
+                <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data2} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="name"
+                      type="category"
+                      scale="point"
+                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
+                      tick={{ fontSize: 8 }} 
+                    />
+                    <YAxis width={20} domain={[0, 6.0]} tick={{ fontSize: 8 }} />
+                    <Tooltip
+                      contentStyle={{ fontSize: '8px' }} 
+                      labelStyle={{ fontSize: '8px' }}
+                      itemStyle={{ fontSize: '8px' }}
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#151515" 
+                      activeDot={{ r: 4 }}
+                      dot={(props) => {
+                        const { cx, cy, value } = props;
+                        return (
+                          <circle
+                            cx={cx}
+                            cy={cy}
+                            r={3}
+                            fill={value <= 3.0 ? 'green' : 'red'}
+                          />
+                        );
+                      }}
+                    >
+                    <LabelList
+                      dataKey="value"
+                      position="top"
+                      content={(props) => {
+                        const { x, y, value } = props;
+                        return (
+                          <text
+                            x={x}
+                            y={y - 4}  // shift upward a little
+                            fontSize={8}
+                            textAnchor="middle"
+                            fill="#000"
+                          >
+                            {value.toFixed(2)}
+                          </text>
+                        );
+                      }}
+                    />
+                    </Line>
+                    <ReferenceLine
+                    y={target2}
+                    stroke="red"
+                    strokeDasharray="3 3"
+                    label={({ viewBox }) => {
+                      const { x, width, y } = viewBox;
+                      return (
+                        <text 
+                          x={x + width} 
+                          y={y - 5} 
+                          fontSize={8} 
+                          textAnchor="end" 
+                          fill="red"
+                        >
+                          {target2.toFixed(2)}
+                        </text>
+                      );
+                    }}
+                  />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
           </div>
@@ -458,6 +693,86 @@ function SixSigmaPage() {
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency (%)</h3>
           </div>
 
+          <div className="max-w-4xl mx-1">
+            <div className="bg-white p-0">
+              <div className="h-30 ">
+                <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data3} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="name"
+                      type="category"
+                      scale="point"
+                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
+                      tick={{ fontSize: 8 }} 
+                    />
+                    <YAxis width={20} domain={[60, 100]} tick={{ fontSize: 8 }} />
+                    <Tooltip
+                      contentStyle={{ fontSize: '8px' }} 
+                      labelStyle={{ fontSize: '8px' }}
+                      itemStyle={{ fontSize: '8px' }}
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#151515" 
+                      activeDot={{ r: 4 }}
+                      dot={(props) => {
+                        const { cx, cy, value } = props;
+                        return (
+                          <circle
+                            cx={cx}
+                            cy={cy}
+                            r={3}
+                            fill={value <= 80.5 ? 'red' : 'green'}
+                          />
+                        );
+                      }}
+                    >
+                    <LabelList
+                      dataKey="value"
+                      position="top"
+                      content={(props) => {
+                        const { x, y, value } = props;
+                        return (
+                          <text
+                            x={x}
+                            y={y - 4}  // shift upward a little
+                            fontSize={8}
+                            textAnchor="middle"
+                            fill="#000"
+                          >
+                            {value.toFixed(2)}
+                          </text>
+                        );
+                      }}
+                    />
+                    </Line>
+                    <ReferenceLine
+                    y={target3}
+                    stroke="red"
+                    strokeDasharray="3 3"
+                    label={({ viewBox }) => {
+                      const { x, width, y } = viewBox;
+                      return (
+                        <text 
+                          x={x + width} 
+                          y={y - 5} 
+                          fontSize={8} 
+                          textAnchor="end" 
+                          fill="red"
+                        >
+                          {target3.toFixed(2)}
+                        </text>
+                      );
+                    }}
+                  />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </div>
+
           </div>
         </div>
 
@@ -524,6 +839,86 @@ function SixSigmaPage() {
 
           <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">MLT (Carlendar day)</h3>
+          </div>
+
+          <div className="max-w-4xl mx-1">
+            <div className="bg-white p-0">
+              <div className="h-30 ">
+                <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data4} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="name"
+                      type="category"
+                      scale="point"
+                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
+                      tick={{ fontSize: 8 }} 
+                    />
+                    <YAxis width={20} domain={[6, 30]} tick={{ fontSize: 8 }} />
+                    <Tooltip
+                      contentStyle={{ fontSize: '8px' }} 
+                      labelStyle={{ fontSize: '8px' }}
+                      itemStyle={{ fontSize: '8px' }}
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#151515" 
+                      activeDot={{ r: 4 }}
+                      dot={(props) => {
+                        const { cx, cy, value } = props;
+                        return (
+                          <circle
+                            cx={cx}
+                            cy={cy}
+                            r={3}
+                            fill={value <= 19.0 ? 'green' : 'red'}
+                          />
+                        );
+                      }}
+                    >
+                    <LabelList
+                      dataKey="value"
+                      position="top"
+                      content={(props) => {
+                        const { x, y, value } = props;
+                        return (
+                          <text
+                            x={x}
+                            y={y - 4}  // shift upward a little
+                            fontSize={8}
+                            textAnchor="middle"
+                            fill="#000"
+                          >
+                            {value.toFixed(2)}
+                          </text>
+                        );
+                      }}
+                    />
+                    </Line>
+                    <ReferenceLine
+                    y={target4}
+                    stroke="red"
+                    strokeDasharray="3 3"
+                    label={({ viewBox }) => {
+                      const { x, width, y } = viewBox;
+                      return (
+                        <text 
+                          x={x + width} 
+                          y={y - 5} 
+                          fontSize={8} 
+                          textAnchor="end" 
+                          fill="red"
+                        >
+                          {target4.toFixed(2)}
+                        </text>
+                      );
+                    }}
+                  />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
           </div>
@@ -594,6 +989,86 @@ function SixSigmaPage() {
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Electricity (kWh.)</h3>
           </div>
 
+          <div className="max-w-4xl mx-1">
+            <div className="bg-white p-0">
+              <div className="h-30 ">
+                <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data5} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="name"
+                      type="category"
+                      scale="point"
+                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
+                      tick={{ fontSize: 8 }} 
+                    />
+                    <YAxis width={20} domain={[10, 120]} tick={{ fontSize: 8 }} />
+                    <Tooltip
+                      contentStyle={{ fontSize: '8px' }} 
+                      labelStyle={{ fontSize: '8px' }}
+                      itemStyle={{ fontSize: '8px' }}
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#151515" 
+                      activeDot={{ r: 4 }}
+                      dot={(props) => {
+                        const { cx, cy, value } = props;
+                        return (
+                          <circle
+                            cx={cx}
+                            cy={cy}
+                            r={3}
+                            fill={value <= 70.0 ? 'green' : 'red'}
+                          />
+                        );
+                      }}
+                    >
+                    <LabelList
+                      dataKey="value"
+                      position="top"
+                      content={(props) => {
+                        const { x, y, value } = props;
+                        return (
+                          <text
+                            x={x}
+                            y={y - 4}  // shift upward a little
+                            fontSize={8}
+                            textAnchor="middle"
+                            fill="#000"
+                          >
+                            {value.toFixed(2)}
+                          </text>
+                        );
+                      }}
+                    />
+                    </Line>
+                    <ReferenceLine
+                    y={target5}
+                    stroke="red"
+                    strokeDasharray="3 3"
+                    label={({ viewBox }) => {
+                      const { x, width, y } = viewBox;
+                      return (
+                        <text 
+                          x={x + width} 
+                          y={y - 5} 
+                          fontSize={8} 
+                          textAnchor="end" 
+                          fill="red"
+                        >
+                          {target5.toFixed(2)}
+                        </text>
+                      );
+                    }}
+                  />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </div>
+
           </div>
         </div>
 
@@ -660,6 +1135,86 @@ function SixSigmaPage() {
 
           <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Attendence (%)</h3>
+          </div>
+
+          <div className="max-w-4xl mx-1">
+            <div className="bg-white p-0">
+              <div className="h-30 ">
+                <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data6} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="name"
+                      type="category"
+                      scale="point"
+                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
+                      tick={{ fontSize: 8 }} 
+                    />
+                    <YAxis width={20} domain={[60, 120]} tick={{ fontSize: 8 }} />
+                    <Tooltip
+                      contentStyle={{ fontSize: '8px' }} 
+                      labelStyle={{ fontSize: '8px' }}
+                      itemStyle={{ fontSize: '8px' }}
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#151515" 
+                      activeDot={{ r: 4 }}
+                      dot={(props) => {
+                        const { cx, cy, value } = props;
+                        return (
+                          <circle
+                            cx={cx}
+                            cy={cy}
+                            r={3}
+                            fill={value <= 92.0 ? 'green' : 'red'}
+                          />
+                        );
+                      }}
+                    >
+                    <LabelList
+                      dataKey="value"
+                      position="top"
+                      content={(props) => {
+                        const { x, y, value } = props;
+                        return (
+                          <text
+                            x={x}
+                            y={y - 4}  // shift upward a little
+                            fontSize={8}
+                            textAnchor="middle"
+                            fill="#000"
+                          >
+                            {value.toFixed(2)}
+                          </text>
+                        );
+                      }}
+                    />
+                    </Line>
+                    <ReferenceLine
+                    y={target6}
+                    stroke="red"
+                    strokeDasharray="3 3"
+                    label={({ viewBox }) => {
+                      const { x, width, y } = viewBox;
+                      return (
+                        <text 
+                          x={x + width} 
+                          y={y - 5} 
+                          fontSize={8} 
+                          textAnchor="end" 
+                          fill="red"
+                        >
+                          {target6.toFixed(2)}
+                        </text>
+                      );
+                    }}
+                  />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
           </div>
