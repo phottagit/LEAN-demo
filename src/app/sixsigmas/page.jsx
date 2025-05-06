@@ -397,7 +397,7 @@ function SixSigmaPage() {
           <div className="max-w-4xl mx-1">
             <div className="bg-white p-0">
               <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="115%">
                 <LineChart data={data1} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
@@ -547,7 +547,7 @@ function SixSigmaPage() {
           <div className="max-w-4xl mx-1">
             <div className="bg-white p-0">
               <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="115%">
                 <LineChart data={data2} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
@@ -696,7 +696,7 @@ function SixSigmaPage() {
           <div className="max-w-4xl mx-1">
             <div className="bg-white p-0">
               <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="115%">
                 <LineChart data={data3} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
@@ -844,7 +844,7 @@ function SixSigmaPage() {
           <div className="max-w-4xl mx-1">
             <div className="bg-white p-0">
               <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="115%">
                 <LineChart data={data4} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
@@ -992,7 +992,7 @@ function SixSigmaPage() {
           <div className="max-w-4xl mx-1">
             <div className="bg-white p-0">
               <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="115%">
                 <LineChart data={data5} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
@@ -1140,7 +1140,7 @@ function SixSigmaPage() {
           <div className="max-w-4xl mx-1">
             <div className="bg-white p-0">
               <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="115%">
                 <LineChart data={data6} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
