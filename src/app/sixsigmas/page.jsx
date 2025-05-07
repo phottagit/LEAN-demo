@@ -36,8 +36,8 @@ function SixSigmaPage() {
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
     { name: '4', value: 10, type: 'Holiday' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -74,8 +74,8 @@ function SixSigmaPage() {
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
     { name: '4', value: 10, type: 'Holiday' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -112,8 +112,8 @@ function SixSigmaPage() {
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
     { name: '4', value: 10, type: 'Holiday' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -150,8 +150,8 @@ function SixSigmaPage() {
     { name: '2', value: 10, type: 'Lower' },
     { name: '3', value: 10, type: 'Lower' },
     { name: '4', value: 10, type: 'Holiday' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '5', value: 10, type: 'Lower' },
+    { name: '6', value: 10, type: 'Lower' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -188,8 +188,8 @@ function SixSigmaPage() {
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
     { name: '4', value: 10, type: 'Holiday' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -226,8 +226,8 @@ function SixSigmaPage() {
     { name: '2', value: 10, type: 'Lower' },
     { name: '3', value: 10, type: 'Lower' },
     { name: '4', value: 10, type: 'Holiday' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '5', value: 10, type: 'Lower' },
+    { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -241,69 +241,63 @@ function SixSigmaPage() {
   ]);
 
   const data1 = [
-    { name: "24/04/2025", value: 0 },
-    { name: "25/04/2025", value: 0 },
-    { name: "26/04/2025", value: 0 },
     { name: "28/04/2025", value: 0 },
     { name: "29/04/2025", value: 0 },
     { name: "30/04/2025", value: 0 },
     { name: "02/05/2025", value: 0 },
     { name: "03/05/2025", value: 0 },
+    { name: "05/05/2025", value: 0 },
+    { name: "06/05/2025", value: 0 },
   ];
 
   const data2 = [
-    { name: "25/04/2025", value: 1.4 },
-    { name: "26/04/2025", value: 1.1 },
     { name: "28/04/2025", value: 1.7 },
     { name: "29/04/2025", value: 1.4 },
     { name: "30/04/2025", value: 0.7 },
     { name: "02/05/2025", value: 1.3 },
     { name: "03/05/2025", value: 1.6 },
     { name: "05/05/2025", value: 1.0 },
+    { name: "06/05/2025", value: 1.7 },
   ];
 
   const data3 = [
-    { name: "25/04/2025", value: 76.9 },
-    { name: "26/04/2025", value: 80.9 },
     { name: "28/04/2025", value: 80.6 },
     { name: "29/04/2025", value: 81.5 },
     { name: "30/04/2025", value: 82.7 },
     { name: "02/05/2025", value: 83.2 },
     { name: "03/05/2025", value: 86.8 },
     { name: "05/05/2025", value: 86.9 },
+    { name: "06/05/2025", value: 85.9 },
   ];
 
   const data4 = [
-    { name: "25/04/2025", value: 21.0 },
-    { name: "26/04/2025", value: 20.0 },
     { name: "28/04/2025", value: 21.1 },
     { name: "29/04/2025", value: 20.6 },
     { name: "30/04/2025", value: 20.0 },
-    { name: "02/05/2025", value: 21.0 },
+    { name: "02/05/2025", value: 21.5 },
     { name: "03/05/2025", value: 21.7 },
-    { name: "05/05/2025", value: 27.0 },
+    { name: "05/05/2025", value: 25.7 },
+    { name: "06/05/2025", value: 23.3 },
   ];
 
   const data5 = [
-    { name: "25/04/2025", value: 56.0 },
-    { name: "26/04/2025", value: 51.1 },
     { name: "28/04/2025", value: 63.5 },
     { name: "29/04/2025", value: 62.2 },
     { name: "30/04/2025", value: 60.2 },
     { name: "02/05/2025", value: 60.2 },
     { name: "03/05/2025", value: 53.1 },
     { name: "05/05/2025", value: 62.0 },
+    { name: "06/05/2025", value: 62.0 },
   ];
 
   const data6 = [
-    { name: "25/04/2025", value: 94.9 },
-    { name: "26/04/2025", value: 91.7 },
     { name: "28/04/2025", value: 93.3 },
     { name: "29/04/2025", value: 94.6 },
     { name: "30/04/2025", value: 94.2 },
     { name: "02/05/2025", value: 86.7 },
     { name: "03/05/2025", value: 88.6 },
     { name: "05/05/2025", value: 93.9 },
+    { name: "06/05/2025", value: 95.2 },
   ];
 
   const target1 = 0.59;
@@ -1168,7 +1162,7 @@ function SixSigmaPage() {
                             cx={cx}
                             cy={cy}
                             r={2}
-                            fill={value <= 92.0 ? 'green' : 'red'}
+                            fill={value <= 94.0 ? 'red' : 'green'}
                           />
                         );
                       }}
