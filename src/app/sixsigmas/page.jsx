@@ -402,16 +402,12 @@ function SixSigmaPage() {
     { highlight: "", date: "" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
   ];
 
   //Quality Action table
   const QualityhighlightValue = [
     { highlight: "Technique issue", date: "7/05/2025" },
     { highlight: "High rework", date: "7/05/2025" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
 
@@ -420,14 +416,10 @@ function SixSigmaPage() {
     { highlight: "Technique issue", date: "7/05/2025" },
     { highlight: "High rework", date: "7/05/2025" },
     { highlight: "High Wip", date: "7/05/2025" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
   ];
 
   //Delivery Action table
   const DeliveryhighlightValue = [
-    { highlight: "High WIP", date: "5/05/2025" },
-    { highlight: "High rework", date: "6/05/2025" },
     { highlight: "High Wip POST efficiency from PLAT", date: "7/05/2025" },
     { highlight: "High WIP: PACK", date: "7/05/2025" },
     { highlight: "High lead time", date: "7/05/2025" },
@@ -438,14 +430,11 @@ function SixSigmaPage() {
     { highlight: "", date: "" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
+
   ];
 
   //Morale Action table
   const MoralehighlightValue = [
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
@@ -455,7 +444,7 @@ function SixSigmaPage() {
   const target2 = 3.0;
   const target3 = 80.5;
   const target4 = 19.0;
-  const target5 = 1.8;
+  const target5 = 70.0;
   const target6 = 94.0;
 
   const IFRtargetTable = 0.0;
@@ -479,7 +468,7 @@ function SixSigmaPage() {
         </h4>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center bg-white-100 p-1">
+      <div className="flex flex-col md:flex-row items-top justify-center bg-white-100 p-1">
         {/* Safety Chart */}
         <div className="flex-1 min-w-0 py-1">
           <div className="h-full border-2 border-gray-400 rounded-lg p-1">
@@ -613,7 +602,7 @@ function SixSigmaPage() {
                     </Line>
                   <ReferenceLine
                       y={target1}
-                      stroke="red"
+                      stroke="black"
                       strokeDasharray="3 3"
                       label={({ viewBox }) => {
                         const { x, width, y } = viewBox;
@@ -637,7 +626,7 @@ function SixSigmaPage() {
           </div>
 
           {/* Safety table data by Action */}
-          <div className="w-full overflow-x-auto py-1">
+          <div className="flex flex-row justify-between py-1">
             <div className="min-w-[60px]">
               <table className="w-full table-fixed border-collapse text-[6px] bg-white">
                 <thead className="sticky top-0 bg-gray-100">
@@ -824,7 +813,7 @@ function SixSigmaPage() {
                     </Line>
                     <ReferenceLine
                     y={target2}
-                    stroke="red"
+                    stroke="black"
                     strokeDasharray="3 3"
                     label={({ viewBox }) => {
                       const { x, width, y } = viewBox;
@@ -847,8 +836,8 @@ function SixSigmaPage() {
             </div>
           </div>
 
-          {/* Safety table data by Action */}
-          <div className="w-full overflow-x-auto py-1">
+          {/* Quality table data by Action */}
+          <div className="flex flex-row justify-between py-1">
             <div className="min-w-[60px]">
               <table className="w-full table-fixed border-collapse text-[6px] bg-white">
                 <thead className="sticky top-0 bg-gray-100">
@@ -1035,7 +1024,7 @@ function SixSigmaPage() {
                     </Line>
                     <ReferenceLine
                     y={target3}
-                    stroke="red"
+                    stroke="black"
                     strokeDasharray="3 3"
                     label={({ viewBox }) => {
                       const { x, width, y } = viewBox;
@@ -1058,8 +1047,8 @@ function SixSigmaPage() {
             </div>
           </div>
 
-          {/* Safety table data by Action */}
-          <div className="w-full overflow-x-auto py-1">
+          {/* Efficiency table data by Action */}
+          <div className="flex flex-row justify-between py-1">
             <div className="min-w-[60px]">
               <table className="w-full table-fixed border-collapse text-[6px] bg-white">
                 <thead className="sticky top-0 bg-gray-100">
@@ -1241,7 +1230,7 @@ function SixSigmaPage() {
                     </Line>
                     <ReferenceLine
                     y={target4}
-                    stroke="red"
+                    stroke="black"
                     strokeDasharray="3 3"
                     label={({ viewBox }) => {
                       const { x, width, y } = viewBox;
@@ -1264,8 +1253,8 @@ function SixSigmaPage() {
             </div>
           </div>
 
-          {/* Safety table data by Action */}
-          <div className="w-full overflow-x-auto py-1">
+          {/* Delivery table data by Action */}
+          <div className="flex flex-row justify-between py-1">
             <div className="min-w-[60px]">
               <table className="w-full table-fixed border-collapse text-[6px] bg-white">
                 <thead className="sticky top-0 bg-gray-100">
@@ -1319,7 +1308,7 @@ function SixSigmaPage() {
           </div>
         </div>
 
-        <div className="flex-1 min-w-0 py-2">
+        <div className="flex-1 min-w-0 py-1">
           <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
@@ -1447,7 +1436,7 @@ function SixSigmaPage() {
                     </Line>
                     <ReferenceLine
                     y={target5}
-                    stroke="red"
+                    stroke="black"
                     strokeDasharray="3 3"
                     label={({ viewBox }) => {
                       const { x, width, y } = viewBox;
@@ -1470,8 +1459,8 @@ function SixSigmaPage() {
             </div>
           </div>
 
-          {/* Safety table data by Action */}
-          <div className="w-full overflow-x-auto py-1">
+          {/* Environment table data by Action */}
+          <div className="flex flex-row justify-between py-1">
             <div className="min-w-[60px]">
               <table className="w-full table-fixed border-collapse text-[6px] bg-white">
                 <thead className="sticky top-0 bg-gray-100">
@@ -1525,9 +1514,9 @@ function SixSigmaPage() {
           </div>
         </div>
 
-        <div className="flex-1 min-w-0 py-2">
+        <div className="flex-1 min-w-0 py-1">
           <div className="h-full border-2 border-gray-400 rounded-lg p-1">
-            <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
+            <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap"  
                 style={{ 
                   fontFamily: 'Century, serif', 
                   fontWeight: 'bold',
@@ -1653,7 +1642,7 @@ function SixSigmaPage() {
                     </Line>
                     <ReferenceLine
                     y={target6}
-                    stroke="red"
+                    stroke="black"
                     strokeDasharray="3 3"
                     label={({ viewBox }) => {
                       const { x, width, y } = viewBox;
@@ -1676,8 +1665,8 @@ function SixSigmaPage() {
             </div>
           </div>
 
-          {/* Safety table data by Action */}
-          <div className="w-full overflow-x-auto py-1">
+          {/* Morale table data by Action */}
+          <div className="flex flex-row justify-between py-1">
             <div className="min-w-[60px]">
               <table className="w-full table-fixed border-collapse text-[6px] bg-white">
                 <thead className="sticky top-0 bg-gray-100">
