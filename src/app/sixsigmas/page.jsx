@@ -240,72 +240,177 @@ function SixSigmaPage() {
     { name: '16', value: 10, type: '' }
   ]);
 
+
+
   const data1 = [
-    { name: "28/04/2025", value: 0 },
     { name: "29/04/2025", value: 0 },
     { name: "30/04/2025", value: 0 },
     { name: "02/05/2025", value: 0 },
     { name: "03/05/2025", value: 0 },
     { name: "05/05/2025", value: 0 },
     { name: "06/05/2025", value: 0 },
+    { name: "07/05/2025", value: 0 },
   ];
 
   const data2 = [
-    { name: "28/04/2025", value: 1.7 },
     { name: "29/04/2025", value: 1.4 },
     { name: "30/04/2025", value: 0.7 },
     { name: "02/05/2025", value: 1.3 },
     { name: "03/05/2025", value: 1.6 },
     { name: "05/05/2025", value: 1.0 },
     { name: "06/05/2025", value: 1.7 },
+    { name: "07/05/2025", value: 6.4 },
   ];
 
   const data3 = [
-    { name: "28/04/2025", value: 80.6 },
     { name: "29/04/2025", value: 81.5 },
     { name: "30/04/2025", value: 82.7 },
     { name: "02/05/2025", value: 83.2 },
     { name: "03/05/2025", value: 86.8 },
     { name: "05/05/2025", value: 86.9 },
     { name: "06/05/2025", value: 85.9 },
+    { name: "07/05/2025", value: 84.8 },
   ];
 
   const data4 = [
-    { name: "28/04/2025", value: 21.1 },
     { name: "29/04/2025", value: 20.6 },
     { name: "30/04/2025", value: 20.0 },
     { name: "02/05/2025", value: 21.5 },
     { name: "03/05/2025", value: 21.7 },
     { name: "05/05/2025", value: 25.7 },
     { name: "06/05/2025", value: 23.3 },
+    { name: "07/05/2025", value: 25.5 },
   ];
 
   const data5 = [
-    { name: "28/04/2025", value: 63.5 },
     { name: "29/04/2025", value: 62.2 },
     { name: "30/04/2025", value: 60.2 },
     { name: "02/05/2025", value: 60.2 },
     { name: "03/05/2025", value: 53.1 },
     { name: "05/05/2025", value: 62.0 },
     { name: "06/05/2025", value: 62.0 },
+    { name: "07/05/2025", value: 65.6 },
   ];
 
   const data6 = [
-    { name: "28/04/2025", value: 93.3 },
     { name: "29/04/2025", value: 94.6 },
     { name: "30/04/2025", value: 94.2 },
     { name: "02/05/2025", value: 86.7 },
     { name: "03/05/2025", value: 88.6 },
     { name: "05/05/2025", value: 93.9 },
     { name: "06/05/2025", value: 95.2 },
+    { name: "07/05/2025", value: 95.6 },
   ];
 
+  //Safety maoth table
+  const IFRmonthlyValues = [
+    { month: 1, value: 0.00 },
+    { month: 2, value: 0.00 },
+    { month: 3, value: 0.00 },
+    { month: 4, value: 0.00 },
+    { month: 5, value: 0.00 },
+    { month: 6, value: null },
+    { month: 7, value: null },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ];
+
+  //Quality maoth table
+  const QualitymonthlyValues = [
+    { month: 1, value: 2.9 },
+    { month: 2, value: 4.0 },
+    { month: 3, value: 4.2 },
+    { month: 4, value: 2.9 },
+    { month: 5, value: 2.4 },
+    { month: 6, value: null },
+    { month: 7, value: null },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ];
+
+  //Efficiency maoth table
+  const EfficiencytargetValue = [
+    { month: 1, value: 84.8 },
+    { month: 2, value: 83.5 },
+    { month: 3, value: 80.0 },
+    { month: 4, value: 79.2 },
+    { month: 5, value: 85.7 },
+    { month: 6, value: null },
+    { month: 7, value: null },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ];
+
+  //Delivery maoth table
+  const DeliverymonthlyValues = [
+    { month: 1, value: 20.6 },
+    { month: 2, value: 17.6 },
+    { month: 3, value: 18.5 },
+    { month: 4, value: 23.2 },
+    { month: 5, value: 23.9 },
+    { month: 6, value: null },
+    { month: 7, value: null },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ];
+
+  //Environment maoth table
+  const EnvironmentmonthlyValues = [
+    { month: 1, value: 1.15 },
+    { month: 2, value: 1.21 },
+    { month: 3, value: 1.40 },
+    { month: 4, value: 1.29 },
+    { month: 5, value: 0.32 },
+    { month: 6, value: null },
+    { month: 7, value: null },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ];
+
+  const MoralemonthlyValues = [
+    { month: 1, value: 93.6 },
+    { month: 2, value: 93.5 },
+    { month: 3, value: 93.3 },
+    { month: 4, value: 92.7 },
+    { month: 5, value: 8.0 },
+    { month: 6, value: null },
+    { month: 7, value: null },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ];
+  
+
   const target1 = 0.59;
-  const target2 = 3.00;
+  const target2 = 3.0;
   const target3 = 80.5;
   const target4 = 19.0;
-  const target5 = 70.0;
-  const target6 = 92;
+  const target5 = 1.8;
+  const target6 = 94.0;
+
+  const IFRtargetTable = 0.0;
+  const QualitytargetTable = 3.0;
+  const EfficiencytargetTable = 80.5;
+  const DeliverytargetTable = 19.0;
+  const EnvironmenttargetTable = 70.0;
+  const MoraletargetTable = 94.0;
     
   return (
     <main className="w-full">
@@ -339,45 +444,51 @@ function SixSigmaPage() {
             <div>
               <h3 className="text-left font-bold text-[6px] p-1">Month (time/mWH)</h3>
             </div>
-            <div className='bg-gray-200 mx-1'>
-              <div className="max-h-[60px] overflow-y-auto">
-                <table className="w-full border-collapse text-[6px]">
-                  {/* Simplified table */}
-                  <thead className="sticky top-0 bg-gray-100">
-                    <tr>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+
+            {/* Safety table data by Month */}
+            <table className="w-full table-fixed border-collapse text-[6px]">
+              <thead className="sticky top-0 bg-gray-100">
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <th
+                      key={i + 1}
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
+                    >
+                      {i + 1}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const monthData = IFRmonthlyValues.find(m => m.month === i + 1);
+                    const value = monthData ? monthData.value : null;
+
+                    let bgColorClass = '';
+                    if (value !== null && value !== undefined) {
+                      bgColorClass = value <= IFRtargetTable ? 'bg-green-300' : 'bg-red-300';
+                    }
+
+                    return (
+                      <td
+                        key={i + 1}
+                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        style={{
+                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
+                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
+                          fontSize: '6px',
+                          padding: '0.1rem',
+                        }}
+                      >
+                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                      </td>
+                    );
+                  })}
+                </tr>
+              </tbody>
+            </table>
             
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -489,45 +600,51 @@ function SixSigmaPage() {
             <div>
               <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
             </div>
-            <div className='bg-gray-200 mx-1'>
-              <div className="max-h-[60px] overflow-y-auto">
-                <table className="w-full border-collapse text-[6px]">
-                  {/* Simplified table */}
-                  <thead className="sticky top-0 bg-gray-100">
-                    <tr>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">2.9</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">4.2</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">2.9</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.4</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+
+            {/* Quality table data by Month */}
+            <table className="w-full table-fixed border-collapse text-[6px]">
+              <thead className="sticky top-0 bg-gray-100">
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <th
+                      key={i + 1}
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
+                    >
+                      {i + 1}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const monthData = QualitymonthlyValues.find(m => m.month === i + 1);
+                    const value = monthData ? monthData.value : null;
+
+                    let bgColorClass = '';
+                    if (value !== null && value !== undefined) {
+                      bgColorClass = value <= QualitytargetTable ? 'bg-green-300' : 'bg-red-300';
+                    }
+
+                    return (
+                      <td
+                        key={i + 1}
+                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        style={{
+                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
+                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
+                          fontSize: '6px',
+                          padding: '0.1rem',
+                        }}
+                      >
+                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                      </td>
+                    );
+                  })}
+                </tr>
+              </tbody>
+            </table>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -638,45 +755,51 @@ function SixSigmaPage() {
             <div>
               <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
             </div>
-            <div className='bg-gray-200 mx-1'>
-              <div className="max-h-[60px] overflow-y-auto">
-                <table className="w-full border-collapse text-[6px]">
-                  {/* Simplified table */}
-                  <thead className="sticky top-0 bg-gray-100">
-                    <tr>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">84.8</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">83.5</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">80.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">79.2</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">85.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            
+            {/* Efficiency table data by Month */}
+            <table className="w-full table-fixed border-collapse text-[6px]">
+              <thead className="sticky top-0 bg-gray-100">
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <th
+                      key={i + 1}
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
+                    >
+                      {i + 1}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const monthData = EfficiencytargetValue.find(m => m.month === i + 1);
+                    const value = monthData ? monthData.value : null;
+
+                    let bgColorClass = '';
+                    if (value !== null && value !== undefined) {
+                      bgColorClass = value >= EfficiencytargetTable ? 'bg-green-300' : 'bg-red-300';
+                    }
+
+                    return (
+                      <td
+                        key={i + 1}
+                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        style={{
+                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
+                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
+                          fontSize: '6px',
+                          padding: '0.1rem',
+                        }}
+                      >
+                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                      </td>
+                    );
+                  })}
+                </tr>
+              </tbody>
+            </table>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -786,45 +909,51 @@ function SixSigmaPage() {
             <div>
               <h3 className="text-left font-bold text-[6px] p-1">Month (day)</h3>
             </div>
-            <div className='bg-gray-200 mx-1'>
-              <div className="max-h-[60px] overflow-y-auto">
-                <table className="w-full border-collapse text-[6px]">
-                  {/* Simplified table */}
-                  <thead className="sticky top-0 bg-gray-100">
-                    <tr>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">20.6</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">17.6</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">18.5</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">23.2</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">24.5</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            
+            {/* Delivery table data by Month */}
+            <table className="w-full table-fixed border-collapse text-[6px]">
+              <thead className="sticky top-0 bg-gray-100">
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <th
+                      key={i + 1}
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
+                    >
+                      {i + 1}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const monthData = DeliverymonthlyValues.find(m => m.month === i + 1);
+                    const value = monthData ? monthData.value : null;
+
+                    let bgColorClass = '';
+                    if (value !== null && value !== undefined) {
+                      bgColorClass = value <= DeliverytargetTable ? 'bg-green-300' : 'bg-red-300';
+                    }
+
+                    return (
+                      <td
+                        key={i + 1}
+                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        style={{
+                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
+                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
+                          fontSize: '6px',
+                          padding: '0.1rem',
+                        }}
+                      >
+                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                      </td>
+                    );
+                  })}
+                </tr>
+              </tbody>
+            </table>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -934,45 +1063,51 @@ function SixSigmaPage() {
             <div>
               <h3 className="text-left font-bold text-[6px] p-1">Month (mkWh)</h3>
             </div>
-            <div className='bg-gray-200 mx-1'>
-              <div className="max-h-[60px] overflow-y-auto">
-                <table className="w-full border-collapse text-[6px]">
-                  {/* Simplified table */}
-                  <thead className="sticky top-0 bg-gray-100">
-                    <tr>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.15</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.21</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.40</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">1.29</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">00.13</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            
+            {/* Environment table data by Month */}
+            <table className="w-full table-fixed border-collapse text-[6px]">
+              <thead className="sticky top-0 bg-gray-100">
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <th
+                      key={i + 1}
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
+                    >
+                      {i + 1}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const monthData = EnvironmentmonthlyValues.find(m => m.month === i + 1);
+                    const value = monthData ? monthData.value : null;
+
+                    let bgColorClass = '';
+                    if (value !== null && value !== undefined) {
+                      bgColorClass = value <= EnvironmenttargetTable ? 'bg-green-300' : 'bg-red-300';
+                    }
+
+                    return (
+                      <td
+                        key={i + 1}
+                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        style={{
+                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
+                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
+                          fontSize: '6px',
+                          padding: '0.1rem',
+                        }}
+                      >
+                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                      </td>
+                    );
+                  })}
+                </tr>
+              </tbody>
+            </table>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -1082,45 +1217,51 @@ function SixSigmaPage() {
             <div>
               <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
             </div>
-            <div className='bg-gray-200 mx-1'>
-              <div className="max-h-[60px] overflow-y-auto">
-                <table className="w-full border-collapse text-[6px]">
-                  {/* Simplified table */}
-                  <thead className="sticky top-0 bg-gray-100">
-                    <tr>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">1</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">2</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">3</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">4</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">5</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">6</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">7</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">8</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">9</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">10</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">11</th>
-                      <th className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700">12</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">93.6</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">93.5</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">93.3</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">92.7</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">12.4</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                      <td className="border border-gray-300 bg-white px-[0.1rem] py-[0.1rem] text-center">0.0</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            
+            {/* Attenance table data by Month */}
+            <table className="w-full table-fixed border-collapse text-[6px]">
+              <thead className="sticky top-0 bg-gray-100">
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <th
+                      key={i + 1}
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
+                    >
+                      {i + 1}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const monthData = MoralemonthlyValues.find(m => m.month === i + 1);
+                    const value = monthData ? monthData.value : null;
+
+                    let bgColorClass = '';
+                    if (value !== null && value !== undefined) {
+                      bgColorClass = value <= MoraletargetTable ? 'bg-green-300' : 'bg-red-300';
+                    }
+
+                    return (
+                      <td
+                        key={i + 1}
+                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        style={{
+                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
+                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
+                          fontSize: '6px',
+                          padding: '0.1rem',
+                        }}
+                      >
+                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                      </td>
+                    );
+                  })}
+                </tr>
+              </tbody>
+            </table>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
