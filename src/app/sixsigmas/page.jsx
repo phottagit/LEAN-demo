@@ -408,7 +408,7 @@ function SixSigmaPage() {
   const QualityhighlightValue = [
     { highlight: "Technique issue", date: "7/05/2025" },
     { highlight: "High rework", date: "7/05/2025" },
-    { highlight: "", date: "" },
+    { highlight: "Bella Plating issue", date: "7/05/2025" },
   ];
 
   //Efficiency Action table
