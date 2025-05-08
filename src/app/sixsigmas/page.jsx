@@ -417,7 +417,7 @@ function SixSigmaPage() {
       <Container>
       <Navbar session={session} />
 
-      <div className='flex flex-col items-center bg-white p-2'>
+      <div className='flex flex-col items-center bg-white p-1'>
         <h3 className="w-full text-center font-bold text-3xl">
           DAILY OBEYA DASHBOARD
         </h3>
@@ -426,9 +426,9 @@ function SixSigmaPage() {
         </h4>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center bg-white-100 p-2">
+      <div className="flex flex-col md:flex-row items-center justify-center bg-white-100 p-1">
         {/* Safety Chart */}
-        <div className="flex-1 min-w-0 py-2">
+        <div className="flex-1 min-w-0 py-1">
           <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
@@ -446,60 +446,63 @@ function SixSigmaPage() {
             </div>
 
             {/* Safety table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px]">
-              <thead className="sticky top-0 bg-gray-100">
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => (
-                    <th
-                      key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
-                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
-                    >
-                      {i + 1}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => {
-                    const monthData = IFRmonthlyValues.find(m => m.month === i + 1);
-                    const value = monthData ? monthData.value : null;
+            <div className="w-full overflow-x-auto">
+  <table className="w-full table-fixed border-collapse text-[6px]">
+    <thead className="sticky top-0 bg-gray-100">
+      <tr>
+        {Array.from({ length: 12 }, (_, i) => (
+          <th
+            key={i + 1}
+            className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+            style={{ width: '8.33%' }}
+          >
+            {i + 1}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {Array.from({ length: 12 }, (_, i) => {
+          const monthData = IFRmonthlyValues.find(m => m.month === i + 1);
+          const value = monthData ? monthData.value : null;
 
-                    let bgColorClass = '';
-                    if (value !== null && value !== undefined) {
-                      bgColorClass = value <= IFRtargetTable ? 'bg-green-300' : 'bg-red-300';
-                    }
+          let bgColorClass = '';
+          if (value !== null && value !== undefined) {
+            bgColorClass = value <= IFRtargetTable ? 'bg-green-300' : 'bg-red-300';
+          }
 
-                    return (
-                      <td
-                        key={i + 1}
-                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
-                        style={{
-                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
-                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
-                          fontSize: '6px',
-                          padding: '0.1rem',
-                        }}
-                      >
-                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                      </td>
-                    );
-                  })}
-                </tr>
-              </tbody>
-            </table>
+          return (
+            <td
+              key={i + 1}
+              className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+              style={{
+                width: '8.33%',
+                height: 'auto',
+                fontSize: '6px',
+                padding: '0.1rem',
+              }}
+            >
+              {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+            </td>
+          );
+        })}
+      </tr>
+    </tbody>
+  </table>
+</div>
+
             
-            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IRF≤0.59 time/mWH</h3>
           </div>
 
-          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Injury Frequency Rate (IFR)</h3>
           </div>
 
-          <div className="max-w-4xl mx-1">
+          <div className="max-w-4xl">
             <div className="bg-white p-0">
               <div className="h-30 ">
                 <ResponsiveContainer width="100%" height="115%">
@@ -584,7 +587,7 @@ function SixSigmaPage() {
         </div>
         
         {/* Quality Chart */}
-        <div className="flex-1 min-w-0 py-2">
+        <div className="flex-1 min-w-0 py-1">
           <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
@@ -646,16 +649,16 @@ function SixSigmaPage() {
               </tbody>
             </table>
 
-            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤3.0%%</h3>
           </div>
 
-          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap Rate (%)</h3>
           </div>
 
-          <div className="max-w-4xl mx-1">
+          <div className="max-w-4xl">
             <div className="bg-white p-0">
               <div className="h-30 ">
                 <ResponsiveContainer width="100%" height="115%">
@@ -739,7 +742,7 @@ function SixSigmaPage() {
         </div>
 
         {/* Efficiency Chart */}
-        <div className="flex-1 min-w-0 py-2">
+        <div className="flex-1 min-w-0 py-1">
           <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
@@ -801,16 +804,16 @@ function SixSigmaPage() {
               </tbody>
             </table>
 
-            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency ≥80.5%</h3>
           </div>
 
-          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency (%)</h3>
           </div>
 
-          <div className="max-w-4xl mx-1">
+          <div className="max-w-4xl">
             <div className="bg-white p-0">
               <div className="h-30 ">
                 <ResponsiveContainer width="100%" height="115%">
@@ -893,7 +896,7 @@ function SixSigmaPage() {
           </div>
         </div>
 
-        <div className="flex-1 min-w-0 py-2">
+        <div className="flex-1 min-w-0 py-1">
           <div className="h-full border-2 border-gray-400 rounded-lg p-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
@@ -955,16 +958,16 @@ function SixSigmaPage() {
               </tbody>
             </table>
 
-            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">MLT ≤19 days</h3>
           </div>
 
-          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">MLT (Carlendar day)</h3>
           </div>
 
-          <div className="max-w-4xl mx-1">
+          <div className="max-w-4xl">
             <div className="bg-white p-0">
               <div className="h-30 ">
                 <ResponsiveContainer width="100%" height="115%">
@@ -1109,16 +1112,16 @@ function SixSigmaPage() {
               </tbody>
             </table>
 
-            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Electricity ≤70,000 kWh</h3>
           </div>
 
-          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Electricity (kWh.)</h3>
           </div>
 
-          <div className="max-w-4xl mx-1">
+          <div className="max-w-4xl">
             <div className="bg-white p-0">
               <div className="h-30 ">
                 <ResponsiveContainer width="100%" height="115%">
@@ -1263,16 +1266,16 @@ function SixSigmaPage() {
               </tbody>
             </table>
 
-            <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+            <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Attendence ≥92%</h3>
           </div>
 
-          <div className="flex flex-row justify-between text-[10px] text-center font-bold mx-1 mt-1">
+          <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Attendence (%)</h3>
           </div>
 
-          <div className="max-w-4xl mx-1">
+          <div className="max-w-4xl">
             <div className="bg-white p-0">
               <div className="h-30 ">
                 <ResponsiveContainer width="100%" height="115%">
