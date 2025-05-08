@@ -335,7 +335,7 @@ function SixSigmaPage() {
   ];
 
   //Efficiency maoth table
-  const EfficiencytargetValue = [
+  const EfficiencytableValue = [
     { month: 1, value: 84.8 },
     { month: 2, value: 83.5 },
     { month: 3, value: 80.0 },
@@ -397,6 +397,59 @@ function SixSigmaPage() {
     { month: 12, value: null },
   ];
   
+  //IFR Action table
+  const IFRhighlightValue = [
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+  ];
+
+  //Quality Action table
+  const QualityhighlightValue = [
+    { highlight: "Technique issue", date: "7/05/2025" },
+    { highlight: "High rework", date: "7/05/2025" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+  ];
+
+  //Efficiency Action table
+  const EfficiencyhighlightValue = [
+    { highlight: "Technique issue", date: "7/05/2025" },
+    { highlight: "High rework", date: "7/05/2025" },
+    { highlight: "High Wip", date: "7/05/2025" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+  ];
+
+  //Delivery Action table
+  const DeliveryhighlightValue = [
+    { highlight: "High WIP", date: "5/05/2025" },
+    { highlight: "High rework", date: "6/05/2025" },
+    { highlight: "High Wip POST efficiency from PLAT", date: "7/05/2025" },
+    { highlight: "High WIP: PACK", date: "7/05/2025" },
+    { highlight: "High lead time", date: "7/05/2025" },
+  ];
+
+  //Environment Action table
+  const EnvironmenthighlightValue = [
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+  ];
+
+  //Morale Action table
+  const MoralehighlightValue = [
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+  ];
 
   const target1 = 0.59;
   const target2 = 3.0;
@@ -447,52 +500,53 @@ function SixSigmaPage() {
 
             {/* Safety table data by Month */}
             <div className="w-full overflow-x-auto">
-  <table className="w-full table-fixed border-collapse text-[6px]">
-    <thead className="sticky top-0 bg-gray-100">
-      <tr>
-        {Array.from({ length: 12 }, (_, i) => (
-          <th
-            key={i + 1}
-            className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
-            style={{ width: '8.33%' }}
-          >
-            {i + 1}
-          </th>
-        ))}
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        {Array.from({ length: 12 }, (_, i) => {
-          const monthData = IFRmonthlyValues.find(m => m.month === i + 1);
-          const value = monthData ? monthData.value : null;
+              <div className="min-w-[60px]">
+                <table className="w-full table-fixed border-collapse text-[6px]">
+                  <thead className="sticky top-0 bg-gray-100">
+                    <tr>
+                      {Array.from({ length: 12 }, (_, i) => (
+                        <th
+                          key={i + 1}
+                          className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                          style={{ width: '8.33%' }}
+                        >
+                          {i + 1}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {Array.from({ length: 12 }, (_, i) => {
+                        const monthData = IFRmonthlyValues.find(m => m.month === i + 1);
+                        const value = monthData ? monthData.value : null;
 
-          let bgColorClass = '';
-          if (value !== null && value !== undefined) {
-            bgColorClass = value <= IFRtargetTable ? 'bg-green-300' : 'bg-red-300';
-          }
+                        let bgColorClass = '';
+                        if (value !== null && value !== undefined) {
+                          bgColorClass = value <= IFRtargetTable ? 'bg-green-300' : 'bg-red-300';
+                        }
 
-          return (
-            <td
-              key={i + 1}
-              className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
-              style={{
-                width: '8.33%',
-                height: 'auto',
-                fontSize: '6px',
-                padding: '0.1rem',
-              }}
-            >
-              {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-            </td>
-          );
-        })}
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-            
+                        return (
+                          <td
+                            key={i + 1}
+                            className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                            style={{
+                              width: '8.33%',
+                              height: 'auto',
+                              fontSize: '6px',
+                              padding: '0.1rem',
+                            }}
+                          >
+                            {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+       
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IRF≤0.59 time/mWH</h3>
@@ -582,6 +636,57 @@ function SixSigmaPage() {
             </div>
           </div>
 
+          {/* Safety table data by Action */}
+          <div className="w-full overflow-x-auto py-1">
+            <div className="min-w-[60px]">
+              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
+                <thead className="sticky top-0 bg-gray-100">
+                  <tr>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '80%' }}
+                    >
+                      Highlight
+                    </th>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '20%' }}
+                    >
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                {IFRhighlightValue.map((item, index) => (
+                  <tr key={index} style={{ height: '15px' }}>
+                    <td
+                      className="border border-gray-300 align-middle"
+                      style={{
+                        width: '80%',
+                        fontSize: '6px',
+                        padding: '0.2rem', // slightly more padding for balance
+                        height: 'auto',
+                      }}
+                    >
+                      {item.highlight}
+                    </td>
+                    <td
+                      className="border border-gray-300 text-center align-middle"
+                      style={{
+                        width: '20%',
+                        fontSize: '6px',
+                        padding: '0.2rem',
+                        height: 'auto',
+                      }}
+                    >
+                      {item.date}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              </table>
+            </div>
+          </div>
 
           </div>
         </div>
@@ -605,49 +710,53 @@ function SixSigmaPage() {
             </div>
 
             {/* Quality table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px]">
-              <thead className="sticky top-0 bg-gray-100">
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => (
-                    <th
-                      key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
-                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
-                    >
-                      {i + 1}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => {
-                    const monthData = QualitymonthlyValues.find(m => m.month === i + 1);
-                    const value = monthData ? monthData.value : null;
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[60px]">
+                <table className="w-full table-fixed border-collapse text-[6px]">
+                  <thead className="sticky top-0 bg-gray-100">
+                    <tr>
+                      {Array.from({ length: 12 }, (_, i) => (
+                        <th
+                          key={i + 1}
+                          className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                          style={{ width: '8.33%' }}
+                        >
+                          {i + 1}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {Array.from({ length: 12 }, (_, i) => {
+                        const monthData = QualitymonthlyValues.find(m => m.month === i + 1);
+                        const value = monthData ? monthData.value : null;
 
-                    let bgColorClass = '';
-                    if (value !== null && value !== undefined) {
-                      bgColorClass = value <= QualitytargetTable ? 'bg-green-300' : 'bg-red-300';
-                    }
+                        let bgColorClass = '';
+                        if (value !== null && value !== undefined) {
+                          bgColorClass = value <= QualitytargetTable ? 'bg-green-300' : 'bg-red-300';
+                        }
 
-                    return (
-                      <td
-                        key={i + 1}
-                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
-                        style={{
-                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
-                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
-                          fontSize: '6px',
-                          padding: '0.1rem',
-                        }}
-                      >
-                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                      </td>
-                    );
-                  })}
-                </tr>
-              </tbody>
-            </table>
+                        return (
+                          <td
+                            key={i + 1}
+                            className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                            style={{
+                              width: '8.33%',
+                              height: 'auto',
+                              fontSize: '6px',
+                              padding: '0.1rem',
+                            }}
+                          >
+                            {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -738,6 +847,58 @@ function SixSigmaPage() {
             </div>
           </div>
 
+          {/* Safety table data by Action */}
+          <div className="w-full overflow-x-auto py-1">
+            <div className="min-w-[60px]">
+              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
+                <thead className="sticky top-0 bg-gray-100">
+                  <tr>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '80%' }}
+                    >
+                      Highlight
+                    </th>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '20%' }}
+                    >
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                {QualityhighlightValue.map((item, index) => (
+                  <tr key={index} style={{ height: '15px' }}>
+                    <td
+                      className="border border-gray-300 align-middle"
+                      style={{
+                        width: '80%',
+                        fontSize: '6px',
+                        padding: '0.2rem', // slightly more padding for balance
+                        height: 'auto',
+                      }}
+                    >
+                      {item.highlight}
+                    </td>
+                    <td
+                      className="border border-gray-300 text-center align-middle"
+                      style={{
+                        width: '20%',
+                        fontSize: '6px',
+                        padding: '0.2rem',
+                        height: 'auto',
+                      }}
+                    >
+                      {item.date}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              </table>
+            </div>
+          </div>
+
           </div>
         </div>
 
@@ -760,49 +921,53 @@ function SixSigmaPage() {
             </div>
             
             {/* Efficiency table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px]">
-              <thead className="sticky top-0 bg-gray-100">
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => (
-                    <th
-                      key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
-                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
-                    >
-                      {i + 1}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => {
-                    const monthData = EfficiencytargetValue.find(m => m.month === i + 1);
-                    const value = monthData ? monthData.value : null;
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[60px]">
+                <table className="w-full table-fixed border-collapse text-[6px]">
+                  <thead className="sticky top-0 bg-gray-100">
+                    <tr>
+                      {Array.from({ length: 12 }, (_, i) => (
+                        <th
+                          key={i + 1}
+                          className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                          style={{ width: '8.33%' }}
+                        >
+                          {i + 1}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {Array.from({ length: 12 }, (_, i) => {
+                        const monthData = EfficiencytableValue.find(m => m.month === i + 1);
+                        const value = monthData ? monthData.value : null;
 
-                    let bgColorClass = '';
-                    if (value !== null && value !== undefined) {
-                      bgColorClass = value >= EfficiencytargetTable ? 'bg-green-300' : 'bg-red-300';
-                    }
+                        let bgColorClass = '';
+                        if (value !== null && value !== undefined) {
+                          bgColorClass = value <= EfficiencytargetTable ? 'bg-green-300' : 'bg-red-300';
+                        }
 
-                    return (
-                      <td
-                        key={i + 1}
-                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
-                        style={{
-                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ กัน
-                          height: 'auto',    // ความสูง fix (เพิ่มหรือลดได้)
-                          fontSize: '6px',
-                          padding: '0.1rem',
-                        }}
-                      >
-                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                      </td>
-                    );
-                  })}
-                </tr>
-              </tbody>
-            </table>
+                        return (
+                          <td
+                            key={i + 1}
+                            className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                            style={{
+                              width: '8.33%',
+                              height: 'auto',
+                              fontSize: '6px',
+                              padding: '0.1rem',
+                            }}
+                          >
+                            {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -890,6 +1055,58 @@ function SixSigmaPage() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
+            </div>
+          </div>
+
+          {/* Safety table data by Action */}
+          <div className="w-full overflow-x-auto py-1">
+            <div className="min-w-[60px]">
+              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
+                <thead className="sticky top-0 bg-gray-100">
+                  <tr>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '80%' }}
+                    >
+                      Highlight
+                    </th>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '20%' }}
+                    >
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                {EfficiencyhighlightValue.map((item, index) => (
+                  <tr key={index} style={{ height: '15px' }}>
+                    <td
+                      className="border border-gray-300 align-middle"
+                      style={{
+                        width: '80%',
+                        fontSize: '6px',
+                        padding: '0.2rem', // slightly more padding for balance
+                        height: 'auto',
+                      }}
+                    >
+                      {item.highlight}
+                    </td>
+                    <td
+                      className="border border-gray-300 text-center align-middle"
+                      style={{
+                        width: '20%',
+                        fontSize: '6px',
+                        padding: '0.2rem',
+                        height: 'auto',
+                      }}
+                    >
+                      {item.date}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              </table>
             </div>
           </div>
 
@@ -1047,6 +1264,58 @@ function SixSigmaPage() {
             </div>
           </div>
 
+          {/* Safety table data by Action */}
+          <div className="w-full overflow-x-auto py-1">
+            <div className="min-w-[60px]">
+              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
+                <thead className="sticky top-0 bg-gray-100">
+                  <tr>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '80%' }}
+                    >
+                      Highlight
+                    </th>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '20%' }}
+                    >
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                {DeliveryhighlightValue.map((item, index) => (
+                  <tr key={index} style={{ height: '15px' }}>
+                    <td
+                      className="border border-gray-300 align-middle"
+                      style={{
+                        width: '80%',
+                        fontSize: '6px',
+                        padding: '0.2rem', // slightly more padding for balance
+                        height: 'auto',
+                      }}
+                    >
+                      {item.highlight}
+                    </td>
+                    <td
+                      className="border border-gray-300 text-center align-middle"
+                      style={{
+                        width: '20%',
+                        fontSize: '6px',
+                        padding: '0.2rem',
+                        height: 'auto',
+                      }}
+                    >
+                      {item.date}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              </table>
+            </div>
+          </div>
+
           </div>
         </div>
 
@@ -1201,6 +1470,58 @@ function SixSigmaPage() {
             </div>
           </div>
 
+          {/* Safety table data by Action */}
+          <div className="w-full overflow-x-auto py-1">
+            <div className="min-w-[60px]">
+              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
+                <thead className="sticky top-0 bg-gray-100">
+                  <tr>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '80%' }}
+                    >
+                      Highlight
+                    </th>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '20%' }}
+                    >
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                {EnvironmenthighlightValue.map((item, index) => (
+                  <tr key={index} style={{ height: '15px' }}>
+                    <td
+                      className="border border-gray-300 align-middle"
+                      style={{
+                        width: '80%',
+                        fontSize: '6px',
+                        padding: '0.2rem', // slightly more padding for balance
+                        height: 'auto',
+                      }}
+                    >
+                      {item.highlight}
+                    </td>
+                    <td
+                      className="border border-gray-300 text-center align-middle"
+                      style={{
+                        width: '20%',
+                        fontSize: '6px',
+                        padding: '0.2rem',
+                        height: 'auto',
+                      }}
+                    >
+                      {item.date}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              </table>
+            </div>
+          </div>
+
           </div>
         </div>
 
@@ -1352,6 +1673,58 @@ function SixSigmaPage() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
+            </div>
+          </div>
+
+          {/* Safety table data by Action */}
+          <div className="w-full overflow-x-auto py-1">
+            <div className="min-w-[60px]">
+              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
+                <thead className="sticky top-0 bg-gray-100">
+                  <tr>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '80%' }}
+                    >
+                      Highlight
+                    </th>
+                    <th
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      style={{ width: '20%' }}
+                    >
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                {MoralehighlightValue.map((item, index) => (
+                  <tr key={index} style={{ height: '15px' }}>
+                    <td
+                      className="border border-gray-300 align-middle"
+                      style={{
+                        width: '80%',
+                        fontSize: '6px',
+                        padding: '0.2rem', // slightly more padding for balance
+                        height: 'auto',
+                      }}
+                    >
+                      {item.highlight}
+                    </td>
+                    <td
+                      className="border border-gray-300 text-center align-middle"
+                      style={{
+                        width: '20%',
+                        fontSize: '6px',
+                        padding: '0.2rem',
+                        height: 'auto',
+                      }}
+                    >
+                      {item.date}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              </table>
             </div>
           </div>
 

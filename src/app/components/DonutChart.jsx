@@ -95,7 +95,7 @@ getColor(d) {
             )
             .attr('fill', d => this.getColor(d))
             .attr("stroke", d => (!d.data.name || d.data.name === '' || d.data.value === 0) ? 'transparent' : '#fff')
-            .style("stroke-width", "2")
+            .style("stroke-width", "1")
             //.style("opacity", "0.8");
 
         // Add "Q" in the middle of the chart
