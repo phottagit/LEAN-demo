@@ -1738,8 +1738,22 @@ function SixSigmaPage() {
           </div>
           </OgtagonBox>
         </div>
-
       </div>
+
+      <div className="flex flex-row space-x-4 mt-2">
+  <div className="flex items-center space-x-1">
+    <div className="w-4 h-4 rounded-full bg-[#00B050]"></div>
+    <span className="text-[10px] font-medium">Achieved</span>
+  </div>
+  <div className="flex items-center space-x-1">
+    <div className="w-4 h-4 rounded-full bg-[#FF0000]"></div>
+    <span className="text-[10px] font-medium">Not Achieved</span>
+  </div>
+  <div className="flex items-le space-x-1">
+    <div className="w-4 h-4 rounded-full bg-[#151515]"></div>
+    <span className="text-[10px] font-medium">Holiday</span>
+  </div>
+</div>
       
       <Footer />
     </Container>
