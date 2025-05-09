@@ -424,9 +424,9 @@ function SixSigmaPage() {
 
   //Efficiency Action table
   const EfficiencyhighlightValue = [
-    { highlight: "Technique issue", date: "7/05/2025" },
-    { highlight: "High rework", date: "7/05/2025" },
-    { highlight: "High Wip", date: "7/05/2025" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
   ];
 
   //Delivery Action table
