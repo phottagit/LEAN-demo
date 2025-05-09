@@ -502,13 +502,13 @@ function SixSigmaPage() {
               {/* IFR table data by Month */}
               <div className="w-full overflow-x-auto">
                 <div className="min-w-[60px]">
-                  <table className="w-full table-fixed border-collapse text-[6px]">
+                  <table className="w-full table-fixed border-collapse text-[6px] text-white">
                     <thead className="sticky top-0 bg-gray-100">
                       <tr>
                         {Array.from({ length: 12 }, (_, i) => (
                           <th
                             key={i + 1}
-                            className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                            className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                             style={{ width: '8.33%' }}
                           >
                             {i + 1}
@@ -524,7 +524,7 @@ function SixSigmaPage() {
 
                           let bgColorClass = '';
                           if (value !== null && value !== undefined) {
-                            bgColorClass = value <= IFRtargetTable ? 'bg-green-300' : 'bg-red-300';
+                            bgColorClass = value <= IFRtargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
                           }
 
                           return (
@@ -714,13 +714,13 @@ function SixSigmaPage() {
               {/* Quality table data by Month */}
               <div className="w-full overflow-x-auto">
                 <div className="min-w-[60px]">
-                  <table className="w-full table-fixed border-collapse text-[6px]">
+                  <table className="w-full table-fixed border-collapse text-[6px] text-white">
                     <thead className="sticky top-0 bg-gray-100">
                       <tr>
                         {Array.from({ length: 12 }, (_, i) => (
                           <th
                             key={i + 1}
-                            className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                            className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                             style={{ width: '8.33%' }}
                           >
                             {i + 1}
@@ -736,7 +736,7 @@ function SixSigmaPage() {
 
                           let bgColorClass = '';
                           if (value !== null && value !== undefined) {
-                            bgColorClass = value <= QualitytargetTable ? 'bg-green-300' : 'bg-red-300';
+                            bgColorClass = value <= QualitytargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
                           }
 
                           return (
@@ -927,13 +927,13 @@ function SixSigmaPage() {
             {/* Efficiency table data by Month */}
             <div className="w-full overflow-x-auto">
               <div className="min-w-[60px]">
-                <table className="w-full table-fixed border-collapse text-[6px]">
+                <table className="w-full table-fixed border-collapse text-[6px] text-white">
                   <thead className="sticky top-0 bg-gray-100">
                     <tr>
                       {Array.from({ length: 12 }, (_, i) => (
                         <th
                           key={i + 1}
-                          className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                          className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                           style={{ width: '8.33%' }}
                         >
                           {i + 1}
@@ -949,7 +949,7 @@ function SixSigmaPage() {
 
                         let bgColorClass = '';
                         if (value !== null && value !== undefined) {
-                          bgColorClass = value <= EfficiencytargetTable ? 'bg-green-300' : 'bg-red-300';
+                          bgColorClass = value >= EfficiencytargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
                         }
 
                         return (
@@ -1136,13 +1136,13 @@ function SixSigmaPage() {
             </div>
             
             {/* Delivery table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px]">
+            <table className="w-full table-fixed border-collapse text-[6px] text-white">
               <thead className="sticky top-0 bg-gray-100">
                 <tr>
                   {Array.from({ length: 12 }, (_, i) => (
                     <th
                       key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                       style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
                     >
                       {i + 1}
@@ -1158,7 +1158,7 @@ function SixSigmaPage() {
 
                     let bgColorClass = '';
                     if (value !== null && value !== undefined) {
-                      bgColorClass = value <= DeliverytargetTable ? 'bg-green-300' : 'bg-red-300';
+                      bgColorClass = value <= DeliverytargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
                     }
 
                     return (
@@ -1343,13 +1343,13 @@ function SixSigmaPage() {
             </div>
             
             {/* Environment table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px]">
+            <table className="w-full table-fixed border-collapse text-[6px] text-white">
               <thead className="sticky top-0 bg-gray-100">
                 <tr>
                   {Array.from({ length: 12 }, (_, i) => (
                     <th
                       key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                       style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
                     >
                       {i + 1}
@@ -1365,7 +1365,7 @@ function SixSigmaPage() {
 
                     let bgColorClass = '';
                     if (value !== null && value !== undefined) {
-                      bgColorClass = value <= EnvironmenttargetTable ? 'bg-green-300' : 'bg-red-300';
+                      bgColorClass = value <= EnvironmenttargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
                     }
 
                     return (
@@ -1551,13 +1551,13 @@ function SixSigmaPage() {
             </div>
             
             {/* Attenance table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px]">
+            <table className="w-full table-fixed border-collapse text-[6px] text-white">
               <thead className="sticky top-0 bg-gray-100">
                 <tr>
                   {Array.from({ length: 12 }, (_, i) => (
                     <th
                       key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                       style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
                     >
                       {i + 1}
@@ -1573,7 +1573,7 @@ function SixSigmaPage() {
 
                     let bgColorClass = '';
                     if (value !== null && value !== undefined) {
-                      bgColorClass = value <= MoraletargetTable ? 'bg-green-300' : 'bg-red-300';
+                      bgColorClass = value <= MoraletargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
                     }
 
                     return (
