@@ -456,14 +456,14 @@ function SixSigmaPage() {
   const target3 = 80.5;
   const target4 = 19.0;
   const target5 = 70.0;
-  const target6 = 94.0;
+  const target6 = 92.0;
 
   const IFRtargetTable = 0.0;
   const QualitytargetTable = 3.0;
   const EfficiencytargetTable = 80.5;
   const DeliverytargetTable = 19.0;
   const EnvironmenttargetTable = 70.0;
-  const MoraletargetTable = 94.0;
+  const MoraletargetTable = 92.0;
   
   return (
     <main className="w-full">
@@ -550,11 +550,11 @@ function SixSigmaPage() {
 
               <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
-                <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤0.59%</h3>
+                <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IFR ≤0.59%</h3>
             </div>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
-              <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IFR (%)</h3>
+              <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Injury Frequency Rate (IFR)</h3>
             </div>
 
             <div className="max-w-4xl">
@@ -818,7 +818,7 @@ function SixSigmaPage() {
                               textAnchor="middle"
                               fill="#000"
                             >
-                              {value.toFixed(2)}
+                              {value.toFixed(1)}
                             </text>
                           );
                         }}
@@ -1635,7 +1635,7 @@ function SixSigmaPage() {
                             cx={cx}
                             cy={cy}
                             r={2}
-                            fill={value <= 94.0 ? 'red' : 'green'}
+                            fill={value <= 92.0 ? 'red' : 'green'}
                           />
                         );
                       }}
