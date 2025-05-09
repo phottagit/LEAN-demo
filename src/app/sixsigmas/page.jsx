@@ -493,7 +493,7 @@ function SixSigmaPage() {
                 IFR
               </h3>
               <div className="w-full aspect-square p-1 m-0">
-                <DonutChart data={chartData1} rotation={-90} centerText="Q" />
+                <DonutChart data={chartData1} rotation={-90} centerText="S" />
               </div>
               <div>
                 <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
