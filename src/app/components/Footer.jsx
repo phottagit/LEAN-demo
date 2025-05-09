@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
 
-  <div className="min-h-screen flex flex-col bg-gray-100">
+  <div className="min-auto flex flex-col bg-gray-100">
   <main className="flex-grow p-4">
     {/* Form or content goes here */}
   </main>
