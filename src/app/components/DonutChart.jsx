@@ -49,7 +49,7 @@ getColor(d) {
         const width = svgContainer.getBoundingClientRect().width;
         const height = width;
         const margin = 15;
-        let radius = Math.min(width, height) / 2 - margin;
+        let radius = Math.min(width, height) / 2;
         
         // Calculate the inner radius (donut hole size)
         const innerRadius = radius / 1.5;
@@ -68,7 +68,7 @@ getColor(d) {
             .append('svg')
             .attr("width", '100%')
             .attr("height", '100%')
-            .attr('viewBox', '0 0 ' + width + ' ' + width)
+            .attr('viewBox', `0 0 ${width} ${height}`)
             .append("g")
             .attr("transform", "translate(" + Math.min(width, height) / 2 + "," + Math.min(width, height) / 2 + ")");
 

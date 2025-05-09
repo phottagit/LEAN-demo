@@ -6,9 +6,10 @@ import Navbar from '../components/Navbar';
 import { useSession } from 'next-auth/react';
 import Container from '../components/Container';
 import Footer from '../components/Footer';
-import ChamferBox from '../components/ChamferBox';
+import OgtagonBox from '../components/OgtagonShape';
 
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, LabelList } from 'recharts';
+import OgtagonShape from '../components/OgtagonShape';
 
 function SixSigmaPage() {
   const { data: session } = useSession();
@@ -41,7 +42,7 @@ function SixSigmaPage() {
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -79,7 +80,7 @@ function SixSigmaPage() {
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -90,6 +91,7 @@ function SixSigmaPage() {
     { name: '16', value: 10, type: '' }
   ]);
 
+  //Efficiency
   const [chartData3, setChartData3] = useState([
     { name: '17', value: 10, type: '' },
     { name: '18', value: 10, type: '' },
@@ -128,6 +130,7 @@ function SixSigmaPage() {
     { name: '16', value: 10, type: '' }
   ]);
 
+  //Delevery
   const [chartData4, setChartData4] = useState([
     { name: '17', value: 10, type: '' },
     { name: '18', value: 10, type: '' },
@@ -155,7 +158,7 @@ function SixSigmaPage() {
     { name: '5', value: 10, type: 'Lower' },
     { name: '6', value: 10, type: 'Lower' },
     { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Lower' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -166,6 +169,7 @@ function SixSigmaPage() {
     { name: '16', value: 10, type: '' }
   ]);
 
+  //Environment
   const [chartData5, setChartData5] = useState([
     { name: '17', value: 10, type: '' },
     { name: '18', value: 10, type: '' },
@@ -193,7 +197,7 @@ function SixSigmaPage() {
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -204,6 +208,7 @@ function SixSigmaPage() {
     { name: '16', value: 10, type: '' }
   ]);
 
+  //Morale
   const [chartData6, setChartData6] = useState([
     { name: '17', value: 10, type: '' },
     { name: '18', value: 10, type: '' },
@@ -242,28 +247,29 @@ function SixSigmaPage() {
     { name: '16', value: 10, type: '' }
   ]);
 
-
-
+  //Safety
   const data1 = [
-    { name: "29/04/2025", value: 0 },
     { name: "30/04/2025", value: 0 },
     { name: "02/05/2025", value: 0 },
     { name: "03/05/2025", value: 0 },
     { name: "05/05/2025", value: 0 },
     { name: "06/05/2025", value: 0 },
     { name: "07/05/2025", value: 0 },
+    { name: "08/05/2025", value: 0 },
   ];
 
+  //Quality
   const data2 = [
-    { name: "29/04/2025", value: 1.4 },
     { name: "30/04/2025", value: 0.7 },
     { name: "02/05/2025", value: 1.3 },
     { name: "03/05/2025", value: 1.6 },
     { name: "05/05/2025", value: 1.0 },
     { name: "06/05/2025", value: 1.7 },
     { name: "07/05/2025", value: 6.4 },
+    { name: "08/05/2025", value: 1.6 },
   ];
 
+  //Efficiency
   const data3 = [
     { name: "29/04/2025", value: 81.5 },
     { name: "30/04/2025", value: 82.7 },
@@ -274,26 +280,29 @@ function SixSigmaPage() {
     { name: "07/05/2025", value: 84.8 },
   ];
 
+  //Delivery
   const data4 = [
-    { name: "29/04/2025", value: 20.6 },
     { name: "30/04/2025", value: 20.0 },
-    { name: "02/05/2025", value: 21.5 },
-    { name: "03/05/2025", value: 21.7 },
-    { name: "05/05/2025", value: 25.7 },
-    { name: "06/05/2025", value: 23.3 },
-    { name: "07/05/2025", value: 25.5 },
+    { name: "02/05/2025", value: 21.0 },
+    { name: "03/05/2025", value: 21.5 },
+    { name: "05/05/2025", value: 24.4 },
+    { name: "06/05/2025", value: 22.9 },
+    { name: "07/05/2025", value: 23.0 },
+    { name: "08/05/2025", value: 21.7 },
   ];
 
+  //Environment
   const data5 = [
-    { name: "29/04/2025", value: 62.2 },
     { name: "30/04/2025", value: 60.2 },
     { name: "02/05/2025", value: 60.2 },
     { name: "03/05/2025", value: 53.1 },
     { name: "05/05/2025", value: 62.0 },
     { name: "06/05/2025", value: 62.0 },
     { name: "07/05/2025", value: 65.6 },
+    { name: "08/05/2025", value: 65.2 },
   ];
 
+  //Morale
   const data6 = [
     { name: "29/04/2025", value: 94.6 },
     { name: "30/04/2025", value: 94.2 },
@@ -472,7 +481,7 @@ function SixSigmaPage() {
 
       <div className="flex flex-col md:flex-row items-top justify-center bg-white-100 p-1">
       <div className="flex-1 min-w-0 py-1">
-        <ChamferBox>
+        <OgtagonBox>
         <div className="flex-1 min-w-0 py-1">
           {/* IFR Chart */}
               <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
@@ -561,7 +570,7 @@ function SixSigmaPage() {
                         tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
                         tick={{ fontSize: 8 }} 
                       />
-                      <YAxis width={20} domain={[0, 6.0]} tick={{ fontSize: 8 }} />
+                      <YAxis width={20} domain={[0, 1.2]} tick={{ fontSize: 8 }} />
                       <Tooltip
                         contentStyle={{ fontSize: '8px' }} 
                         labelStyle={{ fontSize: '8px' }}
@@ -579,7 +588,7 @@ function SixSigmaPage() {
                               cx={cx}
                               cy={cy}
                               r={2}
-                              fill={value <= 3.0 ? 'green' : 'red'}
+                              fill={value <= 0.59 ? 'green' : 'red'}
                             />
                           );
                         }}
@@ -627,7 +636,6 @@ function SixSigmaPage() {
                 </div>
               </div>
             </div>
-
 
             {/* Safety table data by Action */}
             <div className="flex flex-row justify-between py-1">
@@ -681,13 +689,13 @@ function SixSigmaPage() {
               </div>
             </div>
             </div>
-          </ChamferBox>
+          </OgtagonBox>
         </div>
       
+      {/* Quality Chart */}
       <div className="flex-1 min-w-0 py-1">
-        <ChamferBox>
-        <div className="flex-1 min-w-0 py-1">
-          {/* Quality Chart */}
+        <OgtagonBox>
+      <div className="flex-1 min-w-0 py-1">
               <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                   style={{ 
                     fontFamily: 'Century, serif', 
@@ -894,12 +902,13 @@ function SixSigmaPage() {
               </div>
             </div>
             </div>
-          </ChamferBox>
+          </OgtagonBox>
         </div>
 
         {/* Efficiency Chart */}
         <div className="flex-1 min-w-0 py-1">
-          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
+        <OgtagonBox>
+        <div className="flex-1 min-w-0 py-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -1104,12 +1113,13 @@ function SixSigmaPage() {
               </table>
             </div>
           </div>
-
-          </div>
+        </div>
+          </OgtagonBox>
         </div>
 
         <div className="flex-1 min-w-0 py-1">
-          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
+        <OgtagonBox>
+        <div className="flex-1 min-w-0 py-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -1310,12 +1320,13 @@ function SixSigmaPage() {
               </table>
             </div>
           </div>
-
           </div>
+          </OgtagonBox>
         </div>
 
         <div className="flex-1 min-w-0 py-1">
-          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
+        <OgtagonBox>
+        <div className="flex-1 min-w-0 py-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -1518,10 +1529,12 @@ function SixSigmaPage() {
           </div>
 
           </div>
+          </OgtagonBox>
         </div>
 
         <div className="flex-1 min-w-0 py-1">
-          <div className="h-full border-2 border-gray-400 rounded-lg p-1">
+        <OgtagonBox>
+        <div className="flex-1 min-w-0 py-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap"  
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -1722,8 +1735,8 @@ function SixSigmaPage() {
               </table>
             </div>
           </div>
-
           </div>
+          </OgtagonBox>
         </div>
 
       </div>
