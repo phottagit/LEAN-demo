@@ -119,7 +119,7 @@ function SixSigmaPage() {
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -236,7 +236,7 @@ function SixSigmaPage() {
     { name: '5', value: 10, type: 'Lower' },
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -271,13 +271,13 @@ function SixSigmaPage() {
 
   //Efficiency
   const data3 = [
-    { name: "29/04/2025", value: 81.5 },
     { name: "30/04/2025", value: 82.7 },
     { name: "02/05/2025", value: 83.2 },
     { name: "03/05/2025", value: 86.8 },
     { name: "05/05/2025", value: 86.9 },
     { name: "06/05/2025", value: 85.9 },
     { name: "07/05/2025", value: 84.8 },
+    { name: "08/05/2025", value: 84.6 },
   ];
 
   //Delivery
@@ -304,13 +304,13 @@ function SixSigmaPage() {
 
   //Morale
   const data6 = [
-    { name: "29/04/2025", value: 94.6 },
     { name: "30/04/2025", value: 94.2 },
     { name: "02/05/2025", value: 86.7 },
     { name: "03/05/2025", value: 88.6 },
     { name: "05/05/2025", value: 93.9 },
     { name: "06/05/2025", value: 95.2 },
     { name: "07/05/2025", value: 95.6 },
+    { name: "08/05/2025", value: 95.4 },
   ];
 
   //Safety maoth table
@@ -335,7 +335,7 @@ function SixSigmaPage() {
     { month: 2, value: 4.0 },
     { month: 3, value: 4.2 },
     { month: 4, value: 2.9 },
-    { month: 5, value: 2.4 },
+    { month: 5, value: 2.2 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -351,7 +351,7 @@ function SixSigmaPage() {
     { month: 2, value: 83.5 },
     { month: 3, value: 80.0 },
     { month: 4, value: 79.2 },
-    { month: 5, value: 85.7 },
+    { month: 5, value: 85.4 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -367,7 +367,7 @@ function SixSigmaPage() {
     { month: 2, value: 17.6 },
     { month: 3, value: 18.5 },
     { month: 4, value: 23.2 },
-    { month: 5, value: 23.9 },
+    { month: 5, value: 23.5 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -383,7 +383,7 @@ function SixSigmaPage() {
     { month: 2, value: 1.21 },
     { month: 3, value: 1.40 },
     { month: 4, value: 1.29 },
-    { month: 5, value: 0.32 },
+    { month: 5, value: 0.39 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -398,7 +398,7 @@ function SixSigmaPage() {
     { month: 2, value: 93.5 },
     { month: 3, value: 93.3 },
     { month: 4, value: 92.7 },
-    { month: 5, value: 8.0 },
+    { month: 5, value: 92.6 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -693,7 +693,7 @@ function SixSigmaPage() {
         </div>
       
       {/* Quality Chart */}
-      <div className="flex-1 min-w-0 py-1">
+      <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
       <div className="flex-1 min-w-0 py-1">
               <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
@@ -906,7 +906,7 @@ function SixSigmaPage() {
         </div>
 
         {/* Efficiency Chart */}
-        <div className="flex-1 min-w-0 py-1">
+        <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
         <div className="flex-1 min-w-0 py-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
@@ -1117,7 +1117,7 @@ function SixSigmaPage() {
           </OgtagonBox>
         </div>
 
-        <div className="flex-1 min-w-0 py-1">
+        <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
         <div className="flex-1 min-w-0 py-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
@@ -1324,7 +1324,7 @@ function SixSigmaPage() {
           </OgtagonBox>
         </div>
 
-        <div className="flex-1 min-w-0 py-1">
+        <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
         <div className="flex-1 min-w-0 py-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
@@ -1532,7 +1532,7 @@ function SixSigmaPage() {
           </OgtagonBox>
         </div>
 
-        <div className="flex-1 min-w-0 py-1">
+        <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
         <div className="flex-1 min-w-0 py-1">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap"  
@@ -1573,7 +1573,7 @@ function SixSigmaPage() {
 
                     let bgColorClass = '';
                     if (value !== null && value !== undefined) {
-                      bgColorClass = value <= MoraletargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
+                      bgColorClass = value >= MoraletargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
                     }
 
                     return (

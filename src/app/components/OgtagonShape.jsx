@@ -24,8 +24,8 @@ export default function OgtagonShape({ children }) {
           background-color: #F0EEE4;
           width: 100%;
           height: 100%;
-          clip-path: polygon(19px 0, calc(100% - 19px) 0, 100% 19px, 100% calc(100% - 19px),
-            calc(100% - 19px) 100%, 19px 100%, 0 calc(100% - 19px), 0 19px
+          clip-path: polygon(18.5px 0, calc(100% - 18.5px) 0, 100% 18.5px, 100% calc(100% - 18.5px),
+            calc(100% - 18.5px) 100%, 18.5px 100%, 0 calc(100% - 18.5px), 0 18.5px
           );
           padding: 3px;
           box-sizing: border-box;

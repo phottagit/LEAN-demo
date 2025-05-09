@@ -56,9 +56,9 @@ getColor(d) {
 
         // Calculate responsive font sizes based on the inner radius and screen width
 
-        const centerFontSize = Math.max(Math.min(radius * 1.0, 480), 10); // Between 8px and 14px
-        const labelFontSize = Math.max(Math.min(radius * 0.07, 138), 8); // Between 8px and 14px
-        const valueFontSize = Math.max(Math.min(radius * 0.05, 12), 6); // Between 6px and 12px
+        const centerFontSize = Math.max(Math.min(radius * 1.0, 480), 12); // Between 8px and 14px
+        const labelFontSize = Math.max(Math.min(radius * 0.07, 138), 10); // Between 8px and 14px
+        const valueFontSize = Math.max(Math.min(radius * 0.05, 14), 8); // Between 6px and 12px
         
         // legend Position
         let legendPosition = d3.arc().innerRadius(innerRadius).outerRadius(radius);
@@ -95,7 +95,7 @@ getColor(d) {
             )
             .attr('fill', d => this.getColor(d))
             .attr("stroke", d => (!d.data.name || d.data.name === '' || d.data.value === 0) ? 'transparent' : '#fff')
-            .style("stroke-width", "1")
+            .style("stroke-width", "1.5")
             //.style("opacity", "0.8");
 
         // Add "Q" in the middle of the chart
