@@ -502,13 +502,13 @@ function SixSigmaPage() {
               {/* IFR table data by Month */}
               <div className="w-full overflow-x-auto">
                 <div className="min-w-[60px]">
-                  <table className="w-full table-fixed border-collapse text-[6px] text-white">
+                  <table className="w-full table-fixed border-collapse text-[8px] text-white">
                     <thead className="sticky top-0 bg-gray-100">
                       <tr>
                         {Array.from({ length: 12 }, (_, i) => (
                           <th
                             key={i + 1}
-                            className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
+                            className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                             style={{ width: '8.33%' }}
                           >
                             {i + 1}
@@ -530,11 +530,10 @@ function SixSigmaPage() {
                           return (
                             <td
                               key={i + 1}
-                              className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                              className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
                               style={{
                                 width: '8.33%',
                                 height: 'auto',
-                                fontSize: '6px',
                                 padding: '0.1rem',
                               }}
                             >
@@ -547,7 +546,7 @@ function SixSigmaPage() {
                   </table>
                 </div>
               </div>
-
+              <hr className='my-1 border-1 border-[#595959]'/>
               <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
                 <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IFR ≤0.59%</h3>
@@ -587,7 +586,7 @@ function SixSigmaPage() {
                             <circle
                               cx={cx}
                               cy={cy}
-                              r={2}
+                              r={3}
                               fill={value <= 0.59 ? 'green' : 'red'}
                             />
                           );
@@ -638,19 +637,19 @@ function SixSigmaPage() {
             </div>
 
             {/* Safety table data by Action */}
-            <div className="flex flex-row justify-between py-1">
+            <div className="flex flex-row justify-between py-1 mb-2">
               <div className="min-w-[60px]">
-                <table className="w-full table-fixed border-collapse text-[6px] bg-white">
-                  <thead className="sticky top-0 bg-gray-100">
+                <table className="w-full table-fixed border-2 border-collapse text-[8px] bg-white">
+                  <thead className="sticky top-0 font-bold bg-gray-100">
                     <tr>
                       <th
-                        className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                        className="border border-[#595959] px-[0.1rem] py-[0.1rem]"
                         style={{ width: '80%' }}
                       >
                         Highlight
                       </th>
                       <th
-                        className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                        className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
                         style={{ width: '20%' }}
                       >
                         Date
@@ -661,10 +660,9 @@ function SixSigmaPage() {
                   {IFRhighlightValue.map((item, index) => (
                     <tr key={index} style={{ height: '20px' }}>
                       <td
-                        className="border border-gray-300 align-middle"
+                        className="border-2 border-[#595959] align-middle"
                         style={{
                           width: '80%',
-                          fontSize: '6px',
                           padding: '0.2rem', // slightly more padding for balance
                           height: 'auto',
                         }}
@@ -672,10 +670,9 @@ function SixSigmaPage() {
                         {item.highlight}
                       </td>
                       <td
-                        className="border border-gray-300 text-center align-middle"
+                        className="border-2 border-[#595959] text-center align-middle"
                         style={{
                           width: '20%',
-                          fontSize: '6px',
                           padding: '0.2rem',
                           height: 'auto',
                         }}
@@ -714,13 +711,13 @@ function SixSigmaPage() {
               {/* Quality table data by Month */}
               <div className="w-full overflow-x-auto">
                 <div className="min-w-[60px]">
-                  <table className="w-full table-fixed border-collapse text-[6px] text-white">
+                  <table className="w-full table-fixed border-collapse text-[8px] text-white">
                     <thead className="sticky top-0 bg-gray-100">
                       <tr>
                         {Array.from({ length: 12 }, (_, i) => (
                           <th
                             key={i + 1}
-                            className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
+                            className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                             style={{ width: '8.33%' }}
                           >
                             {i + 1}
@@ -742,11 +739,10 @@ function SixSigmaPage() {
                           return (
                             <td
                               key={i + 1}
-                              className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                              className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
                               style={{
                                 width: '8.33%',
                                 height: 'auto',
-                                fontSize: '6px',
                                 padding: '0.1rem',
                               }}
                             >
@@ -759,7 +755,7 @@ function SixSigmaPage() {
                   </table>
                 </div>
               </div>
-
+              <hr className='my-1 border-1 border-[#595959]'/>
               <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
                 <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤3.0%%</h3>
@@ -799,7 +795,7 @@ function SixSigmaPage() {
                             <circle
                               cx={cx}
                               cy={cy}
-                              r={2}
+                              r={3}
                               fill={value <= 3.0 ? 'green' : 'red'}
                             />
                           );
@@ -851,19 +847,19 @@ function SixSigmaPage() {
 
 
             {/* Quality table data by Action */}
-            <div className="flex flex-row justify-between py-1">
-              <div className="min-w-[60px]">
-                <table className="w-full table-fixed border-collapse text-[6px] bg-white">
-                  <thead className="sticky top-0 bg-gray-100">
+            <div className="flex flex-row justify-between py-1 mb-2">
+              <div className="min-w-[60px] ">
+                <table className="w-full table-fixed border-collapse bg-white" style={{ fontSize: '8px' }}>
+                  <thead className="sticky top-0 font-bold border-2 border-[#595959] bg-gray-100">
                     <tr>
                       <th
-                        className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                        className="px-[0.1rem] py-[0.1rem]"
                         style={{ width: '80%' }}
                       >
                         Highlight
                       </th>
                       <th
-                        className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                        className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
                         style={{ width: '20%' }}
                       >
                         Date
@@ -874,10 +870,9 @@ function SixSigmaPage() {
                   {QualityhighlightValue.map((item, index) => (
                     <tr key={index} style={{ height: '20px' }}>
                       <td
-                        className="border border-gray-300 align-middle"
+                        className="border-2 border-[#595959] align-middle"
                         style={{
                           width: '80%',
-                          fontSize: '6px',
                           padding: '0.2rem', // slightly more padding for balance
                           height: 'auto',
                         }}
@@ -885,10 +880,9 @@ function SixSigmaPage() {
                         {item.highlight}
                       </td>
                       <td
-                        className="border border-gray-300 text-center align-middle"
+                        className="border-2 border-[#595959] text-center align-middle"
                         style={{
                           width: '20%',
-                          fontSize: '6px',
                           padding: '0.2rem',
                           height: 'auto',
                         }}
@@ -927,13 +921,13 @@ function SixSigmaPage() {
             {/* Efficiency table data by Month */}
             <div className="w-full overflow-x-auto">
               <div className="min-w-[60px]">
-                <table className="w-full table-fixed border-collapse text-[6px] text-white">
+                <table className="w-full table-fixed border-collapse text-[8px] text-white">
                   <thead className="sticky top-0 bg-gray-100">
                     <tr>
                       {Array.from({ length: 12 }, (_, i) => (
                         <th
                           key={i + 1}
-                          className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
+                          className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                           style={{ width: '8.33%' }}
                         >
                           {i + 1}
@@ -955,11 +949,10 @@ function SixSigmaPage() {
                         return (
                           <td
                             key={i + 1}
-                            className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                            className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
                             style={{
                               width: '8.33%',
                               height: 'auto',
-                              fontSize: '6px',
                               padding: '0.1rem',
                             }}
                           >
@@ -972,7 +965,7 @@ function SixSigmaPage() {
                 </table>
               </div>
             </div>
-
+            <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency ≥80.5%</h3>
@@ -1012,7 +1005,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={2}
+                            r={3}
                             fill={value <= 80.5 ? 'red' : 'green'}
                           />
                         );
@@ -1063,19 +1056,19 @@ function SixSigmaPage() {
           </div>
 
           {/* Efficiency table data by Action */}
-          <div className="flex flex-row justify-between py-1">
+          <div className="flex flex-row justify-between py-1 mb-2">
             <div className="min-w-[60px]">
-              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
-                <thead className="sticky top-0 bg-gray-100">
+              <table className="w-full table-fixed border-collapse text-[8px] bg-white ">
+                <thead className="sticky top-0 font-bold bg-gray-100 border-2 border-[#595959]">
                   <tr>
                     <th
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="px-[0.1rem] py-[0.1rem]"
                       style={{ width: '80%' }}
                     >
                       Highlight
                     </th>
                     <th
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
                       style={{ width: '20%' }}
                     >
                       Date
@@ -1086,10 +1079,9 @@ function SixSigmaPage() {
                 {EfficiencyhighlightValue.map((item, index) => (
                   <tr key={index} style={{ height: '20px' }}>
                     <td
-                      className="border border-gray-300 align-middle"
+                      className="border-2 border-[#595959] align-middle"
                       style={{
                         width: '80%',
-                        fontSize: '6px',
                         padding: '0.2rem', // slightly more padding for balance
                         height: 'auto',
                       }}
@@ -1097,10 +1089,9 @@ function SixSigmaPage() {
                       {item.highlight}
                     </td>
                     <td
-                      className="border border-gray-300 text-center align-middle"
+                      className="border-2 border-[#595959] text-center align-middle"
                       style={{
                         width: '20%',
-                        fontSize: '6px',
                         padding: '0.2rem',
                         height: 'auto',
                       }}
@@ -1136,13 +1127,13 @@ function SixSigmaPage() {
             </div>
             
             {/* Delivery table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px] text-white">
+            <table className="w-full table-fixed border-collapse text-[8px] text-white">
               <thead className="sticky top-0 bg-gray-100">
                 <tr>
                   {Array.from({ length: 12 }, (_, i) => (
                     <th
                       key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
+                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                       style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
                     >
                       {i + 1}
@@ -1164,11 +1155,10 @@ function SixSigmaPage() {
                     return (
                       <td
                         key={i + 1}
-                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
                         style={{
                           width: '8.33%',    // ให้แต่ละ column เท่า ๆ
                           height: 'auto',    // ความสูง fix (ไม่ลดได้)
-                          fontSize: '6px',
                           padding: '0.1rem',
                         }}
                       >
@@ -1179,7 +1169,7 @@ function SixSigmaPage() {
                 </tr>
               </tbody>
             </table>
-
+            <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">MLT ≤19 days</h3>
@@ -1219,7 +1209,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={2}
+                            r={3}
                             fill={value <= 19.0 ? 'green' : 'red'}
                           />
                         );
@@ -1270,19 +1260,19 @@ function SixSigmaPage() {
           </div>
 
           {/* Delivery table data by Action */}
-          <div className="flex flex-row justify-between py-1">
+          <div className="flex flex-row justify-between py-1 mb-2">
             <div className="min-w-[60px]">
-              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
-                <thead className="sticky top-0 bg-gray-100">
+              <table className="w-full table-fixed border-collapse text-[8px] bg-white">
+                <thead className="sticky top-0 font-bold bg-gray-100 border-2 border-[#595959]">
                   <tr>
                     <th
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="px-[0.1rem] py-[0.1rem]"
                       style={{ width: '80%' }}
                     >
                       Highlight
                     </th>
                     <th
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
                       style={{ width: '20%' }}
                     >
                       Date
@@ -1293,10 +1283,9 @@ function SixSigmaPage() {
                 {DeliveryhighlightValue.map((item, index) => (
                   <tr key={index} style={{ height: '20px' }}>
                     <td
-                      className="border border-gray-300 align-middle"
+                      className="border-2 border-[#595959] align-middle"
                       style={{
                         width: '80%',
-                        fontSize: '6px',
                         padding: '0.2rem', // slightly more padding for balance
                         height: 'auto',
                       }}
@@ -1304,10 +1293,9 @@ function SixSigmaPage() {
                       {item.highlight}
                     </td>
                     <td
-                      className="border border-gray-300 text-center align-middle"
+                      className="border-2 border-[#595959] text-center align-middle"
                       style={{
                         width: '20%',
-                        fontSize: '6px',
                         padding: '0.2rem',
                         height: 'auto',
                       }}
@@ -1343,13 +1331,13 @@ function SixSigmaPage() {
             </div>
             
             {/* Environment table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px] text-white">
+            <table className="w-full table-fixed border-collapse text-[8px] text-white">
               <thead className="sticky top-0 bg-gray-100">
                 <tr>
                   {Array.from({ length: 12 }, (_, i) => (
                     <th
                       key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
+                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                       style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
                     >
                       {i + 1}
@@ -1371,11 +1359,10 @@ function SixSigmaPage() {
                     return (
                       <td
                         key={i + 1}
-                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
                         style={{
                           width: '8.33%',    // ให้แต่ละ column เท่า ๆ
                           height: 'auto',    // ความสูง fix (ไม่ลดได้)
-                          fontSize: '6px',
                           padding: '0.1rem',
                         }}
                       >
@@ -1386,7 +1373,7 @@ function SixSigmaPage() {
                 </tr>
               </tbody>
             </table>
-
+            <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Electricity ≤70,000 kWh</h3>
@@ -1426,7 +1413,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={2}
+                            r={3}
                             fill={value <= 70.0 ? 'green' : 'red'}
                           />
                         );
@@ -1477,19 +1464,19 @@ function SixSigmaPage() {
           </div>
 
           {/* Environment table data by Action */}
-          <div className="flex flex-row justify-between py-1">
+          <div className="flex flex-row justify-between py-1 mb-2">
             <div className="min-w-[60px]">
-              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
-                <thead className="sticky top-0 bg-gray-100">
+              <table className="w-full table-fixed border-collapse text-[8px] bg-white border-2 border-[#595959]">
+                <thead className="sticky top-0 font-bold bg-gray-100">
                   <tr>
                     <th
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="px-[0.1rem] py-[0.1rem]"
                       style={{ width: '80%' }}
                     >
                       Highlight
                     </th>
                     <th
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
                       style={{ width: '20%' }}
                     >
                       Date
@@ -1500,10 +1487,9 @@ function SixSigmaPage() {
                 {EnvironmenthighlightValue.map((item, index) => (
                   <tr key={index} style={{ height: '20px' }}>
                     <td
-                      className="border border-gray-300 align-middle"
+                      className="border-2 border-[#595959] align-middle"
                       style={{
                         width: '80%',
-                        fontSize: '6px',
                         padding: '0.2rem', // slightly more padding for balance
                         height: 'auto',
                       }}
@@ -1511,10 +1497,9 @@ function SixSigmaPage() {
                       {item.highlight}
                     </td>
                     <td
-                      className="border border-gray-300 text-center align-middle"
+                      className="border-2 border-[#595959] text-center align-middle"
                       style={{
                         width: '20%',
-                        fontSize: '6px',
                         padding: '0.2rem',
                         height: 'auto',
                       }}
@@ -1551,13 +1536,13 @@ function SixSigmaPage() {
             </div>
             
             {/* Attenance table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[6px] text-white">
+            <table className="w-full table-fixed border-collapse text-[8px] text-white">
               <thead className="sticky top-0 bg-gray-100">
                 <tr>
                   {Array.from({ length: 12 }, (_, i) => (
                     <th
                       key={i + 1}
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
+                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
                       style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
                     >
                       {i + 1}
@@ -1579,11 +1564,10 @@ function SixSigmaPage() {
                     return (
                       <td
                         key={i + 1}
-                        className={`border border-gray-300 text-center align-middle ${bgColorClass}`}
+                        className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
                         style={{
                           width: '8.33%',    // ให้แต่ละ column เท่า ๆ
                           height: 'auto',    // ความสูง fix (ไม่ลดได้)
-                          fontSize: '6px',
                           padding: '0.1rem',
                         }}
                       >
@@ -1594,7 +1578,7 @@ function SixSigmaPage() {
                 </tr>
               </tbody>
             </table>
-
+            <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
               <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Attendence ≥92%</h3>
@@ -1634,7 +1618,7 @@ function SixSigmaPage() {
                           <circle
                             cx={cx}
                             cy={cy}
-                            r={2}
+                            r={3}
                             fill={value <= 92.0 ? 'red' : 'green'}
                           />
                         );
@@ -1685,19 +1669,19 @@ function SixSigmaPage() {
           </div>
 
           {/* Morale table data by Action */}
-          <div className="flex flex-row justify-between py-1">
+          <div className="flex flex-row justify-between py-1 mb-2">
             <div className="min-w-[60px]">
-              <table className="w-full table-fixed border-collapse text-[6px] bg-white">
-                <thead className="sticky top-0 bg-gray-100">
+              <table className="w-full table-fixed border-collapse text-[8px] bg-white border-2 border-[#595959]">
+                <thead className="sticky top-0 font-bold bg-gray-100">
                   <tr>
                     <th
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="px-[0.1rem] py-[0.1rem]"
                       style={{ width: '80%' }}
                     >
                       Highlight
                     </th>
                     <th
-                      className="border border-gray-300 px-[0.1rem] py-[0.1rem] font-medium text-gray-700"
+                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
                       style={{ width: '20%' }}
                     >
                       Date
@@ -1708,10 +1692,9 @@ function SixSigmaPage() {
                 {MoralehighlightValue.map((item, index) => (
                   <tr key={index} style={{ height: '20px' }}>
                     <td
-                      className="border border-gray-300 align-middle"
+                      className="border-2 border-[#595959] align-middle"
                       style={{
                         width: '80%',
-                        fontSize: '6px',
                         padding: '0.2rem', // slightly more padding for balance
                         height: 'auto',
                       }}
@@ -1719,10 +1702,9 @@ function SixSigmaPage() {
                       {item.highlight}
                     </td>
                     <td
-                      className="border border-gray-300 text-center align-middle"
+                      className="border-2 border-[#595959] text-center align-middle"
                       style={{
                         width: '20%',
-                        fontSize: '6px',
                         padding: '0.2rem',
                         height: 'auto',
                       }}
