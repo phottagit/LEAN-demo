@@ -490,7 +490,7 @@ function SixSigmaPage() {
                     fontWeight: 'bold',
                     fontSize: 'min(max(16pt, 5vw), 16pt)'
                   }}>
-                IFR
+                Safety
               </h3>
               <div className="w-full aspect-square p-1 m-0">
                 <DonutChart data={chartData1} rotation={-90} centerText="S" />
@@ -550,11 +550,11 @@ function SixSigmaPage() {
 
               <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
-                <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤3.0%%</h3>
+                <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤0.59%</h3>
             </div>
 
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
-              <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap Rate (%)</h3>
+              <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IFR (%)</h3>
             </div>
 
             <div className="max-w-4xl">
