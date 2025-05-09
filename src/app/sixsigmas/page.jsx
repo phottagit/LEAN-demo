@@ -659,7 +659,7 @@ function SixSigmaPage() {
                   </thead>
                   <tbody>
                   {IFRhighlightValue.map((item, index) => (
-                    <tr key={index} style={{ height: '15px' }}>
+                    <tr key={index} style={{ height: '20px' }}>
                       <td
                         className="border border-gray-300 align-middle"
                         style={{
@@ -872,7 +872,7 @@ function SixSigmaPage() {
                   </thead>
                   <tbody>
                   {QualityhighlightValue.map((item, index) => (
-                    <tr key={index} style={{ height: '15px' }}>
+                    <tr key={index} style={{ height: '20px' }}>
                       <td
                         className="border border-gray-300 align-middle"
                         style={{
@@ -1084,7 +1084,7 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                 {EfficiencyhighlightValue.map((item, index) => (
-                  <tr key={index} style={{ height: '15px' }}>
+                  <tr key={index} style={{ height: '20px' }}>
                     <td
                       className="border border-gray-300 align-middle"
                       style={{
@@ -1291,7 +1291,7 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                 {DeliveryhighlightValue.map((item, index) => (
-                  <tr key={index} style={{ height: '15px' }}>
+                  <tr key={index} style={{ height: '20px' }}>
                     <td
                       className="border border-gray-300 align-middle"
                       style={{
@@ -1498,7 +1498,7 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                 {EnvironmenthighlightValue.map((item, index) => (
-                  <tr key={index} style={{ height: '15px' }}>
+                  <tr key={index} style={{ height: '20px' }}>
                     <td
                       className="border border-gray-300 align-middle"
                       style={{
@@ -1706,7 +1706,7 @@ function SixSigmaPage() {
                 </thead>
                 <tbody>
                 {MoralehighlightValue.map((item, index) => (
-                  <tr key={index} style={{ height: '15px' }}>
+                  <tr key={index} style={{ height: '20px' }}>
                     <td
                       className="border border-gray-300 align-middle"
                       style={{
