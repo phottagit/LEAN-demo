@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function OgtagonShape({ children }) {
+export default function OgtagonShape({ children, className = "" }) {
   return (
-    <div className="OgtagonShape-container">
+    <div className={`OgtagonShape-container ${className}`}>
       <div className="OgtagonShape-container-inner">
         {children}
       </div>

@@ -150,13 +150,3 @@ getColor(d) {
 }
 
 export default DonutChart;
-
-
-
-
-
-
-
-
-
-

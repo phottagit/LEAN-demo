@@ -134,6 +134,13 @@ export default function Home() {
                       <h2 className="font-semibold text-left">Lean Suggestion</h2>
                     </div>
                   </a>
+
+                  <a href="/performances" target="_blank" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
+                    <div>
+                      <h2 className="font-semibold text-left">Pefrormance Design Template</h2>
+                    </div>
+                  </a>
+
                 </div>
                 </div>     
                 <Footer />
