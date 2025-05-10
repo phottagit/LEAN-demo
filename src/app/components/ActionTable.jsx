@@ -20,8 +20,8 @@ const ActionTable = ({ highlightValues, rows = 3 }) => {
 
   return (
     <div className="min-w-[60px]">
-      <table className="w-full table-fixed border-collapse text-[8px] bg-white border-2 border-[#595959]">
-        <thead className="sticky font-bold bg-gray-100">
+      <table className="w-full table-fixed border-collapse text-[8px] bg-white ">
+        <thead className="sticky font-bold bg-gray-100 border-2 border-[#595959]">
           <tr>
             <th
               className="px-[0.1rem] py-[0.1rem]"
