@@ -1,8 +1,19 @@
 import React from 'react';
 
-// Make sure the component is properly defined as a function that returns JSX
-const EfficiencyTable = ({ EfficiencytableValue, EfficiencytargetTable }) => {
-  // Ensure the component returns a single root element
+/**
+ * A reusable component for displaying monthly data in a table format
+ * @param {Object} props
+ * @param {Array} props.monthlyValues - Array of objects with month and value properties
+ * @param {number} props.targetValue - Target value for comparison
+ * @param {boolean} props.higherIsBetter - If true, values >= target are good (green), otherwise values <= target are good
+ * @param {number} props.decimalPlaces - Number of decimal places to display (default: 1)
+ */
+const MonthlyDataTable = ({ 
+  monthlyValues, 
+  targetValue, 
+  higherIsBetter = true,
+  decimalPlaces = 1 
+}) => {
   return (
     <table className="w-full table-fixed border-collapse text-[8px] text-white">
       <thead className="sticky top-0 bg-gray-100">
@@ -21,12 +32,16 @@ const EfficiencyTable = ({ EfficiencytableValue, EfficiencytargetTable }) => {
       <tbody>
         <tr>
           {Array.from({ length: 12 }, (_, i) => {
-            const monthData = EfficiencytableValue.find(m => m.month === i + 1);
+            const monthData = monthlyValues.find(m => m.month === i + 1);
             const value = monthData ? monthData.value : null;
 
             let bgColorClass = '';
             if (value !== null && value !== undefined) {
-              bgColorClass = value >= EfficiencytargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
+              if (higherIsBetter) {
+                bgColorClass = value >= targetValue ? 'bg-[#00B050]' : 'bg-[#FF0000]';
+              } else {
+                bgColorClass = value <= targetValue ? 'bg-[#00B050]' : 'bg-[#FF0000]';
+              }
             }
 
             return (
@@ -39,7 +54,7 @@ const EfficiencyTable = ({ EfficiencytableValue, EfficiencytargetTable }) => {
                   padding: '0.1rem',
                 }}
               >
-                {value !== null && value !== undefined ? value.toFixed(1) : '-'}
+                {value !== null && value !== undefined ? value.toFixed(decimalPlaces) : '-'}
               </td>
             );
           })}
@@ -49,5 +64,4 @@ const EfficiencyTable = ({ EfficiencytableValue, EfficiencytargetTable }) => {
   );
 };
 
-// Make sure to export the component as default
-export default EfficiencyTable;
+export default MonthlyDataTable;

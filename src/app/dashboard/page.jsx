@@ -8,7 +8,7 @@ import Container from '../components/Container';
 import Footer from '../components/Footer';
 import OgtagonBox from '../components/OgtagonShape';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, LabelList } from 'recharts';
-import EfficiencyTable from '../components/EfficiencyTable';
+import MonthlyDataTable from '../components/MonthlyDataTable';
 
 function DashboardPage() {
   const { data: session } = useSession();
@@ -344,22 +344,6 @@ function DashboardPage() {
     { month: 12, value: null },
   ];
 
-  //EfficiencyTable maoth table
-  const EfficiencyTable = [
-    { month: 1, value: 84.8 },
-    { month: 2, value: 83.5 },
-    { month: 3, value: 80.0 },
-    { month: 4, value: 79.2 },
-    { month: 5, value: 85.4 },
-    { month: 6, value: null },
-    { month: 7, value: null },
-    { month: 8, value: null },
-    { month: 9, value: null },
-    { month: 10, value: null },
-    { month: 11, value: null },
-    { month: 12, value: null },
-  ];
-
   //Efficiency maoth table
   const EfficiencytableValue = [
     { month: 1, value: 84.8 },
@@ -514,7 +498,7 @@ function DashboardPage() {
                 <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
               </div>
 
-              {/* IFR table data by Month */}
+              {/* Safety table data by Month */}
               <div className="w-full overflow-x-auto">
                 <div className="min-w-[60px]">
                   <table className="w-full table-fixed border-collapse text-[8px] text-white">
@@ -723,53 +707,18 @@ function DashboardPage() {
                 <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
               </div>
 
-              {/* Quality table data by Month */}
-              <div className="w-full overflow-x-auto">
-                <div className="min-w-[60px]">
-                  <table className="w-full table-fixed border-collapse text-[8px] text-white">
-                    <thead className="sticky top-0 bg-gray-100">
-                      <tr>
-                        {Array.from({ length: 12 }, (_, i) => (
-                          <th
-                            key={i + 1}
-                            className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
-                            style={{ width: '8.33%' }}
-                          >
-                            {i + 1}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        {Array.from({ length: 12 }, (_, i) => {
-                          const monthData = QualitymonthlyValues.find(m => m.month === i + 1);
-                          const value = monthData ? monthData.value : null;
-
-                          let bgColorClass = '';
-                          if (value !== null && value !== undefined) {
-                            bgColorClass = value <= QualitytargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
-                          }
-
-                          return (
-                            <td
-                              key={i + 1}
-                              className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
-                              style={{
-                                width: '8.33%',
-                                height: 'auto',
-                                padding: '0.1rem',
-                              }}
-                            >
-                              {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              {/* Quality Monthly Table - Using the imported component */}
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[60px]">
+                <MonthlyDataTable
+                  monthlyValues={QualitymonthlyValues}
+                  targetValue={QualitytargetTable}
+                  higherIsBetter={false} // For Quality (scrap), lower is better
+                  decimalPlaces={1}
+                />
               </div>
+            </div>
+
               <hr className='my-1 border-1 border-[#595959]'/>
               <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -933,53 +882,18 @@ function DashboardPage() {
               <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
             </div>
             
-            {/* Efficiency table data by Month */}
+            {/* Efficiency Monthly Table - Using the imported component */}
             <div className="w-full overflow-x-auto">
               <div className="min-w-[60px]">
-                <table className="w-full table-fixed border-collapse text-[8px] text-white">
-                  <thead className="sticky top-0 bg-gray-100">
-                    <tr>
-                      {Array.from({ length: 12 }, (_, i) => (
-                        <th
-                          key={i + 1}
-                          className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
-                          style={{ width: '8.33%' }}
-                        >
-                          {i + 1}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      {Array.from({ length: 12 }, (_, i) => {
-                        const monthData = EfficiencytableValue.find(m => m.month === i + 1);
-                        const value = monthData ? monthData.value : null;
-
-                        let bgColorClass = '';
-                        if (value !== null && value !== undefined) {
-                          bgColorClass = value >= EfficiencytargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
-                        }
-
-                        return (
-                          <td
-                            key={i + 1}
-                            className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
-                            style={{
-                              width: '8.33%',
-                              height: 'auto',
-                              padding: '0.1rem',
-                            }}
-                          >
-                            {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                          </td>
-                        );
-                      })}
-                    </tr>
-                  </tbody>
-                </table>
+                <MonthlyDataTable
+                  monthlyValues={EfficiencytableValue}
+                  targetValue={EfficiencytargetTable}
+                  higherIsBetter={true} // For Efficiency, higher is better
+                  decimalPlaces={1}
+                />
               </div>
             </div>
+
             <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -1142,48 +1056,16 @@ function DashboardPage() {
             </div>
             
             {/* Delivery table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[8px] text-white border-2 border-[#595959]">
-              <thead className="sticky top-0 bg-gray-100">
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => (
-                    <th
-                      key={i + 1}
-                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
-                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
-                    >
-                      {i + 1}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => {
-                    const monthData = DeliverymonthlyValues.find(m => m.month === i + 1);
-                    const value = monthData ? monthData.value : null;
-
-                    let bgColorClass = '';
-                    if (value !== null && value !== undefined) {
-                      bgColorClass = value <= DeliverytargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
-                    }
-
-                    return (
-                      <td
-                        key={i + 1}
-                        className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
-                        style={{
-                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ
-                          height: 'auto',    // ความสูง fix (ไม่ลดได้)
-                          padding: '0.1rem',
-                        }}
-                      >
-                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                      </td>
-                    );
-                  })}
-                </tr>
-              </tbody>
-            </table>
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[60px]">
+                <MonthlyDataTable
+                  monthlyValues={DeliverymonthlyValues}
+                  targetValue={DeliverytargetTable}
+                  higherIsBetter={false} // For Delivery (lead time), lower is better
+                  decimalPlaces={1}
+                />
+              </div>
+            </div>
             <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -1346,48 +1228,17 @@ function DashboardPage() {
             </div>
             
             {/* Environment table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[8px] text-white">
-              <thead className="sticky top-0 bg-gray-100">
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => (
-                    <th
-                      key={i + 1}
-                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
-                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
-                    >
-                      {i + 1}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => {
-                    const monthData = EnvironmentmonthlyValues.find(m => m.month === i + 1);
-                    const value = monthData ? monthData.value : null;
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[60px]">
+                <MonthlyDataTable
+                  monthlyValues={EnvironmentmonthlyValues}
+                  targetValue={EnvironmenttargetTable}
+                  higherIsBetter={false} // For Environment (electricity), lower is better
+                  decimalPlaces={2}
+                />
+              </div>
+            </div>
 
-                    let bgColorClass = '';
-                    if (value !== null && value !== undefined) {
-                      bgColorClass = value <= EnvironmenttargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
-                    }
-
-                    return (
-                      <td
-                        key={i + 1}
-                        className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
-                        style={{
-                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ
-                          height: 'auto',    // ความสูง fix (ไม่ลดได้)
-                          padding: '0.1rem',
-                        }}
-                      >
-                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                      </td>
-                    );
-                  })}
-                </tr>
-              </tbody>
-            </table>
             <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
@@ -1551,48 +1402,18 @@ function DashboardPage() {
             </div>
             
             {/* Attenance table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[8px] text-white">
-              <thead className="sticky top-0 bg-gray-100">
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => (
-                    <th
-                      key={i + 1}
-                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
-                      style={{ width: '8.33%' }} // 100 / 12 ≈ 8.33%
-                    >
-                      {i + 1}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {Array.from({ length: 12 }, (_, i) => {
-                    const monthData = MoralemonthlyValues.find(m => m.month === i + 1);
-                    const value = monthData ? monthData.value : null;
-
-                    let bgColorClass = '';
-                    if (value !== null && value !== undefined) {
-                      bgColorClass = value >= MoraletargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
-                    }
-
-                    return (
-                      <td
-                        key={i + 1}
-                        className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
-                        style={{
-                          width: '8.33%',    // ให้แต่ละ column เท่า ๆ
-                          height: 'auto',    // ความสูง fix (ไม่ลดได้)
-                          padding: '0.1rem',
-                        }}
-                      >
-                        {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                      </td>
-                    );
-                  })}
-                </tr>
-              </tbody>
-            </table>
+            
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[60px]">
+                <MonthlyDataTable
+                  monthlyValues={MoralemonthlyValues}
+                  targetValue={MoraletargetTable}
+                  higherIsBetter={true} // For Morale (attendance), higher is better
+                  decimalPlaces={1}
+                />
+              </div>
+            </div>
+           
             <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
