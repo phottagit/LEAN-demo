@@ -21,17 +21,17 @@ const ActionTable = ({ highlightValues, rows = 3 }) => {
   return (
     <div className="min-w-[60px]">
       <table className="w-full table-fixed border-collapse text-[8px] bg-white border-2 border-[#595959]">
-        <thead className="sticky top-0 font-bold bg-gray-100">
+        <thead className="sticky font-bold bg-gray-100">
           <tr>
             <th
               className="px-[0.1rem] py-[0.1rem]"
-              style={{ width: '80%' }}
+              style={{ width: '75%' }}
             >
               Highlight
             </th>
             <th
               className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
-              style={{ width: '20%' }}
+              style={{ width: '25%' }}
             >
               Date
             </th>
@@ -54,6 +54,7 @@ const ActionTable = ({ highlightValues, rows = 3 }) => {
                 className="border-2 border-[#595959] text-center align-middle"
                 style={{
                   width: '20%',
+                  wordWrap: 'break-word',
                   padding: '0.2rem',
                   height: 'auto',
                 }}
