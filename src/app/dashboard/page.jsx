@@ -534,12 +534,10 @@ function DashboardPage() {
                 {/* Safety (IFR) chart */}
                 <CustomLineChart data={data1} targetValue={target1} yDomain={[0, 1.2]} decimalPlaces={2} higherIsBetter={false} tooltipSuffix="%"/>
 
-                {/* Safety table data by Action */}
-                <div className="flex flex-row justify-between py-1 mb-2">
-                  <div className="flex flex-row justify-between py-1 mb-2">
-                  <ActionTable highlightValues={IFRhighlightValue} rows={3} />
-                </div>
-              </div>
+            {/* Safety table data by Action */}
+            <div className="flex flex-row justify-between py-1 mb-2">
+              <ActionTable highlightValues={IFRhighlightValue} rows={3} />
+            </div>
             </div>
           </OgtagonBox>
         </div>
@@ -594,14 +592,12 @@ function DashboardPage() {
               tooltipSuffix="%" 
             />
 
-            {/* Quality table data by Action */}
-            <div className="flex flex-row justify-between py-1 mb-2">
+              {/* Quality table data by Action */}
               <div className="flex flex-row justify-between py-1 mb-2">
-              <ActionTable highlightValues={QualityhighlightValue} rows={3} />
+                <ActionTable highlightValues={QualityhighlightValue} rows={3} />
+              </div>
             </div>
-            </div>
-            </div>
-          </OgtagonBox>
+        </OgtagonBox>
         </div>
 
         {/* Efficiency Chart */}
