@@ -479,7 +479,7 @@ function DashboardPage() {
   return (
     <main className="w-full">
       <Container>
-      <Navbar session={session} />
+      {/* <Navbar session={session} /> */}
 
       <div className='flex flex-col items-center bg-white p-1'>
         <h3 className="w-full text-center font-bold text-2xl">
