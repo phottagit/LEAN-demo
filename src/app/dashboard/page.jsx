@@ -18,6 +18,14 @@ function DashboardPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
+  const currentYear = new Date().getFullYear();
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  const currentMonthIndex = new Date().getMonth();
+  const currentMonth = monthNames[currentMonthIndex];
+
   // Sample data for the donut chart
   const [chartData1, setChartData1] = useState([
     { name: '17', value: 10, type: '' },
@@ -486,7 +494,7 @@ function DashboardPage() {
           DAILY OBEYA DASHBOARD
         </h3>
         <h4 className="w-full text-center font-medium text-1xl">
-          (May 2025)
+          ({currentMonth} {currentYear})
         </h4>
       </div>
 
