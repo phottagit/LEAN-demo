@@ -9,6 +9,8 @@ import Container from '../components/Container';
 import Footer from '../components/Footer';
 import OgtagonBox from '../components/OgtagonShape';
 import MonthlyDataTable from '../components/MonthlyDataTable';
+import CustomLineChart from '../components/CustomLineChart';
+import ActionTable from '../components/ActionTable';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, LabelList } from 'recharts';
 
 
@@ -489,211 +491,55 @@ function DashboardPage() {
       </div>
 
       <div className="flex flex-col md:flex-row items-top justify-center bg-white-100 p-1">
-      <div className="flex-1 min-w-0 py-1">
-        <OgtagonBox>
         <div className="flex-1 min-w-0 py-1">
-          {/* IFR Chart */}
-              <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
-                  style={{ 
-                    fontFamily: 'Century, serif', 
-                    fontWeight: 'bold',
-                    fontSize: 'min(max(16pt, 5vw), 16pt)'
-                  }}>
-                Safety
-              </h3>
-              <div className="w-full aspect-square p-1 m-0">
-                <DonutChart data={chartData1} rotation={-90} centerText="S" />
-              </div>
-              <div>
-                <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
-              </div>
+          <OgtagonBox>
+            <div className="flex-1 min-w-0 py-1">
+              {/* IFR Chart */}
+                  <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
+                      style={{ 
+                        fontFamily: 'Century, serif', 
+                        fontWeight: 'bold',
+                        fontSize: 'min(max(16pt, 5vw), 16pt)'
+                      }}>
+                    Safety
+                  </h3>
+                  <div className="w-full aspect-square p-1 m-0">
+                    <DonutChart data={chartData1} rotation={-90} centerText="S" />
+                  </div>
+                  <div>
+                    <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
+                  </div>
 
-              {/* Safety table data by Month */}
-              <div className="w-full overflow-x-auto">
-                <div className="min-w-[60px]">
-                  <table className="w-full table-fixed border-collapse text-[8px] text-white">
-                    <thead className="sticky top-0 bg-gray-100">
-                      <tr>
-                        {Array.from({ length: 12 }, (_, i) => (
-                          <th
-                            key={i + 1}
-                            className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem] font-bold text-gray-700"
-                            style={{ width: '8.33%' }}
-                          >
-                            {i + 1}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        {Array.from({ length: 12 }, (_, i) => {
-                          const monthData = IFRmonthlyValues.find(m => m.month === i + 1);
-                          const value = monthData ? monthData.value : null;
+                  {/* Safety table data by Month */}
+                  <div className="w-full overflow-x-auto">
+                    <div className="min-w-[60px]">
+                      <MonthlyDataTable
+                        monthlyValues={IFRmonthlyValues}
+                        targetValue={IFRtargetTable}
+                        higherIsBetter={false} // For IFR, lower is better
+                        decimalPlaces={2}
+                      />
+                    </div>
+                  </div>
+                  <hr className='my-1 border-1 border-[#595959]'/>
+                  <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
+                  <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
+                    <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IFR ≤0.59%</h3>
+                </div>
 
-                          let bgColorClass = '';
-                          if (value !== null && value !== undefined) {
-                            bgColorClass = value <= IFRtargetTable ? 'bg-[#00B050]' : 'bg-[#FF0000]';
-                          }
+                <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
+                  <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Injury Frequency Rate (IFR)</h3>
+                </div>
 
-                          return (
-                            <td
-                              key={i + 1}
-                              className={`border-2 border-[#595959] text-center align-middle ${bgColorClass}`}
-                              style={{
-                                width: '8.33%',
-                                height: 'auto',
-                                padding: '0.1rem',
-                              }}
-                            >
-                              {value !== null && value !== undefined ? value.toFixed(1) : '-'}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    </tbody>
-                  </table>
+                {/* Safety (IFR) chart */}
+                <CustomLineChart data={data1} targetValue={target1} yDomain={[0, 1.2]} decimalPlaces={2} higherIsBetter={false} tooltipSuffix="%"/>
+
+                {/* Safety table data by Action */}
+                <div className="flex flex-row justify-between py-1 mb-2">
+                  <div className="flex flex-row justify-between py-1 mb-2">
+                  <ActionTable highlightValues={IFRhighlightValue} rows={3} />
                 </div>
               </div>
-              <hr className='my-1 border-1 border-[#595959]'/>
-              <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
-              <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
-                <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">IFR ≤0.59%</h3>
-            </div>
-
-            <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
-              <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Injury Frequency Rate (IFR)</h3>
-            </div>
-
-            <div className="max-w-4xl">
-              <div className="bg-white p-0">
-                <div className="h-30 ">
-                  <ResponsiveContainer width="100%" height="115%">
-                  <LineChart data={data1} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis
-                        dataKey="name"
-                        type="category"
-                        scale="point"
-                        tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
-                        tick={{ fontSize: 8 }} 
-                      />
-                      <YAxis width={20} domain={[0, 1.2]} tick={{ fontSize: 8 }} />
-                      <Tooltip
-                        contentStyle={{ fontSize: '8px' }} 
-                        labelStyle={{ fontSize: '8px' }}
-                        itemStyle={{ fontSize: '8px' }}
-                      />
-                      <Line 
-                        type="monotone" 
-                        dataKey="value" 
-                        stroke="#151515" 
-                        activeDot={{ r: 5 }}
-                        dot={(props) => {
-                          const { cx, cy, value } = props;
-                          return (
-                            <circle
-                              cx={cx}
-                              cy={cy}
-                              r={3}
-                              fill={value <= 0.59 ? 'green' : 'red'}
-                            />
-                          );
-                        }}
-                      >
-                      <LabelList
-                        dataKey="value"
-                        position="top"
-                        content={(props) => {
-                          const { x, y, value } = props;
-                          return (
-                            <text
-                              x={x}
-                              y={y - 4}  // shift upward a little
-                              fontSize={8}
-                              textAnchor="middle"
-                              fill="#000"
-                            >
-                              {value.toFixed(2)}
-                            </text>
-                          );
-                        }}
-                      />
-                      </Line>
-                      <ReferenceLine
-                      y={target1}
-                      stroke="black"
-                      strokeDasharray="3 3"
-                      label={({ viewBox }) => {
-                        const { x, width, y } = viewBox;
-                        return (
-                          <text 
-                            x={x + width} 
-                            y={y - 5} 
-                            fontSize={8} 
-                            textAnchor="end" 
-                            fill="red"
-                          >
-                            {target1.toFixed(2)}
-                          </text>
-                        );
-                      }}
-                    />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            </div>
-
-            {/* Safety table data by Action */}
-            <div className="flex flex-row justify-between py-1 mb-2">
-              <div className="min-w-[60px]">
-                <table className="w-full table-fixed border-2 border-collapse text-[8px] bg-white">
-                  <thead className="sticky top-0 font-bold bg-gray-100">
-                    <tr>
-                      <th
-                        className="border border-[#595959] px-[0.1rem] py-[0.1rem]"
-                        style={{ width: '80%' }}
-                      >
-                        Highlight
-                      </th>
-                      <th
-                        className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
-                        style={{ width: '20%' }}
-                      >
-                        Date
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {IFRhighlightValue.map((item, index) => (
-                    <tr key={index} style={{ height: '20px' }}>
-                      <td
-                        className="border-2 border-[#595959] align-middle"
-                        style={{
-                          width: '80%',
-                          padding: '0.2rem', // slightly more padding for balance
-                          height: 'auto',
-                        }}
-                      >
-                        {item.highlight}
-                      </td>
-                      <td
-                        className="border-2 border-[#595959] text-center align-middle"
-                        style={{
-                          width: '20%',
-                          padding: '0.2rem',
-                          height: 'auto',
-                        }}
-                      >
-                        {item.date}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-                </table>
-              </div>
-            </div>
             </div>
           </OgtagonBox>
         </div>
@@ -739,135 +585,20 @@ function DashboardPage() {
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap Rate (%)</h3>
             </div>
 
-            <div className="max-w-4xl">
-              <div className="bg-white p-0">
-                <div className="h-30 ">
-                  <ResponsiveContainer width="100%" height="115%">
-                  <LineChart data={data2} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis
-                        dataKey="name"
-                        type="category"
-                        scale="point"
-                        tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
-                        tick={{ fontSize: 8 }} 
-                      />
-                      <YAxis width={20} domain={[0, 6.0]} tick={{ fontSize: 8 }} />
-                      <Tooltip
-                        contentStyle={{ fontSize: '8px' }} 
-                        labelStyle={{ fontSize: '8px' }}
-                        itemStyle={{ fontSize: '8px' }}
-                      />
-                      <Line 
-                        type="monotone" 
-                        dataKey="value" 
-                        stroke="#151515" 
-                        activeDot={{ r: 5 }}
-                        dot={(props) => {
-                          const { cx, cy, value } = props;
-                          return (
-                            <circle
-                              cx={cx}
-                              cy={cy}
-                              r={3}
-                              fill={value <= 3.0 ? 'green' : 'red'}
-                            />
-                          );
-                        }}
-                      >
-                      <LabelList
-                        dataKey="value"
-                        position="top"
-                        content={(props) => {
-                          const { x, y, value } = props;
-                          return (
-                            <text
-                              x={x}
-                              y={y - 4}  // shift upward a little
-                              fontSize={8}
-                              textAnchor="middle"
-                              fill="#000"
-                            >
-                              {value.toFixed(1)}
-                            </text>
-                          );
-                        }}
-                      />
-                      </Line>
-                      <ReferenceLine
-                      y={target2}
-                      stroke="black"
-                      strokeDasharray="3 3"
-                      label={({ viewBox }) => {
-                        const { x, width, y } = viewBox;
-                        return (
-                          <text 
-                            x={x + width} 
-                            y={y - 5} 
-                            fontSize={8} 
-                            textAnchor="end" 
-                            fill="red"
-                          >
-                            {target2.toFixed(2)}
-                          </text>
-                        );
-                      }}
-                    />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            </div>
-
+            <CustomLineChart 
+              data={data2} 
+              targetValue={target2} 
+              yDomain={[0, 6.0]} 
+              decimalPlaces={1} 
+              higherIsBetter={false} 
+              tooltipSuffix="%" 
+            />
 
             {/* Quality table data by Action */}
             <div className="flex flex-row justify-between py-1 mb-2">
-              <div className="min-w-[60px] ">
-                <table className="w-full table-fixed border-collapse bg-white" style={{ fontSize: '8px' }}>
-                  <thead className="sticky top-0 font-bold border-2 border-[#595959] bg-gray-100">
-                    <tr>
-                      <th
-                        className="px-[0.1rem] py-[0.1rem]"
-                        style={{ width: '80%' }}
-                      >
-                        Highlight
-                      </th>
-                      <th
-                        className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
-                        style={{ width: '20%' }}
-                      >
-                        Date
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {QualityhighlightValue.map((item, index) => (
-                    <tr key={index} style={{ height: '20px' }}>
-                      <td
-                        className="border-2 border-[#595959] align-middle"
-                        style={{
-                          width: '80%',
-                          padding: '0.2rem', // slightly more padding for balance
-                          height: 'auto',
-                        }}
-                      >
-                        {item.highlight}
-                      </td>
-                      <td
-                        className="border-2 border-[#595959] text-center align-middle"
-                        style={{
-                          width: '20%',
-                          padding: '0.2rem',
-                          height: 'auto',
-                        }}
-                      >
-                        {item.date}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-                </table>
-              </div>
+              <div className="flex flex-row justify-between py-1 mb-2">
+              <ActionTable highlightValues={QualityhighlightValue} rows={3} />
+            </div>
             </div>
             </div>
           </OgtagonBox>
@@ -914,135 +645,20 @@ function DashboardPage() {
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency (%)</h3>
           </div>
 
-          <div className="max-w-4xl">
-            <div className="bg-white p-0">
-              <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="115%">
-                <LineChart data={data3} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                      dataKey="name"
-                      type="category"
-                      scale="point"
-                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
-                      tick={{ fontSize: 8 }} 
-                    />
-                    <YAxis width={20} domain={[60, 100]} tick={{ fontSize: 8 }} />
-                    <Tooltip
-                      contentStyle={{ fontSize: '8px' }} 
-                      labelStyle={{ fontSize: '8px' }}
-                      itemStyle={{ fontSize: '8px' }}
-                    />
-                    <Line 
-                      type="monotone" 
-                      dataKey="value" 
-                      stroke="#151515" 
-                      activeDot={{ r: 5 }}
-                      dot={(props) => {
-                        const { cx, cy, value } = props;
-                        return (
-                          <circle
-                            cx={cx}
-                            cy={cy}
-                            r={3}
-                            fill={value <= 80.5 ? 'red' : 'green'}
-                          />
-                        );
-                      }}
-                    >
-                    <LabelList
-                      dataKey="value"
-                      position="top"
-                      content={(props) => {
-                        const { x, y, value } = props;
-                        return (
-                          <text
-                            x={x}
-                            y={y - 4}  // shift upward a little
-                            fontSize={8}
-                            textAnchor="middle"
-                            fill="#000"
-                          >
-                            {value.toFixed(1)}
-                          </text>
-                        );
-                      }}
-                    />
-                    </Line>
-                    <ReferenceLine
-                    y={target3}
-                    stroke="black"
-                    strokeDasharray="3 3"
-                    label={({ viewBox }) => {
-                      const { x, width, y } = viewBox;
-                      return (
-                        <text 
-                          x={x + width} 
-                          y={y - 5} 
-                          fontSize={8} 
-                          textAnchor="end" 
-                          fill="red"
-                        >
-                          {target3.toFixed(1)}
-                        </text>
-                      );
-                    }}
-                  />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </div>
+          {/* For Efficiency chart */}
+          <CustomLineChart 
+            data={data3} 
+            targetValue={target3} 
+            yDomain={[60, 100]} 
+            decimalPlaces={1} 
+            higherIsBetter={true} 
+            tooltipSuffix="%" 
+          />
 
           {/* Efficiency table data by Action */}
-          <div className="flex flex-row justify-between py-1 mb-2">
-            <div className="min-w-[60px]">
-              <table className="w-full table-fixed border-collapse text-[8px] bg-white ">
-                <thead className="sticky top-0 font-bold bg-gray-100 border-2 border-[#595959]">
-                  <tr>
-                    <th
-                      className="px-[0.1rem] py-[0.1rem]"
-                      style={{ width: '80%' }}
-                    >
-                      Highlight
-                    </th>
-                    <th
-                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
-                      style={{ width: '20%' }}
-                    >
-                      Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                {EfficiencyhighlightValue.map((item, index) => (
-                  <tr key={index} style={{ height: '20px' }}>
-                    <td
-                      className="border-2 border-[#595959] align-middle"
-                      style={{
-                        width: '80%',
-                        padding: '0.2rem', // slightly more padding for balance
-                        height: 'auto',
-                      }}
-                    >
-                      {item.highlight}
-                    </td>
-                    <td
-                      className="border-2 border-[#595959] text-center align-middle"
-                      style={{
-                        width: '20%',
-                        padding: '0.2rem',
-                        height: 'auto',
-                      }}
-                    >
-                      {item.date}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-              </table>
+            <div className="flex flex-row justify-between py-1 mb-2">
+              <ActionTable highlightValues={EfficiencyhighlightValue} rows={3} />
             </div>
-          </div>
         </div>
           </OgtagonBox>
         </div>
@@ -1086,135 +702,21 @@ function DashboardPage() {
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">MLT (Carlendar day)</h3>
           </div>
 
-          <div className="max-w-4xl">
-            <div className="bg-white p-0">
-              <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="115%">
-                <LineChart data={data4} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                      dataKey="name"
-                      type="category"
-                      scale="point"
-                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
-                      tick={{ fontSize: 8 }} 
-                    />
-                    <YAxis width={20} domain={[6, 30]} tick={{ fontSize: 8 }} />
-                    <Tooltip
-                      contentStyle={{ fontSize: '8px' }} 
-                      labelStyle={{ fontSize: '8px' }}
-                      itemStyle={{ fontSize: '8px' }}
-                    />
-                    <Line 
-                      type="monotone" 
-                      dataKey="value" 
-                      stroke="#151515" 
-                      activeDot={{ r: 5 }}
-                      dot={(props) => {
-                        const { cx, cy, value } = props;
-                        return (
-                          <circle
-                            cx={cx}
-                            cy={cy}
-                            r={3}
-                            fill={value <= 19.0 ? 'green' : 'red'}
-                          />
-                        );
-                      }}
-                    >
-                    <LabelList
-                      dataKey="value"
-                      position="top"
-                      content={(props) => {
-                        const { x, y, value } = props;
-                        return (
-                          <text
-                            x={x}
-                            y={y - 4}  // shift upward a little
-                            fontSize={8}
-                            textAnchor="middle"
-                            fill="#000"
-                          >
-                            {value.toFixed(1)}
-                          </text>
-                        );
-                      }}
-                    />
-                    </Line>
-                    <ReferenceLine
-                    y={target4}
-                    stroke="black"
-                    strokeDasharray="3 3"
-                    label={({ viewBox }) => {
-                      const { x, width, y } = viewBox;
-                      return (
-                        <text 
-                          x={x + width} 
-                          y={y - 5} 
-                          fontSize={8} 
-                          textAnchor="end" 
-                          fill="red"
-                        >
-                          {target4.toFixed(1)}
-                        </text>
-                      );
-                    }}
-                  />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </div>
+          {/* For Delivery chart */}
+          <CustomLineChart 
+            data={data4} 
+            targetValue={target4} 
+            yDomain={[6, 30]} 
+            decimalPlaces={1} 
+            higherIsBetter={false} 
+            tooltipSuffix=" days" 
+          />
 
           {/* Delivery table data by Action */}
           <div className="flex flex-row justify-between py-1 mb-2">
-            <div className="min-w-[60px]">
-              <table className="w-full table-fixed border-collapse text-[8px] bg-white">
-                <thead className="sticky top-0 font-bold bg-gray-100 border-2 border-[#595959]">
-                  <tr>
-                    <th
-                      className="px-[0.1rem] py-[0.1rem]"
-                      style={{ width: '80%' }}
-                    >
-                      Highlight
-                    </th>
-                    <th
-                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
-                      style={{ width: '20%' }}
-                    >
-                      Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                {DeliveryhighlightValue.map((item, index) => (
-                  <tr key={index} style={{ height: '20px' }}>
-                    <td
-                      className="border-2 border-[#595959] align-middle"
-                      style={{
-                        width: '80%',
-                        padding: '0.2rem', // slightly more padding for balance
-                        height: 'auto',
-                      }}
-                    >
-                      {item.highlight}
-                    </td>
-                    <td
-                      className="border-2 border-[#595959] text-center align-middle"
-                      style={{
-                        width: '20%',
-                        padding: '0.2rem',
-                        height: 'auto',
-                      }}
-                    >
-                      {item.date}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-              </table>
-            </div>
+            <ActionTable highlightValues={DeliveryhighlightValue} rows={3} />
           </div>
+
           </div>
           </OgtagonBox>
         </div>
@@ -1259,134 +761,19 @@ function DashboardPage() {
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Electricity (kWh.)</h3>
           </div>
 
-          <div className="max-w-4xl">
-            <div className="bg-white p-0">
-              <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="115%">
-                <LineChart data={data5} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                      dataKey="name"
-                      type="category"
-                      scale="point"
-                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
-                      tick={{ fontSize: 8 }} 
-                    />
-                    <YAxis width={20} domain={[10, 120]} tick={{ fontSize: 8 }} />
-                    <Tooltip
-                      contentStyle={{ fontSize: '8px' }} 
-                      labelStyle={{ fontSize: '8px' }}
-                      itemStyle={{ fontSize: '8px' }}
-                    />
-                    <Line 
-                      type="monotone" 
-                      dataKey="value" 
-                      stroke="#151515" 
-                      activeDot={{ r: 5 }}
-                      dot={(props) => {
-                        const { cx, cy, value } = props;
-                        return (
-                          <circle
-                            cx={cx}
-                            cy={cy}
-                            r={3}
-                            fill={value <= 70.0 ? 'green' : 'red'}
-                          />
-                        );
-                      }}
-                    >
-                    <LabelList
-                      dataKey="value"
-                      position="top"
-                      content={(props) => {
-                        const { x, y, value } = props;
-                        return (
-                          <text
-                            x={x}
-                            y={y - 4}  // shift upward a little
-                            fontSize={8}
-                            textAnchor="middle"
-                            fill="#000"
-                          >
-                            {value.toFixed(1)}
-                          </text>
-                        );
-                      }}
-                    />
-                    </Line>
-                    <ReferenceLine
-                    y={target5}
-                    stroke="black"
-                    strokeDasharray="3 3"
-                    label={({ viewBox }) => {
-                      const { x, width, y } = viewBox;
-                      return (
-                        <text 
-                          x={x + width} 
-                          y={y - 5} 
-                          fontSize={8} 
-                          textAnchor="end" 
-                          fill="red"
-                        >
-                          {target5.toFixed(1)}
-                        </text>
-                      );
-                    }}
-                  />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </div>
+          {/* For Environment chart */}  
+          <CustomLineChart 
+            data={data5} 
+            targetValue={target5} 
+            yDomain={[10, 120]} 
+            decimalPlaces={1} 
+            higherIsBetter={false} 
+            tooltipSuffix=" kWh"
+          />
 
           {/* Environment table data by Action */}
           <div className="flex flex-row justify-between py-1 mb-2">
-            <div className="min-w-[60px]">
-              <table className="w-full table-fixed border-collapse text-[8px] bg-white border-2 border-[#595959]">
-                <thead className="sticky top-0 font-bold bg-gray-100">
-                  <tr>
-                    <th
-                      className="px-[0.1rem] py-[0.1rem]"
-                      style={{ width: '80%' }}
-                    >
-                      Highlight
-                    </th>
-                    <th
-                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
-                      style={{ width: '20%' }}
-                    >
-                      Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                {EnvironmenthighlightValue.map((item, index) => (
-                  <tr key={index} style={{ height: '20px' }}>
-                    <td
-                      className="border-2 border-[#595959] align-middle"
-                      style={{
-                        width: '80%',
-                        padding: '0.2rem', // slightly more padding for balance
-                        height: 'auto',
-                      }}
-                    >
-                      {item.highlight}
-                    </td>
-                    <td
-                      className="border-2 border-[#595959] text-center align-middle"
-                      style={{
-                        width: '20%',
-                        padding: '0.2rem',
-                        height: 'auto',
-                      }}
-                    >
-                      {item.date}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-              </table>
-            </div>
+            <ActionTable highlightValues={EnvironmenthighlightValue} rows={3} />
           </div>
 
           </div>
@@ -1434,134 +821,19 @@ function DashboardPage() {
             <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Attendence (%)</h3>
           </div>
 
-          <div className="max-w-4xl">
-            <div className="bg-white p-0">
-              <div className="h-30 ">
-                <ResponsiveContainer width="100%" height="115%">
-                <LineChart data={data6} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                      dataKey="name"
-                      type="category"
-                      scale="point"
-                      tickFormatter={(tick) => tick.split('/')[0].padStart(2, '0')}
-                      tick={{ fontSize: 8 }} 
-                    />
-                    <YAxis width={20} domain={[60, 120]} tick={{ fontSize: 8 }} />
-                    <Tooltip
-                      contentStyle={{ fontSize: '8px' }} 
-                      labelStyle={{ fontSize: '8px' }}
-                      itemStyle={{ fontSize: '8px' }}
-                    />
-                    <Line 
-                      type="monotone" 
-                      dataKey="value" 
-                      stroke="#151515" 
-                      activeDot={{ r: 5 }}
-                      dot={(props) => {
-                        const { cx, cy, value } = props;
-                        return (
-                          <circle
-                            cx={cx}
-                            cy={cy}
-                            r={3}
-                            fill={value <= 92.0 ? 'red' : 'green'}
-                          />
-                        );
-                      }}
-                    >
-                    <LabelList
-                      dataKey="value"
-                      position="top"
-                      content={(props) => {
-                        const { x, y, value } = props;
-                        return (
-                          <text
-                            x={x}
-                            y={y - 4}  // shift upward a little
-                            fontSize={8}
-                            textAnchor="middle"
-                            fill="#000"
-                          >
-                            {value.toFixed(1)}
-                          </text>
-                        );
-                      }}
-                    />
-                    </Line>
-                    <ReferenceLine
-                    y={target6}
-                    stroke="black"
-                    strokeDasharray="3 3"
-                    label={({ viewBox }) => {
-                      const { x, width, y } = viewBox;
-                      return (
-                        <text 
-                          x={x + width} 
-                          y={y - 5} 
-                          fontSize={8} 
-                          textAnchor="end" 
-                          fill="red"
-                        >
-                          {target6.toFixed(1)}
-                        </text>
-                      );
-                    }}
-                  />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          </div>
+          {/* For Morale chart */} 
+          <CustomLineChart 
+            data={data6} 
+            targetValue={target6} 
+            yDomain={[60, 120]} 
+            decimalPlaces={1} 
+            higherIsBetter={true} 
+            tooltipSuffix="%" 
+          />
 
           {/* Morale table data by Action */}
           <div className="flex flex-row justify-between py-1 mb-2">
-            <div className="min-w-[60px]">
-              <table className="w-full table-fixed border-collapse text-[8px] bg-white border-2 border-[#595959]">
-                <thead className="sticky top-0 font-bold bg-gray-100">
-                  <tr>
-                    <th
-                      className="px-[0.1rem] py-[0.1rem]"
-                      style={{ width: '80%' }}
-                    >
-                      Highlight
-                    </th>
-                    <th
-                      className="border-2 border-[#595959] px-[0.1rem] py-[0.1rem]"
-                      style={{ width: '20%' }}
-                    >
-                      Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                {MoralehighlightValue.map((item, index) => (
-                  <tr key={index} style={{ height: '20px' }}>
-                    <td
-                      className="border-2 border-[#595959] align-middle"
-                      style={{
-                        width: '80%',
-                        padding: '0.2rem', // slightly more padding for balance
-                        height: 'auto',
-                      }}
-                    >
-                      {item.highlight}
-                    </td>
-                    <td
-                      className="border-2 border-[#595959] text-center align-middle"
-                      style={{
-                        width: '20%',
-                        padding: '0.2rem',
-                        height: 'auto',
-                      }}
-                    >
-                      {item.date}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-              </table>
-            </div>
+            <ActionTable highlightValues={MoralehighlightValue} rows={3} />
           </div>
           </div>
           </OgtagonBox>
