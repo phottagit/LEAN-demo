@@ -60,8 +60,8 @@ export default function Home() {
                         </div>
                     )}
 
-                    <h3 className="text-3xl"> ยินดีต้อนรับ: {session?.user?.name}</h3>
-                    <p className="text-1xl mt-3 mb-4">{session?.user?.email}</p>
+                    <h3 className="text-3xl"> ยินดีต้อนรับเข้าสู่ Lean Six Sigma</h3>
+                    <p className="text-1xl mt-3 mb-4">({session?.user?.name})</p>
                 </div>
                 <div className="container mx-auto px-4 py-8 bg-white">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

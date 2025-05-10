@@ -467,7 +467,7 @@ function DashboardPage() {
   const [EfficiencytargetTable, setEfficiencytargetTable] = useState(80.5);
   const [DeliverytargetTable, setDeliverytargetTable] = useState(19.0);
   const [EnvironmenttargetTable, setEnvironmenttargetTable] = useState(70.0);
-  const [MoraletargetTable, setMoraletargetTable] = useState(94);
+  const [MoraletargetTable, setMoraletargetTable] = useState(92.0);
   
   // 6. Authentication effect
   useEffect(() => {
