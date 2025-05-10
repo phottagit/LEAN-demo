@@ -1,18 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import DonutChart from '../components/DonutChart';
 import Navbar from '../components/Navbar';
 import { useSession } from 'next-auth/react';
 import Container from '../components/Container';
 import Footer from '../components/Footer';
 import OgtagonBox from '../components/OgtagonShape';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, LabelList } from 'recharts';
 import MonthlyDataTable from '../components/MonthlyDataTable';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, LabelList } from 'recharts';
+
 
 function DashboardPage() {
-  const { data: session } = useSession();
-  
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
   // Sample data for the donut chart
   const [chartData1, setChartData1] = useState([
     { name: '17', value: 10, type: '' },
@@ -313,7 +316,7 @@ function DashboardPage() {
   ];
 
   //Safety maoth table
-  const IFRmonthlyValues = [
+  const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
     { month: 1, value: 0.00 },
     { month: 2, value: 0.00 },
     { month: 3, value: 0.00 },
@@ -326,10 +329,10 @@ function DashboardPage() {
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
-  ];
+  ]);
 
   //Quality maoth table
-  const QualitymonthlyValues = [
+  const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
     { month: 1, value: 2.9 },
     { month: 2, value: 4.0 },
     { month: 3, value: 4.2 },
@@ -342,10 +345,10 @@ function DashboardPage() {
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
-  ];
+  ]);
 
   //Efficiency maoth table
-  const EfficiencytableValue = [
+  const [EfficiencytableValue, setEfficiencytableValue] = useState([
     { month: 1, value: 84.8 },
     { month: 2, value: 83.5 },
     { month: 3, value: 80.0 },
@@ -358,10 +361,10 @@ function DashboardPage() {
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
-  ];
+  ]);
 
   //Delivery maoth table
-  const DeliverymonthlyValues = [
+  const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
     { month: 1, value: 20.6 },
     { month: 2, value: 17.6 },
     { month: 3, value: 18.5 },
@@ -374,10 +377,10 @@ function DashboardPage() {
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
-  ];
+  ]);
 
   //Environment maoth table
-  const EnvironmentmonthlyValues = [
+  const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
     { month: 1, value: 1.15 },
     { month: 2, value: 1.21 },
     { month: 3, value: 1.40 },
@@ -390,9 +393,9 @@ function DashboardPage() {
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
-  ];
+  ]);
 
-  const MoralemonthlyValues = [
+  const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
     { month: 1, value: 93.6 },
     { month: 2, value: 93.5 },
     { month: 3, value: 93.3 },
@@ -405,7 +408,7 @@ function DashboardPage() {
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
-  ];
+  ]);
   
   //IFR Action table
   const IFRhighlightValue = [
@@ -457,12 +460,19 @@ function DashboardPage() {
   const target5 = 70.0;
   const target6 = 92.0;
 
-  const IFRtargetTable = 0.0;
-  const QualitytargetTable = 3.0;
-  const EfficiencytargetTable = 80.5;
-  const DeliverytargetTable = 19.0;
-  const EnvironmenttargetTable = 70.0;
-  const MoraletargetTable = 92.0;
+  const [IFRtargetTable, setIFRtargetTable] = useState(0.59);
+  const [QualitytargetTable, setQualitytargetTable] = useState(3.0);
+  const [EfficiencytargetTable, setEfficiencytargetTable] = useState(80.5);
+  const [DeliverytargetTable, setDeliverytargetTable] = useState(19.0);
+  const [EnvironmenttargetTable, setEnvironmenttargetTable] = useState(70.0);
+  const [MoraletargetTable, setMoraletargetTable] = useState(94);
+  
+  // 6. Authentication effect
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.replace("/login");
+    }
+  }, [status, router]);
   
   return (
     <main className="w-full">
