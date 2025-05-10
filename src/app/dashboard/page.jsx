@@ -8,6 +8,7 @@ import Container from '../components/Container';
 import Footer from '../components/Footer';
 import OgtagonBox from '../components/OgtagonShape';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, LabelList } from 'recharts';
+import EfficiencyTable from '../components/EfficiencyTable';
 
 function DashboardPage() {
   const { data: session } = useSession();
@@ -343,6 +344,22 @@ function DashboardPage() {
     { month: 12, value: null },
   ];
 
+  //EfficiencyTable maoth table
+  const EfficiencyTable = [
+    { month: 1, value: 84.8 },
+    { month: 2, value: 83.5 },
+    { month: 3, value: 80.0 },
+    { month: 4, value: 79.2 },
+    { month: 5, value: 85.4 },
+    { month: 6, value: null },
+    { month: 7, value: null },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ];
+
   //Efficiency maoth table
   const EfficiencytableValue = [
     { month: 1, value: 84.8 },
@@ -494,7 +511,7 @@ function DashboardPage() {
                 <DonutChart data={chartData1} rotation={-90} centerText="S" />
               </div>
               <div>
-                <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
+                <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
               </div>
 
               {/* IFR table data by Month */}
@@ -577,7 +594,7 @@ function DashboardPage() {
                         type="monotone" 
                         dataKey="value" 
                         stroke="#151515" 
-                        activeDot={{ r: 4 }}
+                        activeDot={{ r: 5 }}
                         dot={(props) => {
                           const { cx, cy, value } = props;
                           return (
@@ -703,7 +720,7 @@ function DashboardPage() {
                 <DonutChart data={chartData2} rotation={-90} centerText="Q" />
               </div>
               <div>
-                <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
+                <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
               </div>
 
               {/* Quality table data by Month */}
@@ -786,7 +803,7 @@ function DashboardPage() {
                         type="monotone" 
                         dataKey="value" 
                         stroke="#151515" 
-                        activeDot={{ r: 4 }}
+                        activeDot={{ r: 5 }}
                         dot={(props) => {
                           const { cx, cy, value } = props;
                           return (
@@ -913,7 +930,7 @@ function DashboardPage() {
               <DonutChart data={chartData3} rotation={-90} centerText="E" />
             </div>
             <div>
-              <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
+              <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
             </div>
             
             {/* Efficiency table data by Month */}
@@ -996,7 +1013,7 @@ function DashboardPage() {
                       type="monotone" 
                       dataKey="value" 
                       stroke="#151515" 
-                      activeDot={{ r: 4 }}
+                      activeDot={{ r: 5 }}
                       dot={(props) => {
                         const { cx, cy, value } = props;
                         return (
@@ -1121,11 +1138,11 @@ function DashboardPage() {
               <DonutChart data={chartData4} rotation={-90} centerText="D" />
             </div>
             <div>
-              <h3 className="text-left font-bold text-[6px] p-1">Month (day)</h3>
+              <h3 className="text-left font-bold text-[8px] p-1">Month (day)</h3>
             </div>
             
             {/* Delivery table data by Month */}
-            <table className="w-full table-fixed border-collapse text-[8px] text-white">
+            <table className="w-full table-fixed border-collapse text-[8px] text-white border-2 border-[#595959]">
               <thead className="sticky top-0 bg-gray-100">
                 <tr>
                   {Array.from({ length: 12 }, (_, i) => (
@@ -1200,7 +1217,7 @@ function DashboardPage() {
                       type="monotone" 
                       dataKey="value" 
                       stroke="#151515" 
-                      activeDot={{ r: 4 }}
+                      activeDot={{ r: 5 }}
                       dot={(props) => {
                         const { cx, cy, value } = props;
                         return (
@@ -1325,7 +1342,7 @@ function DashboardPage() {
               <DonutChart data={chartData5} rotation={-90} centerText="E" />
             </div>
             <div>
-              <h3 className="text-left font-bold text-[6px] p-1">Month (mkWh)</h3>
+              <h3 className="text-left font-bold text-[8px] p-1">Month (mkWh)</h3>
             </div>
             
             {/* Environment table data by Month */}
@@ -1404,7 +1421,7 @@ function DashboardPage() {
                       type="monotone" 
                       dataKey="value" 
                       stroke="#151515" 
-                      activeDot={{ r: 4 }}
+                      activeDot={{ r: 5 }}
                       dot={(props) => {
                         const { cx, cy, value } = props;
                         return (
@@ -1530,7 +1547,7 @@ function DashboardPage() {
               <DonutChart data={chartData6} rotation={-90} centerText="M" />
             </div>
             <div>
-              <h3 className="text-left font-bold text-[6px] p-1">Month (%)</h3>
+              <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
             </div>
             
             {/* Attenance table data by Month */}
@@ -1609,7 +1626,7 @@ function DashboardPage() {
                       type="monotone" 
                       dataKey="value" 
                       stroke="#151515" 
-                      activeDot={{ r: 4 }}
+                      activeDot={{ r: 5 }}
                       dot={(props) => {
                         const { cx, cy, value } = props;
                         return (
