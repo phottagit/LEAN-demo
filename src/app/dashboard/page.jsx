@@ -435,7 +435,7 @@ function DashboardPage() {
 
   //Delivery Action table
   const DeliveryhighlightValue = [
-    { highlight: "High Wip POST efficiency from PLAT", date: "8/05/2025" },
+    { highlight: "High WIP POST efficiency from PLAT", date: "8/05/2025" },
     { highlight: "High WIP: PACK", date: "8/05/2025" },
     { highlight: "High lead time", date: "8/05/2025" },
   ];

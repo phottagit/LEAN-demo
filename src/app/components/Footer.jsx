@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Footer() {
+
+  const currentYear = new Date().getFullYear();
   return (
 
   <div className="min-auto flex flex-col bg-gray-100">
@@ -8,8 +10,8 @@ function Footer() {
     {/* Form or content goes here */}
   </main>
 
-  <footer className="bg-[#333] text-white text-center p-2">
-    &copy; 2025 Swarovski
+  <footer className="bg-[#333] text-white text-center p-1">
+    &copy; {currentYear} Swarovski
   </footer>
 </div>
 
