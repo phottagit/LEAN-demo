@@ -49,7 +49,7 @@ getColor(d) {
         const width = svgContainer.getBoundingClientRect().width;
         const height = width;
         const margin = 15;
-        let radius = Math.min(width, height) / 2;
+        let radius = Math.min(width, height) / 2.1;
         
         // Calculate the inner radius (donut hole size)
         const innerRadius = radius / 1.5;
@@ -57,7 +57,7 @@ getColor(d) {
         // Calculate responsive font sizes based on the inner radius and screen width
 
         const centerFontSize = Math.max(Math.min(radius * 1.0, 480), 12); // Between 8px and 14px
-        const labelFontSize = Math.max(Math.min(radius * 0.07, 138), 10); // Between 8px and 14px
+        const labelFontSize = Math.max(Math.min(radius * 0.07, 138), 13); // Between 8px and 14px
         const valueFontSize = Math.max(Math.min(radius * 0.05, 14), 8); // Between 6px and 12px
         
         // legend Position
