@@ -250,11 +250,11 @@ function DashboardPage() {
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: 'Upper' },
-    { name: '10', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Lower' },
     { name: '11', value: 10, type: 'Holiday' },
-    { name: '12', value: 10, type: 'Upper' },
-    { name: '13', value: 10, type: 'Lower' },
-    { name: '14', value: 10, type: 'Holiday' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
   ]);
