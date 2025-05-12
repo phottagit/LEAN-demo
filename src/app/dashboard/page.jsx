@@ -272,8 +272,6 @@ function DashboardPage() {
 
   //Quality
   const data2 = [
-    { name: "30/04/2025", value: 0.7 },
-    { name: "02/05/2025", value: 1.3 },
     { name: "03/05/2025", value: 1.6 },
     { name: "05/05/2025", value: 1.0 },
     { name: "06/05/2025", value: 1.7 },
