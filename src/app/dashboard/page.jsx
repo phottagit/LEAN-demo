@@ -846,7 +846,7 @@ function DashboardPage() {
         </div>
       </div>
 
-      <div className="flex flex-row items-center space-x-4 mt-2 pl-[10px]">
+      <div className="flex flex-row items-center space-x-4 mt-2 mb-4 pl-[10px]">
         <div className="flex items-center space-x-1">
           <div className="w-4 h-4 rounded-full bg-[#00B050]"></div>
           <span className="text-[10px] font-medium">Achieved</span>
