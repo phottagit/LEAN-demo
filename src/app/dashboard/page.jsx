@@ -132,9 +132,9 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: '' },
-    { name: '10', value: 10, type: '' },
-    { name: '11', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Upper' },
+    { name: '11', value: 10, type: 'Holiday' },
     { name: '12', value: 10, type: '' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
@@ -252,9 +252,9 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: 'Holiday' },
-    { name: '12', value: 10, type: '' },
-    { name: '13', value: 10, type: '' },
-    { name: '14', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Upper' },
+    { name: '13', value: 10, type: 'Lower' },
+    { name: '14', value: 10, type: 'Holiday' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
   ]);
@@ -285,13 +285,13 @@ function DashboardPage() {
 
   //Efficiency
   const data3 = [
-    { name: "30/04/2025", value: 82.7 },
-    { name: "02/05/2025", value: 83.2 },
     { name: "03/05/2025", value: 86.8 },
     { name: "05/05/2025", value: 86.9 },
     { name: "06/05/2025", value: 85.9 },
     { name: "07/05/2025", value: 84.8 },
     { name: "08/05/2025", value: 84.6 },
+    { name: "09/05/2025", value: 83.4 },
+    { name: "10/05/2025", value: 86.4 },
   ];
 
   //Delivery
@@ -318,13 +318,13 @@ function DashboardPage() {
 
   //Morale
   const data6 = [
-    { name: "30/04/2025", value: 94.2 },
-    { name: "02/05/2025", value: 86.7 },
     { name: "03/05/2025", value: 88.6 },
     { name: "05/05/2025", value: 93.9 },
     { name: "06/05/2025", value: 95.2 },
     { name: "07/05/2025", value: 95.6 },
     { name: "08/05/2025", value: 95.4 },
+    { name: "09/05/2025", value: 94.9 },
+    { name: "10/05/2025", value: 88.7 },
   ];
 
   //Safety maoth table
@@ -365,7 +365,7 @@ function DashboardPage() {
     { month: 2, value: 83.5 },
     { month: 3, value: 80.0 },
     { month: 4, value: 79.2 },
-    { month: 5, value: 85.4 },
+    { month: 5, value: 85.3 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -412,7 +412,7 @@ function DashboardPage() {
     { month: 2, value: 93.5 },
     { month: 3, value: 93.3 },
     { month: 4, value: 92.7 },
-    { month: 5, value: 92.6 },
+    { month: 5, value: 92.4 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
