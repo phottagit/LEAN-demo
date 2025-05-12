@@ -55,9 +55,9 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: '' },
-    { name: '10', value: 10, type: '' },
-    { name: '11', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Upper' },
+    { name: '11', value: 10, type: 'Holiday' },
     { name: '12', value: 10, type: '' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
@@ -93,9 +93,9 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Lower' },
     { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: '' },
-    { name: '10', value: 10, type: '' },
-    { name: '11', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Upper' },
+    { name: '11', value: 10, type: 'Holiday' },
     { name: '12', value: 10, type: '' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
@@ -171,9 +171,9 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Lower' },
     { name: '7', value: 10, type: 'Lower' },
     { name: '8', value: 10, type: 'Lower' },
-    { name: '9', value: 10, type: '' },
-    { name: '10', value: 10, type: '' },
-    { name: '11', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Lower' },
+    { name: '10', value: 10, type: 'Upper' },
+    { name: '11', value: 10, type: 'Holiday' },
     { name: '12', value: 10, type: '' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
@@ -210,9 +210,9 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: '' },
-    { name: '10', value: 10, type: '' },
-    { name: '11', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Upper' },
+    { name: '11', value: 10, type: 'Holiday' },
     { name: '12', value: 10, type: '' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
@@ -249,9 +249,9 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: '' },
-    { name: '10', value: 10, type: '' },
-    { name: '11', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Upper' },
+    { name: '11', value: 10, type: 'Holiday' },
     { name: '12', value: 10, type: '' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
@@ -261,13 +261,13 @@ function DashboardPage() {
 
   //Safety
   const data1 = [
-    { name: "30/04/2025", value: 0 },
-    { name: "02/05/2025", value: 0 },
     { name: "03/05/2025", value: 0 },
     { name: "05/05/2025", value: 0 },
     { name: "06/05/2025", value: 0 },
     { name: "07/05/2025", value: 0 },
     { name: "08/05/2025", value: 0 },
+    { name: "09/05/2025", value: 0 },
+    { name: "10/05/2025", value: 0 },
   ];
 
   //Quality
@@ -279,6 +279,8 @@ function DashboardPage() {
     { name: "06/05/2025", value: 1.7 },
     { name: "07/05/2025", value: 6.4 },
     { name: "08/05/2025", value: 1.6 },
+    { name: "09/05/2025", value: 2.1 },
+    { name: "10/05/2025", value: 0.8 },
   ];
 
   //Efficiency
@@ -294,24 +296,24 @@ function DashboardPage() {
 
   //Delivery
   const data4 = [
-    { name: "30/04/2025", value: 20.0 },
-    { name: "02/05/2025", value: 21.0 },
     { name: "03/05/2025", value: 21.5 },
     { name: "05/05/2025", value: 24.4 },
     { name: "06/05/2025", value: 22.9 },
     { name: "07/05/2025", value: 23.0 },
     { name: "08/05/2025", value: 21.7 },
+    { name: "09/05/2025", value: 20.5 },
+    { name: "10/05/2025", value: 9.5 },
   ];
 
   //Environment
   const data5 = [
-    { name: "30/04/2025", value: 60.2 },
-    { name: "02/05/2025", value: 60.2 },
     { name: "03/05/2025", value: 53.1 },
     { name: "05/05/2025", value: 62.0 },
     { name: "06/05/2025", value: 62.0 },
     { name: "07/05/2025", value: 65.6 },
     { name: "08/05/2025", value: 65.2 },
+    { name: "09/05/2025", value: 60.3 },
+    { name: "10/05/2025", value: 55.4 },
   ];
 
   //Morale
@@ -347,7 +349,7 @@ function DashboardPage() {
     { month: 2, value: 4.0 },
     { month: 3, value: 4.2 },
     { month: 4, value: 2.9 },
-    { month: 5, value: 2.2 },
+    { month: 5, value: 2.0 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -379,7 +381,7 @@ function DashboardPage() {
     { month: 2, value: 17.6 },
     { month: 3, value: 18.5 },
     { month: 4, value: 23.2 },
-    { month: 5, value: 23.5 },
+    { month: 5, value: 22.8 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -395,7 +397,7 @@ function DashboardPage() {
     { month: 2, value: 1.21 },
     { month: 3, value: 1.40 },
     { month: 4, value: 1.29 },
-    { month: 5, value: 0.39 },
+    { month: 5, value: 0.51 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -512,7 +514,7 @@ function DashboardPage() {
                     Safety
                   </h3>
                   <div className="w-full aspect-square p-1 m-0">
-                    <DonutChart data={chartData1} rotation={-90} centerText="S" />
+                    <DonutChart data={chartData1} rotation={-90} title="Safety" centerText="S" />
                   </div>
                   <div>
                     <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
