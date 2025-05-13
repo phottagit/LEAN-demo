@@ -7,14 +7,18 @@ function CustomLineChart({
   yDomain = [0, 100], 
   decimalPlaces = 1,
   higherIsBetter = true,
-  tooltipSuffix = ''
+  tooltipSuffix = '',
+  daysToShow = 0 // 0 means show all data
 }) {
+  // Filter data if daysToShow is specified
+  const displayData = daysToShow > 0 ? data.slice(-daysToShow) : data;
+  
   return (
     <div className="max-w-4xl">
       <div className="bg-white p-0">
         <div className="h-30">
           <ResponsiveContainer width="100%" height="115%">
-            <LineChart data={data} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
+            <LineChart data={displayData} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis
                 dataKey="name"

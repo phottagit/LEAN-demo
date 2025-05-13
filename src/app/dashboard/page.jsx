@@ -58,7 +58,7 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: 'Holiday' },
-    { name: '12', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Upper' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
@@ -96,7 +96,7 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: 'Holiday' },
-    { name: '12', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Upper' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
@@ -174,7 +174,7 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Lower' },
     { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: 'Holiday' },
-    { name: '12', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Upper' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
@@ -213,7 +213,7 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: 'Holiday' },
-    { name: '12', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Upper' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
@@ -268,6 +268,7 @@ function DashboardPage() {
     { name: "08/05/2025", value: 0 },
     { name: "09/05/2025", value: 0 },
     { name: "10/05/2025", value: 0 },
+    { name: "12/05/2025", value: 0 },
   ];
 
   //Quality
@@ -279,6 +280,7 @@ function DashboardPage() {
     { name: "08/05/2025", value: 1.6 },
     { name: "09/05/2025", value: 2.1 },
     { name: "10/05/2025", value: 0.8 },
+    { name: "12/05/2025", value: 2.2 },
   ];
 
   //Efficiency
@@ -300,7 +302,8 @@ function DashboardPage() {
     { name: "07/05/2025", value: 23.0 },
     { name: "08/05/2025", value: 21.7 },
     { name: "09/05/2025", value: 20.5 },
-    { name: "10/05/2025", value: 9.5 },
+    { name: "10/05/2025", value: 14.6 },
+    { name: "12/05/2025", value: 14.0 },
   ];
 
   //Environment
@@ -312,6 +315,7 @@ function DashboardPage() {
     { name: "08/05/2025", value: 65.2 },
     { name: "09/05/2025", value: 60.3 },
     { name: "10/05/2025", value: 55.4 },
+    { name: "12/05/2025", value: 59.5 },
   ];
 
   //Morale
@@ -347,7 +351,7 @@ function DashboardPage() {
     { month: 2, value: 4.0 },
     { month: 3, value: 4.2 },
     { month: 4, value: 2.9 },
-    { month: 5, value: 2.0 },
+    { month: 5, value: 2.1 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -379,7 +383,7 @@ function DashboardPage() {
     { month: 2, value: 17.6 },
     { month: 3, value: 18.5 },
     { month: 4, value: 23.2 },
-    { month: 5, value: 22.8 },
+    { month: 5, value: 22.5 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -395,7 +399,7 @@ function DashboardPage() {
     { month: 2, value: 1.21 },
     { month: 3, value: 1.40 },
     { month: 4, value: 1.29 },
-    { month: 5, value: 0.51 },
+    { month: 5, value: 0.57 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -470,6 +474,8 @@ function DashboardPage() {
   const target5 = 70.0;
   const target6 = 92.0;
 
+  const last7DaysData2 = data2.slice(-7);
+
   const [IFRtargetTable, setIFRtargetTable] = useState(0.59);
   const [QualitytargetTable, setQualitytargetTable] = useState(3.0);
   const [EfficiencytargetTable, setEfficiencytargetTable] = useState(80.5);
@@ -540,7 +546,15 @@ function DashboardPage() {
                 </div>
 
                 {/* Safety (IFR) chart */}
-                <CustomLineChart data={data1} targetValue={target1} yDomain={[0, 1.2]} decimalPlaces={2} higherIsBetter={false} tooltipSuffix="%"/>
+                <CustomLineChart 
+                  data={data1} 
+                  targetValue={target1} 
+                  yDomain={[0, 1.2]} 
+                  decimalPlaces={2} 
+                  higherIsBetter={false} 
+                  tooltipSuffix="%"
+                  daysToShow={7} // Show only the last 7 days
+                />
 
             {/* Safety table data by Action */}
             <div className="flex flex-row justify-between py-1 mb-2">
@@ -598,6 +612,7 @@ function DashboardPage() {
               decimalPlaces={1} 
               higherIsBetter={false} 
               tooltipSuffix="%" 
+              daysToShow={7} // Show only the last 7 days
             />
 
               {/* Quality table data by Action */}
@@ -656,7 +671,8 @@ function DashboardPage() {
             yDomain={[60, 100]} 
             decimalPlaces={1} 
             higherIsBetter={true} 
-            tooltipSuffix="%" 
+            tooltipSuffix="%"
+            daysToShow={7} // Show only the last 7 days
           />
 
           {/* Efficiency table data by Action */}
@@ -713,7 +729,8 @@ function DashboardPage() {
             yDomain={[6, 30]} 
             decimalPlaces={1} 
             higherIsBetter={false} 
-            tooltipSuffix=" days" 
+            tooltipSuffix=" days"
+            daysToShow={7} // Show only the last 7 days 
           />
 
           {/* Delivery table data by Action */}
@@ -773,6 +790,7 @@ function DashboardPage() {
             decimalPlaces={1} 
             higherIsBetter={false} 
             tooltipSuffix=" kWh"
+            daysToShow={7} // Show only the last 7 days
           />
 
           {/* Environment table data by Action */}
@@ -832,7 +850,8 @@ function DashboardPage() {
             yDomain={[60, 120]} 
             decimalPlaces={1} 
             higherIsBetter={true} 
-            tooltipSuffix="%" 
+            tooltipSuffix="%"
+            daysToShow={7} // Show only the last 7 days
           />
 
           {/* Morale table data by Action */}

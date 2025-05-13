@@ -57,7 +57,7 @@ getColor(d) {
         // Calculate responsive font sizes based on the inner radius and screen width
 
         const centerFontSize = Math.max(Math.min(radius * 1.0, 480), 12); // Between 8px and 14px
-        const labelFontSize = Math.max(Math.min(radius * 0.07, 138), 13); // Between 8px and 14px
+        const labelFontSize = Math.max(Math.min(radius * 0.07, 138), 11); // Between 8px and 14px
         const valueFontSize = Math.max(Math.min(radius * 0.05, 14), 8); // Between 6px and 12px
         
         // legend Position
