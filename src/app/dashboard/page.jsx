@@ -507,7 +507,7 @@ function DashboardPage() {
       <div className="flex flex-col md:flex-row items-top justify-center bg-white-100 p-1">
         <div className="flex-1 min-w-0 py-1">
           <OgtagonBox>
-            <div className="flex-1 min-w-0 py-1">
+            <div className="flex-1 min-w-0">
               {/* IFR Chart */}
                   <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                       style={{ 
@@ -521,7 +521,7 @@ function DashboardPage() {
                     <DonutChart data={chartData1} rotation={-90} title="Safety" centerText="S" />
                   </div>
                   <div>
-                    <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
+                    <h3 className="text-left font-bold text-[8px]">Month (%)</h3>
                   </div>
 
                   {/* Safety table data by Month */}
@@ -567,7 +567,7 @@ function DashboardPage() {
       {/* Quality Chart */}
       <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
-      <div className="flex-1 min-w-0 py-1">
+      <div className="flex-1 min-w-0">
               <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                   style={{ 
                     fontFamily: 'Century, serif', 
@@ -580,7 +580,7 @@ function DashboardPage() {
                 <DonutChart data={chartData2} rotation={-90} centerText="Q" />
               </div>
               <div>
-                <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
+                <h3 className="text-left font-bold text-[8px]">Month (%)</h3>
               </div>
 
               {/* Quality Monthly Table - Using the imported component */}
@@ -626,7 +626,7 @@ function DashboardPage() {
         {/* Efficiency Chart */}
         <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
-        <div className="flex-1 min-w-0 py-1">
+        <div className="flex-1 min-w-0">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -639,7 +639,7 @@ function DashboardPage() {
               <DonutChart data={chartData3} rotation={-90} centerText="E" />
             </div>
             <div>
-              <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
+              <h3 className="text-left font-bold text-[8px]">Month (%)</h3>
             </div>
             
             {/* Efficiency Monthly Table - Using the imported component */}
@@ -685,7 +685,7 @@ function DashboardPage() {
 
         <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
-        <div className="flex-1 min-w-0 py-1">
+        <div className="flex-1 min-w-0">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -698,7 +698,7 @@ function DashboardPage() {
               <DonutChart data={chartData4} rotation={-90} centerText="D" />
             </div>
             <div>
-              <h3 className="text-left font-bold text-[8px] p-1">Month (day)</h3>
+              <h3 className="text-left font-bold text-[8px]">Month (day)</h3>
             </div>
             
             {/* Delivery table data by Month */}
@@ -744,7 +744,7 @@ function DashboardPage() {
 
         <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
-        <div className="flex-1 min-w-0 py-1">
+        <div className="flex-1 min-w-0">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap" 
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -757,7 +757,7 @@ function DashboardPage() {
               <DonutChart data={chartData5} rotation={-90} centerText="E" />
             </div>
             <div>
-              <h3 className="text-left font-bold text-[8px] p-1">Month (mkWh)</h3>
+              <h3 className="text-left font-bold text-[8px]">Month (mkWh)</h3>
             </div>
             
             {/* Environment table data by Month */}
@@ -804,7 +804,7 @@ function DashboardPage() {
 
         <div className="relative z-20 flex-1 min-w-0 py-1 -ml-1">
         <OgtagonBox>
-        <div className="flex-1 min-w-0 py-1">
+        <div className="flex-1 min-w-0">
             <h3 className="text-center font-medium text-ellipsis overflow-hidden whitespace-nowrap"  
                 style={{ 
                   fontFamily: 'Century, serif', 
@@ -817,7 +817,7 @@ function DashboardPage() {
               <DonutChart data={chartData6} rotation={-90} centerText="M" />
             </div>
             <div>
-              <h3 className="text-left font-bold text-[8px] p-1">Month (%)</h3>
+              <h3 className="text-left font-bold text-[8px]">Month (%)</h3>
             </div>
             
             {/* Attenance table data by Month */}
