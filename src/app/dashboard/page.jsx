@@ -860,7 +860,7 @@ function DashboardPage() {
           </OgtagonBox>
         </div>
       </div>
-      <div className="max-w-screen bg-white mt-2">
+      <div className="min-w-full bg-white mt-2">
         <div className="flex flex-row items-center space-x-4 mt-2 mb-4 pl-[10px]">
           <div className="flex items-center space-x-1">
             <div className="w-4 h-4 rounded-full bg-[#00B050]"></div>
