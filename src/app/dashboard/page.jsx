@@ -474,8 +474,6 @@ function DashboardPage() {
   const target5 = 70.0;
   const target6 = 92.0;
 
-  const last7DaysData2 = data2.slice(-7);
-
   const [IFRtargetTable, setIFRtargetTable] = useState(0.59);
   const [QualitytargetTable, setQualitytargetTable] = useState(3.0);
   const [EfficiencytargetTable, setEfficiencytargetTable] = useState(80.5);
@@ -593,14 +591,12 @@ function DashboardPage() {
                   decimalPlaces={1}
                 />
               </div>
-            </div>
-
-              <hr className='my-1 border-1 border-[#595959]'/>
-              <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
-              <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
+              </div>
+                <hr className='my-1 border-1 border-[#595959]'/>
+                <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
+                <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
                 <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤3.0%%</h3>
-            </div>
-
+              </div>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap Rate (%)</h3>
             </div>
