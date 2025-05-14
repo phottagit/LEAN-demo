@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
@@ -14,12 +13,11 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function Sidebar({ isCollapsed, isMobile, toggleSidebar }) {
+export default function QCCSidebar({ isCollapsed, isMobile, toggleSidebar }) {
   const pathname = usePathname();
 
   return (
     <div className="relative">
-      {/* Mobile menu button - only visible on mobile */}
       {isMobile && (
         <button 
           onClick={toggleSidebar}
@@ -29,7 +27,6 @@ export default function Sidebar({ isCollapsed, isMobile, toggleSidebar }) {
         </button>
       )}
 
-      {/* Sidebar */}
       <aside
         className={cn(
           "fixed top-0 left-0 z-40 h-screen transition-all duration-300 bg-white border-r border-gray-200",
@@ -38,7 +35,6 @@ export default function Sidebar({ isCollapsed, isMobile, toggleSidebar }) {
         )}
       >
         <div className="flex flex-col h-full">
-          {/* Sidebar header */}
           <div className={cn(
             "flex items-center justify-between p-4 border-b",
             isCollapsed && "justify-center"
@@ -55,50 +51,47 @@ export default function Sidebar({ isCollapsed, isMobile, toggleSidebar }) {
             </button>
           </div>
 
-          {/* Sidebar content */}
           <div className="flex-1 py-4 overflow-y-auto">
             <nav className="space-y-1 px-2">
               <SidebarItem
                 icon={<LayoutDashboard size={20} />}
                 title="Dashboard"
-                href="/sixsigmas/dashboard"
-                isActive={pathname === "/sixsigmas/dashboard"}
+                href="/qccs/qccdashboard"
+                isActive={pathname === "/qccs/dashboard"}
                 isCollapsed={isCollapsed}
               />
               <SidebarItem
-                icon={<BarChart3 size={20} />}
-                title="Projects"
-                href="/sixsigmas/projects"
-                isActive={pathname === "/sixsigmas/projects"}
+                icon={<FileText size={20} />}
+                title="QCC Create"
+                href="/qccs/projects"
+                isActive={pathname === "/qccs/projects"}
                 isCollapsed={isCollapsed}
               />
               <SidebarItem
                 icon={<PieChart size={20} />}
                 title="Statistics"
-                href="/sixsigmas/statistics"
-                isActive={pathname === "/sixsigmas/statistics"}
+                href="/qccs/statistics"
+                isActive={pathname === "/qccs/statistics"}
                 isCollapsed={isCollapsed}
               />
               <SidebarItem
                 icon={<FileText size={20} />}
                 title="Reports"
-                href="/sixsigmas/reports"
-                isActive={pathname === "/sixsigmas/reports"}
+                href="/qccs/reports"
+                isActive={pathname === "/qccs/reports"}
                 isCollapsed={isCollapsed}
               />
               <SidebarItem
                 icon={<Users size={20} />}
                 title="Team"
-                href="/sixsigmas/team"
-                isActive={pathname === "/sixsigmas/team"}
+                href="/qccs/team"
+                isActive={pathname === "/qccs/team"}
                 isCollapsed={isCollapsed}
               />
             </nav>
           </div>
         </div>
       </aside>
-
-      {/* Overlay for mobile - only visible when sidebar is open on mobile */}
       {isMobile && !isCollapsed && (
         <div 
           className="fixed inset-0 z-30 bg-black/50 md:hidden"
@@ -124,5 +117,3 @@ function SidebarItem({ icon, title, href, isActive, isCollapsed }) {
     </Link>
   );
 }
-
-

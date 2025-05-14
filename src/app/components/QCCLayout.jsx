@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Sidebar from './SixSigmaSidebar';
+import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { cn } from '@/lib/utils';
 import { useSession } from 'next-auth/react';
 
-export default function SixSigmaLayout({ children }) {
+export default function QCCLayout({ children }) {
   const { data: session } = useSession();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);

@@ -10,7 +10,7 @@ export default function QccDashboard() {
     const [loading, setLoading] = useState(true);
     const [showForm, setShowForm] = useState(false);
     const [formData, setFormData] = useState({
-            registrationDate: new Date().toISOString().split('T')[0],
+    registrationDate: new Date().toISOString().split('T')[0],
     department: '',
     teamName: '',
     projectName: '',
@@ -115,8 +115,8 @@ export default function QccDashboard() {
     };
     
   return (
-      <SixSigmaLayout>
-        <div className="max-w-7xl mx-auto">
+
+        <div className="p-4">
           <h1 className="text-3xl font-semibold mb-6">QCC Dashboard: Under contrucktion</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -183,7 +183,7 @@ export default function QccDashboard() {
             </div>
           </div>
         </div>
-      </SixSigmaLayout>
+
     );
   }
   
