@@ -7,26 +7,33 @@ function SixSigmaPage() {
   return (
     <SixSigmaLayout>
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-semibold mb-6">Lean Six Sigma Dashboard</h1>
+        <h1 className="text-3xl font-semibold mb-6">Lean Six Sigma Dashboard: Under contrucktion</h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Stats Cards */}
+
           <StatsCard 
             title="Active Projects" 
-            value="12" 
-            change="+2" 
+            value="18" 
+            change="" 
+            isPositive={true} 
+          />
+          <StatsCard 
+            title="In Process" 
+            value="18" 
+            change="" 
             isPositive={true} 
           />
           <StatsCard 
             title="Completed Projects" 
-            value="48" 
-            change="+5" 
+            value="0" 
+            change="" 
             isPositive={true} 
           />
           <StatsCard 
             title="Cost Savings" 
-            value="$1.2M" 
-            change="+$250K" 
+            value="$0THB" 
+            change="" 
             isPositive={true} 
           />
         </div>
@@ -47,7 +54,7 @@ function SixSigmaPage() {
           
           {/* Team Performance */}
           <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-xl font-semibold mb-4">Team Performance</h2>
+            <h2 className="text-xl font-semibold mb-4">Team Category</h2>
             <div className="space-y-4">
               {['Green Belt Team', 'Black Belt Team', 'Master Black Belt'].map((team) => (
                 <div key={team} className="flex justify-between items-center">

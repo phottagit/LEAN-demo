@@ -65,7 +65,7 @@ export default function Home() {
                 </div>
                 <div className="container mx-auto px-4 py-8 bg-white">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                        <a href="/sixsigmas">
+                        <a href="/sixsigmas/dashboard">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
                                     <img src="1-Six Sigma.JPG" alt="Six Sigma" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow" />
@@ -74,7 +74,7 @@ export default function Home() {
                             </div>
                         </a>
 
-                        <a href="/qccs">
+                        <a href="/qccs/qccdashboard">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
                                 <img src="2-QCC.jpg" alt="QCC" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"/>
