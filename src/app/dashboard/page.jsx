@@ -338,9 +338,9 @@ function DashboardPage() {
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
     { month: 1, value: 0.00 },
     { month: 2, value: 0.00 },
-    { month: 3, value: 0.00 },
-    { month: 4, value: 0.00 },
-    { month: 5, value: 0.00 },
+    { month: 3, value: 0.29 },
+    { month: 4, value: 0.29 },
+    { month: 5, value: 0.29 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
