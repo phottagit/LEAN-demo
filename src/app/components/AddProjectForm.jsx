@@ -11,7 +11,7 @@ const AddProjectForm = ({
 }) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-      <h3 className="text-lg font-medium mb-4">เพิ่มโปรเจค (Add new project)</h3>
+
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Date */}
@@ -34,14 +34,25 @@ const AddProjectForm = ({
             <label className="block text-sm font-medium text-gray-700 mb-1">
               ส่วนงาน (Department)
             </label>
-            <input
-              type="text"
-              name="department"
-              value={formData.department}
+            <select
+              name="projectCategory"
+              value={formData.Department}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md"
               required
-            />
+            >
+              <option value="">Select Department</option>
+              <option value="Waxing">Waxing</option>
+              <option value="Casting">Casting</option>
+              <option value="Pre-plating">Pre-plating</option>
+              <option value="Plating">Plating</option>
+              <option value="QC After-plating">QC After-plating</option>
+              <option value="Post-plating">Post-plating</option>
+              <option value="QC Final">QC Final</option>
+              <option value="Packing">Packing</option>
+              <option value="Production engineering">Production engineering</option>
+              <option value="Support">Support</option>
+            </select>
           </div>
 
           {/* Team Name */}

@@ -54,7 +54,7 @@ const QCCCreatePage = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-4">Create New QCC Project</h1>
+      <h1 className="text-2xl font-semibold mb-4">เพิ่มโปรเจค (Add new project)</h1>
       <AddProjectForm
         formData={formData}
         handleChange={handleChange}

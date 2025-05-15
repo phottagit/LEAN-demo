@@ -57,14 +57,14 @@ export default function QCCSidebar({ isCollapsed, isMobile, toggleSidebar }) {
                 icon={<LayoutDashboard size={20} />}
                 title="Dashboard"
                 href="/qccs/qccdashboard"
-                isActive={pathname === "/qccs/dashboard"}
+                isActive={pathname === "/qccs/qccdashboard"}
                 isCollapsed={isCollapsed}
               />
               <SidebarItem
                 icon={<FileText size={20} />}
                 title="QCC Create"
-                href="/qccs/projects"
-                isActive={pathname === "/qccs/projects"}
+                href="/qccs/qcccreate"
+                isActive={pathname === "/qccs/qcccreate"}
                 isCollapsed={isCollapsed}
               />
               <SidebarItem
