@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Sidebar from './Sidebar';
+import QCCSidebar from './QCCSidebar';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { cn } from '@/lib/utils';
@@ -42,7 +42,7 @@ export default function QCCLayout({ children }) {
       {/* <Navbar session={session} /> */}
       
       <div className="flex flex-1">
-        <Sidebar isCollapsed={isCollapsed} isMobile={isMobile} toggleSidebar={toggleSidebar} />
+        <QCCSidebar isCollapsed={isCollapsed} isMobile={isMobile} toggleSidebar={toggleSidebar} />
         
         <main 
           className={cn(

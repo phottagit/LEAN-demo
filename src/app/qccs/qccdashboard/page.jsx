@@ -1,6 +1,6 @@
 "use client";
 
-import SixSigmaLayout from '../../components/SixSigmaLayout';
+import QCCLayout from '@/app/components/QCCLayout';
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, Edit, Trash2,FileText ,DollarSign, CheckCircle, XCircle } from 'lucide-react';
 
@@ -186,8 +186,7 @@ export default function QccDashboard() {
               </div>
             </div>
           </div>
-        </div>
-
+      </div>
     );
   }
   

@@ -1,13 +1,13 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  ChevronLeft, 
-  BarChart3, 
-  LayoutDashboard, 
-  FileText, 
-  Users, 
+import {
+  ChevronLeft,
+  LayoutDashboard,
+  FileText,
+  Users,
   PieChart,
   Menu
 } from "lucide-react";
@@ -15,11 +15,26 @@ import { cn } from "@/lib/utils";
 
 export default function QCCSidebar({ isCollapsed, isMobile, toggleSidebar }) {
   const pathname = usePathname();
+  const scrollRef = useRef(null);
+
+  // Scroll position persistence
+  useEffect(() => {
+    const savedScroll = sessionStorage.getItem("sidebarScroll");
+    if (scrollRef.current && savedScroll) {
+      scrollRef.current.scrollTop = parseInt(savedScroll, 10);
+    }
+
+    return () => {
+      if (scrollRef.current) {
+        sessionStorage.setItem("sidebarScroll", scrollRef.current.scrollTop.toString());
+      }
+    };
+  }, [pathname]);
 
   return (
     <div className="relative">
       {isMobile && (
-        <button 
+        <button
           onClick={toggleSidebar}
           className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md shadow-md md:hidden"
         >
@@ -35,10 +50,12 @@ export default function QCCSidebar({ isCollapsed, isMobile, toggleSidebar }) {
         )}
       >
         <div className="flex flex-col h-full">
-          <div className={cn(
-            "flex items-center justify-between p-4 border-b",
-            isCollapsed && "justify-center"
-          )}>
+          <div
+            className={cn(
+              "flex items-center justify-between p-4 border-b",
+              isCollapsed && "justify-center"
+            )}
+          >
             {!isCollapsed && <h2 className="text-xl font-semibold">QCC</h2>}
             <button
               onClick={toggleSidebar}
@@ -51,7 +68,10 @@ export default function QCCSidebar({ isCollapsed, isMobile, toggleSidebar }) {
             </button>
           </div>
 
-          <div className="flex-1 py-4 overflow-y-auto">
+          <div
+            className="flex-1 py-4 overflow-y-auto"
+            ref={scrollRef}
+          >
             <nav className="space-y-1 px-2">
               <SidebarItem
                 icon={<LayoutDashboard size={20} />}
@@ -92,8 +112,9 @@ export default function QCCSidebar({ isCollapsed, isMobile, toggleSidebar }) {
           </div>
         </div>
       </aside>
+
       {isMobile && !isCollapsed && (
-        <div 
+        <div
           className="fixed inset-0 z-30 bg-black/50 md:hidden"
           onClick={toggleSidebar}
         />
