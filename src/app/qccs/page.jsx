@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, Edit, Trash2,FileText ,DollarSign, CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
-import SixSigmaLayout from '../components/SixSigmaLayout';
+import QCCLayout from '../components/QCCLayout';
 
 export default function QccsPage() {
   const [projects, setProjects] = useState([]);
@@ -115,7 +115,7 @@ export default function QccsPage() {
   };
 
   return (
-    <SixSigmaLayout>
+    <QCCLayout>
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-semibold mb-6">QCC: Quality Control Circle Dashboard</h1>
@@ -412,7 +412,7 @@ export default function QccsPage() {
         </div>
       </div>
     </div>
-    </SixSigmaLayout>
+    </QCCLayout>
   );
 }
 
