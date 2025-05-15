@@ -39,7 +39,7 @@ export default function QCCSidebar({ isCollapsed, isMobile, toggleSidebar }) {
             "flex items-center justify-between p-4 border-b",
             isCollapsed && "justify-center"
           )}>
-            {!isCollapsed && <h2 className="text-xl font-semibold">Six Sigma</h2>}
+            {!isCollapsed && <h2 className="text-xl font-semibold">QCC</h2>}
             <button
               onClick={toggleSidebar}
               className={cn(

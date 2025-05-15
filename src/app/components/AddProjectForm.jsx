@@ -158,10 +158,10 @@ const AddProjectForm = ({
             </select>
           </div>
 
-          {/* Status Category */}
+          {/* Project Status */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Status Category
+              Project Status
             </label>
             <select
               name="statusCategory"

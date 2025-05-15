@@ -117,7 +117,7 @@ export default function QccDashboard() {
   return (
 
         <div className="p-4">
-          <h1 className="text-3xl font-semibold mb-6">QCC Dashboard: Under contrucktion</h1>
+          <h1 className="text-3xl font-semibold mb-6">QCC Dashboard: Under contruction</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Stats Cards */}
@@ -127,48 +127,52 @@ export default function QccDashboard() {
             value={stats.total} 
             icon={<FileText className="h-8 w-8 text-blue-500" />}
             color="bg-blue-50"
-          />
+            />
   
-        <StatsCard 
-            title="In Progress" 
-            value={stats.inProgress} 
-            icon={<CheckCircle className="h-8 w-8 text-yellow-500" />}
-            color="bg-yellow-50"
-          />
-          <StatsCard 
-            title="Completed" 
-            value={stats.completed} 
-            icon={<CheckCircle className="h-8 w-8 text-green-500" />}
-            color="bg-green-50"
-          />
-          <StatsCard 
-            title="Cost Saving" 
-            value={stats.departments} 
-            icon={<DollarSign className="h-8 w-8 text-purple-500" />}
-            color="bg-purple-50"
-          />
+            <StatsCard 
+                title="In Progress" 
+                value={stats.inProgress} 
+                icon={<CheckCircle className="h-8 w-8 text-yellow-500" />}
+                color="bg-yellow-50"
+              />
+              <StatsCard 
+                title="Completed" 
+                value={stats.completed} 
+                icon={<CheckCircle className="h-8 w-8 text-green-500" />}
+                color="bg-green-50"
+              />
+              <StatsCard 
+                title="Cost Saving" 
+                value={stats.departments} 
+                icon={<DollarSign className="h-8 w-8 text-purple-500" />}
+                color="bg-purple-50"
+              />
           </div>
           
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow">
-                <h2 className="text-xl font-semibold mb-4">Recent Projects</h2>
-                <div className="space-y-4">
-                    {projects.slice(0, 3).map((project, index) => (
-                    <div key={project.id || index} className="border-b pb-4">
-                        <h3 className="font-medium">{project.projectName}</h3>
-                    <p className="text-sm text-gray-500">
-                        Department: {project.department} | Registered on: {project.registrationDate}
-                    </p>
-                </div>
-                ))}
-            </div>
-        </div>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow">
+                  <h2 className="text-xl font-semibold mb-4">Recent Projects</h2>
+                  <div className="space-y-4">
+                      {projects && projects.length > 0 ? (
+                        projects.slice(0, 3).map((project, index) => (
+                          <div key={project.id || index} className="border-b pb-4">
+                            <h3 className="font-medium">{project.projectName}</h3>
+                            <p className="text-sm text-gray-500">
+                              Department: {project.department} | Registered on: {project.registrationDate}
+                            </p>
+                          </div>
+                        ))
+                      ) : (
+                        <p className="text-sm text-gray-500">Not found project</p>
+                      )}         
+              </div>
+          </div>
             
             {/* Team Performance */}
             <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-4">Team Category</h2>
+              <h2 className="text-xl font-semibold mb-4">Project Status</h2>
               <div className="space-y-4">
-                {['Green Belt Team', 'Black Belt Team', 'Master Black Belt'].map((team) => (
+                {['Plan', 'Do', 'Check', 'Action'].map((team) => (
                   <div key={team} className="flex justify-between items-center">
                     <span>{team}</span>
                     <div className="w-2/3 bg-gray-200 rounded-full h-2.5">
