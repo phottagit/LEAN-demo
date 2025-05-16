@@ -88,7 +88,7 @@ export default function QccDashboardPage() {
 
   return (
     <div className="max-w-7xl mx-auto ">
-        <h1 className="text-3xl font-semibold mb-6 ">Lean Six Sigma Dashboard: Under contrucktion</h1>
+        <h1 className="text-3xl font-semibold mb-6 ">QCC Dashboard: Under contrucktion</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <StatsCard
@@ -122,14 +122,21 @@ export default function QccDashboardPage() {
                 <h2 className="text-xl font-semibold mb-4">Recent Projects</h2>
                 <div className="space-y-4">
                   {projects.length > 0 ? (
-                    projects.slice(0, 3).map((project, index) => (
-                      <div key={project.id || index} className="border-b pb-4">
-                        <h3 className="font-medium">{project.projectName}</h3>
-                        <p className="text-sm text-gray-500">
-                          Department: {project.department} | Registered on: {project.registrationDate}
-                        </p>
-                      </div>
-                    ))
+                    [...projects]
+                      .sort((a, b) => {
+                        const numA = parseInt(a.projectNumber.replace(/\D/g, ""), 10);
+                        const numB = parseInt(b.projectNumber.replace(/\D/g, ""), 10);
+                        return numB - numA; // Descending
+                      })
+                      .slice(0, 3)
+                      .map((project, index) => (
+                        <div key={project.id || index} className="border-b pb-4">
+                          <h3 className="font-medium">{project.projectName}</h3>
+                          <p className="text-sm text-gray-500">
+                            Project #: {project.projectNumber} | Process: {project.department} | Registered on: {project.registrationDate}
+                          </p>
+                        </div>
+                      ))
                   ) : (
                     <p className="text-sm text-gray-500">No projects found</p>
                   )}
@@ -144,7 +151,7 @@ export default function QccDashboardPage() {
                     const percentage = totalStatus > 0 ? (count / totalStatus) * 100 : 0;
                     return (
                       <div key={phase} className="flex justify-between items-center">
-                        <span className="w-20">{phase} ({count})</span>
+                        <span className="w-28">{phase} ({count})</span>
                         <div className="w-full bg-gray-200 rounded-full h-2.5 ml-4">
                           <div
                             className="bg-blue-600 h-2.5 rounded-full"
