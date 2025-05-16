@@ -113,10 +113,9 @@ export default function QccDashboardPage() {
   const totalStatus = Object.values(statusCategoryCounts).reduce((sum, count) => sum + count, 0);
 
   return (
-
       <div className="p-4">
         <h1 className="text-3xl font-semibold mb-6">QCC Dashboard</h1>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <StatsCard
             title="Total Projects"
@@ -142,7 +141,6 @@ export default function QccDashboardPage() {
             icon={<DollarSign className="h-8 w-8 text-purple-500" />}
             color="bg-purple-50"
           />
-
         </div>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -165,28 +163,25 @@ export default function QccDashboardPage() {
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow">
-  <h2 className="text-xl font-semibold mb-4">Project Status Summary</h2>
-  <div className="space-y-4">
-    {['Plan', 'Do', 'Check', 'Action'].map((phase) => {
-      const count = statusCategoryCounts[phase] || 0;
-      const percentage = totalStatus > 0 ? (count / totalStatus) * 100 : 0;
-
-      return (
-        <div key={phase} className="flex justify-between items-center">
-          <span className="w-20">{phase} ({count})</span>
-          <div className="w-full bg-gray-200 rounded-full h-2.5 ml-4">
-            <div
-              className="bg-blue-600 h-2.5 rounded-full"
-              style={{ width: `${percentage}%` }}
-            ></div>
+            <h2 className="text-xl font-semibold mb-4">Project Status Summary</h2>
+            <div className="space-y-4">
+              {['Plan', 'Do', 'Check', 'Action'].map((phase) => {
+                const count = statusCategoryCounts[phase] || 0;
+                const percentage = totalStatus > 0 ? (count / totalStatus) * 100 : 0;
+                return (
+                  <div key={phase} className="flex justify-between items-center">
+                    <span className="w-20">{phase} ({count})</span>
+                    <div className="w-full bg-gray-200 rounded-full h-2.5 ml-4">
+                      <div
+                        className="bg-blue-600 h-2.5 rounded-full"
+                        style={{ width: `${percentage}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      );
-    })}
-  </div>
-</div>
-
-
         </div>
       </div>
 
