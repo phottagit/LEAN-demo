@@ -11,13 +11,12 @@ const AddProjectForm = ({
 }) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Date */}
+          {/* Registration Date */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              วันที่ลงทะเบียน (Registation date)
+              วันที่ลงทะเบียน (Registration Date)
             </label>
             <input
               type="date"
@@ -58,7 +57,7 @@ const AddProjectForm = ({
           {/* Team Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              ชื่อทีม (Team name)
+              ชื่อทีม (Team Name)
             </label>
             <input
               type="text"
@@ -73,7 +72,7 @@ const AddProjectForm = ({
           {/* Project Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              ชื่อโปรเจค (Project name)
+              ชื่อโปรเจค (Project Name)
             </label>
             <input
               type="text"
@@ -85,10 +84,10 @@ const AddProjectForm = ({
             />
           </div>
 
-          {/* Slogan */}
+          {/* Team Slogan */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              สโลแกนทีม (Slogan)
+              สโลแกนทีม (Team Slogan)
             </label>
             <input
               type="text"
@@ -102,7 +101,7 @@ const AddProjectForm = ({
           {/* Project Category */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              ประเภทของโปรเจค (Project category)
+              ประเภทของโปรเจค (Project Category)
             </label>
             <select
               name="projectCategory"
@@ -123,7 +122,7 @@ const AddProjectForm = ({
           {/* Members */}
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              สมาชิกทีม (one per line)
+              สมาชิกทีม (Team Members - one per line)
             </label>
             <textarea
               name="members"
@@ -139,7 +138,7 @@ const AddProjectForm = ({
           {/* Advisors */}
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              ผู้ให้คำปรึกษา (one per line)
+              ผู้ให้คำปรึกษา (Advisors - one per line)
             </label>
             <textarea
               name="advisors"
@@ -169,10 +168,10 @@ const AddProjectForm = ({
             </select>
           </div>
 
-          {/* Project Status */}
+          {/* Status Category */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Project Status
+              สถานะของโปรเจค (Status Category)
             </label>
             <select
               name="statusCategory"
@@ -190,23 +189,27 @@ const AddProjectForm = ({
 
           {/* Cost Saving */}
           <div>
-            <label className="block mb-2 text-sm font-medium">Cost Saving</label>
-              <input
-                type="number"
-                name="costsaving"
-                value={formData.costsaving}
-                onChange={handleChange}
-                className="w-full border rounded px-3 py-2"
-              />
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              ประหยัดต้นทุน (Cost Saving)
+            </label>
+            <input
+              type="number"
+              name="costsaving"
+              value={formData.costsaving}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="e.g., 10000"
+            />
           </div>
         </div>
 
+        {/* Buttons */}
         <div className="mt-6 flex justify-end">
           {setShowForm && (
             <button
               type="button"
               onClick={() => setShowForm(false)}
-              className="mr-4 px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+              className="mr-4 px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100"
             >
               Cancel
             </button>

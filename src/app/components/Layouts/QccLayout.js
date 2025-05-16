@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import QCCSidebar from "./QCCSidebar";
-import Navbar from "./Navbar"; // Optional - uncomment if used
-import Footer from "./Footer";
+import QCCSidebar from "../QCCSidebar";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 import { cn } from "@/lib/utils";
 import { useSession } from "next-auth/react";
 
@@ -30,16 +30,13 @@ export default function QccLayout({ children }) {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Optional top navbar */}
-      {/* <Navbar session={session} /> */}
-
+      <Navbar toggleSidebar={toggleSidebar} />
       <div className="flex flex-1">
         <QCCSidebar
           isCollapsed={isCollapsed}
           isMobile={isMobile}
           toggleSidebar={toggleSidebar}
         />
-
         <main
           className={cn(
             "flex-1 p-6 transition-all duration-300",
@@ -50,7 +47,6 @@ export default function QccLayout({ children }) {
           {children}
         </main>
       </div>
-
       <Footer />
     </div>
   );

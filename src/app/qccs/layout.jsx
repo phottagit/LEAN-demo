@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import QCCSidebar from "../components/QCCSidebar";
+import QCCSidebar from "../components/Sidebars/QCCSidebar";
 import Footer from "../components/Footer";
 
 export default function QCCLayout({ children }) {
