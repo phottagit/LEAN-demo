@@ -4,50 +4,55 @@ import { connectMongoDB } from '../lib/mongodb';
 const qccmodelsSchema = new mongoose.Schema({
   registrationDate: {
     type: Date,
-    required: [true, 'Registration date is required'],
+    required: true,
     default: Date.now,
   },
   projectNumber: {
     type: String,
-    required: [true, 'Project number is required'],
+    required: true,
     unique: true,
   },
   department: {
     type: String,
-    required: [true, 'Department is required'],
+    required: true,
   },
   teamName: {
     type: String,
-    required: [true, 'Team name is required'],
+    required: true,
   },
   projectName: {
     type: String,
-    required: [true, 'Project name is required'],
+    required: true,
   },
   teamSlogan: {
     type: String,
-    required: [true, 'Team slogan is required'],
+    required: true,
   },
   projectCategory: {
     type: String,
-    required: [true, 'Project category is required'],
+    required: true,
   },
   members: {
     type: [String],
-    required: [true, 'At least one team member is required'],
+    required: true,
   },
   advisors: {
     type: [String],
-    required: [true, 'At least one advisor is required'],
+    required: true,
   },
   status: {
     type: String,
+    required: true,
     default: 'On progress',
-    required: [true, 'Status is required'],
   },
   statusCategory: {
     type: String,
-    required: [true, 'Status category is required'],
+    required: true,
+    default: 'Plan',
+  },
+  costsaving: {
+    type: Number,
+    default: 0,
   },
   createdAt: {
     type: Date,

@@ -5,7 +5,7 @@ import AddProjectForm from '@/app/components/AddProjectForm';
 
 const QCCCreatePage = () => {
   const [formData, setFormData] = useState({
-    registrationDate: "",
+    registrationDate: new Date().toISOString().split('T')[0],
     department: "",
     teamName: "",
     projectName: "",
@@ -15,6 +15,7 @@ const QCCCreatePage = () => {
     advisors: "",
     status: "On progress",
     statusCategory: "Plan",
+    costsaving: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -51,7 +52,7 @@ const QCCCreatePage = () => {
 
     // Reset form
     setFormData({
-      registrationDate: "",
+      registrationDate: new Date().toISOString().split('T')[0],
       department: "",
       teamName: "",
       projectName: "",
@@ -61,6 +62,7 @@ const QCCCreatePage = () => {
       advisors: "",
       status: "On progress",
       statusCategory: "Plan",
+      costsaving: "",
     });
 
   } catch (error) {

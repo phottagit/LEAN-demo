@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { NextResponse } from 'next/server';
 import { connectMongoDB } from '../../../../../lib/mongodb';
 import qccmodels from '../../../../../models/qccmodels';
@@ -20,6 +21,7 @@ export async function POST(request) {
       advisors,
       status,
       statusCategory,
+      costsaving,
     } = body;
 
     if (
@@ -59,6 +61,7 @@ export async function POST(request) {
       status,
       statusCategory,
       projectNumber,
+      costsaving,
     });
 
     return NextResponse.json({ success: true, data: newProject }, { status: 201 });

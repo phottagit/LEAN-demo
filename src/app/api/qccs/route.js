@@ -17,16 +17,16 @@ export async function GET() {
 export async function POST(request) {
   try {
     
-    const body = await request.json();
+    const formData = await request.json();
     await connectMongoDB();
 
     // Validate required fields (optional but good practice)
     const requiredFields = [
       'registrationDate', 'department', 'teamName', 'projectName',
-      'teamSlogan', 'projectCategory', 'members', 'advisors', 'statusCategory'
+      'teamSlogan', 'projectCategory', 'members', 'advisors', 'status', 'statusCategory'
     ];
     for (const field of requiredFields) {
-      if (!body[field]) {
+      if (!formData[field]) {
         return NextResponse.json({ success: false, message: `${field} is required.` }, { status: 400 });
       }
     }
@@ -35,10 +35,11 @@ export async function POST(request) {
     const projectNumber = await QccModel.generateProjectNumber();
     const newProject = await QccModel.create({
 
-      ...body,
+      ...formData,
       projectNumber,
-      members: Array.isArray(body.members) ? body.members : [],
-      advisors: Array.isArray(body.advisors) ? body.advisors : [],
+      costsaving: formData.costsaving || 0, // ✅ Default to 0 if empty
+      members: Array.isArray(formData.members) ? formData.members : [],
+      advisors: Array.isArray(formData.advisors) ? formData.advisors : [],
     });
 
     return NextResponse.json({ success: true, data: newProject }, { status: 201 });

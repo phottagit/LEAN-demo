@@ -18,7 +18,8 @@ export default function QccDashboardPage() {
     members: '',
     advisors: '',
     status: 'On progress',
-    statusCategory: ''
+    statusCategory: '',
+    costsaving: ''
   });
 
   useEffect(() => {
@@ -80,7 +81,8 @@ export default function QccDashboardPage() {
           members: '',
           advisors: '',
           status: 'On progress',
-          statusCategory: ''
+          statusCategory: '',
+          costsaving: ''
         });
         setShowForm(false);
       } else {
@@ -98,8 +100,17 @@ export default function QccDashboardPage() {
     total: projects.length,
     inProgress: projects.filter(p => p.status === 'On progress').length,
     completed: projects.filter(p => p.status === 'Completed').length,
-    departments: [...new Set(projects.map(p => p.department))].length
+    //costsaving: [...new Set(projects.map(p => p.costsaving))].length
+    costsaving: projects.reduce((sum, p) => sum + (parseFloat(p.costsaving) || 0), 0)
   };
+
+  // StatusCategory Distribution
+  const statusCategoryCounts = ['Plan', 'Do', 'Check', 'Action'].reduce((acc, phase) => {
+    acc[phase] = projects.filter((p) => p.statusCategory === phase).length;
+    return acc;
+  }, {});
+
+  const totalStatus = Object.values(statusCategoryCounts).reduce((sum, count) => sum + count, 0);
 
   return (
 
@@ -126,11 +137,12 @@ export default function QccDashboardPage() {
             color="bg-green-50"
           />
           <StatsCard
-            title="Departments Involved"
-            value={stats.departments}
+            title="Project Cost Saving"
+            value={`$${stats.costsaving.toLocaleString()}`}
             icon={<DollarSign className="h-8 w-8 text-purple-500" />}
             color="bg-purple-50"
           />
+
         </div>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -153,21 +165,28 @@ export default function QccDashboardPage() {
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-xl font-semibold mb-4">Project Status</h2>
-            <div className="space-y-4">
-              {['Plan', 'Do', 'Check', 'Action'].map((phase) => (
-                <div key={phase} className="flex justify-between items-center">
-                  <span>{phase}</span>
-                  <div className="w-2/3 bg-gray-200 rounded-full h-2.5">
-                    <div
-                      className="bg-blue-600 h-2.5 rounded-full"
-                      style={{ width: `${Math.floor(Math.random() * 50) + 50}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+  <h2 className="text-xl font-semibold mb-4">Project Status Summary</h2>
+  <div className="space-y-4">
+    {['Plan', 'Do', 'Check', 'Action'].map((phase) => {
+      const count = statusCategoryCounts[phase] || 0;
+      const percentage = totalStatus > 0 ? (count / totalStatus) * 100 : 0;
+
+      return (
+        <div key={phase} className="flex justify-between items-center">
+          <span className="w-20">{phase} ({count})</span>
+          <div className="w-full bg-gray-200 rounded-full h-2.5 ml-4">
+            <div
+              className="bg-blue-600 h-2.5 rounded-full"
+              style={{ width: `${percentage}%` }}
+            ></div>
           </div>
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+
         </div>
       </div>
 

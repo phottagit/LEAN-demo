@@ -187,6 +187,18 @@ const AddProjectForm = ({
               <option value="Action">Action</option>
             </select>
           </div>
+
+          {/* Cost Saving */}
+          <div>
+            <label className="block mb-2 text-sm font-medium">Cost Saving</label>
+              <input
+                type="number"
+                name="costsaving"
+                value={formData.costsaving}
+                onChange={handleChange}
+                className="w-full border rounded px-3 py-2"
+              />
+          </div>
         </div>
 
         <div className="mt-6 flex justify-end">
