@@ -11,7 +11,6 @@ import {
   XCircle,
 } from "lucide-react";
 
-import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { cn } from "@/lib/utils";
 
@@ -71,13 +70,13 @@ export default function QccDashboardPage() {
 
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
-  // Stats & statusCategoryCounts same as your code (omitted here for brevity)...
+  // Stats & statusCategoryCounts as before...
 
   const stats = {
     total: projects.length,
+    costsaving: projects.reduce((sum, p) => sum + (parseFloat(p.costsaving) || 0), 0),
     inProgress: projects.filter((p) => p.status === "On progress").length,
     completed: projects.filter((p) => p.status === "Completed").length,
-    costsaving: projects.reduce((sum, p) => sum + (parseFloat(p.costsaving) || 0), 0),
   };
 
   const statusCategoryCounts = ["Plan", "Do", "Check", "Action"].reduce((acc, phase) => {
@@ -88,18 +87,10 @@ export default function QccDashboardPage() {
   const totalStatus = Object.values(statusCategoryCounts).reduce((sum, count) => sum + count, 0);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
-
-      <div className="flex flex-1">
-
-        <main
-          
-        >
-          <div className="p-4">
-            <h1 className="text-3xl font-semibold mb-6">QCC Dashboard</h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="max-w-7xl mx-auto ">
+        <h1 className="text-3xl font-semibold mb-6 ">Lean Six Sigma Dashboard: Under contrucktion</h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <StatsCard
                 title="Total Projects"
                 value={stats.total}
@@ -162,15 +153,10 @@ export default function QccDashboardPage() {
                         </div>
                       </div>
                     );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-
-      <Footer />
+                  })}  
+                </div>    
+              </div>    
+          </div>    
     </div>
   );
 }

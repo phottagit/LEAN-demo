@@ -1,11 +1,10 @@
 "use client";
 
 import React from 'react';
-import SixSigmaLayout from '../components/SixSigmaLayout';
 
 function SixSigmaPage() {
   return (
-    <SixSigmaLayout>
+
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-semibold mb-6">Lean Six Sigma Dashboard: Under contrucktion</h1>
         
@@ -71,7 +70,7 @@ function SixSigmaPage() {
           </div>
         </div>
       </div>
-    </SixSigmaLayout>
+
   );
 }
 

@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import Sidebar from './SixSigmaSidebar';
-import Navbar from './Navbar';
 import Footer from './Footer';
 import { cn } from '@/lib/utils';
 import { useSession } from 'next-auth/react';
