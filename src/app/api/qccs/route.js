@@ -1,41 +1,48 @@
 import { NextResponse } from 'next/server';
 import { connectMongoDB } from '../../../../lib/mongodb';
-import qccmodels from '../../../../models/qccmodels';
+import QccModel from '../../../../models/qccmodels';
 
 // GET all QCC projects
 export async function GET() {
   try {
     await connectMongoDB();
-    const projects = await qccmodels.find({}).sort({ registrationDate: -1 });
-    return NextResponse.json({ success: true, data: projects });
+    const qccs = await QccModel.find({}).sort({ registrationDate: -1 });
+    return NextResponse.json({ success: true, data: qccs });
   } catch (error) {
-    return NextResponse.json(
-      { success: false, message: error.message },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
 }
 
 // POST a new QCC project
 export async function POST(request) {
   try {
-    await connectMongoDB();
     
     const body = await request.json();
-    
-    // Generate project number automatically
-    const projectNumber = await qccmodels.generateProjectNumber();
-    
-    // Create new project with the generated number
-    const newProject = await qccmodels.create({
+    await connectMongoDB();
+
+    // Validate required fields (optional but good practice)
+    const requiredFields = [
+      'registrationDate', 'department', 'teamName', 'projectName',
+      'teamSlogan', 'projectCategory', 'members', 'advisors', 'statusCategory'
+    ];
+    for (const field of requiredFields) {
+      if (!body[field]) {
+        return NextResponse.json({ success: false, message: `${field} is required.` }, { status: 400 });
+      }
+    }
+
+    // Generate project number
+    const projectNumber = await QccModel.generateProjectNumber();
+    const newProject = await QccModel.create({
+
       ...body,
-      projectNumber
+      projectNumber,
+      members: Array.isArray(body.members) ? body.members : [],
+      advisors: Array.isArray(body.advisors) ? body.advisors : [],
     });
-    
-    return NextResponse.json(
-      { success: true, data: newProject },
-      { status: 201 }
-    );
+
+    return NextResponse.json({ success: true, data: newProject }, { status: 201 });
+
   } catch (error) {
     return NextResponse.json(
       { success: false, message: error.message },
@@ -43,3 +50,4 @@ export async function POST(request) {
     );
   }
 }
+

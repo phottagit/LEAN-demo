@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { connectMongoDB } from '../../../../../lib/mongodb';
 import qccmodels from '../../../../../models/qccmodels';
+import bcrypt from 'bcryptjs';
 
 // GET a single QCC project
 export async function GET(request, { params }) {
@@ -25,6 +26,32 @@ export async function GET(request, { params }) {
     );
   }
 }
+
+// CREATE a new QCC project
+export async function POST(request) {
+  try {
+    await connectMongoDB();
+    const body = await request.json();
+
+    // Optional: validate the required fields here
+    if (!body.title || !body.description) {
+      return NextResponse.json(
+        { success: false, message: 'Title and description are required.' },
+        { status: 400 }
+      );
+    }
+
+    const newProject = await qccmodels.create(body);
+
+    return NextResponse.json({ success: true, data: newProject }, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, message: error.message },
+      { status: 500 }
+    );
+  }
+}
+
 
 // UPDATE a QCC project
 export async function PUT(request, { params }) {

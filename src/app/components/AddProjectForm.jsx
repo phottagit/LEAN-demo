@@ -35,8 +35,8 @@ const AddProjectForm = ({
               ส่วนงาน (Department)
             </label>
             <select
-              name="projectCategory"
-              value={formData.Department}
+              name="department"
+              value={formData.department}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md"
               required

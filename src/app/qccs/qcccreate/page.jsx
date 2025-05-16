@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import AddProjectForm from "@/app/components/AddProjectForm";
+import React, { useState } from 'react';
+import AddProjectForm from '@/app/components/AddProjectForm';
 
 const QCCCreatePage = () => {
   const [formData, setFormData] = useState({
@@ -24,33 +24,53 @@ const QCCCreatePage = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      // Submit formData to backend
-      console.log("Submitting: ", formData);
-      // You can transform members/advisors from string to array if needed
+  try {
+    const res = await fetch('/api/qccs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...formData,
+        members: formData.members.split('\n').filter(Boolean),
+        advisors: formData.advisors.split('\n').filter(Boolean),
+      }),
+    });
 
-      // Reset form
-      setFormData({
-        registrationDate: "",
-        department: "",
-        teamName: "",
-        projectName: "",
-        teamSlogan: "",
-        projectCategory: "",
-        members: "",
-        advisors: "",
-        status: "On progress",
-        statusCategory: "Plan",
-      });
-    } catch (error) {
-      console.error("Submit failed", error);
-    } finally {
-      setLoading(false);
+    const result = await res.json();
+
+    if (!res.ok) {
+    throw new Error(result.message || 'Failed to create project');
     }
-  };
+    
+    alert('Project created successfully!');
+    console.log('Created:', result.data);
+
+    // Reset form
+    setFormData({
+      registrationDate: "",
+      department: "",
+      teamName: "",
+      projectName: "",
+      teamSlogan: "",
+      projectCategory: "",
+      members: "",
+      advisors: "",
+      status: "On progress",
+      statusCategory: "Plan",
+    });
+
+  } catch (error) {
+    console.error("Submit failed", error);
+    alert('Error: ' + error.message);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="p-6">
