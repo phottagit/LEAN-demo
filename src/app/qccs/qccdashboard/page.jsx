@@ -1,18 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import {
-  PlusCircle,
-  Edit,
-  Trash2,
-  FileText,
-  DollarSign,
-  CheckCircle,
-  XCircle,
-} from "lucide-react";
-
-import Footer from "@/app/components/Footer";
-import { cn } from "@/lib/utils";
+import { PlusCircle, Edit, Trash2, FileText, DollarSign, CheckCircle, XCircle, LayoutDashboard, Menu } from "lucide-react";
 
 export default function QccDashboardPage() {
   const [projects, setProjects] = useState([]);
@@ -88,7 +77,7 @@ export default function QccDashboardPage() {
 
   return (
     <div className="max-w-7xl mx-auto ">
-        <h1 className="text-3xl font-semibold mb-6 ">QCC Dashboard: Under contrucktion</h1>
+        <h1 className="text-3xl font-semibold mb-6 ">QCC Dashboard: Under construction</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <StatsCard
@@ -111,7 +100,7 @@ export default function QccDashboardPage() {
               />
               <StatsCard
                 title="Project Cost Saving"
-                value={`$${stats.costsaving.toLocaleString()}`}
+                value={`THB${stats.costsaving.toLocaleString()}`}
                 icon={<DollarSign className="h-8 w-8 text-purple-500" />}
                 color="bg-purple-50"
               />
@@ -133,7 +122,11 @@ export default function QccDashboardPage() {
                         <div key={project.id || index} className="border-b pb-4">
                           <h3 className="font-medium">{project.projectName}</h3>
                           <p className="text-sm text-gray-500">
-                            Project #: {project.projectNumber} | Process: {project.department} | Registered on: {project.registrationDate}
+                            {project.projectNumber} | Process: {project.department} | Registered on: {new Date(project.registrationDate).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            })}
                           </p>
                         </div>
                       ))
