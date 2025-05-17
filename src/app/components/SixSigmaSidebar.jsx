@@ -9,7 +9,8 @@ import {
   FileText, 
   Users, 
   PieChart,
-  Menu
+  Menu,
+  Home,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -86,6 +87,13 @@ export default function Sidebar({ isCollapsed, isMobile, toggleSidebar }) {
                 title="Team"
                 href="/sixsigmas/team"
                 isActive={pathname === "/sixsigmas/team"}
+                isCollapsed={isCollapsed}
+              />
+              <SidebarItem
+                icon={<Home size={20} />}
+                title="Home"
+                href="/welcome"
+                isActive={pathname === "/welcome"}
                 isCollapsed={isCollapsed}
               />
             </nav>

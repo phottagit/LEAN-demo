@@ -1,0 +1,86 @@
+import mongoose from 'mongoose';
+import { NextResponse } from 'next/server';
+import { connectMongoDB } from '../../../../../lib/mongodb';
+import sixsigmas from '../../../../../models/sixsigmasmodels';
+
+// CREATE a new sixsigmas project
+export async function POST(request) {
+  try {
+    await connectMongoDB();
+    const body = await request.json();
+
+    // Validate required fields
+    const {
+      registrationDate,
+      projectleader,
+      process,
+      teammembers,
+      sponser,
+      projectName,
+      problemstatement,
+      projectObjective,
+      projectbenefit,
+      primarymetric,
+      secondarymetric,
+      projectresult,
+      projectstatus,
+      statusCategory,
+      costsaving,
+    } = body;
+
+    if (
+      !registrationDate ||
+      !projectleader ||
+      !process ||
+      !teammembers ||
+      !sponser ||
+      !projectName ||
+      !problemstatement ||
+      !projectObjective ||
+      !projectbenefit ||
+      !primarymetric ||
+      !secondarymetric ||
+      !projectresult ||
+      !projectstatus ||
+      !statusCategory ||
+      !costsaving
+    ) {
+      return NextResponse.json(
+        { success: false, message: 'All required fields must be filled.' },
+        { status: 400 }
+      );
+    }
+
+    const teammembersArray = typeof teammembers === 'string' ? teammembers.split('\n').filter(Boolean) : teammembers;
+    const sponserArray = typeof sponser === 'string' ? sponser.split('\n').filter(Boolean) : sponser;
+
+    // Generate project number
+    const projectNumber = await sixsigmas.generateProjectNumber();
+
+    const newProject = await sixsigmas.create({
+      registrationDate,
+      projectleader,
+      process,
+      teammembers: teammembersArray,
+      sponser: sponserArray,
+      projectName,
+      problemstatement,
+      projectObjective,
+      projectbenefit,
+      primarymetric,
+      secondarymetric,
+      projectresult,
+      projectstatus,
+      statusCategory,
+      costsaving,
+      projectNumber,
+    });
+
+    return NextResponse.json({ success: true, data: newProject }, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, message: error.message },
+      { status: 500 }
+    );
+  }
+}
