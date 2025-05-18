@@ -22,7 +22,10 @@ export async function POST(request) {
 
     // Validate required fields (optional but good practice)
     const requiredFields = [
-      'registrationDate', 'projectleader', 'process', 'teammembers', 'sponser', 'projectName', 'problemstatement', 'projectObjective', 'projectbenefit', 'primarymetric', 'secondarymetric', 'projectresult', 'projectstatus', 'statusCategory'
+      'registrationDate', 'projectleader', 'process', 'teammembers',
+      'sponser', 'projectName', 'problemstatement', 'projectObjective',
+      'projectbenefit', 'primarymetric', 'secondarymetric', 'projectresult',
+      'projectstatus', 'statusCategory'
     ];
     for (const field of requiredFields) {
       if (!formData[field]) {

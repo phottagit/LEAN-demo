@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import SixSigmaLayout from '../../components/SixSigmaLayout'; // Import the SixSigmaLayout component
-import { PlusCircle, Edit, Trash2, FileText, DollarSign, CheckCircle, XCircle, LayoutDashboard, Menu, ArrowUturnLeft } from 'lucide-react';
+import { PlusCircle, Edit, Trash2, FileText, DollarSign, CheckCircle, XCircle, LayoutDashboard, Menu, ArrowUturnLeft, ArrowUturnRight } from 'lucide-react';
 
 export default function Dashboard() {
 
@@ -23,7 +23,7 @@ export default function Dashboard() {
       secondarymetric: "",
       projectresult: "",
       projectstatus: "In progress",
-      statusCategory: "",
+      statusCategory: "Define",
     });
   
     useEffect(() => {
@@ -63,17 +63,15 @@ export default function Dashboard() {
     }, []);
   
     const toggleSidebar = () => setIsCollapsed(!isCollapsed);
-  
-    // Stats & statusCategoryCounts as before...
-  
+
     const stats = {
       total: projects.length,
       costsaving: projects.reduce((sum, p) => sum + (parseFloat(p.costsaving) || 0), 0),
-      inProgress: projects.filter((p) => p.status === "In progress").length,
-      completed: projects.filter((p) => p.status === "Completed").length,
+      inProgress: projects.filter((p) => p.projectstatus === "In progress").length,
+      completed: projects.filter((p) => p.projectstatus === "Completed").length,
     };
   
-    const statusCategoryCounts = ["Define", "Measure", "Analize", "Improve", "Control"].reduce((acc, phase) => {
+    const statusCategoryCounts = ["Define", "Measure", "Analyze", "Improve", "Control"].reduce((acc, phase) => {
       acc[phase] = projects.filter((p) => p.statusCategory === phase).length;
       return acc;
     }, {});
@@ -126,7 +124,7 @@ export default function Dashboard() {
                         <div key={project.id || index} className="border-b pb-4">
                           <h3 className="font-medium">{project.projectName}</h3>
                           <p className="text-sm text-gray-500">
-                            {project.projectNumber} | Process: {project.department} | Registered on: {new Date(project.registrationDate).toLocaleDateString('en-US', {
+                            {project.projectNumber} | Process: {project.process} | Registered on: {new Date(project.registrationDate).toLocaleDateString('en-US', {
                               year: 'numeric',
                               month: 'long',
                               day: 'numeric'
@@ -143,7 +141,7 @@ export default function Dashboard() {
               <div className="bg-white p-6 rounded-lg shadow">
                 <h2 className="text-xl font-semibold mb-4">Project Status Summary</h2>
                 <div className="space-y-4">
-                  {["Define", "Measure", "Analize", "Improve", "Control"].map((phase) => {
+                  {["Define", "Measure", "Analyze", "Improve", "Control"].map((phase) => {
                     const count = statusCategoryCounts[phase] || 0;
                     const percentage = totalStatus > 0 ? (count / totalStatus) * 100 : 0;
                     return (

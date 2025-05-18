@@ -71,7 +71,7 @@ const AddGBProjectForm = ({
           </div>
 
           {/* Core Team Member */}
-          <div >
+          <div className="md:col-span-1">
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Core Team Member - one per line
             </label>
@@ -103,7 +103,7 @@ const AddGBProjectForm = ({
           </div>
 
           {/* Sponser */}
-          <div>
+          <div className="md:col-span-1">
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Sponser - one per line
             </label>
