@@ -63,7 +63,7 @@ export default function Sidebar({ isCollapsed, isMobile, toggleSidebar }) {
               />
               <SidebarItem
                 icon={<BarChart3 size={20} />}
-                title="Projects"
+                title="Add Projects"
                 href="/sixsigmas/projects"
                 isActive={pathname === "/sixsigmas/projects"}
                 isCollapsed={isCollapsed}
