@@ -29,17 +29,18 @@ const AddGBProjectForm = ({
           </div>
 
           {/* Project leader */}
-          <div>
+          <div className="md:col-span-1">
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Project leader
+              Project leader - one per line
             </label>
-            <input
-              type="text"
+            <textarea
               name="projectleader"
               value={formData.projectleader}
               onChange={handleChange}
+              rows={1}
               className="w-full p-2 border border-gray-300 rounded-md"
               required
+              placeholder="Enter each member on a new line"
             />
           </div>
 
@@ -79,7 +80,7 @@ const AddGBProjectForm = ({
               name="teammembers"
               value={formData.teammembers}
               onChange={handleChange}
-              rows={4}
+              rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
               required
               placeholder="Enter each member on a new line"
@@ -95,7 +96,7 @@ const AddGBProjectForm = ({
               name="coach"
               value={formData.coach}
               onChange={handleChange}
-              rows={4}
+              rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
               required
               placeholder="Enter each member on a new line"
@@ -111,7 +112,7 @@ const AddGBProjectForm = ({
               name="sponser"
               value={formData.sponser}
               onChange={handleChange}
-              rows={4}
+              rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
               required
               placeholder="Enter each member on a new line"
@@ -144,7 +145,6 @@ const AddGBProjectForm = ({
               onChange={handleChange}
               rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
-              required
               placeholder="Enter each member on a new line"
             />
           </div>
@@ -160,7 +160,6 @@ const AddGBProjectForm = ({
               onChange={handleChange}
               rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
-              required
               placeholder="Enter each member on a new line"
             />
           </div>
@@ -176,7 +175,6 @@ const AddGBProjectForm = ({
               onChange={handleChange}
               rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
-              required
               placeholder="Enter each member on a new line"
             />
           </div>
@@ -223,8 +221,6 @@ const AddGBProjectForm = ({
             </select>
           </div>
 
-
-
           {/* Project result */}
           <div className="md:col-span-3">
             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -236,7 +232,6 @@ const AddGBProjectForm = ({
               onChange={handleChange}
               rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
-              required
               placeholder="Enter each member on a new line"
             />
           </div>

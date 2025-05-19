@@ -13,7 +13,7 @@ const sixsigmasmodelsSchema = new mongoose.Schema({
     unique: true,
   },
   projectleader: {
-    type: String,
+    type: [String],
     required: true,
   },
   process: {
@@ -38,27 +38,27 @@ const sixsigmasmodelsSchema = new mongoose.Schema({
   },
   problemstatement: {
     type: String,
-    required: true,
+    default: '',
   },
   projectObjective: {
     type: String,
-    required: true,
+    default: '',
   },
   projectbenefit: {
     type: String,
-    required: true,
+    default: '',
   },
   primarymetric: {
     type: String,
-    required: true,
+    default: '',
   },
   secondarymetric: {
     type: String,
-    required: true,
+    default: '',
   },
   projectresult: {
     type: String,
-    required: true,
+    default: '',
   },
   projectstatus: {
     type: String,

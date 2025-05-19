@@ -18,12 +18,6 @@ export async function POST(request) {
       coach,
       sponser,
       projectName,
-      problemstatement,
-      projectObjective,
-      projectbenefit,
-      primarymetric,
-      secondarymetric,
-      projectresult,
       projectstatus,
       statusCategory,
     } = body;
@@ -36,12 +30,6 @@ export async function POST(request) {
       !coach ||
       !sponser ||
       !projectName ||
-      !problemstatement ||
-      !projectObjective ||
-      !projectbenefit ||
-      !primarymetric ||
-      !secondarymetric ||
-      !projectresult ||
       !projectstatus ||
       !statusCategory 
     ) {
@@ -51,6 +39,7 @@ export async function POST(request) {
       );
     }
 
+    const projectleaderArray = typeof projectleader === 'string' ? projectleader.split('\n').filter(Boolean) : projectleader;
     const teammembersArray = typeof teammembers === 'string' ? teammembers.split('\n').filter(Boolean) : teammembers;
     const sponserArray = typeof sponser === 'string' ? sponser.split('\n').filter(Boolean) : sponser;
     const coachArray = typeof coach === 'string' ? coach.split('\n').filter(Boolean) : coach;
@@ -59,22 +48,17 @@ export async function POST(request) {
     const projectNumber = await sixsigmas.generateProjectNumber();
 
     const newProject = await sixsigmas.create({
+      projectNumber,
       registrationDate,
-      projectleader,
+      projectleader: projectleaderArray,
       process,
       teammembers: teammembersArray,
       coach: coachArray,
       sponser: sponserArray,
       projectName,
-      problemstatement,
-      projectObjective,
-      projectbenefit,
-      primarymetric,
-      secondarymetric,
-      projectresult,
       projectstatus,
       statusCategory,
-      projectNumber,
+      
     });
 
     return NextResponse.json({ success: true, data: newProject }, { status: 201 });

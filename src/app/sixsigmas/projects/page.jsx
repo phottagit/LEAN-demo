@@ -41,6 +41,7 @@ const ProjectPage = () => {
       },
       body: JSON.stringify({
         ...formData,
+        projectleader: formData.projectleader.split('\n').filter(Boolean),
         teammembers: formData.teammembers.split('\n').filter(Boolean),
         coach: formData.coach.split('\n').filter(Boolean),
         sponser: formData.sponser.split('\n').filter(Boolean),
