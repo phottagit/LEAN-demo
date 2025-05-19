@@ -39,41 +39,34 @@ export default function Home() {
     return (
         <main>
             <Container>
-                <Navbar session={session} />
-                <div className="flex-wrap text-center p-10">
-                    {imageUrl && !imageError ? (
-                        <div className="flex justify-center mb-4">
-                            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                                <img 
-                                    src={imageUrl} 
-                                    alt="Profile" 
-                                    className="w-full h-full object-cover"
-                                    onError={handleImageError}
-                                />
-                            </div>
+                <Navbar session={session} />             
+                <div className="container mx-auto py-8">
+                    <div className="flex items-center space-x-4">
+                        <div className="w-20 h-20 rounded-full overflow-hidden">
+                        <img 
+                            src={imageUrl} 
+                            alt="Profile" 
+                            className="w-full h-full object-cover"
+                            onError={handleImageError}
+                        />
                         </div>
-                    ) : (
-                        <div className="flex justify-center mb-4">
-                            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg bg-gray-200 flex items-center justify-center">
-                                <span className="text-gray-500 text-2xl">{session?.user?.name?.charAt(0) || "U"}</span>
-                            </div>
+                        <div className="flex flex-col">
+                        <h3 className="text-2xl">ยินดีต้อนรับเข้าสู่ Lean Six Sigma</h3>
+                        <p className="text-xl mt-auto">({session?.user?.name})</p>
                         </div>
-                    )}
-
-                    <h3 className="text-3xl"> ยินดีต้อนรับเข้าสู่ Lean Six Sigma</h3>
-                    <p className="text-1xl mt-3 mb-4">({session?.user?.name})</p>
+                    </div>
                 </div>
-                <div className="container mx-auto px-4 py-8 bg-white">
+                <div className="container mx-auto px-4 bg-white">
+                    <h2 className="text-2xl py-2">โครงการทั้งหมด</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                         <a href="/sixsigmas/dashboard">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
                                     <img src="1-Six Sigma.JPG" alt="Six Sigma" className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow" />
                                 </div>   
-                                    <h2 className="mt-2 text-center font-medium">Lean Six Sigma</h2>
+                                    <h2 className="mt-2 mb-2 text-center font-medium">Lean Six Sigma</h2>
                             </div>
                         </a>
-
                         <a href="/qccs/qccdashboard">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
@@ -82,7 +75,6 @@ export default function Home() {
                                 <h2 className="mt-2 text-center font-medium">Quality Control Circle</h2>
                             </div>
                         </a>
-
                         <a href="/suggestions">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
@@ -95,7 +87,6 @@ export default function Home() {
                                     <h2 className="mt-2 text-center font-medium">Lean Suggestion</h2>
                                 </div>
                         </a>
-
                         <a href="/trainings">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
@@ -104,7 +95,6 @@ export default function Home() {
                                     <h2 className="mt-2 text-center font-medium">Training</h2>
                             </div>   
                         </a>
-
                         <a href="/activitys">
                             <div className="flex flex-col items-center">
                                 <div className="aspect-square cursor-pointer picture-box rounded-lg w-full">
@@ -120,28 +110,25 @@ export default function Home() {
                   <h2 className="mb-4"></h2>    
                 </div>  
 
-                <div className="container mx-auto px-4 py-4 bg-white">
-                <h2 className="text-2xl">แอฟของฉัน</h2>
-                <div className="mt-4 space-y-2">
-                  <a href="/dashboard" target="_blank" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
-                    <div>
-                      <h2 className="font-semibold text-left">OBEYA Dashboard</h2>
+                <div className="container mx-auto px-4 py-4 mb-8 bg-white">
+                    <h2 className="text-2xl">แอฟของฉัน</h2>
+                    <div className="mt-4 space-y-2">
+                        <a href="/dashboard" target="_blank" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
+                            <div>
+                            <h2 className="font-semibold text-left">OBEYA Dashboard</h2>
+                            </div>
+                        </a>                      
+                        <a href="/six-sigma" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
+                            <div>
+                            <h2 className="font-semibold text-left">Lean Suggestion</h2>
+                            </div>
+                        </a>
+                        <a href="/performances" target="_blank" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
+                            <div>
+                            <h2 className="font-semibold text-left">Performance Design Template</h2>
+                            </div>
+                        </a>
                     </div>
-                  </a>
-                  
-                  <a href="/six-sigma" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
-                    <div>
-                      <h2 className="font-semibold text-left">Lean Suggestion</h2>
-                    </div>
-                  </a>
-
-                  <a href="/performances" target="_blank" className="block w-full cursor-pointer buttonbox hover:bg-gray-300 transition p-2 picture-box">
-                    <div>
-                      <h2 className="font-semibold text-left">Performance Design Template</h2>
-                    </div>
-                  </a>
-
-                </div>
                 </div>     
                 <Footer />
             </Container>

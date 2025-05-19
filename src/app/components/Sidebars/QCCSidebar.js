@@ -11,6 +11,7 @@ import {
   PieChart,
   Menu,
   Home,
+  FilePlus,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -79,7 +80,7 @@ export default function QCCSidebar({ isCollapsed, isMobile, toggleSidebar, title
                 isCollapsed={isCollapsed}
               />
               <SidebarItem
-                icon={<FileText size={20} />}
+                icon={<FilePlus size={20} />}
                 title="QCC Create"
                 href="/qccs/qcccreate"
                 isActive={pathname === "/qccs/qcccreate"}

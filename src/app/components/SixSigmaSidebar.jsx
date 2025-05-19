@@ -11,6 +11,7 @@ import {
   PieChart,
   Menu,
   Home,
+  FilePlus,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -62,7 +63,7 @@ export default function Sidebar({ isCollapsed, isMobile, toggleSidebar }) {
                 isCollapsed={isCollapsed}
               />
               <SidebarItem
-                icon={<BarChart3 size={20} />}
+                icon={<FilePlus size={20} />}
                 title="Add Projects"
                 href="/sixsigmas/projects"
                 isActive={pathname === "/sixsigmas/projects"}
