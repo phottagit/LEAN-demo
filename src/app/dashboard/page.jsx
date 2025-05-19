@@ -105,8 +105,8 @@ function DashboardPage() {
 
   //Efficiency
   const [chartData3, setChartData3] = useState([
-    { name: '17', value: 10, type: '' },
-    { name: '18', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
+    { name: '18', value: 10, type: 'Holiday' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -139,7 +139,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Upper' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Delevery
@@ -222,8 +222,8 @@ function DashboardPage() {
 
   //Morale
   const [chartData6, setChartData6] = useState([
-    { name: '17', value: 10, type: '' },
-    { name: '18', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Lower' },
+    { name: '18', value: 10, type: 'Holiday' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -256,7 +256,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Upper' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Safety
@@ -306,6 +306,8 @@ function DashboardPage() {
     { name: "13/05/2025", value: 84.2 },
     { name: "14/05/2025", value: 84.6 },
     { name: "15/05/2025", value: 81.8 },
+    { name: "16/05/2025", value: 82.5 },
+    { name: "17/05/2025", value: 87.3 },
   ];
 
   //Delivery
@@ -355,6 +357,8 @@ function DashboardPage() {
     { name: "13/05/2025", value: 92.3 },
     { name: "14/05/2025", value: 94.5 },
     { name: "15/05/2025", value: 94.4 },
+    { name: "16/05/2025", value: 93.2 },
+    { name: "17/05/2025", value: 91.1 },
   ];
 
   //Safety maoth table
