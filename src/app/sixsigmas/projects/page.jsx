@@ -8,6 +8,9 @@ const ProjectPage = () => {
     registrationDate: new Date().toISOString().split('T')[0],
     projectleader: "",
     process: "",
+    teammembers: "",
+    coach: "",
+    sponser: "",
     projectName: "",
     problemstatement: "",
     projectObjective: "",
@@ -15,10 +18,8 @@ const ProjectPage = () => {
     primarymetric: "",
     secondarymetric: "",
     projectresult: "",
-    members: "",
-    advisors: "",
     status: "On progress",
-    statusCategory: "Plan",
+    statusCategory: "",
     costsaving: "",
   });
 
@@ -40,8 +41,9 @@ const ProjectPage = () => {
       },
       body: JSON.stringify({
         ...formData,
-        members: formData.members.split('\n').filter(Boolean),
-        advisors: formData.advisors.split('\n').filter(Boolean),
+        teammembers: formData.teammembers.split('\n').filter(Boolean),
+        coach: formData.coach.split('\n').filter(Boolean),
+        sponser: formData.sponser.split('\n').filter(Boolean),
       }),
     });
 
@@ -58,7 +60,10 @@ const ProjectPage = () => {
     setFormData({
       registrationDate: new Date().toISOString().split('T')[0],
       projectleader: "",
-      process: "",
+      process: "", 
+      teammembers: "",
+      coach: "",
+      sponser: "",
       projectName: "",
       problemstatement: "",
       projectObjective: "",
@@ -66,10 +71,8 @@ const ProjectPage = () => {
       primarymetric: "",
       secondarymetric: "",
       projectresult: "",
-      members: "",
-      advisors: "",
       status: "On progress",
-      statusCategory: "Plan",
+      statusCategory: "",
       costsaving: "",
     });
 

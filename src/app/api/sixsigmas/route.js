@@ -22,10 +22,7 @@ export async function POST(request) {
 
     // Validate required fields (optional but good practice)
     const requiredFields = [
-      'registrationDate', 'projectleader', 'process', 'teammembers',
-      'sponser', 'projectName', 'problemstatement', 'projectObjective',
-      'projectbenefit', 'primarymetric', 'secondarymetric', 'projectresult',
-      'projectstatus', 'statusCategory'
+      'registrationDate', 'projectleader', 'process', 'teammembers', 'coach', 'sponser', 'projectName', 'problemstatement', 'projectObjective', 'projectbenefit', 'primarymetric', 'secondarymetric', 'projectresult', 'projectstatus', 'statusCategory'
     ];
     for (const field of requiredFields) {
       if (!formData[field]) {
@@ -41,6 +38,7 @@ export async function POST(request) {
       projectNumber,
       costsaving: formData.costsaving || 0, // ✅ Default to 0 if empty or undefined
       teammembers: Array.isArray(formData.teammembers) ? formData.teammembers : [],
+      coach: Array.isArray(formData.coach) ? formData.coach : [],
       sponser: Array.isArray(formData.sponser) ? formData.sponser : [],
     });
 

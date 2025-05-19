@@ -15,6 +15,7 @@ export async function POST(request) {
       projectleader,
       process,
       teammembers,
+      coach,
       sponser,
       projectName,
       problemstatement,
@@ -25,7 +26,6 @@ export async function POST(request) {
       projectresult,
       projectstatus,
       statusCategory,
-      costsaving,
     } = body;
 
     if (
@@ -33,6 +33,7 @@ export async function POST(request) {
       !projectleader ||
       !process ||
       !teammembers ||
+      !coach ||
       !sponser ||
       !projectName ||
       !problemstatement ||
@@ -42,8 +43,7 @@ export async function POST(request) {
       !secondarymetric ||
       !projectresult ||
       !projectstatus ||
-      !statusCategory ||
-      !costsaving
+      !statusCategory 
     ) {
       return NextResponse.json(
         { success: false, message: 'All required fields must be filled.' },
@@ -53,6 +53,7 @@ export async function POST(request) {
 
     const teammembersArray = typeof teammembers === 'string' ? teammembers.split('\n').filter(Boolean) : teammembers;
     const sponserArray = typeof sponser === 'string' ? sponser.split('\n').filter(Boolean) : sponser;
+    const coachArray = typeof coach === 'string' ? coach.split('\n').filter(Boolean) : coach;
 
     // Generate project number
     const projectNumber = await sixsigmas.generateProjectNumber();
@@ -62,6 +63,7 @@ export async function POST(request) {
       projectleader,
       process,
       teammembers: teammembersArray,
+      coach: coachArray,
       sponser: sponserArray,
       projectName,
       problemstatement,
@@ -72,7 +74,6 @@ export async function POST(request) {
       projectresult,
       projectstatus,
       statusCategory,
-      costsaving,
       projectNumber,
     });
 

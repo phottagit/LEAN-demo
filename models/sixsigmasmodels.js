@@ -24,6 +24,10 @@ const sixsigmasmodelsSchema = new mongoose.Schema({
     type: [String],
     required: true,
   },
+  coach: {
+    type: [String],
+    required: true,
+  },
   sponser: {
     type: [String],
     required: true,

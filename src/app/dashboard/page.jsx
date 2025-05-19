@@ -28,8 +28,8 @@ function DashboardPage() {
 
   // Sample data for the donut chart
   const [chartData1, setChartData1] = useState([
-    { name: '17', value: 10, type: '' },
-    { name: '18', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
+    { name: '18', value: 10, type: 'Holiday' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -62,12 +62,12 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Upper' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 // Quality
   const [chartData2, setChartData2] = useState([
-    { name: '17', value: 10, type: '' },
-    { name: '18', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
+    { name: '18', value: 10, type: 'Holiday' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -100,7 +100,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Upper' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Efficiency
@@ -144,8 +144,8 @@ function DashboardPage() {
 
   //Delevery
   const [chartData4, setChartData4] = useState([
-    { name: '17', value: 10, type: '' },
-    { name: '18', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
+    { name: '18', value: 10, type: 'Holiday' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -174,17 +174,17 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Lower' },
     { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: 'Holiday' },
-    { name: '12', value: 10, type: 'Upper' },
+    { name: '12', value: 10, type: 'Lower' },
     { name: '13', value: 10, type: 'Upper' },
-    { name: '14', value: 10, type: 'Upper' },
-    { name: '15', value: 10, type: 'Lower' },
-    { name: '16', value: 10, type: '' }
+    { name: '14', value: 10, type: 'Lower' },
+    { name: '15', value: 10, type: 'Upper' },
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Environment
   const [chartData5, setChartData5] = useState([
-    { name: '17', value: 10, type: '' },
-    { name: '18', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
+    { name: '18', value: 10, type: 'Holiday' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -217,7 +217,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Upper' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Morale
@@ -272,6 +272,8 @@ function DashboardPage() {
     { name: "13/05/2025", value: 0 },
     { name: "14/05/2025", value: 0 },
     { name: "15/05/2025", value: 0 },
+    { name: "16/05/2025", value: 0 },
+    { name: "17/05/2025", value: 0 },
   ];
 
   //Quality
@@ -284,9 +286,11 @@ function DashboardPage() {
     { name: "09/05/2025", value: 2.1 },
     { name: "10/05/2025", value: 0.8 },
     { name: "12/05/2025", value: 2.2 },
-    { name: "13/05/2025", value: 1.3 },
+    { name: "13/05/2025", value: 1.2 },
     { name: "14/05/2025", value: 2.0 },
-    { name: "15/05/2025", value: 2.3 },
+    { name: "15/05/2025", value: 2.6 },
+    { name: "16/05/2025", value: 1.4 },
+    { name: "17/05/2025", value: 1.4 },
   ];
 
   //Efficiency
@@ -312,11 +316,13 @@ function DashboardPage() {
     { name: "07/05/2025", value: 22.6 },
     { name: "08/05/2025", value: 20.4 },
     { name: "09/05/2025", value: 20.5 },
-    { name: "10/05/2025", value: 15.4 },
-    { name: "12/05/2025", value: 14.2 },
-    { name: "13/05/2025", value: 17.4 },
-    { name: "14/05/2025", value: 18.0 },
-    { name: "15/05/2025", value: 23.0 },
+    { name: "10/05/2025", value: 17.2 },
+    { name: "12/05/2025", value: 19.3 },
+    { name: "13/05/2025", value: 18.5 },
+    { name: "14/05/2025", value: 21.2 },
+    { name: "15/05/2025", value: 17.3 },
+    { name: "16/05/2025", value: 17.7 },
+    { name: "17/05/2025", value: 18.0 },
   ];
 
   //Environment
@@ -332,6 +338,8 @@ function DashboardPage() {
     { name: "13/05/2025", value: 58.4 },
     { name: "14/05/2025", value: 61.0 },
     { name: "15/05/2025", value: 56.3 },
+    { name: "16/05/2025", value: 54.3 },
+    { name: "17/05/2025", value: 51.8 },
   ];
 
   //Morale
@@ -371,7 +379,7 @@ function DashboardPage() {
     { month: 2, value: 4.0 },
     { month: 3, value: 4.2 },
     { month: 4, value: 2.9 },
-    { month: 5, value: 2.0 },
+    { month: 5, value: 1.9 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -403,7 +411,7 @@ function DashboardPage() {
     { month: 2, value: 17.6 },
     { month: 3, value: 18.5 },
     { month: 4, value: 23.2 },
-    { month: 5, value: 21.7 },
+    { month: 5, value: 21.3 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -419,7 +427,7 @@ function DashboardPage() {
     { month: 2, value: 1.21 },
     { month: 3, value: 1.40 },
     { month: 4, value: 1.29 },
-    { month: 5, value: 0.69 },
+    { month: 5, value: 0.87 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
