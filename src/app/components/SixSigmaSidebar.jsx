@@ -23,7 +23,7 @@ export default function Sidebar({ isCollapsed, isMobile, toggleSidebar }) {
       {isMobile && (
         <button 
           onClick={toggleSidebar}
-          className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md shadow-md md:hidden"
+          className="fixed top-4 right-4 z-50 p-2 bg-white rounded-md shadow-md md:hidden"
         >
           <Menu size={24} />
         </button>
