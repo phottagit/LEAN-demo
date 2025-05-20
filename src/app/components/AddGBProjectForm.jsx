@@ -180,45 +180,35 @@ const AddGBProjectForm = ({
           </div>
 
           {/* Primary metric*/}
-          <div >
+          <div className="md:col-span-1">
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Primary metric
+              Primary metric - one per line
             </label>
-            <select
+            <textarea
               name="primarymetric"
               value={formData.primarymetric}
               onChange={handleChange}
+              rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
-            >
-              <option value="">Select Category</option>
-              <option value="Quality">Quality</option>
-              <option value="Cost">Cost</option>
-              <option value="Delivery">Delivery</option>
-              <option value="Safety">6S & Safety</option>
-              <option value="Morale">Morale</option>
-              <option value="Environment">Environment</option>
-            </select>
+              required
+              placeholder="Enter each member on a new line"
+            />
           </div>
 
           {/* Secondary metric*/}
-          <div >
+          {/* Primary metric*/}
+          <div className="md:col-span-1">
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Secondary metric
+              Secondary metric - one per line
             </label>
-            <select
+            <textarea
               name="secondarymetric"
               value={formData.secondarymetric}
               onChange={handleChange}
+              rows={2}
               className="w-full p-2 border border-gray-300 rounded-md"
-            >
-              <option value="">Select Category</option>
-              <option value="Quality">Quality</option>
-              <option value="Cost">Cost</option>
-              <option value="Delivery">Delivery</option>
-              <option value="Safety">6S & Safety</option>
-              <option value="Morale">Morale</option>
-              <option value="Environment">Environment</option>
-            </select>
+              placeholder="Enter each member on a new line"
+            />
           </div>
 
           {/* Project result */}

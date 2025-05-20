@@ -22,7 +22,7 @@ const ProjectPage = () => {
     primarymetric: "",
     secondarymetric: "",
     projectresult: "",
-    status: "On progress",
+    projectstatus: "On progress",
     statusCategory: "",
     costsaving: "",
   });
@@ -76,7 +76,7 @@ const ProjectPage = () => {
       primarymetric: "",
       secondarymetric: "",
       projectresult: "",
-      status: "On progress",
+      projectstatus: "On progress",
       statusCategory: "",
       costsaving: "",
     });
