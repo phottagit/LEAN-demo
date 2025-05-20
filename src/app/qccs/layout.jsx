@@ -3,8 +3,14 @@
 import { useState, useEffect } from "react";
 import QCCSidebar from "../components/Sidebars/QCCSidebar";
 import Footer from "../components/Footer";
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function QCCLayout({ children }) {
+
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
   const [isMobile, setIsMobile] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -20,6 +26,13 @@ export default function QCCLayout({ children }) {
   }, []);
 
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
+
+  // 6. Authentication effect
+        useEffect(() => {
+          if (status === "unauthenticated") {
+            router.replace("/login");
+          }
+        }, [status, router]);
 
   return (
 

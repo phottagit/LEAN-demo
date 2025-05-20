@@ -2,12 +2,19 @@
 
 import React, { useState, useEffect } from "react";
 import { PlusCircle, Edit, Trash2, FileText, DollarSign, CheckCircle, XCircle, LayoutDashboard, Menu } from "lucide-react";
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function QccDashboardPage() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+
+  const { data: session, status } = useSession(); // ✅ Add this
+  const router = useRouter();    
+
   const [formData, setFormData] = useState({
+    projectNumber: "",
     registrationDate: new Date().toISOString().split("T")[0],
     department: "",
     teamName: "",
@@ -74,6 +81,13 @@ export default function QccDashboardPage() {
   }, {});
 
   const totalStatus = Object.values(statusCategoryCounts).reduce((sum, count) => sum + count, 0);
+
+  // 6. Authentication effect
+        useEffect(() => {
+          if (status === "unauthenticated") {
+            router.replace("/login");
+          }
+        }, [status, router]);
 
   return (
     <div className="max-w-7xl mx-auto ">

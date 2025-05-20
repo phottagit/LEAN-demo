@@ -1,8 +1,20 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 function SixSigmaPage() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  // 6. Authentication effect
+        useEffect(() => {
+          if (status === "unauthenticated") {
+            router.replace("/login");
+          }
+        }, [status, router]);
+
   return (
 
       <div className="max-w-7xl mx-auto">

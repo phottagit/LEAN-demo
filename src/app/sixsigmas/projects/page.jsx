@@ -1,9 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddGBProjectForm from '@/app/components/AddGBProjectForm';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const ProjectPage = () => {
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     registrationDate: new Date().toISOString().split('T')[0],
     projectleader: "",
@@ -85,6 +89,13 @@ const ProjectPage = () => {
   }
 };
   
+// 6. Authentication effect
+      useEffect(() => {
+        if (status === "unauthenticated") {
+          router.replace("/login");
+        }
+      }, [status, router]);
+
 return (
     <div className="p-6">
       <h1 className="text-2xl font-semibold mb-4">เพิ่มโปรเจค (Add new project)</h1>
