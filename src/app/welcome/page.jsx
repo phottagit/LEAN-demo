@@ -40,9 +40,9 @@ export default function Home() {
         <main>
             <Container>
                 <Navbar session={session} />             
-                <div className="container mx-auto py-8">
-                    <div className="flex items-center space-x-4">
-                        <div className="w-20 h-20 rounded-full overflow-hidden">
+                <div className="container mx-auto py-8 ">
+                    <div className="flex items-center space-x-4 px-4">
+                        <div className="w-16 h-16 rounded-full overflow-hidden">
                         <img 
                             src={imageUrl} 
                             alt="Profile" 
@@ -50,9 +50,9 @@ export default function Home() {
                             onError={handleImageError}
                         />
                         </div>
-                        <div className="flex flex-col">
-                        <h3 className="text-2xl">ยินดีต้อนรับเข้าสู่ Lean Six Sigma</h3>
-                        <p className="text-xl mt-auto">({session?.user?.name})</p>
+                        <div className="flex flex-col ">
+                        <h3 className="text-1xl ">ยินดีต้อนรับเข้าสู่ Lean Six Sigma</h3>
+                        <p className="text-1xl mt-auto">{session?.user?.name}</p>
                         </div>
                     </div>
                 </div>
