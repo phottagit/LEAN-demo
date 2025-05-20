@@ -16,7 +16,7 @@ export async function GET() {
 // POST a new sixsigmas project
 export async function POST(request) {
   try {
-    
+
     const formData = await request.json();
     await connectMongoDB();
 

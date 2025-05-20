@@ -30,7 +30,7 @@ export default function QCCLayout({ children }) {
   // 6. Authentication effect
         useEffect(() => {
           if (status === "unauthenticated") {
-            router.replace("/login");
+            router.replace("/dashboard");
           }
         }, [status, router]);
 

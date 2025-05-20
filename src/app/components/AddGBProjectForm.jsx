@@ -66,8 +66,17 @@ const AddGBProjectForm = ({
               <option value="QC Final">QC Final</option> // Add this option
               <option value="Packing">Packing</option> // Add this option
               <option value="Production engineering">Production engineering</option> // Add this option
+              <option value="Production engineering">Tool Production</option> // Add this option
               <option value="Support">Support</option> // Add this option
               <option value="IE">IE</option> // Add this option
+              <option value="IE">Store</option> // Add this option
+              <option value="IE">Production</option> // Add this option
+              <option value="IE">Quality Engineering</option> // Add this option
+              <option value="IE">Quality Assurance</option> // Add this option
+              <option value="IE">Procurement</option> // Add this option
+              <option value="IE">Controlling</option> // Add this option
+              <option value="IE">F&A</option> // Add this option
+              <option value="IE">Etc.</option> // Add this option
             </select>
           </div>
 

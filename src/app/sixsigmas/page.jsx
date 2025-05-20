@@ -8,12 +8,11 @@ function SixSigmaPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // 6. Authentication effect
-        useEffect(() => {
-          if (status === "unauthenticated") {
-            router.replace("/login");
-          }
-        }, [status, router]);
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.replace("/login");
+    }
+  }, [status, router]);
 
   return (
 
