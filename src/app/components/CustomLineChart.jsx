@@ -39,9 +39,8 @@ function CustomLineChart({
                 y2={highlightAboveTarget ? yDomain[1] : targetValue}
                 strokeOpacity={0}
                 fill="green"
-                fillOpacity={0.1}
+                fillOpacity={0.2}
               />
-
               <XAxis
                 dataKey="name"
                 type="category"
