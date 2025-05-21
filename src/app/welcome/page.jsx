@@ -40,7 +40,7 @@ export default function Home() {
         <main>
             <Container>
                 <Navbar session={session} />             
-                <div className="container mx-auto py-8 ">
+                <div className="container mx-auto py-8">
                     <div className="flex items-center space-x-4 px-4">
                         <div className="w-16 h-16 rounded-full overflow-hidden">
                         <img 

@@ -1,43 +1,16 @@
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: [true, 'Name is required'],
-    },
-    empId: {
-        type: String,
-        required: [true, 'Employee ID is required'],
-    },
-    departments: {
-        type: String,
-        required: [true, 'Department is required'],
-    },
-    email: {
-        type: String,
-        required: [true, 'Email is required'],
-        unique: true,
-    },
-    password: {
-        type: String,
-        required: [true, 'Password is required'],
-    },
-    img: {
-        type: String,
-        required: [true, 'Image is required'],
-    },
-    role: {
-        type: String,
-        default: 'user',
-        enum: ['user', 'admin'],
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
+const UserSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  empId: { type: String, required: true },
+  departments: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  img: { type: Buffer, required: true }, // store binary image
+  role: { type: String, enum: ['user', 'admin'], default: 'user' },
 });
 
 // Check if the model is already defined to prevent overwriting
-const User = mongoose.models.User || mongoose.model('User', userSchema);
+const User = mongoose.models.User || mongoose.model('User', UserSchema);
 
 export default User;

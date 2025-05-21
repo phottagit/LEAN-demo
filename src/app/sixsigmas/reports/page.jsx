@@ -79,7 +79,7 @@ const Reports = () => {
     });
 
   return (
-    <div className="flex-grow p-6">
+    <div className="flex-grow p-6 bg-[#F0EEE4]">
       <h1 className="text-xl font-semibold mb-4">
         Lean Six Sigma: List of Projects
       </h1>
@@ -148,7 +148,7 @@ const Reports = () => {
           />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
             <svg
-              className="w-5 h-5 text-gray-500"
+              className="w-5 h-5 text-gray-500 mb-4"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -169,9 +169,9 @@ const Reports = () => {
       ) : filteredProjects.length === 0 ? (
         <p>No projects found.</p>
       ) : (
-        <table className="min-w-full bg-white rounded shadow">
+        <table className="min-w-full bg-white whitespace-nowrap rounded shadow">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-gray-200">
               <th className="text-left px-4 py-2">Project No.</th>
               <th className="text-left px-4 py-2">Project Name</th>
               <th className="text-left px-4 py-2">Project Leader</th>
@@ -194,10 +194,12 @@ const Reports = () => {
               .map((project) => (
                 <tr key={project._id} className="border-t text-sm">
                   <td className="px-4 py-2">{project.projectNumber}</td>
-                  <td className="px-4 py-2">{project.projectName}</td>
                   <td className="px-4 py-2">
-                    {project.projectleader?.length > 0
-                      ? project.projectleader.join(", ")
+                    {project.projectName?.length > 70 ? `${project.projectName.slice(0, 70)}...`
+                      : project.projectName}
+                  </td>
+                  <td className="px-4 py-2">
+                    {project.projectleader?.length > 0 ? project.projectleader.join(", ")
                       : "No leaders assigned"}
                   </td>
                   <td className="px-4 py-2">{project.projectstatus || project.status}</td>

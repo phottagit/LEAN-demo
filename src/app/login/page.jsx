@@ -55,10 +55,10 @@ function LoginPage() {
     return (
         <Container>
             <Navbar />
-            <div className="flex-grow">
+            <main className="flex-grow flex items-center justify-center bg-[#F0EEE4] p-4">
                 <div className="flex justify-center items-center">
-                    <div className="w-[400px] shadow-xl p-10 mt-5 rounded-xl">
-                        <h3 className="text-3xl">เข้าสู่ระบบ</h3>
+                    <div className="w-[400px] shadow-xl p-10 mt-5 rounded-xl bg-white">
+                        <h3 className="text-center text-3xl">เข้าสู่ระบบ</h3>
                         <hr className="my-3" />
                         {error && (
                             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -66,37 +66,39 @@ function LoginPage() {
                             </div>
                         )}
                         <form onSubmit={handleSubmit}>
-                            <input
-                                type="text"
-                                id="email"
-                                name="email"
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
-                                placeholder="Enter your email"
-                                disabled={isLoading}
-                                autoComplete="email"
-                            />
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                onChange={(e) => setPassword(e.target.value)}
-                                className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
-                                placeholder="Enter your password"
-                                disabled={isLoading}
-                                autoComplete="current-password"
-                            />
-                            <button 
-                                type="submit" 
-                                className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                disabled={isLoading}
-                            >
-                                {isLoading ? "Logging in..." : "Login"}
-                            </button>
-                        </form>
+                                <input
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
+                                    placeholder="Enter your email"
+                                    disabled={isLoading}
+                                    autoComplete="email"
+                                />
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    className="w-full bg-gray-200 border py-2 px-3 rounded text-lg my-2"
+                                    placeholder="Enter your password"
+                                    disabled={isLoading}
+                                    autoComplete="current-password"
+                                />
+                                <button 
+                                    type="submit" 
+                                    className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    disabled={isLoading}
+                                >
+                                    {isLoading ? "Logging in..." : "Login"}
+                                </button>
+                            </form>
+                            <hr className="my-3" />
+                            <p  className="text-center"> Go to{" "} <Link href="/register" className="text-blue-500 hover:underline">Register</Link>{" "}Page</p>
                     </div>
                 </div>
-            </div>
+                </main>
             <Footer />
         </Container>
     );
