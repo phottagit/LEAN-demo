@@ -19,7 +19,8 @@ function CustomLineChart({
   decimalPlaces = 1,
   higherIsBetter = true,
   tooltipSuffix = '',
-  daysToShow = 0 // 0 means show all data
+  daysToShow = 0, // 0 means show all data
+  highlightAboveTarget = false
 }) {
   // Filter data if daysToShow is specified
   const displayData = daysToShow > 0 ? data.slice(-daysToShow) : data;
@@ -32,10 +33,10 @@ function CustomLineChart({
             <LineChart data={displayData} margin={{ top: 10, right: 10, left: 1, bottom: 10 }}>
               <CartesianGrid strokeDasharray="3 3" />
 
-              {/* Blue area from y=0 to targetValue */}
+              {/* Conditional green area based on highlightAboveTarget */}
               <ReferenceArea
-                y1={yDomain}
-                y2={targetValue}
+                y1={highlightAboveTarget ? targetValue : yDomain[0]}
+                y2={highlightAboveTarget ? yDomain[1] : targetValue}
                 strokeOpacity={0}
                 fill="green"
                 fillOpacity={0.1}

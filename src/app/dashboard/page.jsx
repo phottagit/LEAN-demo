@@ -712,7 +712,8 @@ function DashboardPage() {
             decimalPlaces={1} 
             higherIsBetter={true} 
             tooltipSuffix="%"
-            daysToShow={7} // Show only the last 7 days
+            daysToShow={7}
+            highlightAboveTarget={true}
           />
 
           {/* Efficiency table data by Action */}
@@ -892,6 +893,7 @@ function DashboardPage() {
             higherIsBetter={true} 
             tooltipSuffix="%"
             daysToShow={7} // Show only the last 7 days
+            highlightAboveTarget={true}
           />
 
           {/* Morale table data by Action */}
