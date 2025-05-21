@@ -1,18 +1,40 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { PlusCircle, Edit, Trash2, FileText, DollarSign, CheckCircle, XCircle, LayoutDashboard, Menu } from "lucide-react";
 
 function SixSigmaPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
-
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     if (status === "unauthenticated") {
       router.replace("/login");
     }
   }, [status, router]);
+
+  useEffect(() => {
+      const fetchProjects = async () => {
+        try {
+          const res = await fetch("/api/sixsigmas/dashboard");
+          const result = await res.json();
+          if (result.success) {
+            setProjects(result.data);
+          } else {
+            console.error("Fetch error:", result.message);
+          }
+        } catch (err) {
+          console.error("API error:", err);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchProjects();
+    }, []);
 
   return (
 
