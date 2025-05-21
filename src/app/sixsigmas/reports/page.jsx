@@ -84,63 +84,65 @@ const Reports = () => {
         Lean Six Sigma: List of Projects
       </h1>
 
-      {/* Filter & Search */}
-      <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
-        {/* Filter Dropdown */}
-        <div className="relative inline-block">
-          <button
-            onClick={() => setShowFilter((prev) => !prev)}
-            className="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4"
-          >
-            Show Filter
-          </button>
+      {/* Filter & Search & Text count */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4 mb-4">
+          {/* Filter Button with Dropdown */}
+          <div className="relative inline-block">
+            <button
+              onClick={() => setShowFilter((prev) => !prev)}
+              className="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+            >
+              {selectedFilter || "Select"}
+            </button>
 
-          {showFilter && (
-            <div className="absolute z-10 mt-2 w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg dark:bg-gray-700 dark:divide-gray-600">
-              <ul className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200">
-                {["Last day", "Last 7 days", "Last 30 days", "Last month", "Last year"].map((label, idx) => (
-                  <li key={idx}>
-                    <div className="flex items-center p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
-                      <input
-                        id={`filter-radio-${idx}`}
-                        type="radio"
-                        name="filter-radio"
-                        value={label}
-                        checked={selectedFilter === label}
-                        onChange={(e) => {
-                          setSelectedFilter(e.target.value);
-                          setShowFilter(false);
-                        }}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600"
-                      />
-                      <label
-                        htmlFor={`filter-radio-${idx}`}
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                      >
-                        {label}
-                      </label>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+            {showFilter && (
+              <div className="absolute z-10 mt-2 w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg dark:bg-gray-700 dark:divide-gray-600">
+                <ul className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200">
+                  {["Last day", "Last 7 days", "Last 30 days", "Last month", "Last year"].map((label, idx) => (
+                    <li key={idx}>
+                      <div className="flex items-center p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+                        <input
+                          id={`filter-radio-${idx}`}
+                          type="radio"
+                          name="filter-radio"
+                          value={label}
+                          checked={selectedFilter === label}
+                          onChange={(e) => {
+                            setSelectedFilter(e.target.value);
+                            setShowFilter(false);
+                          }}
+                          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          htmlFor={`filter-radio-${idx}`}
+                          className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                        >
+                          {label}
+                        </label>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
 
-        {/* Selected Filter Text */}
-        {selectedFilter && (
-          <p className="text-sm text-gray-600 dark:text-gray-300">
-            Selected Filter: <strong>{selectedFilter}</strong>
-          </p>
-        )}
+          {/* Text count on the right of the button */}
+          {selectedFilter && (
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              {filteredProjects.length} project{filteredProjects.length !== 1 && "s"} in <strong>{selectedFilter}</strong>
+            </p>
+            )}
+          </div>
 
         {/* Search Bar */}
         <div className="relative">
           <input
             type="text"
             id="table-search"
-            className="block w-80 p-2 pr-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Search for projects"
+            className="block w-80 p-2 pr-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 mb-4"
+            placeholder="Search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -175,7 +177,6 @@ const Reports = () => {
               <th className="text-left px-4 py-2">Project Leader</th>
               <th className="text-left px-4 py-2">Status</th>
               <th className="text-left px-4 py-2">Phase</th>
-              <th className="text-left px-4 py-2">Created At</th>
               <th className="text-left px-4 py-2">Actions</th>
             </tr>
           </thead>
@@ -201,9 +202,6 @@ const Reports = () => {
                   </td>
                   <td className="px-4 py-2">{project.projectstatus || project.status}</td>
                   <td className="px-4 py-2">{project.statusCategory}</td>
-                  <td className="px-4 py-2">
-                    {new Date(project.createdAt).toLocaleDateString()}
-                  </td>
                   <td className="px-4 py-2 space-x-2">
                     <Link
                       href={`/sixsigmas/edit/${project._id}`}
