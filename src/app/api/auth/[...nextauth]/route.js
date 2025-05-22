@@ -1,87 +1,79 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { connectMongoDB } from "../../../../../lib/mongodb";
-import User from "../../../../../models/user";
+import { MongoClient } from "mongodb";
 import bcrypt from 'bcryptjs';
 
 export const authOptions = {
-    providers: [
-        CredentialsProvider({
-            name: "credentials",
-            credentials: {
-                email: { label: "Email", type: "text" },
-                password: { label: "Password", type: "password" }
-            },
-            async authorize(credentials) {
-                const { email, password } = credentials;
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        const client = await MongoClient.connect(process.env.MONGODB_URI);
+        const db = client.db("test");
 
-                try {
-                    await connectMongoDB();
-                    const user = await User.findOne({ email });
-
-                    if (!user) {
-                        return null;
-                    }
-
-                    const passwordMatch = await bcrypt.compare(password, user.password);
-
-                    if (!passwordMatch) {
-                        return null;
-                    }
-
-                    // Return user without password
-                    const userObject = user.toObject();
-                    delete userObject.password;
-                    
-                    return userObject;
-                } catch(error) {
-                    console.log("Error in authorize:", error);
-                    return null;
-                }
-            }
-        })
-    ],
-    session: {
-        strategy: "jwt",
-    },
-    secret: process.env.NEXTAUTH_SECRET,
-    pages: {
-        signIn: "/login",
-        error: "/login" // Add this to handle errors gracefully
-    },
-    callbacks: {
-        async jwt({ token, user }) {
-            if (user) {
-                return {
-                    ...token,
-                    id: user._id,
-                    role: user.role,
-                    img: user.img,
-                    departments: user.departments,
-                    empId: user.empId,
-                    name: user.name
-                }
-            }
-            return token;
-        },
-        async session({ session, token }) {
-            return {
-                ...session,
-                user: {
-                    ...session.user,
-                    id: token.id,
-                    role: token.role,
-                    img: token.img,
-                    departments: token.departments,
-                    empId: token.empId,
-                    name: token.name
-                }
-            }
+        const user = await db.collection("users").findOne({ email: credentials.email });
+        if (!user) {
+          await client.close();
+          return null;
         }
+
+        const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
+        if (!isPasswordValid) {
+          await client.close();
+          return null;
+        }
+
+        await client.close();
+
+        return {
+          _id: user._id.toString(),
+          name: user.name,
+          email: user.email,
+          role: user.role,
+          departments: user.departments,
+          empId: user.empId,
+          img: user.img?.filename || `user_${user._id}.jpg`,
+        };
+      },
+    }),
+  ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user._id;
+        token.name = user.name;
+        token.email = user.email;
+        token.img = user.img;
+        token.role = user.role;
+        token.departments = user.departments;
+        token.empId = user.empId;
+      }
+      return token;
     },
-    //debug: process.env.NODE_ENV === 'development'
-}
+    async session({ session, token }) {
+      session.user.id = token.id;
+      session.user.name = token.name;
+      session.user.email = token.email;
+      session.user.img = token.img;
+      session.user.role = token.role;
+      session.user.departments = token.departments;
+      session.user.empId = token.empId;
+      return session;
+    },
+  },
+  session: {
+    strategy: "jwt",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/login",
+    error: "/login"
+  },
+};
 
 const handler = NextAuth(authOptions);
-
 export { handler as GET, handler as POST };

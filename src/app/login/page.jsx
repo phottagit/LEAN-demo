@@ -16,14 +16,13 @@ function LoginPage() {
     const [isLoading, setIsLoading] = useState(false);
 
     const router = useRouter();
-    const { data: session, status } = useSession();
+    const { data: session } = useSession();
 
-    // Redirect if user is already logged in
     useEffect(() => {
-        if (status === "authenticated") {
-            router.replace("welcome");
+        if (session) {
+            router.replace('/welcome');
         }
-    }, [status, router]);
+    }, [session, router]);;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -38,7 +37,7 @@ function LoginPage() {
             });
 
             if (res.error) {
-                setError("Username or password is incorrect."); //Invalid credentials or server error
+                setError("Username or password is incorrect.");
                 console.error("Login error:", res.error);
                 return;
             }

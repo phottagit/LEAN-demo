@@ -1,41 +1,30 @@
-import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { connectMongoDB } from '../../../../../lib/mongodb';
+import User from '../../../../../models/user';
 
 export async function GET(request, { params }) {
-    // Get filename from params
-    const filename = params.filename;
-    
-    try {
-        // Define the path to your images directory
-        const imagePath = path.join(process.cwd(), 'public', 'uploads', filename);
-        
-        // Check if the file exists
-        if (!fs.existsSync(imagePath)) {
-            console.error(`Image not found: ${imagePath}`);
-            return NextResponse.json({ error: 'Image not found' }, { status: 404 });
-        }
-        
-        // Read the file
-        const imageBuffer = fs.readFileSync(imagePath);
-        
-        // Determine content type based on file extension
-        const ext = path.extname(filename).toLowerCase();
-        let contentType = 'image/jpeg'; // Default
-        
-        if (ext === '.png') contentType = 'image/png';
-        else if (ext === '.gif') contentType = 'image/gif';
-        else if (ext === '.webp') contentType = 'image/webp';
-        
-        // Return the image with appropriate headers
-        return new NextResponse(imageBuffer, {
-            headers: {
-                'Content-Type': contentType,
-                'Cache-Control': 'public, max-age=86400'
-            }
-        });
-    } catch (error) {
-        console.error('Error serving image:', error);
-        return NextResponse.json({ error: 'Failed to serve image' }, { status: 500 });
+  const { filename } = params;
+
+  await connectMongoDB();
+
+  try {
+    const user = await User.findOne({ imgFilename: filename });
+
+    if (!user || !user.img) {
+      return new Response('Image not found', { status: 404 });
     }
+
+    // Convert Binary to base64 string
+    const buffer = user.img.buffer; // if user.img is a BSON Binary object
+    const base64 = buffer.toString('base64');
+    const mimeType = user.imgType || 'image/jpeg';
+
+    const jsonResponse = {
+      dataUri: `data:${mimeType};base64,${base64}`,
+    };
+
+    return Response.json(jsonResponse);
+  } catch (error) {
+    console.error('Error fetching image:', error);
+    return new Response('Server error', { status: 500 });
+  }
 }
