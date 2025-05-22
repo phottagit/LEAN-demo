@@ -158,6 +158,16 @@ export default function Home() {
             >
               <h2 className="font-semibold text-left">Performance Design Template</h2>
             </a>
+
+            {/* 🔒 Only show this to admins */}
+            {session?.user?.role === "admin" && (
+              <a
+                href="/register"
+                className="block w-full cursor-pointer buttonbox hover:bg-green-300 transition p-2 picture-box"
+              >
+                <h2 className="font-semibold text-left text-green-800">Register New User</h2>
+              </a>
+            )}
           </div>
         </div>
 

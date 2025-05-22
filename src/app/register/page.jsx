@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Container from "../components/Container";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
@@ -20,8 +20,15 @@ export default function RegisterPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const { data: session } = useSession();
-  if (session) redirect('/welcome');
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  // Redirect if user is already logged in
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/register");
+    }
+  }, [status, router]);
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -76,7 +83,7 @@ export default function RegisterPage() {
       if (res.ok) {
         setSuccess("User registered successfully! Redirecting to login...");
         setTimeout(() => {
-          window.location.href = "/login";
+          router.push("/login");
         }, 2000);
       } else {
         setError(data.message || "Registration failed.");
@@ -86,6 +93,8 @@ export default function RegisterPage() {
       setError("Unexpected error occurred. Please try again.");
     }
   };
+
+  if (status === "loading") return null; // wait for session to load
 
   return (
     <Container>
@@ -178,7 +187,7 @@ export default function RegisterPage() {
             <p className="text-center">
               Go to{" "}
               <Link href="/login" className="text-blue-500 hover:underline">
-                Login
+                Home
               </Link>{" "}
               Page
             </p>
