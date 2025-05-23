@@ -94,7 +94,7 @@ function LoginPage() {
                                 </button>
                             </form>
                             <hr className="my-3" />
-                            <p  className="text-center"> Go to{" "} <Link href="/requestaccess" className="text-blue-500 hover:underline">Register</Link>{" "}Page</p>
+                            <p  className="text-center"> Go to{" "} <Link href="/requestaccess" className="text-blue-500 hover:underline">Request access</Link>{" "}Page</p>
                     </div>
                 </div>
                 </main>
