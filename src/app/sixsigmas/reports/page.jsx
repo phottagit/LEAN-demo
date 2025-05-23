@@ -147,7 +147,7 @@ const Reports = () => {
         </div>
 
         {/* Search Input */}
-        <div className="relative w-full sm:w-80">
+        <div className="relative w-full sm:w-60">
           <input
             type="text"
             id="table-search"

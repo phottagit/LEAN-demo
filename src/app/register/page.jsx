@@ -23,12 +23,28 @@ export default function RegisterPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // Redirect if user is already logged in
+  // ✅ ตรวจสอบสิทธิ์ผู้ใช้
   useEffect(() => {
-    if (status === "authenticated") {
-      router.push("/register");
+    if (status === "loading") return;
+
+    if (status === "unauthenticated") {
+      router.push("/login");
+      return;
     }
-  }, [status, router]);
+
+    if (status === "authenticated" && session?.user?.role !== "admin") {
+      router.push("/unauthorized");
+      return;
+    }
+  }, [status, session, router]);
+
+  // ❌ ซ่อนเนื้อหาระหว่างโหลดหรือไม่ใช่ admin
+  if (
+    status === "loading" ||
+    (status === "authenticated" && session?.user?.role !== "admin")
+  ) {
+    return null;
+  }
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -94,8 +110,6 @@ export default function RegisterPage() {
     }
   };
 
-  if (status === "loading") return null; // wait for session to load
-
   return (
     <Container>
       <Navbar />
@@ -135,7 +149,9 @@ export default function RegisterPage() {
                 value={departments}
                 onChange={(e) => setDepartment(e.target.value)}
               >
-                <option value="" disabled>Select department</option>
+                <option value="" disabled>
+                  Select department
+                </option>
                 <option value="Lean Six Sigma">Lean Six Sigma</option>
                 <option value="Production">Production</option>
                 <option value="Quality">Quality</option>
