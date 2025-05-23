@@ -298,7 +298,7 @@ function DashboardPage() {
     { name: "19/05/2025", value: 1.1 },
     { name: "20/05/2025", value: 1.2 },
     { name: "21/05/2025", value: 1.3 },
-    { name: "22/05/2025", value: 1.3 },
+    { name: "22/05/2025", value: 1.0 },
   ];
 
   //Efficiency
