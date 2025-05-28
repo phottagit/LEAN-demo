@@ -38,7 +38,7 @@ function DashboardPage() {
     { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: 'Holiday' },
     { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: '' },
+    { name: '27', value: 10, type: 'Upper' },
     { name: '28', value: 10, type: '' },
     { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
@@ -76,7 +76,7 @@ function DashboardPage() {
     { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: 'Holiday' },
     { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: '' },
+    { name: '27', value: 10, type: 'Upper' },
     { name: '28', value: 10, type: '' },
     { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
@@ -193,7 +193,7 @@ function DashboardPage() {
     { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: 'Holiday' },
     { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: '' },
+    { name: '27', value: 10, type: 'Upper' },
     { name: '28', value: 10, type: '' },
     { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
@@ -281,6 +281,7 @@ function DashboardPage() {
     { name: "23/05/2025", value: 0 },
     { name: "24/05/2025", value: 0 },
     { name: "26/05/2025", value: 0 },
+    { name: "27/05/2025", value: 0 },
   ];
 
   //Quality
@@ -305,6 +306,7 @@ function DashboardPage() {
     { name: "23/05/2025", value: 1.9 },
     { name: "24/05/2025", value: 1.7 },
     { name: "26/05/2025", value: 1.7 },
+    { name: "27/05/2025", value: 0.7 },
   ];
 
   //Efficiency
@@ -377,6 +379,7 @@ function DashboardPage() {
     { name: "23/05/2025", value: 53.9 },
     { name: "24/05/2025", value: 50.4 },
     { name: "26/05/2025", value: 57.5 },
+    { name: "27/05/2025", value: 59.0 },
   ];
 
   //Morale
@@ -425,7 +428,7 @@ function DashboardPage() {
     { month: 2, value: 4.0 },
     { month: 3, value: 4.2 },
     { month: 4, value: 2.9 },
-    { month: 5, value: 1.8 },
+    { month: 5, value: 1.7 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
@@ -472,7 +475,7 @@ function DashboardPage() {
     { month: 1, value: 1.15 },
     { month: 2, value: 1.21 },
     { month: 3, value: 1.40 },
-    { month: 4, value: 1.29 },
+    { month: 4, value: 1.34 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
