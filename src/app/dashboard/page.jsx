@@ -154,8 +154,8 @@ function DashboardPage() {
     { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: 'Holiday' },
     { name: '26', value: 10, type: 'Lower' },
-    { name: '27', value: 10, type: '' },
-    { name: '28', value: 10, type: '' },
+    { name: '27', value: 10, type: 'Upper' },
+    { name: '28', value: 10, type: 'Lower' },
     { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
@@ -357,8 +357,10 @@ function DashboardPage() {
     { name: "21/05/2025", value: 18.2 },
     { name: "22/05/2025", value: 17.7 },
     { name: "23/05/2025", value: 20.8 },
-    { name: "24/05/2025", value: 18.7 },
-    { name: "26/05/2025", value: 20.0 },
+    { name: "24/05/2025", value: 17.8 },
+    { name: "26/05/2025", value: 20.2 },
+    { name: "27/05/2025", value: 18.9 },
+    { name: "28/05/2025", value: 26.5 },
   ];
 
   //Environment
@@ -467,7 +469,7 @@ function DashboardPage() {
     { month: 2, value: 17.6 },
     { month: 3, value: 18.5 },
     { month: 4, value: 23.2 },
-    { month: 5, value: 20.5 },
+    { month: 5, value: 20.3 },
     { month: 6, value: null },
     { month: 7, value: null },
     { month: 8, value: null },
