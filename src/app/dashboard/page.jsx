@@ -517,7 +517,7 @@ function DashboardPage() {
     { month: 2, value: 17.6 },
     { month: 3, value: 18.5 },
     { month: 4, value: 23.2 },
-    { month: 4, value: 20.0 },
+    { month: 5, value: 20.0 },
     { month: 6, value: 18.3 },
     { month: 7, value: null },
     { month: 8, value: null },
