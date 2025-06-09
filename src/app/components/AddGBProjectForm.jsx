@@ -56,7 +56,7 @@ const AddGBProjectForm = ({
               className="w-full p-2 border border-gray-300 rounded-md"
               required
             >
-              <option value="">Select Process</option>
+              <option value="" enabled>Select Process</option>
               <option value="Waxing">Waxing</option> // Add this option
               <option value="Casting">Casting</option> // Add this option
               <option value="Pre-plating">Pre-plating</option> // Add this option
@@ -66,16 +66,16 @@ const AddGBProjectForm = ({
               <option value="QC Final">QC Final</option> // Add this option
               <option value="Packing">Packing</option> // Add this option
               <option value="Production engineering">Production engineering</option> // Add this option
-              <option value="Production engineering">Tool Production</option> // Add this option
+              <option value="Tool Support">Production engineering</option> // Add this option
               <option value="Support">Support</option> // Add this option
               <option value="IE">IE</option> // Add this option
-              <option value="IE">Store</option> // Add this option
-              <option value="IE">Production</option> // Add this option
-              <option value="IE">Quality Engineering</option> // Add this option
-              <option value="IE">Quality Assurance</option> // Add this option
-              <option value="IE">Procurement</option> // Add this option
-              <option value="IE">Controlling</option> // Add this option
-              <option value="IE">F&A</option> // Add this option
+              <option value="Store">Store</option> // Add this option
+              <option value="Production">Production</option> // Add this option
+              <option value="Quality Engineering">Quality Engineering</option> // Add this option
+              <option value="Quality Assurance">Quality Assurance</option> // Add this option
+              <option value="Procurement">Procurement</option> // Add this option
+              <option value="Controlling">Controlling</option> // Add this option
+              <option value="F&A">F&A</option> // Add this option
               <option value="IE">Etc.</option> // Add this option
             </select>
           </div>
