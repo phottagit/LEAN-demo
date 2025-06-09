@@ -392,7 +392,7 @@ function DashboardPage() {
     { name: "04/06/2025", value: 18.6 },
     { name: "05/06/2025", value: 18.6 },
     { name: "06/06/2025", value: 17.5 },
-    { name: "07/06/2025", value: 18.1 },
+    { name: "07/06/2025", value: 18.0 },
   ];
 
   //Environment
@@ -513,12 +513,12 @@ function DashboardPage() {
 
   //Delivery maoth table
   const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
-    { month: 1, value: 30.3 },
-    { month: 2, value: 25.2 },
-    { month: 3, value: 26.2 },
-    { month: 4, value: 30.5 },
-    { month: 5, value: 29.1 },
-    { month: 6, value: 25.4 },
+    { month: 1, value: 20.6 },
+    { month: 2, value: 17.6 },
+    { month: 3, value: 18.5 },
+    { month: 4, value: 23.2 },
+    { month: 4, value: 20.0 },
+    { month: 6, value: 18.3 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
