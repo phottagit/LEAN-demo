@@ -55,7 +55,7 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Holiday' },
-    { name: '9', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
     { name: '12', value: 10, type: '' },
@@ -93,7 +93,7 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Holiday' },
-    { name: '9', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
     { name: '12', value: 10, type: '' },
@@ -171,7 +171,7 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Holiday' },
-    { name: '9', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Lower' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
     { name: '12', value: 10, type: '' },
@@ -210,7 +210,7 @@ function DashboardPage() {
     { name: '6', value: 10, type: 'Upper' },
     { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: 'Holiday' },
-    { name: '9', value: 10, type: '' },
+    { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
     { name: '12', value: 10, type: '' },
@@ -291,6 +291,7 @@ function DashboardPage() {
     { name: "05/06/2025", value: 0 },
     { name: "06/06/2025", value: 0 },
     { name: "07/06/2025", value: 0 },
+    { name: "09/06/2025", value: 0 },
   ];
 
   //Quality
@@ -325,6 +326,7 @@ function DashboardPage() {
     { name: "05/06/2025", value: 1.0 },
     { name: "06/06/2025", value: 1.3 },
     { name: "07/06/2025", value: 2.3 },
+    { name: "09/06/2025", value: 1.4 },
   ];
 
   //Efficiency
@@ -392,7 +394,7 @@ function DashboardPage() {
     { name: "04/06/2025", value: 18.6 },
     { name: "05/06/2025", value: 18.6 },
     { name: "06/06/2025", value: 17.5 },
-    { name: "07/06/2025", value: 18.0 },
+    { name: "07/06/2025", value: 22.7 },
   ];
 
   //Environment
@@ -427,6 +429,7 @@ function DashboardPage() {
     { name: "05/06/2025", value: 62.2 },
     { name: "06/06/2025", value: 59.6 },
     { name: "07/06/2025", value: 53.9 },
+    { name: "09/06/2025", value: 60.2 },
   ];
 
   //Morale
@@ -518,7 +521,7 @@ function DashboardPage() {
     { month: 3, value: 18.5 },
     { month: 4, value: 23.2 },
     { month: 5, value: 20.0 },
-    { month: 6, value: 18.3 },
+    { month: 6, value: 18.0 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
@@ -534,7 +537,7 @@ function DashboardPage() {
     { month: 3, value: 1.40 },
     { month: 4, value: 1.29 },
     { month: 5, value: 1.58 },
-    { month: 6, value: 0.33 },
+    { month: 6, value: 0.39 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
