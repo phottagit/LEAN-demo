@@ -136,9 +136,9 @@ function DashboardPage() {
     { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: 'Upper' },
     { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: '' },
-    { name: '14', value: 10, type: '' },
-    { name: '15', value: 10, type: '' },
+    { name: '13', value: 10, type: 'Lower' },
+    { name: '14', value: 10, type: 'Upper' },
+    { name: '15', value: 10, type: 'Holiday' },
     { name: '16', value: 10, type: '' }
   ]);
 
@@ -253,9 +253,9 @@ function DashboardPage() {
     { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: 'Upper' },
     { name: '12', value: 10, type: 'Upper' },
-    { name: '13', value: 10, type: '' },
-    { name: '14', value: 10, type: '' },
-    { name: '15', value: 10, type: '' },
+    { name: '13', value: 10, type: 'Upper' },
+    { name: '14', value: 10, type: 'Upper' },
+    { name: '15', value: 10, type: 'Holiday' },
     { name: '16', value: 10, type: '' }
   ]);
 
@@ -375,6 +375,8 @@ function DashboardPage() {
     { name: "10/06/2025", value: 82.3 },
     { name: "11/06/2025", value: 81.9 },
     { name: "12/06/2025", value: 80.3 },
+    { name: "13/06/2025", value: 78.0 },
+    { name: "14/06/2025", value: 82.7 },
   ];
 
   //Delivery
@@ -494,6 +496,8 @@ function DashboardPage() {
     { name: "10/06/2025", value: 94.4 },
     { name: "11/06/2025", value: 95.3 },
     { name: "12/06/2025", value: 94.8 },
+    { name: "13/06/2025", value: 95.4 },
+    { name: "14/06/2025", value: 93.3 },
   ];
 
   //Safety maoth table
@@ -535,7 +539,7 @@ function DashboardPage() {
     { month: 3, value: 80.0 },
     { month: 4, value: 79.2 },
     { month: 5, value: 82.8 },
-    { month: 6, value: 82.1 },
+    { month: 6, value: 81.7 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
@@ -582,7 +586,7 @@ function DashboardPage() {
     { month: 3, value: 93.3 },
     { month: 4, value: 92.7 },
     { month: 5, value: 93.3 },
-    { month: 6, value: 93.3 },
+    { month: 6, value: 93.5 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
