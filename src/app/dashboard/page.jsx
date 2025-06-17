@@ -62,7 +62,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 // Quality
   const [chartData2, setChartData2] = useState([
@@ -100,7 +100,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Efficiency
@@ -178,7 +178,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Lower' }
   ]);
 
   //Environment
@@ -217,7 +217,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: '' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Morale
@@ -297,6 +297,7 @@ function DashboardPage() {
     { name: "12/06/2025", value: 0 },
     { name: "13/06/2025", value: 0 },
     { name: "14/06/2025", value: 0 },
+    { name: "16/06/2025", value: 0 },
   ];
 
   //Quality
@@ -337,6 +338,7 @@ function DashboardPage() {
     { name: "12/06/2025", value: 1.1 },
     { name: "13/06/2025", value: 0.9 },
     { name: "14/06/2025", value: 1.2 },
+    { name: "16/06/2025", value: 1.2 },
   ];
 
   //Efficiency
@@ -416,7 +418,8 @@ function DashboardPage() {
     { name: "11/06/2025", value: 16.7 },
     { name: "12/06/2025", value: 17.7 },
     { name: "13/06/2025", value: 16.1 },
-    { name: "14/06/2025", value: 17.0 },
+    { name: "14/06/2025", value: 17.1 },
+    { name: "16/06/2025", value: 26.5 },
   ];
 
   //Environment
@@ -458,6 +461,7 @@ function DashboardPage() {
     { name: "13/06/2025", value: 55.0 },
     { name: "14/06/2025", value: 49.9 },
     { name: "15/06/2025", value: 11.2 },
+    { name: "16/06/2025", value: 54.4 },
   ];
 
   //Morale
@@ -523,7 +527,7 @@ function DashboardPage() {
     { month: 3, value: 4.2 },
     { month: 4, value: 2.9 },
     { month: 5, value: 1.6 },
-    { month: 6, value: 1.3 },
+    { month: 6, value: 1.2 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
@@ -555,7 +559,7 @@ function DashboardPage() {
     { month: 3, value: 18.5 },
     { month: 4, value: 23.2 },
     { month: 5, value: 20.0 },
-    { month: 6, value: 17.8 },
+    { month: 6, value: 17.4 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
@@ -571,7 +575,7 @@ function DashboardPage() {
     { month: 3, value: 1.40 },
     { month: 4, value: 1.29 },
     { month: 5, value: 1.58 },
-    { month: 6, value: 0.67 },
+    { month: 6, value: 0.72 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
