@@ -105,7 +105,7 @@ function DashboardPage() {
 
   //Efficiency
   const [chartData3, setChartData3] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Lower' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -222,7 +222,7 @@ function DashboardPage() {
 
   //Morale
   const [chartData6, setChartData6] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -382,6 +382,7 @@ function DashboardPage() {
     { name: "13/06/2025", value: 78.0 },
     { name: "14/06/2025", value: 82.7 },
     { name: "16/06/2025", value: 79.7 },
+    { name: "17/06/2025", value: 76.7 },
   ];
 
   //Delivery
@@ -508,6 +509,7 @@ function DashboardPage() {
     { name: "13/06/2025", value: 95.4 },
     { name: "14/06/2025", value: 93.3 },
     { name: "16/06/2025", value: 91.7 },
+    { name: "17/06/2025", value: 95.8 },
   ];
 
   //Safety maoth table
@@ -549,7 +551,7 @@ function DashboardPage() {
     { month: 3, value: 80.0 },
     { month: 4, value: 79.2 },
     { month: 5, value: 82.8 },
-    { month: 6, value: 81.6 },
+    { month: 6, value: 81.2 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
@@ -596,7 +598,7 @@ function DashboardPage() {
     { month: 3, value: 93.3 },
     { month: 4, value: 92.7 },
     { month: 5, value: 93.3 },
-    { month: 6, value: 93.3 },
+    { month: 6, value: 93.5 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
