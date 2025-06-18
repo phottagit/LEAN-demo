@@ -28,7 +28,7 @@ function DashboardPage() {
 
   // Safety
   const [chartData1, setChartData1] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -66,7 +66,7 @@ function DashboardPage() {
   ]);
 // Quality
   const [chartData2, setChartData2] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -144,7 +144,7 @@ function DashboardPage() {
 
   //Delevery
   const [chartData4, setChartData4] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Lower' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -183,7 +183,7 @@ function DashboardPage() {
 
   //Environment
   const [chartData5, setChartData5] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -298,6 +298,7 @@ function DashboardPage() {
     { name: "13/06/2025", value: 0 },
     { name: "14/06/2025", value: 0 },
     { name: "16/06/2025", value: 0 },
+    { name: "17/06/2025", value: 0 },
   ];
 
   //Quality
@@ -339,6 +340,7 @@ function DashboardPage() {
     { name: "13/06/2025", value: 0.9 },
     { name: "14/06/2025", value: 1.2 },
     { name: "16/06/2025", value: 1.2 },
+    { name: "17/06/2025", value: 1.4 },
   ];
 
   //Efficiency
@@ -420,7 +422,8 @@ function DashboardPage() {
     { name: "12/06/2025", value: 17.7 },
     { name: "13/06/2025", value: 16.1 },
     { name: "14/06/2025", value: 17.1 },
-    { name: "16/06/2025", value: 26.5 },
+    { name: "16/06/2025", value: 28.0 },
+    { name: "17/06/2025", value: 19.8 },
   ];
 
   //Environment
@@ -463,6 +466,7 @@ function DashboardPage() {
     { name: "14/06/2025", value: 49.9 },
     { name: "15/06/2025", value: 11.2 },
     { name: "16/06/2025", value: 54.4 },
+    { name: "17/06/2025", value: 57.1 },
   ];
 
   //Morale
