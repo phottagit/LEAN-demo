@@ -641,23 +641,23 @@ function DashboardPage() {
 
   //Quality Action table
   const QualityhighlightValue = [
-    { highlight: "Technique issue", date: "7/05/2025" },
-    { highlight: "High rework", date: "7/05/2025" },
-    { highlight: "Bella Plating issue", date: "7/05/2025" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
   ];
 
   //Efficiency Action table
   const EfficiencyhighlightValue = [
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
+    { highlight: "Racking issue", date: "19/06/2025" },
+    { highlight: "Racking issue", date: "20/06/2025" },
+    { highlight: "Racking issue", date: "21/06/2025" },
   ];
 
   //Delivery Action table
   const DeliveryhighlightValue = [
-    { highlight: "High WIP POST efficiency from PLAT", date: "23/05/2025" },
-    { highlight: "High WIP: PLAT", date: "23/05/2025" },
-    { highlight: "High lead time", date: "23/05/2025" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
   ];
 
   //Environment Action table
