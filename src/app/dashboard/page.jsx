@@ -227,7 +227,7 @@ function DashboardPage() {
     { name: '19', value: 10, type: 'Upper' },
     { name: '20', value: 10, type: 'Upper' },
     { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: '' },
+    { name: '22', value: 10, type: 'Holiday' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
