@@ -107,10 +107,10 @@ function DashboardPage() {
   const [chartData3, setChartData3] = useState([
     { name: '17', value: 10, type: 'Lower' },
     { name: '18', value: 10, type: 'Lower' },
-    { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: '' },
-    { name: '21', value: 10, type: '' },
-    { name: '22', value: 10, type: '' },
+    { name: '19', value: 10, type: 'Lower' },
+    { name: '20', value: 10, type: 'Lower' },
+    { name: '21', value: 10, type: 'Lower' },
+    { name: '22', value: 10, type: 'Holiday' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
@@ -224,9 +224,9 @@ function DashboardPage() {
   const [chartData6, setChartData6] = useState([
     { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: 'Upper' },
-    { name: '19', value: 10, type: '' },
-    { name: '20', value: 10, type: '' },
-    { name: '21', value: 10, type: '' },
+    { name: '19', value: 10, type: 'Upper' },
+    { name: '20', value: 10, type: 'Upper' },
+    { name: '21', value: 10, type: 'Upper' },
     { name: '22', value: 10, type: '' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
@@ -393,6 +393,9 @@ function DashboardPage() {
     { name: "16/06/2025", value: 79.7 },
     { name: "17/06/2025", value: 76.7 },
     { name: "18/06/2025", value: 79.5 },
+    { name: "19/06/2025", value: 76.9 },
+    { name: "20/06/2025", value: 79.6 },
+    { name: "21/06/2025", value: 80.0 },
   ];
 
   //Delivery
@@ -529,6 +532,9 @@ function DashboardPage() {
     { name: "16/06/2025", value: 91.7 },
     { name: "17/06/2025", value: 95.8 },
     { name: "18/06/2025", value: 96.1 },
+    { name: "19/06/2025", value: 96.2 },
+    { name: "20/06/2025", value: 95.7 },
+    { name: "21/06/2025", value: 93.9 },
   ];
 
   //Safety maoth table
@@ -570,7 +576,7 @@ function DashboardPage() {
     { month: 3, value: 80.0 },
     { month: 4, value: 79.2 },
     { month: 5, value: 82.8 },
-    { month: 6, value: 81.2 },
+    { month: 6, value: 80.7 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
@@ -617,7 +623,7 @@ function DashboardPage() {
     { month: 3, value: 93.3 },
     { month: 4, value: 92.7 },
     { month: 5, value: 93.3 },
-    { month: 6, value: 93.7 },
+    { month: 6, value: 94.0 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
