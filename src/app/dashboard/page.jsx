@@ -31,9 +31,9 @@ function DashboardPage() {
     { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: '' },
-    { name: '21', value: 10, type: '' },
-    { name: '22', value: 10, type: '' },
+    { name: '20', value: 10, type: 'Upper' },
+    { name: '21', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Holiday' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
@@ -69,9 +69,9 @@ function DashboardPage() {
     { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: '' },
-    { name: '21', value: 10, type: '' },
-    { name: '22', value: 10, type: '' },
+    { name: '20', value: 10, type: 'Upper' },
+    { name: '21', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Holiday' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
@@ -107,7 +107,7 @@ function DashboardPage() {
   const [chartData3, setChartData3] = useState([
     { name: '17', value: 10, type: 'Lower' },
     { name: '18', value: 10, type: 'Lower' },
-    { name: '19', value: 10, type: '' },
+    { name: '19', value: 10, type: 'Upper' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
     { name: '22', value: 10, type: '' },
@@ -144,12 +144,12 @@ function DashboardPage() {
 
   //Delevery
   const [chartData4, setChartData4] = useState([
-    { name: '17', value: 10, type: 'Lower' },
-    { name: '18', value: 10, type: 'Lower' },
-    { name: '19', value: 10, type: 'Lower' },
-    { name: '20', value: 10, type: '' },
-    { name: '21', value: 10, type: '' },
-    { name: '22', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
+    { name: '18', value: 10, type: 'Upper' },
+    { name: '19', value: 10, type: 'Upper' },
+    { name: '20', value: 10, type: 'Upper' },
+    { name: '21', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Holiday' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
@@ -178,7 +178,7 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Holiday' },
-    { name: '16', value: 10, type: 'Lower' }
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Environment
@@ -186,9 +186,9 @@ function DashboardPage() {
     { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: '' },
-    { name: '21', value: 10, type: '' },
-    { name: '22', value: 10, type: '' },
+    { name: '20', value: 10, type: 'Upper' },
+    { name: '21', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Holiday' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
@@ -301,6 +301,8 @@ function DashboardPage() {
     { name: "17/06/2025", value: 0 },
     { name: "18/06/2025", value: 0 },
     { name: "19/06/2025", value: 0 },
+    { name: "20/06/2025", value: 0 },
+    { name: "21/06/2025", value: 0 },
   ];
 
   //Quality
@@ -345,6 +347,9 @@ function DashboardPage() {
     { name: "17/06/2025", value: 1.4 },
     { name: "18/06/2025", value: 1.4 },
     { name: "19/06/2025", value: 1.1 },
+    { name: "20/06/2025", value: 0.9 },
+    { name: "21/06/2025", value: 1.5 },
+    
   ];
 
   //Efficiency
@@ -427,11 +432,13 @@ function DashboardPage() {
     { name: "11/06/2025", value: 16.7 },
     { name: "12/06/2025", value: 17.7 },
     { name: "13/06/2025", value: 16.1 },
-    { name: "14/06/2025", value: 17.1 },
-    { name: "16/06/2025", value: 26.1 },
-    { name: "17/06/2025", value: 18.0 },
-    { name: "18/06/2025", value: 24.3 },
-    { name: "19/06/2025", value: 22.9 },
+    { name: "14/06/2025", value: 16.9 },
+    { name: "16/06/2025", value: 15.4 },
+    { name: "17/06/2025", value: 16.0 },
+    { name: "18/06/2025", value: 15.2 },
+    { name: "19/06/2025", value: 13.6 },
+    { name: "20/06/2025", value: 14.3 },
+    { name: "21/06/2025", value: 15.0 },
   ];
 
   //Environment
@@ -477,6 +484,8 @@ function DashboardPage() {
     { name: "17/06/2025", value: 57.1 },
     { name: "18/06/2025", value: 56.2 },
     { name: "19/06/2025", value: 59.3 },
+    { name: "20/06/2025", value: 55.6 },
+    { name: "21/06/2025", value: 51.5 },
   ];
 
   //Morale
@@ -545,7 +554,7 @@ function DashboardPage() {
     { month: 3, value: 4.2 },
     { month: 4, value: 2.9 },
     { month: 5, value: 1.6 },
-    { month: 6, value: 1.3 },
+    { month: 6, value: 1.2 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
@@ -593,7 +602,7 @@ function DashboardPage() {
     { month: 3, value: 1.40 },
     { month: 4, value: 1.29 },
     { month: 5, value: 1.58 },
-    { month: 6, value: 0.89 },
+    { month: 6, value: 1.01 },
     { month: 7, value: null },
     { month: 8, value: null },
     { month: 9, value: null },
