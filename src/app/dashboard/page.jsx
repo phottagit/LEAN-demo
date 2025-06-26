@@ -112,7 +112,7 @@ function DashboardPage() {
     { name: '21', value: 10, type: 'Lower' },
     { name: '22', value: 10, type: 'Holiday' },
     { name: '23', value: 10, type: 'Lower' },
-    { name: '24', value: 10, type: '' },
+    { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: '' },
     { name: '26', value: 10, type: '' },
     { name: '27', value: 10, type: '' },
@@ -229,7 +229,7 @@ function DashboardPage() {
     { name: '21', value: 10, type: 'Upper' },
     { name: '22', value: 10, type: 'Holiday' },
     { name: '23', value: 10, type: 'Upper' },
-    { name: '24', value: 10, type: '' },
+    { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: '' },
     { name: '26', value: 10, type: '' },
     { name: '27', value: 10, type: '' },
@@ -353,6 +353,8 @@ function DashboardPage() {
     { name: "20/06/2025", value: 79.6 },
     { name: "21/06/2025", value: 80.0 },
     { name: "23/06/2025", value: 66.6 },
+    { name: "24/06/2025", value: 89.5 },
+
   ];
 
   //Delivery
@@ -474,6 +476,7 @@ function DashboardPage() {
     { name: "20/06/2025", value: 95.7 },
     { name: "21/06/2025", value: 93.9 },
     { name: "23/06/2025", value: 94.4 },
+    { name: "24/06/2025", value: 96.2 },
   ];
 
   //Safety maoth table
