@@ -569,6 +569,15 @@ function DashboardPage() {
       router.replace("/login");
     }
   }, [status, router]);
+
+  // Auto-refresh every 10 minutes
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      window.location.reload();
+    }, 600000); // 600,000 ms = 10 minutes
+
+    return () => clearTimeout(timeout);
+  }, []);
   
   return (
     <main className="w-full">
