@@ -49,7 +49,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
-    { name: '3', value: 10, type: '' },
+    { name: '3', value: 10, type: 'Upper' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
@@ -87,7 +87,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
-    { name: '3', value: 10, type: '' },
+    { name: '3', value: 10, type: 'Upper' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
@@ -165,7 +165,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Lower' },
-    { name: '3', value: 10, type: '' },
+    { name: '3', value: 10, type: 'Upper' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
@@ -204,7 +204,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
-    { name: '3', value: 10, type: '' },
+    { name: '3', value: 10, type: 'Upper' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
@@ -287,6 +287,7 @@ function DashboardPage() {
     { name: "30/06/2025", value: 0 },
     { name: "01/07/2025", value: 0 },
     { name: "02/07/2025", value: 0 },
+    { name: "03/07/2025", value: 0 },
 
   ];
 
@@ -318,6 +319,7 @@ function DashboardPage() {
     { name: "30/06/2025", value: 1.9 },
     { name: "01/07/2025", value: 1.6 },
     { name: "02/07/2025", value: 2.3 },
+    { name: "03/07/2025", value: 2.0 },
   ];
 
   //Efficiency
@@ -377,7 +379,8 @@ function DashboardPage() {
     { name: "27/06/2025", value: 16.2 },
     { name: "28/06/2025", value: 18.8 },
     { name: "01/07/2025", value: 12.3 },
-    { name: "02/07/2025", value: 24.0 },
+    { name: "02/07/2025", value: 7.0 },
+    { name: "03/07/2025", value: 17.0 },
   ];
 
   //Environment
@@ -409,6 +412,7 @@ function DashboardPage() {
     { name: "30/06/2025", value: 59.0 },
     { name: "01/07/2025", value: 59.9 },
     { name: "02/07/2025", value: 60.1 },
+    { name: "03/07/2025", value: 56.3 },
   ];
 
   //Morale
@@ -513,7 +517,7 @@ function DashboardPage() {
     { month: 4, value: 1.29 },
     { month: 5, value: 1.58 },
     { month: 6, value: 1.39 },
-    { month: 7, value: 0.12 },
+    { month: 7, value: 0.18 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
