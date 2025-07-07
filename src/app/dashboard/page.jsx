@@ -50,9 +50,9 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: '' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Upper' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Holiday' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -88,9 +88,9 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: '' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Upper' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Holiday' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -166,9 +166,9 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Lower' },
     { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: '' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Upper' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Holiday' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -205,9 +205,9 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: '' },
-    { name: '5', value: 10, type: '' },
-    { name: '6', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Upper' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Holiday' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
@@ -288,6 +288,8 @@ function DashboardPage() {
     { name: "01/07/2025", value: 0 },
     { name: "02/07/2025", value: 0 },
     { name: "03/07/2025", value: 0 },
+    { name: "04/07/2025", value: 0 },
+    { name: "05/07/2025", value: 0 },
 
   ];
 
@@ -320,6 +322,8 @@ function DashboardPage() {
     { name: "01/07/2025", value: 1.6 },
     { name: "02/07/2025", value: 2.3 },
     { name: "03/07/2025", value: 2.0 },
+    { name: "04/07/2025", value: 1.8 },
+    { name: "05/07/2025", value: 1.5 },
   ];
 
   //Efficiency
@@ -378,10 +382,13 @@ function DashboardPage() {
     { name: "25/06/2025", value: 15.7 },
     { name: "26/06/2025", value: 15.4 },
     { name: "27/06/2025", value: 16.2 },
-    { name: "28/06/2025", value: 18.8 },
-    { name: "01/07/2025", value: 12.3 },
-    { name: "02/07/2025", value: 7.0 },
-    { name: "03/07/2025", value: 17.0 },
+    { name: "28/06/2025", value: 15.3 },
+    { name: "30/06/2025", value: 17.9 },
+    { name: "01/07/2025", value: 15.8 },
+    { name: "02/07/2025", value: 15.3 },
+    { name: "03/07/2025", value: 15.1 },
+    { name: "04/07/2025", value: 14.3 },
+    { name: "05/07/2025", value: 19.0 },
   ];
 
   //Environment
@@ -414,6 +421,9 @@ function DashboardPage() {
     { name: "01/07/2025", value: 59.9 },
     { name: "02/07/2025", value: 60.1 },
     { name: "03/07/2025", value: 56.3 },
+    { name: "04/07/2025", value: 56.3 },
+    { name: "05/07/2025", value: 54.7 },
+    { name: "06/07/2025", value: 48.8 },
   ];
 
   //Morale
@@ -722,7 +732,7 @@ function DashboardPage() {
                 <hr className='my-1 border-1 border-[#595959]'/>
                 <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
                 <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
-                <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤3.0%%</h3>
+                <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap ≤3.0%</h3>
               </div>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Scrap Rate (%)</h3>
