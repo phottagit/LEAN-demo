@@ -130,7 +130,7 @@ function DashboardPage() {
     { name: '4', value: 10, type: 'Lower' },
     { name: '5', value: 10, type: 'Lower' },
     { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: '' },
+    { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
@@ -247,7 +247,7 @@ function DashboardPage() {
     { name: '4', value: 10, type: 'Upper' },
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: '' },
+    { name: '7', value: 10, type: 'Upper' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
@@ -359,6 +359,7 @@ function DashboardPage() {
     { name: "03/07/2025", value: 79.1 },
     { name: "04/07/2025", value: 79.5 },
     { name: "05/07/2025", value: 78.0 },
+    { name: "07/07/2025", value: 79.5 },
 
   ];
 
@@ -463,6 +464,7 @@ function DashboardPage() {
     { name: "03/07/2025", value: 95.6 },
     { name: "04/07/2025", value: 95.2 },
     { name: "05/07/2025", value: 92.8 },
+    { name: "07/07/2025", value: 93.9 },
   ];
 
   //Safety maoth table
