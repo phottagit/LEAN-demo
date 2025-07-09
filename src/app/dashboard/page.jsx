@@ -54,7 +54,7 @@ function DashboardPage() {
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Holiday' },
     { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -92,7 +92,7 @@ function DashboardPage() {
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Holiday' },
     { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -130,7 +130,7 @@ function DashboardPage() {
     { name: '4', value: 10, type: 'Lower' },
     { name: '5', value: 10, type: 'Lower' },
     { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Upper' },
+    { name: '7', value: 10, type: 'Lower' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
@@ -170,7 +170,7 @@ function DashboardPage() {
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Holiday' },
     { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -209,7 +209,7 @@ function DashboardPage() {
     { name: '5', value: 10, type: 'Upper' },
     { name: '6', value: 10, type: 'Holiday' },
     { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: '' },
+    { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: '' },
     { name: '10', value: 10, type: '' },
     { name: '11', value: 10, type: '' },
@@ -291,6 +291,7 @@ function DashboardPage() {
     { name: "04/07/2025", value: 0 },
     { name: "05/07/2025", value: 0 },
     { name: "07/07/2025", value: 0 },
+    { name: "08/07/2025", value: 0 },
 
   ];
 
@@ -326,6 +327,7 @@ function DashboardPage() {
     { name: "04/07/2025", value: 1.8 },
     { name: "05/07/2025", value: 1.5 },
     { name: "07/07/2025", value: 1.4 },
+    { name: "08/07/2025", value: 1.6 },
   ];
 
   //Efficiency
@@ -395,6 +397,7 @@ function DashboardPage() {
     { name: "04/07/2025", value: 14.3 },
     { name: "05/07/2025", value: 15.0 },
     { name: "07/07/2025", value: 23.8 },
+    { name: "08/07/2025", value: 9.0 },
   ];
 
   //Environment
@@ -431,6 +434,7 @@ function DashboardPage() {
     { name: "05/07/2025", value: 54.7 },
     { name: "06/07/2025", value: 48.8 },
     { name: "07/07/2025", value: 57.8 },
+    { name: "08/07/2025", value: 63.4 },
   ];
 
   //Morale
@@ -491,7 +495,7 @@ function DashboardPage() {
     { month: 4, value: 2.9 },
     { month: 5, value: 1.6 },
     { month: 6, value: 1.3 },
-    { month: 7, value: 1.9 },
+    { month: 7, value: 1.7 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -507,7 +511,7 @@ function DashboardPage() {
     { month: 4, value: 79.2 },
     { month: 5, value: 82.8 },
     { month: 6, value: 81.1 },
-    { month: 7, value: 80.3 },
+    { month: 7, value: 79.7 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -523,7 +527,7 @@ function DashboardPage() {
     { month: 4, value: 23.2 },
     { month: 5, value: 20.0 },
     { month: 6, value: 16.5 },
-    { month: 7, value: 15.6 },
+    { month: 7, value: 15.3 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -539,7 +543,7 @@ function DashboardPage() {
     { month: 4, value: 1.29 },
     { month: 5, value: 1.58 },
     { month: 6, value: 1.39 },
-    { month: 7, value: 0.18 },
+    { month: 7, value: 0.42 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
