@@ -134,9 +134,9 @@ function DashboardPage() {
     { name: '8', value: 10, type: 'Lower' },
     { name: '9', value: 10, type: 'Lower' },
     { name: '10', value: 10, type: 'Holiday' },
-    { name: '11', value: 10, type: '' },
-    { name: '12', value: 10, type: '' },
-    { name: '13', value: 10, type: '' },
+    { name: '11', value: 10, type: 'Lower' },
+    { name: '12', value: 10, type: 'Lower' },
+    { name: '13', value: 10, type: 'Holiday' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
@@ -251,9 +251,9 @@ function DashboardPage() {
     { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Holiday' },
-    { name: '11', value: 10, type: '' },
-    { name: '12', value: 10, type: '' },
-    { name: '13', value: 10, type: '' },
+    { name: '11', value: 10, type: 'Lower' },
+    { name: '12', value: 10, type: 'Lower' },
+    { name: '13', value: 10, type: 'Holiday' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
@@ -370,6 +370,8 @@ function DashboardPage() {
     { name: "07/07/2025", value: 79.5 },
     { name: "08/07/2025", value: 78.5 },
     { name: "09/07/2025", value: 76.9 },
+    { name: "11/07/2025", value: 77.1 },
+    { name: "12/07/2025", value: 77.9 },
 
   ];
 
@@ -485,6 +487,8 @@ function DashboardPage() {
     { name: "07/07/2025", value: 93.9 },
     { name: "08/07/2025", value: 95.8 },
     { name: "09/07/2025", value: 94.7 },
+    { name: "11/07/2025", value: 89.6 },
+    { name: "12/07/2025", value: 88.9 },
   ];
 
   //Safety maoth table
@@ -527,7 +531,7 @@ function DashboardPage() {
     { month: 4, value: 79.2 },
     { month: 5, value: 82.8 },
     { month: 6, value: 81.1 },
-    { month: 7, value: 79.2 },
+    { month: 7, value: 78.9 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -574,7 +578,7 @@ function DashboardPage() {
     { month: 4, value: 92.7 },
     { month: 5, value: 93.3 },
     { month: 6, value: 94.0 },
-    { month: 7, value: 95.0 },
+    { month: 7, value: 94.0 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
