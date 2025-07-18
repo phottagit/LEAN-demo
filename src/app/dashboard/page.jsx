@@ -105,7 +105,7 @@ function DashboardPage() {
 
   //Efficiency
   const [chartData3, setChartData3] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Lower' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -383,6 +383,7 @@ function DashboardPage() {
     { name: "14/07/2025", value: 77.4 },
     { name: "15/07/2025", value: 77.8 },
     { name: "16/07/2025", value: 79.5 },
+    { name: "17/07/2025", value: 79.0 },
   ];
 
   //Delivery
@@ -467,7 +468,7 @@ function DashboardPage() {
     { name: "12/07/2025", value: 50.3 },
     { name: "14/07/2025", value: 54.6 },
     { name: "15/07/2025", value: 55.7 },
-    { name: "16/07/2025", value: 557.4 },
+    { name: "16/07/2025", value: 57.4 },
   ];
 
   //Morale
@@ -509,7 +510,7 @@ function DashboardPage() {
     { name: "14/07/2025", value: 93.9 },
     { name: "15/07/2025", value: 95.7 },
     { name: "16/07/2025", value: 94.7 },
-    { name: "17/07/2025", value: 95.0 },
+    { name: "17/07/2025", value: 95.6 },
   ];
 
   //Safety maoth table
