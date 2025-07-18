@@ -28,7 +28,7 @@ function DashboardPage() {
 
   // Safety
   const [chartData1, setChartData1] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -66,7 +66,7 @@ function DashboardPage() {
   ]);
 // Quality
   const [chartData2, setChartData2] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -144,7 +144,7 @@ function DashboardPage() {
 
   //Delevery
   const [chartData4, setChartData4] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Lower' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -178,12 +178,12 @@ function DashboardPage() {
     { name: '13', value: 10, type: 'Holiday' },
     { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: 'Lower' },
-    { name: '16', value: 10, type: 'Upper' }
+    { name: '16', value: 10, type: 'Lower' }
   ]);
 
   //Environment
   const [chartData5, setChartData5] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -222,7 +222,7 @@ function DashboardPage() {
 
   //Morale
   const [chartData6, setChartData6] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -298,6 +298,7 @@ function DashboardPage() {
     { name: "14/07/2025", value: 0 },
     { name: "15/07/2025", value: 0 },
     { name: "16/07/2025", value: 0 },
+    { name: "17/07/2025", value: 0 },
 
   ];
 
@@ -339,7 +340,8 @@ function DashboardPage() {
     { name: "12/07/2025", value: 1.3 },
     { name: "14/07/2025", value: 1.5 },
     { name: "15/07/2025", value: 1.0 },
-    { name: "16/07/2025", value: 1.6 }
+    { name: "16/07/2025", value: 1.6 },
+    { name: "17/07/2025", value: 1.4 },
   ];
 
   //Efficiency
@@ -380,7 +382,7 @@ function DashboardPage() {
     { name: "12/07/2025", value: 77.9 },
     { name: "14/07/2025", value: 77.4 },
     { name: "15/07/2025", value: 77.8 },
-    { name: "16/07/2025", value: 79.5 }
+    { name: "16/07/2025", value: 79.5 },
   ];
 
   //Delivery
@@ -421,7 +423,8 @@ function DashboardPage() {
     { name: "12/07/2025", value: 12.3 },
     { name: "14/07/2025", value: 15.6 },
     { name: "15/07/2025", value: 20.0 },
-    { name: "16/07/2025", value: 16.5 }
+    { name: "16/07/2025", value: 19.2 },
+    { name: "17/07/2025", value: 20.0 },
   ];
 
   //Environment
@@ -464,7 +467,7 @@ function DashboardPage() {
     { name: "12/07/2025", value: 50.3 },
     { name: "14/07/2025", value: 54.6 },
     { name: "15/07/2025", value: 55.7 },
-    { name: "16/07/2025", value: 55.9 }
+    { name: "16/07/2025", value: 557.4 },
   ];
 
   //Morale
@@ -505,7 +508,8 @@ function DashboardPage() {
     { name: "12/07/2025", value: 88.9 },
     { name: "14/07/2025", value: 93.9 },
     { name: "15/07/2025", value: 95.7 },
-    { name: "16/07/2025", value: 94.7 }
+    { name: "16/07/2025", value: 94.7 },
+    { name: "17/07/2025", value: 95.0 },
   ];
 
   //Safety maoth table
@@ -580,7 +584,7 @@ function DashboardPage() {
     { month: 4, value: 1.29 },
     { month: 5, value: 1.58 },
     { month: 6, value: 1.39 },
-    { month: 7, value: 0.77 },
+    { month: 7, value: 0.83 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -619,14 +623,14 @@ function DashboardPage() {
 
   //Efficiency Action table
   const EfficiencyhighlightValue = [
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
+    { highlight: "Technical issue", date: "17/07/2025" },
+    { highlight: "Racking issue", date: "17/07/2025" },
     { highlight: "", date: "" },
   ];
 
   //Delivery Action table
   const DeliveryhighlightValue = [
-    { highlight: "", date: "" },
+    { highlight: "Racking issue", date: "17/07/2025" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
