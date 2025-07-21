@@ -144,7 +144,7 @@ function DashboardPage() {
 
   //Delevery
   const [chartData4, setChartData4] = useState([
-    { name: '17', value: 10, type: 'Lower' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: 'Lower' },
     { name: '20', value: 10, type: 'Holiday' },
@@ -177,8 +177,8 @@ function DashboardPage() {
     { name: '12', value: 10, type: 'Upper' },
     { name: '13', value: 10, type: 'Holiday' },
     { name: '14', value: 10, type: 'Upper' },
-    { name: '15', value: 10, type: 'Lower' },
-    { name: '16', value: 10, type: 'Lower' }
+    { name: '15', value: 10, type: 'Upper' },
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Environment
