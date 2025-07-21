@@ -106,9 +106,9 @@ function DashboardPage() {
   //Efficiency
   const [chartData3, setChartData3] = useState([
     { name: '17', value: 10, type: 'Lower' },
-    { name: '18', value: 10, type: '' },
-    { name: '19', value: 10, type: '' },
-    { name: '20', value: 10, type: '' },
+    { name: '18', value: 10, type: 'Lower' },
+    { name: '19', value: 10, type: 'Lower' },
+    { name: '20', value: 10, type: 'Holiday' },
     { name: '21', value: 10, type: '' },
     { name: '22', value: 10, type: '' },
     { name: '23', value: 10, type: '' },
@@ -223,9 +223,9 @@ function DashboardPage() {
   //Morale
   const [chartData6, setChartData6] = useState([
     { name: '17', value: 10, type: 'Upper' },
-    { name: '18', value: 10, type: '' },
-    { name: '19', value: 10, type: '' },
-    { name: '20', value: 10, type: '' },
+    { name: '18', value: 10, type: 'Upper' },
+    { name: '19', value: 10, type: 'Upper' },
+    { name: '20', value: 10, type: 'Holiday' },
     { name: '21', value: 10, type: '' },
     { name: '22', value: 10, type: '' },
     { name: '23', value: 10, type: '' },
@@ -387,6 +387,8 @@ function DashboardPage() {
     { name: "15/07/2025", value: 77.8 },
     { name: "16/07/2025", value: 79.5 },
     { name: "17/07/2025", value: 79.0 },
+    { name: "18/07/2025", value: 78.8 },
+    { name: "19/07/2025", value: 77.5 },
   ];
 
   //Delivery
@@ -519,6 +521,8 @@ function DashboardPage() {
     { name: "15/07/2025", value: 95.7 },
     { name: "16/07/2025", value: 94.7 },
     { name: "17/07/2025", value: 95.6 },
+    { name: "18/07/2025", value: 96.1 },
+    { name: "19/07/2025", value: 94.0 },
   ];
 
   //Safety maoth table
@@ -561,7 +565,7 @@ function DashboardPage() {
     { month: 4, value: 79.2 },
     { month: 5, value: 82.8 },
     { month: 6, value: 81.1 },
-    { month: 7, value: 78.8 },
+    { month: 7, value: 78.7 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -632,14 +636,15 @@ function DashboardPage() {
 
   //Efficiency Action table
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "17/07/2025" },
-    { highlight: "Racking issue", date: "17/07/2025" },
+    { highlight: "Technical issue", date: "19/07/2025" },
+    { highlight: "Racking issue", date: "19/07/2025" },
+    { highlight: "Rework issue", date: "19/07/2025" },
     { highlight: "", date: "" },
   ];
 
   //Delivery Action table
   const DeliveryhighlightValue = [
-    { highlight: "Racking issue", date: "17/07/2025" },
+    { highlight: "Racking issue", date: "19/07/2025" },
     { highlight: "Rework issue", date: "19/07/2025" },
     { highlight: "", date: "" },
   ];
