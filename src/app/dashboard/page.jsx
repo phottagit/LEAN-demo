@@ -146,9 +146,9 @@ function DashboardPage() {
   const [chartData4, setChartData4] = useState([
     { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: 'Upper' },
-    { name: '19', value: 10, type: 'Lower' },
+    { name: '19', value: 10, type: 'Upper' },
     { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Upper' },
+    { name: '21', value: 10, type: 'Lower' },
     { name: '22', value: 10, type: '' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
