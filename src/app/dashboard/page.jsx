@@ -277,7 +277,7 @@ function DashboardPage() {
     { name: "17/07/2025", value: 0 },
     { name: "18/07/2025", value: 0 },
     { name: "19/07/2025", value: 0 },
-    { name: "20/07/2025", value: 0 }
+    { name: "21/07/2025", value: 0 }
   ];
 
   //Quality
@@ -298,7 +298,7 @@ function DashboardPage() {
     { name: "17/07/2025", value: 1.4 },
     { name: "18/07/2025", value: 1.6 },
     { name: "19/07/2025", value: 1.6 },
-    { name: "20/07/2025", value: 1.6 }
+    { name: "21/07/2025", value: 1.6 }
   ];
 
   //Efficiency
@@ -339,7 +339,7 @@ function DashboardPage() {
     { name: "17/07/2025", value: 16.5 },
     { name: "18/07/2025", value: 18.4 },
     { name: "19/07/2025", value: 12.5 },
-    { name: "20/07/2025", value: 24.0 }
+    { name: "21/07/2025", value: 24.0 }
   ];
 
   //Environment
@@ -361,7 +361,7 @@ function DashboardPage() {
     { name: "17/07/2025", value: 16.5 },
     { name: "18/07/2025", value: 55.9 },
     { name: "19/07/2025", value: 50.1 },
-    { name: "20/07/2025", value: 56.7 }
+    { name: "21/07/2025", value: 56.7 }
   ];
 
   //Morale
