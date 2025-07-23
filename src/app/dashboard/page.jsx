@@ -33,45 +33,7 @@ function DashboardPage() {
     { name: '19', value: 10, type: 'Upper' },
     { name: '20', value: 10, type: 'Holiday' },
     { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: '' },
-    { name: '23', value: 10, type: '' },
-    { name: '24', value: 10, type: '' },
-    { name: '25', value: 10, type: '' },
-    { name: '26', value: 10, type: '' },
-    { name: '27', value: 10, type: '' },
-    { name: '28', value: 10, type: '' },
-    { name: '29', value: 10, type: '' },
-    { name: '30', value: 10, type: '' },
-    { name: '31', value: 10, type: '' },
-    { name: '', value: 10, type: '' },
-    { name: '', value: 10, type: '' },
-    { name: '', value: 10, type: '' },
-    { name: '', value: 10, type: '' },
-    { name: '1', value: 10, type: 'Upper' },
-    { name: '2', value: 10, type: 'Upper' },
-    { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: 'Upper' },
-    { name: '5', value: 10, type: 'Upper' },
-    { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: 'Upper' },
-    { name: '10', value: 10, type: 'Holiday' },
-    { name: '11', value: 10, type: 'Upper' },
-    { name: '12', value: 10, type: 'Upper' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Upper' },
-    { name: '15', value: 10, type: 'Upper' },
-    { name: '16', value: 10, type: 'Upper' }
-  ]);
-// Quality
-  const [chartData2, setChartData2] = useState([
-    { name: '17', value: 10, type: 'Upper' },
-    { name: '18', value: 10, type: 'Upper' },
-    { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: '' },
+    { name: '22', value: 10, type: 'Upper' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
@@ -103,6 +65,131 @@ function DashboardPage() {
     { name: '16', value: 10, type: 'Upper' }
   ]);
 
+  const data1 = [
+    { name: "01/07/2025", value: 0 },
+    { name: "02/07/2025", value: 0 },
+    { name: "03/07/2025", value: 0 },
+    { name: "04/07/2025", value: 0 },
+    { name: "05/07/2025", value: 0 },
+    { name: "07/07/2025", value: 0 },
+    { name: "08/07/2025", value: 0 },
+    { name: "09/07/2025", value: 0 },
+    { name: "11/07/2025", value: 0 },
+    { name: "12/07/2025", value: 0 },
+    { name: "14/07/2025", value: 0 },
+    { name: "15/07/2025", value: 0 },
+    { name: "16/07/2025", value: 0 },
+    { name: "17/07/2025", value: 0 },
+    { name: "18/07/2025", value: 0 },
+    { name: "19/07/2025", value: 0 },
+    { name: "21/07/2025", value: 0 },
+    { name: "22/07/2025", value: 0 }
+  ];
+
+  const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
+    { month: 1, value: 0.00 },
+    { month: 2, value: 0.00 },
+    { month: 3, value: 0.29 },
+    { month: 4, value: 0.29 },
+    { month: 5, value: 0.29 },
+    { month: 6, value: 0.29 },
+    { month: 7, value: null },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ]);
+
+  //IFR Action table
+  const IFRhighlightValue = [
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+  ];
+
+// Quality
+  const [chartData2, setChartData2] = useState([
+    { name: '17', value: 10, type: 'Upper' },
+    { name: '18', value: 10, type: 'Upper' },
+    { name: '19', value: 10, type: 'Upper' },
+    { name: '20', value: 10, type: 'Holiday' },
+    { name: '21', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Upper' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
+    { name: '30', value: 10, type: '' },
+    { name: '31', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '', value: 10, type: '' },
+    { name: '1', value: 10, type: 'Upper' },
+    { name: '2', value: 10, type: 'Upper' },
+    { name: '3', value: 10, type: 'Upper' },
+    { name: '4', value: 10, type: 'Upper' },
+    { name: '5', value: 10, type: 'Upper' },
+    { name: '6', value: 10, type: 'Holiday' },
+    { name: '7', value: 10, type: 'Upper' },
+    { name: '8', value: 10, type: 'Upper' },
+    { name: '9', value: 10, type: 'Upper' },
+    { name: '10', value: 10, type: 'Holiday' },
+    { name: '11', value: 10, type: 'Upper' },
+    { name: '12', value: 10, type: 'Upper' },
+    { name: '13', value: 10, type: 'Holiday' },
+    { name: '14', value: 10, type: 'Upper' },
+    { name: '15', value: 10, type: 'Upper' },
+    { name: '16', value: 10, type: 'Upper' }
+  ]);
+
+  const data2 = [
+    { name: "01/07/2025", value: 1.6 },
+    { name: "02/07/2025", value: 2.3 },
+    { name: "03/07/2025", value: 2.0 },
+    { name: "04/07/2025", value: 1.8 },
+    { name: "05/07/2025", value: 1.5 },
+    { name: "07/07/2025", value: 1.4 },
+    { name: "08/07/2025", value: 1.6 },
+    { name: "09/07/2025", value: 1.8 },
+    { name: "11/07/2025", value: 1.3 },
+    { name: "12/07/2025", value: 1.3 },
+    { name: "14/07/2025", value: 1.5 },
+    { name: "15/07/2025", value: 1.0 },
+    { name: "16/07/2025", value: 1.6 },
+    { name: "17/07/2025", value: 1.4 },
+    { name: "18/07/2025", value: 1.6 },
+    { name: "19/07/2025", value: 1.6 },
+    { name: "21/07/2025", value: 1.6 },
+    { name: "22/07/2025", value: 1.8 }
+  ];
+
+  const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
+    { month: 1, value: 2.9 },
+    { month: 2, value: 4.0 },
+    { month: 3, value: 4.2 },
+    { month: 4, value: 2.9 },
+    { month: 5, value: 1.6 },
+    { month: 6, value: 1.3 },
+    { month: 7, value: 1.6 },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ]);
+
+  const QualityhighlightValue = [
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+  ];
+
+  
   //Efficiency
   const [chartData3, setChartData3] = useState([
     { name: '17', value: 10, type: 'Lower' },
@@ -141,6 +228,48 @@ function DashboardPage() {
     { name: '15', value: 10, type: 'Lower' },
     { name: '16', value: 10, type: 'Lower' }
   ]);
+
+  const data3 = [
+    { name: "01/07/2025", value: 80.5 },
+    { name: "02/07/2025", value: 81.3 },
+    { name: "03/07/2025", value: 79.1 },
+    { name: "04/07/2025", value: 79.5 },
+    { name: "05/07/2025", value: 78.0 },
+    { name: "07/07/2025", value: 79.5 },
+    { name: "08/07/2025", value: 78.5 },
+    { name: "09/07/2025", value: 76.9 },
+    { name: "11/07/2025", value: 77.1 },
+    { name: "12/07/2025", value: 77.9 },
+    { name: "14/07/2025", value: 77.4 },
+    { name: "15/07/2025", value: 77.8 },
+    { name: "16/07/2025", value: 79.5 },
+    { name: "17/07/2025", value: 79.0 },
+    { name: "18/07/2025", value: 78.8 },
+    { name: "19/07/2025", value: 77.5 },
+    { name: "21/07/2025", value: 74.1 }
+  ];
+
+  const [EfficiencytableValue, setEfficiencytableValue] = useState([
+    { month: 1, value: 84.8 },
+    { month: 2, value: 83.5 },
+    { month: 3, value: 80.0 },
+    { month: 4, value: 79.2 },
+    { month: 5, value: 82.8 },
+    { month: 6, value: 81.1 },
+    { month: 7, value: 78.4 },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ]);
+
+  const EfficiencyhighlightValue = [
+    { highlight: "Technical issue", date: "19/07/2025" },
+    { highlight: "Racking issue", date: "19/07/2025" },
+    { highlight: "Rework issue", date: "19/07/2025" },
+    { highlight: "", date: "" },
+  ];
 
   //Delevery
   const [chartData4, setChartData4] = useState([
@@ -181,6 +310,47 @@ function DashboardPage() {
     { name: '16', value: 10, type: 'Upper' }
   ]);
 
+  const data4 = [
+    { name: "01/07/2025", value: 15.8 },
+    { name: "02/07/2025", value: 15.3 },
+    { name: "03/07/2025", value: 15.1 },
+    { name: "04/07/2025", value: 14.3 },
+    { name: "05/07/2025", value: 15.0 },
+    { name: "07/07/2025", value: 15.8 },
+    { name: "08/07/2025", value: 15.2 },
+    { name: "09/07/2025", value: 15.8 },
+    { name: "11/07/2025", value: 16.2 },
+    { name: "12/07/2025", value: 16.5 },
+    { name: "14/07/2025", value: 16.5 },
+    { name: "15/07/2025", value: 16.8 },
+    { name: "16/07/2025", value: 17.9 },
+    { name: "17/07/2025", value: 16.5 },
+    { name: "18/07/2025", value: 18.4 },
+    { name: "19/07/2025", value: 12.5 },
+    { name: "21/07/2025", value: 24.0 }
+  ];
+
+  const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
+    { month: 1, value: 20.6 },
+    { month: 2, value: 17.6 },
+    { month: 3, value: 18.5 },
+    { month: 4, value: 23.2 },
+    { month: 5, value: 20.0 },
+    { month: 6, value: 16.5 },
+    { month: 7, value: 16.0 },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ]);
+
+  const DeliveryhighlightValue = [
+    { highlight: "Racking issue", date: "20/07/2025" },
+    { highlight: "Rework issue", date: "19/07/2025" },
+    { highlight: "", date: "" },
+  ];
+
   //Environment
   const [chartData5, setChartData5] = useState([
     { name: '17', value: 10, type: 'Upper' },
@@ -188,7 +358,7 @@ function DashboardPage() {
     { name: '19', value: 10, type: 'Upper' },
     { name: '20', value: 10, type: 'Holiday' },
     { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: '' },
+    { name: '22', value: 10, type: 'Upper' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
@@ -219,6 +389,50 @@ function DashboardPage() {
     { name: '15', value: 10, type: 'Upper' },
     { name: '16', value: 10, type: 'Upper' }
   ]);
+
+  const data5 = [
+    { name: "01/07/2025", value: 59.9 },
+    { name: "02/07/2025", value: 60.1 },
+    { name: "03/07/2025", value: 56.3 },
+    { name: "04/07/2025", value: 56.3 },
+    { name: "05/07/2025", value: 54.7 },
+    { name: "06/07/2025", value: 48.8 },
+    { name: "07/07/2025", value: 57.8 },
+    { name: "08/07/2025", value: 63.4 },
+    { name: "09/07/2025", value: 57.6 },
+    { name: "11/07/2025", value: 56.7 },
+    { name: "12/07/2025", value: 50.3 },
+    { name: "14/07/2025", value: 54.6 },
+    { name: "15/07/2025", value: 55.7 },
+    { name: "16/07/2025", value: 57.4 },
+    { name: "17/07/2025", value: 16.5 },
+    { name: "18/07/2025", value: 55.9 },
+    { name: "19/07/2025", value: 50.1 },
+    { name: "21/07/2025", value: 56.7 },
+    { name: "22/07/2025", value: 58.4 }
+  ];
+
+  const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
+    { month: 1, value: 1.15 },
+    { month: 2, value: 1.21 },
+    { month: 3, value: 1.40 },
+    { month: 4, value: 1.29 },
+    { month: 5, value: 1.58 },
+    { month: 6, value: 1.39 },
+    { month: 7, value: 1.06 },
+    { month: 8, value: null },
+    { month: 9, value: null },
+    { month: 10, value: null },
+    { month: 11, value: null },
+    { month: 12, value: null },
+  ]);
+
+  const EnvironmenthighlightValue = [
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+
+  ];
 
   //Morale
   const [chartData6, setChartData6] = useState([
@@ -259,112 +473,6 @@ function DashboardPage() {
     { name: '16', value: 10, type: 'Upper' }
   ]);
 
-  //Safety
-  const data1 = [
-    { name: "01/07/2025", value: 0 },
-    { name: "02/07/2025", value: 0 },
-    { name: "03/07/2025", value: 0 },
-    { name: "04/07/2025", value: 0 },
-    { name: "05/07/2025", value: 0 },
-    { name: "07/07/2025", value: 0 },
-    { name: "08/07/2025", value: 0 },
-    { name: "09/07/2025", value: 0 },
-    { name: "11/07/2025", value: 0 },
-    { name: "12/07/2025", value: 0 },
-    { name: "14/07/2025", value: 0 },
-    { name: "15/07/2025", value: 0 },
-    { name: "16/07/2025", value: 0 },
-    { name: "17/07/2025", value: 0 },
-    { name: "18/07/2025", value: 0 },
-    { name: "19/07/2025", value: 0 },
-    { name: "21/07/2025", value: 0 }
-  ];
-
-  //Quality
-  const data2 = [
-    { name: "01/07/2025", value: 1.6 },
-    { name: "02/07/2025", value: 2.3 },
-    { name: "03/07/2025", value: 2.0 },
-    { name: "04/07/2025", value: 1.8 },
-    { name: "05/07/2025", value: 1.5 },
-    { name: "07/07/2025", value: 1.4 },
-    { name: "08/07/2025", value: 1.6 },
-    { name: "09/07/2025", value: 1.8 },
-    { name: "11/07/2025", value: 1.3 },
-    { name: "12/07/2025", value: 1.3 },
-    { name: "14/07/2025", value: 1.5 },
-    { name: "15/07/2025", value: 1.0 },
-    { name: "16/07/2025", value: 1.6 },
-    { name: "17/07/2025", value: 1.4 },
-    { name: "18/07/2025", value: 1.6 },
-    { name: "19/07/2025", value: 1.6 },
-    { name: "21/07/2025", value: 1.6 }
-  ];
-
-  //Efficiency
-  const data3 = [
-    { name: "01/07/2025", value: 80.5 },
-    { name: "02/07/2025", value: 81.3 },
-    { name: "03/07/2025", value: 79.1 },
-    { name: "04/07/2025", value: 79.5 },
-    { name: "05/07/2025", value: 78.0 },
-    { name: "07/07/2025", value: 79.5 },
-    { name: "08/07/2025", value: 78.5 },
-    { name: "09/07/2025", value: 76.9 },
-    { name: "11/07/2025", value: 77.1 },
-    { name: "12/07/2025", value: 77.9 },
-    { name: "14/07/2025", value: 77.4 },
-    { name: "15/07/2025", value: 77.8 },
-    { name: "16/07/2025", value: 79.5 },
-    { name: "17/07/2025", value: 79.0 },
-    { name: "18/07/2025", value: 78.8 },
-    { name: "19/07/2025", value: 77.5 },
-    { name: "21/07/2025", value: 74.1 }
-  ];
-
-  //Delivery
-  const data4 = [
-    { name: "01/07/2025", value: 15.8 },
-    { name: "02/07/2025", value: 15.3 },
-    { name: "03/07/2025", value: 15.1 },
-    { name: "04/07/2025", value: 14.3 },
-    { name: "05/07/2025", value: 15.0 },
-    { name: "07/07/2025", value: 15.8 },
-    { name: "08/07/2025", value: 15.2 },
-    { name: "09/07/2025", value: 15.8 },
-    { name: "11/07/2025", value: 16.2 },
-    { name: "12/07/2025", value: 16.5 },
-    { name: "14/07/2025", value: 16.5 },
-    { name: "15/07/2025", value: 16.8 },
-    { name: "16/07/2025", value: 17.9 },
-    { name: "17/07/2025", value: 16.5 },
-    { name: "18/07/2025", value: 18.4 },
-    { name: "19/07/2025", value: 12.5 },
-    { name: "21/07/2025", value: 24.0 }
-  ];
-
-  //Environment
-  const data5 = [
-    { name: "01/07/2025", value: 59.9 },
-    { name: "02/07/2025", value: 60.1 },
-    { name: "03/07/2025", value: 56.3 },
-    { name: "04/07/2025", value: 56.3 },
-    { name: "05/07/2025", value: 54.7 },
-    { name: "06/07/2025", value: 48.8 },
-    { name: "07/07/2025", value: 57.8 },
-    { name: "08/07/2025", value: 63.4 },
-    { name: "09/07/2025", value: 57.6 },
-    { name: "11/07/2025", value: 56.7 },
-    { name: "12/07/2025", value: 50.3 },
-    { name: "14/07/2025", value: 54.6 },
-    { name: "15/07/2025", value: 55.7 },
-    { name: "16/07/2025", value: 57.4 },
-    { name: "17/07/2025", value: 16.5 },
-    { name: "18/07/2025", value: 55.9 },
-    { name: "19/07/2025", value: 50.1 },
-    { name: "21/07/2025", value: 56.7 }
-  ];
-
   //Morale
   const data6 = [
     { name: "01/07/2025", value: 94.5 },
@@ -386,86 +494,6 @@ function DashboardPage() {
     { name: "21/07/2025", value: 92.3 }
   ];
 
-  //Safety maoth table
-  const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
-    { month: 1, value: 0.00 },
-    { month: 2, value: 0.00 },
-    { month: 3, value: 0.29 },
-    { month: 4, value: 0.29 },
-    { month: 5, value: 0.29 },
-    { month: 6, value: 0.29 },
-    { month: 7, value: null },
-    { month: 8, value: null },
-    { month: 9, value: null },
-    { month: 10, value: null },
-    { month: 11, value: null },
-    { month: 12, value: null },
-  ]);
-
-  //Quality maoth table
-  const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
-    { month: 1, value: 2.9 },
-    { month: 2, value: 4.0 },
-    { month: 3, value: 4.2 },
-    { month: 4, value: 2.9 },
-    { month: 5, value: 1.6 },
-    { month: 6, value: 1.3 },
-    { month: 7, value: 1.6 },
-    { month: 8, value: null },
-    { month: 9, value: null },
-    { month: 10, value: null },
-    { month: 11, value: null },
-    { month: 12, value: null },
-  ]);
-
-  //Efficiency maoth table
-  const [EfficiencytableValue, setEfficiencytableValue] = useState([
-    { month: 1, value: 84.8 },
-    { month: 2, value: 83.5 },
-    { month: 3, value: 80.0 },
-    { month: 4, value: 79.2 },
-    { month: 5, value: 82.8 },
-    { month: 6, value: 81.1 },
-    { month: 7, value: 78.4 },
-    { month: 8, value: null },
-    { month: 9, value: null },
-    { month: 10, value: null },
-    { month: 11, value: null },
-    { month: 12, value: null },
-  ]);
-
-  //Delivery maoth table
-  const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
-    { month: 1, value: 20.6 },
-    { month: 2, value: 17.6 },
-    { month: 3, value: 18.5 },
-    { month: 4, value: 23.2 },
-    { month: 5, value: 20.0 },
-    { month: 6, value: 16.5 },
-    { month: 7, value: 16.0 },
-    { month: 8, value: null },
-    { month: 9, value: null },
-    { month: 10, value: null },
-    { month: 11, value: null },
-    { month: 12, value: null },
-  ]);
-
-  //Environment maoth table
-  const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
-    { month: 1, value: 1.15 },
-    { month: 2, value: 1.21 },
-    { month: 3, value: 1.40 },
-    { month: 4, value: 1.29 },
-    { month: 5, value: 1.58 },
-    { month: 6, value: 1.39 },
-    { month: 7, value: 1.00 },
-    { month: 8, value: null },
-    { month: 9, value: null },
-    { month: 10, value: null },
-    { month: 11, value: null },
-    { month: 12, value: null },
-  ]);
-
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
     { month: 1, value: 93.6 },
     { month: 2, value: 93.5 },
@@ -480,45 +508,7 @@ function DashboardPage() {
     { month: 11, value: null },
     { month: 12, value: null },
   ]);
-  
-  //IFR Action table
-  const IFRhighlightValue = [
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-  ];
-
-  //Quality Action table
-  const QualityhighlightValue = [
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-  ];
-
-  //Efficiency Action table
-  const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "19/07/2025" },
-    { highlight: "Racking issue", date: "19/07/2025" },
-    { highlight: "Rework issue", date: "19/07/2025" },
-    { highlight: "", date: "" },
-  ];
-
-  //Delivery Action table
-  const DeliveryhighlightValue = [
-    { highlight: "Racking issue", date: "20/07/2025" },
-    { highlight: "Rework issue", date: "19/07/2025" },
-    { highlight: "", date: "" },
-  ];
-
-  //Environment Action table
-  const EnvironmenthighlightValue = [
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-
-  ];
-
-  //Morale Action table
+ 
   const MoralehighlightValue = [
     { highlight: "", date: "" },
     { highlight: "", date: "" },
