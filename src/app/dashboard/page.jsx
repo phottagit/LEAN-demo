@@ -268,9 +268,9 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "19/07/2025" },
-    { highlight: "Racking issue", date: "19/07/2025" },
-    { highlight: "Rework issue", date: "19/07/2025" },
+    { highlight: "Technical issue", date: "23/07/2025" },
+    { highlight: "Racking issue", date: "23/07/2025" },
+    { highlight: "Rework issue", date: "23/07/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -351,8 +351,8 @@ function DashboardPage() {
   ]);
 
   const DeliveryhighlightValue = [
-    { highlight: "Racking issue", date: "20/07/2025" },
-    { highlight: "Rework issue", date: "19/07/2025" },
+    { highlight: "Racking issue", date: "21/07/2025" },
+    { highlight: "Rework issue", date: "21/07/2025" },
     { highlight: "", date: "" },
   ];
 
