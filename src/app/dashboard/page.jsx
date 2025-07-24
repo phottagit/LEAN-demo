@@ -93,8 +93,8 @@ function DashboardPage() {
     { month: 3, value: 0.00 },
     { month: 4, value: 0.00  },
     { month: 5, value: 0.00  },
-    { month: 6, value: 3.26 },
-    { month: 7, value: null },
+    { month: 6, value: 0.00 },
+    { month: 7, value: 3.26 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -104,8 +104,8 @@ function DashboardPage() {
 
   //IFR Action table
   const IFRhighlightValue = [
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
+    { highlight: "Supplier stacked pallets above truck barriers", date: "18/07/2025" },
+    { highlight: "SMT employee entered hazardous area without PPE", date: "18/07/2025" },
     { highlight: "", date: "" },
   ];
 
