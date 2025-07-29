@@ -120,11 +120,11 @@ function DashboardPage() {
     { name: '22', value: 10, type: 'Upper' },
     { name: '23', value: 10, type: 'Upper' },
     { name: '24', value: 10, type: 'Upper' },
-    { name: '25', value: 10, type: '' },
-    { name: '26', value: 10, type: '' },
-    { name: '27', value: 10, type: '' },
-    { name: '28', value: 10, type: '' },
-    { name: '29', value: 10, type: '' },
+    { name: '25', value: 10, type: 'Upper' },
+    { name: '26', value: 10, type: 'Upper' },
+    { name: '27', value: 10, type: 'Upper' },
+    { name: '28', value: 10, type: 'Holiday' },
+    { name: '29', value: 10, type: 'Holiday' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -169,7 +169,9 @@ function DashboardPage() {
     { name: "21/07/2025", value: 1.6 },
     { name: "22/07/2025", value: 1.8 },
     { name: "23/07/2025", value: 1.5 },
-    { name: "24/07/2025", value: 1.7 }
+    { name: "24/07/2025", value: 1.7 },
+    { name: "25/07/2025", value: 1.4 },
+    { name: "26/07/2025", value: 1.1 }
   ];
 
   const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
@@ -179,7 +181,7 @@ function DashboardPage() {
     { month: 4, value: 2.9 },
     { month: 5, value: 1.6 },
     { month: 6, value: 1.3 },
-    { month: 7, value: 1.6 },
+    { month: 7, value: 1.5 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -284,14 +286,14 @@ function DashboardPage() {
     { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: 'Upper' },
     { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Lower' },
+    { name: '21', value: 10, type: 'Upper' },
     { name: '22', value: 10, type: 'Upper' },
     { name: '23', value: 10, type: 'Upper' },
     { name: '24', value: 10, type: 'Upper' },
-    { name: '25', value: 10, type: '' },
-    { name: '26', value: 10, type: '' },
-    { name: '27', value: 10, type: '' },
-    { name: '28', value: 10, type: '' },
+    { name: '25', value: 10, type: 'Upper' },
+    { name: '26', value: 10, type: 'Lower' },
+    { name: '27', value: 10, type: 'Holiday' },
+    { name: '28', value: 10, type: 'Holiday' },
     { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
@@ -333,11 +335,13 @@ function DashboardPage() {
     { name: "16/07/2025", value: 17.9 },
     { name: "17/07/2025", value: 16.5 },
     { name: "18/07/2025", value: 18.4 },
-    { name: "19/07/2025", value: 14.3 },
-    { name: "21/07/2025", value: 24.0 },
-    { name: "22/07/2025", value: 11.5 },
-    { name: "23/07/2025", value: 16.1 },
-    { name: "24/07/2025", value: 16.8 }
+    { name: "19/07/2025", value: 15.1 },
+    { name: "21/07/2025", value: 17.9 },
+    { name: "22/07/2025", value: 17.8 },
+    { name: "23/07/2025", value: 17.4 },
+    { name: "24/07/2025", value: 17.3 },
+    { name: "25/07/2025", value: 15.1 },
+    { name: "26/07/2025", value: 26.8 }
   ];
 
   const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
@@ -356,8 +360,8 @@ function DashboardPage() {
   ]);
 
   const DeliveryhighlightValue = [
-    { highlight: "Racking issue", date: "21/07/2025" },
-    { highlight: "Rework issue", date: "21/07/2025" },
+    { highlight: "Racking issue", date: "26/07/2025" },
+    { highlight: "Rework issue", date: "26/07/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -371,10 +375,10 @@ function DashboardPage() {
     { name: '22', value: 10, type: 'Upper' },
     { name: '23', value: 10, type: 'Upper' },
     { name: '24', value: 10, type: 'Upper' },
-    { name: '25', value: 10, type: '' },
-    { name: '26', value: 10, type: '' },
-    { name: '27', value: 10, type: '' },
-    { name: '28', value: 10, type: '' },
+    { name: '25', value: 10, type: 'Upper' },
+    { name: '26', value: 10, type: 'Upper' },
+    { name: '27', value: 10, type: 'Holiday' },
+    { name: '28', value: 10, type: 'Holiday' },
     { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
