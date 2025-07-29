@@ -36,8 +36,8 @@ function DashboardPage() {
     { name: '22', value: 10, type: 'Lower' },
     { name: '23', value: 10, type: 'Lower' },
     { name: '24', value: 10, type: 'Lower' },
-    { name: '25', value: 10, type: '' },
-    { name: '26', value: 10, type: '' },
+    { name: '25', value: 10, type: 'Lower' },
+    { name: '26', value: 10, type: 'Lower' },
     { name: '27', value: 10, type: '' },
     { name: '28', value: 10, type: '' },
     { name: '29', value: 10, type: '' },
@@ -85,7 +85,9 @@ function DashboardPage() {
     { name: "21/07/2025", value: 10.74 },
     { name: "22/07/2025", value: 7.46 },
     { name: "23/07/2025", value: 5.73 },
-    { name: "24/07/2025", value: 4.67 }
+    { name: "24/07/2025", value: 4.67 },
+    { name: "25/07/2025", value: 3.98 },
+    { name: "26/07/2025", value: 3.52 }
   ];
 
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
@@ -95,7 +97,7 @@ function DashboardPage() {
     { month: 4, value: 0.00  },
     { month: 5, value: 0.00  },
     { month: 6, value: 0.00 },
-    { month: 7, value: 3.26 },
+    { month: 7, value: 3.52 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
