@@ -124,9 +124,9 @@ function DashboardPage() {
     { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: 'Upper' },
     { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: 'Upper' },
+    { name: '27', value: 10, type: 'Holiday' },
     { name: '28', value: 10, type: 'Holiday' },
-    { name: '29', value: 10, type: 'Holiday' },
+    { name: '29', value: 10, type: 'Upper' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -173,7 +173,8 @@ function DashboardPage() {
     { name: "23/07/2025", value: 1.5 },
     { name: "24/07/2025", value: 1.7 },
     { name: "25/07/2025", value: 1.4 },
-    { name: "26/07/2025", value: 1.1 }
+    { name: "26/07/2025", value: 1.1 },
+    { name: "29/07/2025", value: 1.3 }
   ];
 
   const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
@@ -278,9 +279,9 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "24/07/2025" },
-    { highlight: "Racking issue", date: "24/07/2025" },
-    { highlight: "Rework issue", date: "24/07/2025" },
+    { highlight: "Technical issue", date: "25/07/2025" },
+    { highlight: "Racking issue", date: "25/07/2025" },
+    { highlight: "Rework issue", date: "25/07/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -298,7 +299,7 @@ function DashboardPage() {
     { name: '26', value: 10, type: 'Lower' },
     { name: '27', value: 10, type: 'Holiday' },
     { name: '28', value: 10, type: 'Holiday' },
-    { name: '29', value: 10, type: '' },
+    { name: '29', value: 10, type: 'Upper' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -345,7 +346,8 @@ function DashboardPage() {
     { name: "23/07/2025", value: 17.4 },
     { name: "24/07/2025", value: 17.3 },
     { name: "25/07/2025", value: 15.1 },
-    { name: "26/07/2025", value: 26.8 }
+    { name: "26/07/2025", value: 25.6 },
+    { name: "29/07/2025", value: 17.6 }
   ];
 
   const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
@@ -355,7 +357,7 @@ function DashboardPage() {
     { month: 4, value: 23.2 },
     { month: 5, value: 20.0 },
     { month: 6, value: 16.5 },
-    { month: 7, value: 16.3 },
+    { month: 7, value: 16.4 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -383,7 +385,7 @@ function DashboardPage() {
     { name: '26', value: 10, type: 'Upper' },
     { name: '27', value: 10, type: 'Holiday' },
     { name: '28', value: 10, type: 'Holiday' },
-    { name: '29', value: 10, type: '' },
+    { name: '29', value: 10, type: 'Upper' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -431,7 +433,8 @@ function DashboardPage() {
     { name: "23/07/2025", value: 57.7 },
     { name: "24/07/2025", value: 55.4 },
     { name: "25/07/2025", value: 52.4 },
-    { name: "26/07/2025", value: 50.5 }
+    { name: "26/07/2025", value: 50.5 },
+    { name: "29/07/2025", value: 47.5 }
   ];
 
   const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
@@ -441,7 +444,7 @@ function DashboardPage() {
     { month: 4, value: 1.29 },
     { month: 5, value: 1.58 },
     { month: 6, value: 1.39 },
-    { month: 7, value: 1.29 },
+    { month: 7, value: 1.34 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
