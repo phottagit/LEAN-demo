@@ -41,8 +41,8 @@ function DashboardPage() {
     { name: '27', value: 10, type: 'Holiday' },
     { name: '28', value: 10, type: 'Holiday' },
     { name: '29', value: 10, type: 'Lower' },
-    { name: '30', value: 10, type: '' },
-    { name: '31', value: 10, type: '' },
+    { name: '30', value: 10, type: 'Lower' },
+    { name: '31', value: 10, type: 'Lower' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -88,7 +88,9 @@ function DashboardPage() {
     { name: "24/07/2025", value: 4.67 },
     { name: "25/07/2025", value: 3.98 },
     { name: "26/07/2025", value: 3.52 },
-    { name: "29/07/2025", value: 3.15 }
+    { name: "29/07/2025", value: 3.15 },
+    { name: "30/07/2025", value: 2.81 },
+    { name: "31/07/2025", value: 2.51 }
   ];
 
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
@@ -98,7 +100,7 @@ function DashboardPage() {
     { month: 4, value: 0.00  },
     { month: 5, value: 0.00  },
     { month: 6, value: 0.00 },
-    { month: 7, value: 3.15 },
+    { month: 7, value: 2.51 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -206,41 +208,41 @@ function DashboardPage() {
   
   //Efficiency
   const [chartData3, setChartData3] = useState([
-    { name: '17', value: 10, type: 'Lower' },
-    { name: '18', value: 10, type: 'Lower' },
-    { name: '19', value: 10, type: 'Lower' },
-    { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Lower' },
-    { name: '22', value: 10, type: 'Lower' },
-    { name: '23', value: 10, type: 'Lower' },
-    { name: '24', value: 10, type: 'Lower' },
-    { name: '25', value: 10, type: 'Lower' },
-    { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: 'Holiday' },
-    { name: '28', value: 10, type: 'Holiday' },
-    { name: '29', value: 10, type: 'Lower' },
+    { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
-    { name: '1', value: 10, type: 'Upper' },
+    { name: '1', value: 10, type: 'Lower' },
     { name: '2', value: 10, type: 'Upper' },
-    { name: '3', value: 10, type: 'Lower' },
-    { name: '4', value: 10, type: 'Lower' },
-    { name: '5', value: 10, type: 'Lower' },
-    { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: 'Lower' },
-    { name: '9', value: 10, type: 'Lower' },
-    { name: '10', value: 10, type: 'Holiday' },
-    { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Lower' },
-    { name: '15', value: 10, type: 'Lower' },
-    { name: '16', value: 10, type: 'Lower' }
+    { name: '3', value: 10, type: 'Holiday' },
+    { name: '4', value: 10, type: '' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
   ]);
 
   const data3 = [
@@ -266,7 +268,10 @@ function DashboardPage() {
     { name: "24/07/2025", value: 77.8 },
     { name: "25/07/2025", value: 78.9 },
     { name: "26/07/2025", value: 81.6 },
-    { name: "29/07/2025", value: 77.2 }
+    { name: "29/07/2025", value: 78.4 },
+    { name: "31/07/2025", value: 78.0 },
+    { name: "01/08/2025", value: 75.8 },
+    { name: "02/08/2025", value: 81.2 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -276,7 +281,7 @@ function DashboardPage() {
     { month: 4, value: 79.2 },
     { month: 5, value: 82.8 },
     { month: 6, value: 81.1 },
-    { month: 7, value: 78.6 },
+    { month: 7, value: 78.5 },
     { month: 8, value: null },
     { month: 9, value: null },
     { month: 10, value: null },
@@ -285,9 +290,9 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "29/07/2025" },
-    { highlight: "Racking issue", date: "29/07/2025" },
-    { highlight: "Rework issue", date: "29/07/2025" },
+    { highlight: "Technical issue", date: "01/08/2025" },
+    { highlight: "Racking issue", date: "01/08/2025" },
+    { highlight: "Rework issue", date: "01/08/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -475,19 +480,19 @@ function DashboardPage() {
 
   //Morale
   const [chartData6, setChartData6] = useState([
-    { name: '17', value: 10, type: 'Upper' },
-    { name: '18', value: 10, type: 'Upper' },
-    { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: 'Holiday' },
-    { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: 'Upper' },
-    { name: '23', value: 10, type: 'Upper' },
-    { name: '24', value: 10, type: 'Upper' },
-    { name: '25', value: 10, type: 'Upper' },
-    { name: '26', value: 10, type: 'Lower' },
-    { name: '27', value: 10, type: 'Holiday' },
-    { name: '28', value: 10, type: 'Holiday' },
-    { name: '29', value: 10, type: 'Lower' },
+    { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -496,20 +501,20 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
-    { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: 'Upper' },
-    { name: '5', value: 10, type: 'Upper' },
-    { name: '6', value: 10, type: 'Holiday' },
-    { name: '7', value: 10, type: 'Upper' },
-    { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: 'Upper' },
-    { name: '10', value: 10, type: 'Holiday' },
-    { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Upper' },
-    { name: '15', value: 10, type: 'Upper' },
-    { name: '16', value: 10, type: 'Upper' }
+    { name: '3', value: 10, type: 'Holiday' },
+    { name: '4', value: 10, type: '' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
   ]);
 
   //Morale
@@ -536,7 +541,10 @@ function DashboardPage() {
     { name: "24/07/2025", value: 96.2 },
     { name: "25/07/2025", value: 96.2 },
     { name: "26/07/2025", value: 87.8 },
-    { name: "29/07/2025", value: 90.6 }
+    { name: "29/07/2025", value: 90.6 },
+    { name: "30/07/2025", value: 93.6 },
+    { name: "31/07/2025", value: 94.9 },
+    { name: "01/08/2025", value: 93.8 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
