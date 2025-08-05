@@ -50,7 +50,7 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Lower' },
     { name: '2', value: 10, type: 'Lower' },
     { name: '3', value: 10, type: 'Holiday' },
-    { name: '4', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Holiday' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
     { name: '7', value: 10, type: '' },
@@ -91,8 +91,9 @@ function DashboardPage() {
     { name: "29/07/2025", value: 3.15 },
     { name: "30/07/2025", value: 2.81 },
     { name: "31/07/2025", value: 2.51 },
-    { name: "01/08/2025", value: 2.23 },
-    { name: "02/08/2025", value: 2.00 }
+    { name: "01/08/2025", value: 2.27 },
+    { name: "02/08/2025", value: 2.10 },
+    { name: "04/08/2025", value: 0.0 }
   ];
 
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
@@ -103,7 +104,7 @@ function DashboardPage() {
     { month: 5, value: 0.00  },
     { month: 6, value: 0.00 },
     { month: 7, value: 2.51 },
-    { month: 8, value: 2.00 },
+    { month: 8, value: 2.10 },
     { month: 9, value: null },
     { month: 10, value: null },
     { month: 11, value: null },
@@ -141,7 +142,7 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Holiday' },
-    { name: '4', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Upper' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
     { name: '7', value: 10, type: '' },
@@ -183,7 +184,8 @@ function DashboardPage() {
     { name: "30/07/2025", value: 1.0 },
     { name: "31/07/2025", value: 1.7 },
     { name: "01/08/2025", value: 1.2 },
-    { name: "02/08/2025", value: 1.1 }
+    { name: "02/08/2025", value: 1.1 },
+    { name: "04/08/2025", value: 1.3 }
   ];
 
   const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
@@ -232,7 +234,7 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Lower' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Holiday' },
-    { name: '4', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Holiday' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
     { name: '7', value: 10, type: '' },
@@ -273,7 +275,8 @@ function DashboardPage() {
     { name: "29/07/2025", value: 78.4 },
     { name: "31/07/2025", value: 78.0 },
     { name: "01/08/2025", value: 75.8 },
-    { name: "02/08/2025", value: 81.2 }
+    { name: "02/08/2025", value: 81.2 },
+    { name: "04/08/2025", value: 0 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -320,9 +323,9 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
-    { name: '2', value: 10, type: 'Lower' },
+    { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Holiday' },
-    { name: '4', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Lower' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
     { name: '7', value: 10, type: '' },
@@ -364,7 +367,8 @@ function DashboardPage() {
     { name: "30/07/2025", value: 17.1 },
     { name: "31/07/2025", value: 17.5 },
     { name: "01/08/2025", value: 17.1 },
-    { name: "02/08/2025", value: 19.5 }
+    { name: "02/08/2025", value: 18.2 },
+    { name: "04/08/2025", value: 21.8 }
   ];
 
   const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
@@ -375,7 +379,7 @@ function DashboardPage() {
     { month: 5, value: 20.0 },
     { month: 6, value: 16.5 },
     { month: 7, value: 16.6 },
-    { month: 8, value: 17.5 },
+    { month: 8, value: 17.6 },
     { month: 9, value: null },
     { month: 10, value: null },
     { month: 11, value: null },
@@ -383,8 +387,8 @@ function DashboardPage() {
   ]);
 
   const DeliveryhighlightValue = [
-    { highlight: "Racking issue", date: "02/08/2025" },
-    { highlight: "Rework issue", date: "02/08/2025" },
+    { highlight: "Racking issue", date: "04/08/2025" },
+    { highlight: "Rework issue", date: "04/08/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -412,7 +416,7 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Holiday' },
-    { name: '4', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Upper' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
     { name: '7', value: 10, type: '' },
@@ -455,7 +459,8 @@ function DashboardPage() {
     { name: "30/07/2025", value: 57.4 },
     { name: "31/07/2025", value: 55.0 },
     { name: "01/08/2025", value: 54.2 },
-    { name: "02/08/2025", value: 47.6 }
+    { name: "02/08/2025", value: 47.6 },
+    { name: "04/08/2025", value: 42.9 }
   ];
 
   const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
@@ -466,7 +471,7 @@ function DashboardPage() {
     { month: 5, value: 1.58 },
     { month: 6, value: 1.39 },
     { month: 7, value: 1.45 },
-    { month: 8, value: 0.11 },
+    { month: 8, value: 0.16 },
     { month: 9, value: null },
     { month: 10, value: null },
     { month: 11, value: null },
@@ -504,7 +509,7 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Holiday' },
-    { name: '4', value: 10, type: '' },
+    { name: '4', value: 10, type: 'Holiday' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
     { name: '7', value: 10, type: '' },
@@ -546,7 +551,9 @@ function DashboardPage() {
     { name: "29/07/2025", value: 90.6 },
     { name: "30/07/2025", value: 93.6 },
     { name: "31/07/2025", value: 94.9 },
-    { name: "01/08/2025", value: 93.8 }
+    { name: "01/08/2025", value: 93.8 },
+    { name: "02/08/2025", value: 0 },
+    { name: "04/08/2025", value: 0 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
