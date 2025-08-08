@@ -176,8 +176,8 @@ function DashboardPage() {
     { name: "02/08/2025", value: 1.1 },
     { name: "04/08/2025", value: 1.3 },
     { name: "05/08/2025", value: 1.5 },
-    { name: "05/08/2025", value: 1.2 },
-    { name: "05/08/2025", value: 1.9 }
+    { name: "06/08/2025", value: 1.2 },
+    { name: "07/08/2025", value: 1.9 }
   ];
 
   const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
@@ -460,8 +460,8 @@ function DashboardPage() {
     { name: "02/08/2025", value: 47.6 },
     { name: "04/08/2025", value: 42.9 },
     { name: "05/08/2025", value: 56.1 },
-    { name: "05/08/2025", value: 55.5 },
-    { name: "05/08/2025", value: 57.4 }
+    { name: "06/08/2025", value: 55.5 },
+    { name: "07/08/2025", value: 57.4 }
   ];
 
   const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
