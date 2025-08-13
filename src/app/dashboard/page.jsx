@@ -239,7 +239,7 @@ function DashboardPage() {
     { name: '8', value: 10, type: 'Lower' },
     { name: '9', value: 10, type: 'Lower' },
     { name: '10', value: 10, type: 'Holiday' },
-    { name: '11', value: 10, type: 'Upper' },
+    { name: '11', value: 10, type: 'Lower' },
     { name: '12', value: 10, type: '' },
     { name: '13', value: 10, type: '' },
     { name: '14', value: 10, type: '' },
