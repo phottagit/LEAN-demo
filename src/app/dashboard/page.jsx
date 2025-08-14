@@ -58,8 +58,8 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Lower' },
     { name: '10', value: 10, type: 'Holiday' },
     { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Holiday' },
+    { name: '13', value: 10, type: 'Lower' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
@@ -132,8 +132,8 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Holiday' },
     { name: '11', value: 10, type: 'Upper' },
-    { name: '12', value: 10, type: 'Upper' },
-    { name: '13', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Holiday' },
+    { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
@@ -206,8 +206,8 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Lower' },
     { name: '10', value: 10, type: 'Holiday' },
     { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Lower' },
-    { name: '13', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Holiday' },
+    { name: '13', value: 10, type: 'Lower' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
@@ -280,8 +280,8 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Holiday' },
     { name: '11', value: 10, type: 'Upper' },
-    { name: '12', value: 10, type: 'Upper' },
-    { name: '13', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Holiday' },
+    { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
@@ -353,8 +353,8 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Holiday' },
     { name: '11', value: 10, type: 'Upper' },
-    { name: '12', value: 10, type: 'Upper' },
-    { name: '13', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Holiday' },
+    { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
@@ -368,7 +368,6 @@ function DashboardPage() {
     { name: "06/08/2025", value: 55.5 },
     { name: "07/08/2025", value: 57.4 },
     { name: "08/08/2025", value: 57.8 },
-    { name: "09/08/2025", value: 54.8 },
     { name: "09/08/2025", value: 47.1 },
     { name: "11/08/2025", value: 49.7 },
     { name: "13/08/2025", value: 55.3 }
@@ -428,8 +427,8 @@ function DashboardPage() {
     { name: '9', value: 10, type: 'Upper' },
     { name: '10', value: 10, type: 'Holiday' },
     { name: '11', value: 10, type: 'Lower' },
-    { name: '12', value: 10, type: 'Upper' },
-    { name: '13', value: 10, type: '' },
+    { name: '12', value: 10, type: 'Holiday' },
+    { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: '' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
