@@ -210,7 +210,7 @@ function DashboardPage() {
     { name: '11', value: 10, type: 'Lower' },
     { name: '12', value: 10, type: 'Holiday' },
     { name: '13', value: 10, type: 'Lower' },
-    { name: '14', value: 10, type: '' },
+    { name: '14', value: 10, type: 'Lower' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
   ]);
@@ -225,7 +225,8 @@ function DashboardPage() {
     { name: "08/08/2025", value: 77.6 },
     { name: "09/08/2025", value: 78.7 },
     { name: "11/08/2025", value: 80.3 },
-    { name: "13/08/2025", value: 74.1 }
+    { name: "13/08/2025", value: 74.1 },
+    { name: "14/08/2025", value: 78.6 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -236,7 +237,7 @@ function DashboardPage() {
     { month: 5, value: 82.8 },
     { month: 6, value: 81.1 },
     { month: 7, value: 78.5 },
-    { month: 8, value: 75.1 },
+    { month: 8, value: 76.3 },
     { month: 9, value: null },
     { month: 10, value: null },
     { month: 11, value: null },
@@ -433,7 +434,7 @@ function DashboardPage() {
     { name: '11', value: 10, type: 'Lower' },
     { name: '12', value: 10, type: 'Holiday' },
     { name: '13', value: 10, type: 'Upper' },
-    { name: '14', value: 10, type: '' },
+    { name: '14', value: 10, type: 'Upper' },
     { name: '15', value: 10, type: '' },
     { name: '16', value: 10, type: '' }
   ]);
@@ -449,7 +450,8 @@ function DashboardPage() {
     { name: "08/08/2025", value: 95.1 },
     { name: "09/08/2025", value: 93.1 },
     { name: "11/08/2025", value: 80.4 },
-    { name: "13/08/2025", value: 92.3 }
+    { name: "13/08/2025", value: 92.3 },
+    { name: "13/08/2025", value: 95.2 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
@@ -460,7 +462,7 @@ function DashboardPage() {
     { month: 5, value: 93.3 },
     { month: 6, value: 94.0 },
     { month: 7, value: 94.0 },
-    { month: 8, value: 95.0 },
+    { month: 8, value: 93.0 },
     { month: 9, value: null },
     { month: 10, value: null },
     { month: 11, value: null },
