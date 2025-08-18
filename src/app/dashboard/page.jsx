@@ -78,7 +78,7 @@ function DashboardPage() {
     { name: "13/08/2025", value: 1.27 },
     { name: "14/08/2025", value: 1.21 },
     { name: "15/08/2025", value: 1.15 },
-    { name: "16/08/2025", value: 1.09 }
+    { name: "16/08/2025", value: 1.10 }
   ];
 
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
@@ -89,7 +89,7 @@ function DashboardPage() {
     { month: 5, value: 0.00  },
     { month: 6, value: 0.00 },
     { month: 7, value: 2.51 },
-    { month: 8, value: 1.09 },
+    { month: 8, value: 1.10 },
     { month: 9, value: null },
     { month: 10, value: null },
     { month: 11, value: null },
@@ -182,7 +182,7 @@ function DashboardPage() {
   
   //Efficiency
   const [chartData3, setChartData3] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Holiday' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -215,8 +215,8 @@ function DashboardPage() {
     { name: '12', value: 10, type: 'Holiday' },
     { name: '13', value: 10, type: 'Lower' },
     { name: '14', value: 10, type: 'Lower' },
-    { name: '15', value: 10, type: '' },
-    { name: '16', value: 10, type: '' }
+    { name: '15', value: 10, type: 'Lower' },
+    { name: '16', value: 10, type: 'Lower' }
   ]);
 
   const data3 = [
@@ -230,7 +230,9 @@ function DashboardPage() {
     { name: "09/08/2025", value: 78.7 },
     { name: "11/08/2025", value: 80.3 },
     { name: "13/08/2025", value: 74.1 },
-    { name: "14/08/2025", value: 78.6 }
+    { name: "14/08/2025", value: 78.6 },
+    { name: "15/08/2025", value: 76.5 },
+    { name: "16/08/2025", value: 79.4 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -241,7 +243,7 @@ function DashboardPage() {
     { month: 5, value: 82.8 },
     { month: 6, value: 81.1 },
     { month: 7, value: 78.5 },
-    { month: 8, value: 76.3 },
+    { month: 8, value: 76.5 },
     { month: 9, value: null },
     { month: 10, value: null },
     { month: 11, value: null },
@@ -249,9 +251,9 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "13/08/2025" },
-    { highlight: "Racking issue", date: "13/08/2025" },
-    { highlight: "Rework issue", date: "13/08/2025" },
+    { highlight: "Technical issue", date: "16/08/2025" },
+    { highlight: "Racking issue", date: "16/08/2025" },
+    { highlight: "Rework issue", date: "16/08/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -410,7 +412,7 @@ function DashboardPage() {
 
   //Morale
   const [chartData6, setChartData6] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Holiday' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -443,8 +445,8 @@ function DashboardPage() {
     { name: '12', value: 10, type: 'Holiday' },
     { name: '13', value: 10, type: 'Upper' },
     { name: '14', value: 10, type: 'Upper' },
-    { name: '15', value: 10, type: '' },
-    { name: '16', value: 10, type: '' }
+    { name: '15', value: 10, type: 'Upper' },
+    { name: '16', value: 10, type: 'Upper' }
   ]);
 
   //Morale
@@ -459,7 +461,9 @@ function DashboardPage() {
     { name: "09/08/2025", value: 93.1 },
     { name: "11/08/2025", value: 80.4 },
     { name: "13/08/2025", value: 92.3 },
-    { name: "14/08/2025", value: 95.2 }
+    { name: "14/08/2025", value: 95.2 },
+    { name: "15/08/2025", value: 95.3 },
+    { name: "16/08/2025", value: 94.1 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
