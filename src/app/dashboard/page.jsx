@@ -191,7 +191,7 @@ function DashboardPage() {
     { name: '17', value: 10, type: 'Holiday' },
     { name: '18', value: 10, type: 'Lower' },
     { name: '19', value: 10, type: 'Lower' },
-    { name: '20', value: 10, type: '' },
+    { name: '20', value: 10, type: 'Lower' },
     { name: '21', value: 10, type: '' },
     { name: '22', value: 10, type: '' },
     { name: '23', value: 10, type: '' },
@@ -240,7 +240,8 @@ function DashboardPage() {
     { name: "15/08/2025", value: 76.5 },
     { name: "16/08/2025", value: 79.4 },
     { name: "18/08/2025", value: 78.0 },
-    { name: "19/08/2025", value: 78.5 }
+    { name: "19/08/2025", value: 78.5 },
+    { name: "20/08/2025", value: 79.6 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -251,7 +252,7 @@ function DashboardPage() {
     { month: 5, value: 82.8 },
     { month: 6, value: 81.1 },
     { month: 7, value: 78.5 },
-    { month: 8, value: 76.8 },
+    { month: 8, value: 77.0 },
     { month: 9, value: null },
     { month: 10, value: null },
     { month: 11, value: null },
@@ -259,9 +260,9 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "19/08/2025" },
-    { highlight: "Racking issue", date: "19/08/2025" },
-    { highlight: "Rework issue", date: "19/08/2025" },
+    { highlight: "Technical issue", date: "20/08/2025" },
+    { highlight: "Racking issue", date: "20/08/2025" },
+    { highlight: "Rework issue", date: "20/08/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -429,7 +430,7 @@ function DashboardPage() {
     { name: '17', value: 10, type: 'Holiday' },
     { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: '' },
+    { name: '20', value: 10, type: 'Upper' },
     { name: '21', value: 10, type: '' },
     { name: '22', value: 10, type: '' },
     { name: '23', value: 10, type: '' },
@@ -479,7 +480,8 @@ function DashboardPage() {
     { name: "15/08/2025", value: 95.3 },
     { name: "16/08/2025", value: 94.1 },
     { name: "18/08/2025", value: 93.6 },
-    { name: "19/08/2025", value: 95.3 }
+    { name: "19/08/2025", value: 95.3 },
+    { name: "20/08/2025", value: 95.3 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
