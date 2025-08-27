@@ -424,7 +424,7 @@ function DashboardPage() {
     { name: "22/08/2025", value: 57.8 },
     { name: "23/08/2025", value: 50.6 },
     { name: "25/08/2025", value: 58.8 },
-    { name: "25/08/2025", value: 59.7 }
+    { name: "26/08/2025", value: 59.7 }
   ];
 
   const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
