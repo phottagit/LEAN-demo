@@ -461,11 +461,11 @@ function DashboardPage() {
     { name: '19', value: 10, type: 'Upper' },
     { name: '20', value: 10, type: 'Upper' },
     { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: '' },
-    { name: '23', value: 10, type: '' },
-    { name: '24', value: 10, type: '' },
-    { name: '25', value: 10, type: '' },
-    { name: '26', value: 10, type: '' },
+    { name: '22', value: 10, type: 'Upper' },
+    { name: '23', value: 10, type: 'Upper' },
+    { name: '24', value: 10, type: 'Holiday' },
+    { name: '25', value: 10, type: 'Upper' },
+    { name: '26', value: 10, type: 'Upper' },
     { name: '27', value: 10, type: '' },
     { name: '28', value: 10, type: '' },
     { name: '29', value: 10, type: '' },
@@ -511,7 +511,11 @@ function DashboardPage() {
     { name: "18/08/2025", value: 93.6 },
     { name: "19/08/2025", value: 95.3 },
     { name: "20/08/2025", value: 95.3 },
-    { name: "21/08/2025", value: 95.7 }
+    { name: "21/08/2025", value: 95.7 },
+    { name: "22/08/2025", value: 95.2 },
+    { name: "23/08/2025", value: 93.9 },
+    { name: "25/08/2025", value: 93.2 },
+    { name: "26/08/2025", value: 95.4 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
