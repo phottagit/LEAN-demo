@@ -230,7 +230,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Lower' },
-    { name: '2', value: 10, type: '' },
+    { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: '' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
@@ -273,7 +273,8 @@ function DashboardPage() {
     { name: "28/08/2025", value: 80.6 },
     { name: "29/08/2025", value: 81.2 },
     { name: "30/08/2025", value: 84.6 },
-    { name: "01/09/2025", value: 78.1 }
+    { name: "01/09/2025", value: 78.1 },
+    { name: "02/09/2025", value: 80.9 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -285,7 +286,7 @@ function DashboardPage() {
     { month: 6, value: 81.1 },
     { month: 7, value: 78.5 },
     { month: 8, value: 78.4 },
-    { month: 9, value: 78.1 },
+    { month: 9, value: 79.5 },
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
@@ -501,7 +502,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
-    { name: '2', value: 10, type: '' },
+    { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: '' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
@@ -545,7 +546,8 @@ function DashboardPage() {
     { name: "28/08/2025", value: 96.1 },
     { name: "29/08/2025", value: 95.6 },
     { name: "30/08/2025", value: 92.3 },
-    { name: "01/09/2025", value: 92.9 }
+    { name: "01/09/2025", value: 92.9 },
+    { name: "02/09/2025", value: 94.8 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
@@ -555,9 +557,9 @@ function DashboardPage() {
     { month: 4, value: 92.7 },
     { month: 5, value: 93.3 },
     { month: 6, value: 94.0 },
-    { month: 7, value: 94.0 },
-    { month: 8, value: 94.0 },
-    { month: 9, value: 92.9 },
+    { month: 7, value: 93.9 },
+    { month: 8, value: 94.2 },
+    { month: 9, value: 93.8 },
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
