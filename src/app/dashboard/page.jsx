@@ -123,7 +123,7 @@ function DashboardPage() {
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: 'Upper' },
-    { name: '4', value: 10, type: 'Lower' },
+    { name: '4', value: 10, type: 'Upper' },
     { name: '5', value: 10, type: '' },
     { name: '6', value: 10, type: '' },
     { name: '7', value: 10, type: '' },
@@ -147,7 +147,7 @@ function DashboardPage() {
     { name: "01/09/2025", value: 1.7 },
     { name: "02/09/2025", value: 2.7 },
     { name: "03/09/2025", value: 2.7 },
-    { name: "04/09/2025", value: 9.0 }
+    { name: "04/09/2025", value: 2.2 }
   ];
 
   const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
@@ -159,14 +159,14 @@ function DashboardPage() {
     { month: 6, value: 1.3 },
     { month: 7, value: 1.5 },
     { month: 8, value: 1.6 },
-    { month: 9, value: 3.6 },
+    { month: 9, value: 2.4 },
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
   ]);
 
   const QualityhighlightValue = [
-    { highlight: "symbolical family coper visible issue", date: "04/09/2025" },
+    { highlight: "", date: "" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
