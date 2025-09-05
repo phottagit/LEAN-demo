@@ -66,6 +66,11 @@ function DashboardPage() {
   ]);
 
   const data1 = [
+    { name: "26/08/2025", value: 0.80 },
+    { name: "27/08/2025", value: 0.78 },
+    { name: "28/08/2025", value: 0.76 },
+    { name: "29/08/2025", value: 0.74 },
+    { name: "30/08/2025", value: 0.72},
     { name: "01/09/2025", value: 0.70 },
     { name: "02/09/2025", value: 0.68 },
     { name: "03/09/2025", value: 0.66 },
@@ -134,6 +139,11 @@ function DashboardPage() {
   ]);
 
   const data2 = [
+    { name: "26/08/2025", value: 1.2 },
+    { name: "27/08/2025", value: 4.6 },
+    { name: "28/08/2025", value: 1.0 },
+    { name: "29/08/2025", value: 1.3 },
+    { name: "30/08/2025", value: 1.8},
     { name: "01/09/2025", value: 1.7 },
     { name: "02/09/2025", value: 2.7 },
     { name: "03/09/2025", value: 2.7 },
@@ -156,7 +166,7 @@ function DashboardPage() {
   ]);
 
   const QualityhighlightValue = [
-    { highlight: "symbolical family coper visible", date: "04/09/2025" },
+    { highlight: "symbolical family coper visible issue", date: "04/09/2025" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
@@ -294,6 +304,11 @@ function DashboardPage() {
   ]);
 
   const data4 = [
+    { name: "26/08/2025", value: 16.6 },
+    { name: "27/08/2025", value: 15.1 },
+    { name: "28/08/2025", value: 16.4 },
+    { name: "29/08/2025", value: 16.8 },
+    { name: "30/08/2025", value: 21.0},
     { name: "01/09/2025", value: 15.0 },
     { name: "02/09/2025", value: 17.5 },
     { name: "03/09/2025", value: 16.7 },
@@ -361,6 +376,11 @@ function DashboardPage() {
   ]);
 
   const data5 = [
+    { name: "26/08/2025", value: 59.7 },
+    { name: "27/08/2025", value: 60.8 },
+    { name: "28/08/2025", value: 53.5 },
+    { name: "29/08/2025", value: 53.1 },
+    { name: "30/08/2025", value: 48.3},
     { name: "01/09/2025", value: 58.2 },
     { name: "02/09/2025", value: 60.9 },
     { name: "03/09/2025", value: 60.2 },
