@@ -491,7 +491,7 @@ function DashboardPage() {
     { name: "03/09/2025", value: 95.2 },
     { name: "04/09/2025", value: 94.9 },
     { name: "05/09/2025", value: 94.3 },
-    { name: "05/09/2025", value: 92.6 }
+    { name: "06/09/2025", value: 92.6 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
