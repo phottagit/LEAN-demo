@@ -715,7 +715,7 @@ function DashboardPage() {
             <hr className='my-1 border-1 border-[#595959]'/>
             <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
               <h3 className="flex-20 bg-[#8C8985] text-white p-1 ">TARGET</h3>
-              <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency ≥{target3}</h3>
+              <h3 className="flex-80 bg-white p-1 text-ellipsis overflow-hidden whitespace-nowrap">Efficiency ≥{target3}%</h3>
           </div>
 
           <div className="flex flex-row justify-between text-[10px] text-center font-bold mt-1">
