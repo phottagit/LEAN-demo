@@ -84,7 +84,7 @@ function DashboardPage() {
     { name: "12/09/2025", value: 0.55 },
     { name: "13/09/2025", value: 0.54 },
     { name: "15/09/2025", value: 0.53 },
-    { name: "15/09/2025", value: 0.52 }
+    { name: "16/09/2025", value: 0.52 }
   ];
 
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
