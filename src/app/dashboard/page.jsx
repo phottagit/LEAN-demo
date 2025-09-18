@@ -197,7 +197,7 @@ function DashboardPage() {
   
   //Efficiency
   const [chartData3, setChartData3] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -251,7 +251,8 @@ function DashboardPage() {
     { name: "12/09/2025", value: 82.3 },
     { name: "13/09/2025", value: 83.8 },
     { name: "15/09/2025", value: 84.0 },
-    { name: "16/09/2025", value: 83.0 }
+    { name: "16/09/2025", value: 83.0 },
+    { name: "17/09/2025", value: 81.7 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -444,7 +445,7 @@ function DashboardPage() {
 
   //Morale
   const [chartData6, setChartData6] = useState([
-    { name: '17', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: '' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
@@ -498,7 +499,8 @@ function DashboardPage() {
     { name: "12/09/2025", value: 96.4 },
     { name: "13/09/2025", value: 92.5 },
     { name: "15/09/2025", value: 92.8 },
-    { name: "16/09/2025", value: 92.8 }
+    { name: "16/09/2025", value: 92.8 },
+    { name: "17/09/2025", value: 95.5 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
