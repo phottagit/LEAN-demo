@@ -190,9 +190,9 @@ function DashboardPage() {
   ]);
 
   const QualityhighlightValue = [
-    { highlight: "Technical issue", date: "08/09/2025" },
-    { highlight: "Racking issue", date: "08/09/2025" },
-    { highlight: "Rework issue", date: "08/09/2025" },
+    { highlight: "Technical issue", date: "18/09/2025" },
+    { highlight: "Racking issue", date: "18/09/2025" },
+    { highlight: "Rework issue", date: "18/09/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -200,7 +200,7 @@ function DashboardPage() {
   //Efficiency
   const [chartData3, setChartData3] = useState([
     { name: '17', value: 10, type: 'Upper' },
-    { name: '18', value: 10, type: '' },
+    { name: '18', value: 10, type: 'Lower' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -254,7 +254,8 @@ function DashboardPage() {
     { name: "13/09/2025", value: 83.8 },
     { name: "15/09/2025", value: 84.0 },
     { name: "16/09/2025", value: 83.0 },
-    { name: "17/09/2025", value: 81.7 }
+    { name: "17/09/2025", value: 81.7 },
+    { name: "18/09/2025", value: 79.9 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -266,16 +267,16 @@ function DashboardPage() {
     { month: 6, value: 81.1 },
     { month: 7, value: 78.5 },
     { month: 8, value: 78.4 },
-    { month: 9, value: 82.0 },
+    { month: 9, value: 81.8 },
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "01/09/2025" },
-    { highlight: "Racking issue", date: "01/09/2025" },
-    { highlight: "Rework issue", date: "01/09/2025" },
+    { highlight: "Technical issue", date: "18/09/2025" },
+    { highlight: "Racking issue", date: "18/09/2025" },
+    { highlight: "Rework issue", date: "18/09/2025" },
     { highlight: "", date: "" },
   ];
 
@@ -451,7 +452,7 @@ function DashboardPage() {
   //Morale
   const [chartData6, setChartData6] = useState([
     { name: '17', value: 10, type: 'Upper' },
-    { name: '18', value: 10, type: '' },
+    { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -505,7 +506,8 @@ function DashboardPage() {
     { name: "13/09/2025", value: 92.5 },
     { name: "15/09/2025", value: 92.8 },
     { name: "16/09/2025", value: 92.8 },
-    { name: "17/09/2025", value: 95.5 }
+    { name: "17/09/2025", value: 95.5 },
+    { name: "18/09/2025", value: 95.6 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
