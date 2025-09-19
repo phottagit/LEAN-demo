@@ -29,7 +29,7 @@ function DashboardPage() {
   // Safety
   const [chartData1, setChartData1] = useState([
     { name: '17', value: 10, type: 'Upper' },
-    { name: '18', value: 10, type: '' },
+    { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -85,7 +85,8 @@ function DashboardPage() {
     { name: "13/09/2025", value: 0.54 },
     { name: "15/09/2025", value: 0.53 },
     { name: "16/09/2025", value: 0.52 },
-    { name: "17/09/2025", value: 0.51 }
+    { name: "17/09/2025", value: 0.51 },
+    { name: "18/09/2025", value: 0.50 }
   ];
 
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
@@ -97,7 +98,7 @@ function DashboardPage() {
     { month: 6, value: 0.00 },
     { month: 7, value: 2.51 },
     { month: 8, value: 0.70 },
-    { month: 9, value: 0.51 },
+    { month: 9, value: 0.50 },
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
@@ -113,7 +114,7 @@ function DashboardPage() {
 // Quality
   const [chartData2, setChartData2] = useState([
     { name: '17', value: 10, type: 'Upper' },
-    { name: '18', value: 10, type: '' },
+    { name: '18', value: 10, type: 'Lower' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -169,7 +170,8 @@ function DashboardPage() {
     { name: "13/09/2025", value: 2.6 },
     { name: "15/09/2025", value: 2.4 },
     { name: "16/09/2025", value: 2.2 },
-    { name: "17/09/2025", value: 2.4 }
+    { name: "17/09/2025", value: 2.4 },
+    { name: "18/09/2025", value: 3.2 }
   ];
 
   const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
@@ -279,8 +281,8 @@ function DashboardPage() {
 
   //Delevery
   const [chartData4, setChartData4] = useState([
-    { name: '17', value: 10, type: '' },
-    { name: '18', value: 10, type: '' },
+    { name: '17', value: 10, type: 'Lower' },
+    { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -333,9 +335,11 @@ function DashboardPage() {
     { name: "10/09/2025", value: 16.9 },
     { name: "11/09/2025", value: 16.2 },
     { name: "12/09/2025", value: 14.7 },
-    { name: "13/09/2025", value: 17.3 },
-    { name: "15/09/2025", value: 25.2 },
-    { name: "16/09/2025", value: 18.3 }
+    { name: "13/09/2025", value: 17.5 },
+    { name: "15/09/2025", value: 24.0 },
+    { name: "16/09/2025", value: 16.6 },
+    { name: "17/09/2025", value: 25.0 },
+    { name: "18/09/2025", value: 16.5 }
   ];
 
   const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
@@ -347,7 +351,7 @@ function DashboardPage() {
     { month: 6, value: 16.5 },
     { month: 7, value: 16.6 },
     { month: 8, value: 16.8 },
-    { month: 9, value: 16.5 },
+    { month: 9, value: 16.4 },
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
@@ -362,7 +366,7 @@ function DashboardPage() {
   //Environment
   const [chartData5, setChartData5] = useState([
     { name: '17', value: 10, type: 'Upper' },
-    { name: '18', value: 10, type: '' },
+    { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: '' },
     { name: '20', value: 10, type: '' },
     { name: '21', value: 10, type: '' },
@@ -418,7 +422,8 @@ function DashboardPage() {
     { name: "13/09/2025", value: 49.2 },
     { name: "15/09/2025", value: 57.3 },
     { name: "16/09/2025", value: 59.7 },
-    { name: "17/09/2025", value: 61.9 }
+    { name: "17/09/2025", value: 61.9 },
+    { name: "18/09/2025", value: 55.1 }
   ];
 
   const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
@@ -430,7 +435,7 @@ function DashboardPage() {
     { month: 6, value: 1.39 },
     { month: 7, value: 1.45 },
     { month: 8, value: 1.42 },
-    { month: 9, value: 0.88 },
+    { month: 9, value: 0.93 },
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
