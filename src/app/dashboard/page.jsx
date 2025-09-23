@@ -294,9 +294,9 @@ function DashboardPage() {
     { name: '17', value: 10, type: 'Upper' },
     { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: 'Upper' },
-    { name: '20', value: 10, type: 'Lower' },
+    { name: '20', value: 10, type: 'Upper' },
     { name: '21', value: 10, type: 'Holiday' },
-    { name: '22', value: 10, type: 'Upper' },
+    { name: '22', value: 10, type: 'Lower' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
     { name: '25', value: 10, type: '' },
@@ -350,9 +350,9 @@ function DashboardPage() {
     { name: "16/09/2025", value: 16.0 },
     { name: "17/09/2025", value: 18.0 },
     { name: "18/09/2025", value: 14.9 },
-    { name: "19/09/2025", value: 17.7 },
-    { name: "20/09/2025", value: 22.3 },
-    { name: "22/09/2025", value: 18.0 }
+    { name: "19/09/2025", value: 14.8 },
+    { name: "20/09/2025", value: 17.7 },
+    { name: "22/09/2025", value: 22.3 }
   ];
 
   const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
