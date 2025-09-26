@@ -183,7 +183,7 @@ function DashboardPage() {
     { name: "22/09/2025", value: 1.7 },
     { name: "23/09/2025", value: 2.2 },
     { name: "24/09/2025", value: 2.7 },
-    { name: "24/09/2025", value: 2.5 }
+    { name: "25/09/2025", value: 2.5 }
   ];
 
   const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
