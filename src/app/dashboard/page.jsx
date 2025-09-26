@@ -219,7 +219,7 @@ function DashboardPage() {
     { name: '22', value: 10, type: 'Lower' },
     { name: '23', value: 10, type: 'Upper' },
     { name: '24', value: 10, type: 'Lower' },
-    { name: '25', value: 10, type: '' },
+    { name: '25', value: 10, type: 'Lower' },
     { name: '26', value: 10, type: '' },
     { name: '27', value: 10, type: '' },
     { name: '28', value: 10, type: '' },
@@ -272,7 +272,8 @@ function DashboardPage() {
     { name: "20/09/2025", value: 83.2 },
     { name: "22/09/2025", value: 79.3 },
     { name: "23/09/2025", value: 80.9 },
-    { name: "24/09/2025", value: 78.8 }
+    { name: "24/09/2025", value: 78.8 },
+    { name: "24/09/2025", value: 79.2 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -284,16 +285,16 @@ function DashboardPage() {
     { month: 6, value: 81.1 },
     { month: 7, value: 78.5 },
     { month: 8, value: 78.4 },
-    { month: 9, value: 81.5 },
+    { month: 9, value: 83.3 },
     { month: 10, value: null },
     { month: 11, value: null },
     { month: 12, value: null },
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "24/09/2025" },
-    { highlight: "UNA issue @PRE", date: "24/09/2025" },
-    { highlight: "Rework issue @QCAP", date: "24/09/2025" },
+    { highlight: "Technical issue", date: "25/09/2025" },
+    { highlight: "UNA issue @PRE", date: "25/09/2025" },
+    { highlight: "Rework issue @QCAP", date: "25/09/2025" },
     { highlight: "", date: "" },
   ];
 
