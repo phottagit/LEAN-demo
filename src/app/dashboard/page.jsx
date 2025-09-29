@@ -579,7 +579,7 @@ function DashboardPage() {
 
   const target1 = 0.59;
   const target2 = 3.0;
-  const target3 = 80.0;
+  const target3 = 80.5;
   const target4 = 19.0;
   const target5 = 70.0;
   const target6 = 92.0;
