@@ -214,9 +214,9 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
     { name: '2', value: 10, type: 'Upper' },
-    { name: '3', value: 10, type: '' },
-    { name: '4', value: 10, type: '' },
-    { name: '5', value: 10, type: '' },
+    { name: '3', value: 10, type: 'Lower' },
+    { name: '4', value: 10, type: 'Upper' },
+    { name: '5', value: 10, type: 'Holiday' },
     { name: '6', value: 10, type: '' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
@@ -231,21 +231,6 @@ function DashboardPage() {
   ]);
 
   const data3 = [
-    { name: "28/08/2025", value: 80.6 },
-    { name: "29/08/2025", value: 81.2 },
-    { name: "30/08/2025", value: 84.6 },
-    { name: "01/09/2025", value: 78.1 },
-    { name: "02/09/2025", value: 80.9 },
-    { name: "03/09/2025", value: 81.5 },
-    { name: "04/09/2025", value: 80.7 },
-    { name: "05/09/2025", value: 80.2 },
-    { name: "06/09/2025", value: 85.0 },
-    { name: "08/09/2025", value: 81.2 },
-    { name: "09/09/2025", value: 81.1 },
-    { name: "10/09/2025", value: 85.7 },
-    { name: "11/09/2025", value: 81.0 },
-    { name: "12/09/2025", value: 82.3 },
-    { name: "13/09/2025", value: 83.8 },
     { name: "15/09/2025", value: 84.0 },
     { name: "16/09/2025", value: 83.0 },
     { name: "17/09/2025", value: 81.7 },
@@ -261,7 +246,9 @@ function DashboardPage() {
     { name: "29/09/2025", value: 81.2 },
     { name: "30/09/2025", value: 80.7 },
     { name: "01/10/2025", value: 81.6 },
-    { name: "02/10/2025", value: 82.1 }
+    { name: "02/10/2025", value: 82.1 },
+    { name: "03/10/2025", value: 80.1 },
+    { name: "04/10/2025", value: 83.2 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -280,9 +267,9 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "27/09/2025" },
-    { highlight: "UNA issue @PRE", date: "27/09/2025" },
-    { highlight: "Rework issue @QCAP", date: "27/09/2025" },
+    { highlight: "Technical issue", date: "03/10/2025" },
+    { highlight: "UNA issue @PRE", date: "03/10/2025" },
+    { highlight: "Rework issue @QCAP", date: "03/10/2025" },
     { highlight: "", date: "" },
   ];
 
