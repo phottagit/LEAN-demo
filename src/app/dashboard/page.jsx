@@ -357,10 +357,6 @@ function DashboardPage() {
     { highlight: "Rework issue @QCAP", date: "06/10/2025" },
     { highlight: "", date: "" },
   ];
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-    { highlight: "", date: "" },
-  ];
 
   //Environment
   const [chartData5, setChartData5] = useState([
