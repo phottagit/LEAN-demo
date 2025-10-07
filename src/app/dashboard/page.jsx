@@ -52,7 +52,7 @@ function DashboardPage() {
     { name: '3', value: 10, type: 'Lower' },
     { name: '4', value: 10, type: 'Lower' },
     { name: '5', value: 10, type: 'Holiday' },
-    { name: '6', value: 10, type: '' },
+    { name: '6', value: 10, type: 'Lower' },
     { name: '7', value: 10, type: '' },
     { name: '8', value: 10, type: '' },
     { name: '9', value: 10, type: '' },
