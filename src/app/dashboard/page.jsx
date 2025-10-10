@@ -260,7 +260,7 @@ function DashboardPage() {
     { name: "06/10/2025", value: 81.4 },
     { name: "07/10/2025", value: 80.2 },
     { name: "08/10/2025", value: 81.2 },
-    { name: "08/10/2025", value: 81.0 }
+    { name: "09/10/2025", value: 81.0 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
