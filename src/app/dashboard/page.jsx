@@ -365,7 +365,7 @@ function DashboardPage() {
     { name: "11/10/2025", value: 15.5 },
     { name: "14/10/2025", value: 17.0 },
     { name: "15/10/2025", value: 17.3 },
-    { name: "15/10/2025", value: 16.7 }
+    { name: "16/10/2025", value: 16.7 }
   ];
 
   const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
