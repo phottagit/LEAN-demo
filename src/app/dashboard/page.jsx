@@ -195,7 +195,7 @@ function DashboardPage() {
     { name: '18', value: 10, type: 'Upper' },
     { name: '19', value: 10, type: 'Holiday' },
     { name: '20', value: 10, type: 'Upper' },
-    { name: '21', value: 10, type: '' },
+    { name: '21', value: 10, type: 'Upper' },
     { name: '22', value: 10, type: '' },
     { name: '23', value: 10, type: '' },
     { name: '24', value: 10, type: '' },
@@ -244,7 +244,8 @@ function DashboardPage() {
     { name: "16/10/2025", value: 80.6 },
     { name: "17/10/2025", value: 79.2 },
     { name: "18/10/2025", value: 82.3 },
-    { name: "20/10/2025", value: 81.0 }
+    { name: "20/10/2025", value: 81.0 },
+    { name: "21/10/2025", value: 81.6 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -263,8 +264,8 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "07/10/2025" },
-    { highlight: "UNA issue @PRE", date: "07/10/2025" },
+    { highlight: "Technical issue", date: "17/10/2025" },
+    { highlight: "UNA issue @PRE", date: "17/10/2025" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
