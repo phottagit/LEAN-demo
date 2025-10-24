@@ -84,7 +84,7 @@ function DashboardPage() {
     { name: "20/10/2025", value: 14.49 },
     { name: "21/10/2025", value: 9.28 },
     { name: "22/10/2025", value: 6.92 },
-    { name: "23/10/2025", value: 5.43 }
+    { name: "23/10/2025", value: 5.41 }
   ];
 
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
@@ -97,7 +97,7 @@ function DashboardPage() {
     { month: 7, value: 2.51 },
     { month: 8, value: 0.70 },
     { month: 9, value: 2.28 },
-    { month: 10, value: 5.43 },
+    { month: 10, value: 5.41 },
     { month: 11, value: null },
     { month: 12, value: null },
   ]);
@@ -332,7 +332,7 @@ function DashboardPage() {
     { name: "18/10/2025", value: 15.5 },
     { name: "20/10/2025", value: 16.4 },
     { name: "21/10/2025", value: 17.2 },
-    { name: "22/10/2025", value: 17.6 },
+    { name: "22/10/2025", value: 18.4 },
     { name: "23/10/2025", value: 18.7 }
   ];
 
@@ -416,7 +416,7 @@ function DashboardPage() {
     { name: "20/10/2025", value: 48.9 },
     { name: "21/10/2025", value: 44.7 },
     { name: "22/10/2025", value: 44.0 },
-    { name: "23/10/2025", value: 36.4 }
+    { name: "23/10/2025", value: 39.6 }
   ];
 
   const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
@@ -429,7 +429,7 @@ function DashboardPage() {
     { month: 7, value: 1.45 },
     { month: 8, value: 1.42 },
     { month: 9, value: 1.50 },
-    { month: 10, value: 0.95 },
+    { month: 10, value: 0.99 },
     { month: 11, value: null },
     { month: 12, value: null },
   ]);
@@ -499,8 +499,8 @@ function DashboardPage() {
     { name: "18/10/2025", value: 92.4 },
     { name: "20/10/2025", value: 91.9 },
     { name: "21/10/2025", value: 93.9 },
-    { name: "22/10/2025", value: 93.3 },
-    { name: "23/10/2025", value: 94.6 }
+    { name: "22/10/2025", value: 94.1 },
+    { name: "23/10/2025", value: 93.5 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
