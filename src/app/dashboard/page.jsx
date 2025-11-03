@@ -211,43 +211,42 @@ function DashboardPage() {
   
   //Efficiency
   const [chartData3, setChartData3] = useState([
-    { name: '17', value: 10, type: 'Lower' },
-    { name: '18', value: 10, type: 'Upper' },
-    { name: '19', value: 10, type: 'Holiday' },
-    { name: '20', value: 10, type: 'Upper' },
-    { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: 'Upper' },
-    { name: '23', value: 10, type: 'Upper' },
-    { name: '24', value: 10, type: 'Upper' },
-    { name: '25', value: 10, type: 'Upper' },
-    { name: '26', value: 10, type: 'Holiday' },
-    { name: '27', value: 10, type: 'Upper' },
-    { name: '28', value: 10, type: 'Upper' },
-    { name: '29', value: 10, type: 'Upper' },
-    { name: '30', value: 10, type: 'Upper' },
+   { name: '17', value: 10, type: '' },
+    { name: '18', value: 10, type: '' },
+    { name: '19', value: 10, type: '' },
+    { name: '20', value: 10, type: '' },
+    { name: '21', value: 10, type: '' },
+    { name: '22', value: 10, type: '' },
+    { name: '23', value: 10, type: '' },
+    { name: '24', value: 10, type: '' },
+    { name: '25', value: 10, type: '' },
+    { name: '26', value: 10, type: '' },
+    { name: '27', value: 10, type: '' },
+    { name: '28', value: 10, type: '' },
+    { name: '29', value: 10, type: '' },
+    { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
-    { name: '2', value: 10, type: 'Upper' },
-    { name: '3', value: 10, type: 'Lower' },
-    { name: '4', value: 10, type: 'Upper' },
-    { name: '5', value: 10, type: 'Holiday' },
-    { name: '6', value: 10, type: 'Upper' },
-    { name: '7', value: 10, type: 'Lower' },
-    { name: '8', value: 10, type: 'Upper' },
-    { name: '9', value: 10, type: 'Upper' },
-    { name: '10', value: 10, type: 'Lower' },
-    { name: '11', value: 10, type: 'Upper' },
-    { name: '12', value: 10, type: 'Holiday' },
-    { name: '13', value: 10, type: 'Holiday' },
-    { name: '14', value: 10, type: 'Upper' },
-    { name: '15', value: 10, type: 'Upper' },
-    { name: '16', value: 10, type: 'Upper' }
+    { name: '2', value: 10, type: '' },
+    { name: '3', value: 10, type: '' },
+    { name: '4', value: 10, type: '' },
+    { name: '5', value: 10, type: '' },
+    { name: '6', value: 10, type: '' },
+    { name: '7', value: 10, type: '' },
+    { name: '8', value: 10, type: '' },
+    { name: '9', value: 10, type: '' },
+    { name: '10', value: 10, type: '' },
+    { name: '11', value: 10, type: '' },
+    { name: '12', value: 10, type: '' },
+    { name: '13', value: 10, type: '' },
+    { name: '14', value: 10, type: '' },
+    { name: '15', value: 10, type: '' },
+    { name: '16', value: 10, type: '' }
   ]);
-
   const data3 = [
     { name: "01/10/2025", value: 81.6 },
     { name: "02/10/2025", value: 82.1 },
@@ -273,7 +272,9 @@ function DashboardPage() {
     { name: "27/10/2025", value: 83.7 },
     { name: "28/10/2025", value: 82.4 },
     { name: "29/10/2025", value: 82.3 },
-    { name: "30/10/2025", value: 80.8 }
+    { name: "30/10/2025", value: 80.8 },
+    { name: "31/10/2025", value: 80.9 },
+    { name: "01/11/2025", value: 83.8 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -287,7 +288,7 @@ function DashboardPage() {
     { month: 8, value: 78.4 },
     { month: 9, value: 81.2 },
     { month: 10, value: 81.4 },
-    { month: 11, value: null },
+    { month: 11, value: 83.8 },
     { month: 12, value: null },
   ]);
 
