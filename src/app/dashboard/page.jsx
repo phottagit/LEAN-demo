@@ -66,21 +66,6 @@ function DashboardPage() {
   ]);
 
   const data1 = [
-    { name: "01/10/2025", value: 0.39 },
-    { name: "02/10/2025", value: 0.38 },
-    { name: "03/10/2025", value: 30.37 },
-    { name: "04/10/2025", value: 15.98 },
-    { name: "06/10/2025", value: 9.59 },
-    { name: "07/10/2025", value: 6.80 },
-    { name: "08/10/2025", value: 5.25 },
-    { name: "09/10/2025", value: 4.38 },
-    { name: "10/10/2025", value: 3.79 },
-    { name: "11/10/2025", value: 3.43 },
-    { name: "14/10/2025", value: 3.05 },
-    { name: "15/10/2025", value: 2.72 },
-    { name: "16/10/2025", value: 2.46 },
-    { name: "17/10/2025", value: 2.25 },
-    { name: "18/10/2025", value: 30.34 },
     { name: "20/10/2025", value: 14.49 },
     { name: "21/10/2025", value: 9.28 },
     { name: "22/10/2025", value: 6.82 },
@@ -158,21 +143,6 @@ function DashboardPage() {
   ]);
 
   const data2 = [
-    { name: "01/10/2025", value: 2.6 },
-    { name: "02/10/2025", value: 1.8 },
-    { name: "03/10/2025", value: 1.4 },
-    { name: "04/10/2025", value: 2.5 },
-    { name: "06/10/2025", value: 2.4 },
-    { name: "07/10/2025", value: 2.4 },
-    { name: "08/10/2025", value: 2.3 },
-    { name: "09/10/2025", value: 2.0 },
-    { name: "10/10/2025", value: 1.9 },
-    { name: "11/10/2025", value: 2.3 },
-    { name: "14/10/2025", value: 1.6 },
-    { name: "15/10/2025", value: 2.5 },
-    { name: "16/10/2025", value: 2.1 },
-    { name: "17/10/2025", value: 1.8 },
-    { name: "18/10/2025", value: 1.4 },
     { name: "20/10/2025", value: 1.7 },
     { name: "21/10/2025", value: 1.7 },
     { name: "22/10/2025", value: 2.0 },
@@ -338,7 +308,7 @@ function DashboardPage() {
     { name: "29/10/2025", value: 18.1 },
     { name: "30/10/2025", value: 17.1 },
     { name: "31/10/2025", value: 17.9 },
-    { name: "01/11/2025", value: 15.7 }},
+    { name: "01/11/2025", value: 15.7 },
     { name: "03/11/2025", value: 14.1 }
   ];
 
@@ -404,21 +374,6 @@ function DashboardPage() {
   ]);
 
   const data5 = [
-    { name: "01/10/2025", value: 62.7 },
-    { name: "02/10/2025", value: 56.9 },
-    { name: "03/10/2025", value: 51.2 },
-    { name: "04/10/2025", value: 49.7 },
-    { name: "06/10/2025", value: 54.9 },
-    { name: "07/10/2025", value: 56.8 },
-    { name: "08/10/2025", value: 58.2 },
-    { name: "09/10/2025", value: 55.7 },
-    { name: "10/10/2025", value: 51.9 },
-    { name: "11/10/2025", value: 46.0 },
-    { name: "14/10/2025", value: 57.7 },
-    { name: "15/10/2025", value: 54.8 },
-    { name: "16/10/2025", value: 55.3 },
-    { name: "17/10/2025", value: 53.9 },
-    { name: "18/10/2025", value: 49.5 },
     { name: "20/10/2025", value: 48.9 },
     { name: "21/10/2025", value: 44.7 },
     { name: "22/10/2025", value: 44.0 },
@@ -497,21 +452,6 @@ function DashboardPage() {
 
   //Morale
   const data6 = [
-    { name: "01/10/2025", value: 94.5 },
-    { name: "02/10/2025", value: 95.3 },
-    { name: "03/10/2025", value: 94.9 },
-    { name: "04/10/2025", value: 92.1 },
-    { name: "06/10/2025", value: 93.3 },
-    { name: "07/10/2025", value: 94.8 },
-    { name: "08/10/2025", value: 95.1 },
-    { name: "09/10/2025", value: 95.4 },
-    { name: "10/10/2025", value: 93.3 },
-    { name: "11/10/2025", value: 86.9 },
-    { name: "14/10/2025", value: 89.2 },
-    { name: "15/10/2025", value: 93.9 },
-    { name: "16/10/2025", value: 94.6 },
-    { name: "17/10/2025", value: 95.2 },
-    { name: "18/10/2025", value: 92.4 },
     { name: "20/10/2025", value: 91.9 },
     { name: "21/10/2025", value: 93.9 },
     { name: "22/10/2025", value: 94.1 },
