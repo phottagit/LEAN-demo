@@ -96,7 +96,7 @@ function DashboardPage() {
     { month: 6, value: 0.00 },
     { month: 7, value: 2.51 },
     { month: 8, value: 0.70 },
-    { month: 9, value: 2.28 },
+    { month: 9, value: 0.00 },
     { month: 10, value: 2.63 },
     { month: 11, value: 1.49 },
     { month: 12, value: null },
