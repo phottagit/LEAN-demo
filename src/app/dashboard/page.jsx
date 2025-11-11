@@ -223,7 +223,7 @@ function DashboardPage() {
     { name: '7', value: 10, type: 'Lower' },
     { name: '8', value: 10, type: 'Upper' },
     { name: '9', value: 10, type: 'Holiday' },
-    { name: '10', value: 10, type: '' },
+    { name: '10', value: 10, type: 'Upper' },
     { name: '11', value: 10, type: '' },
     { name: '12', value: 10, type: '' },
     { name: '13', value: 10, type: '' },
@@ -249,7 +249,8 @@ function DashboardPage() {
     { name: "05/11/2025", value: 83.8 },
     { name: "06/11/2025", value: 81.4 },
     { name: "07/11/2025", value: 79.1 },
-    { name: "08/11/2025", value: 83.2 }
+    { name: "08/11/2025", value: 83.2 },
+    { name: "08/11/2025", value: 81.6 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -263,7 +264,7 @@ function DashboardPage() {
     { month: 8, value: 78.4 },
     { month: 9, value: 81.2 },
     { month: 10, value: 81.4 },
-    { month: 11, value: 82.9 },
+    { month: 11, value: 82.8 },
     { month: 12, value: null },
   ]);
 
