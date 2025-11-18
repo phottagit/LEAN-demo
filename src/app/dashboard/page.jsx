@@ -66,17 +66,6 @@ function DashboardPage() {
   ]);
 
   const data1 = [
-    { name: "20/10/2025", value: 14.49 },
-    { name: "21/10/2025", value: 9.28 },
-    { name: "22/10/2025", value: 6.82 },
-    { name: "23/10/2025", value: 5.46 },
-    { name: "24/10/2025", value: 4.58 },
-    { name: "25/10/2025", value: 4.06 },
-    { name: "27/10/2025", value: 3.58 },
-    { name: "28/10/2025", value: 3.19 },
-    { name: "29/10/2025", value: 2.87 },
-    { name: "30/10/2025", value: 2.63 },
-    { name: "31/10/2025", value: 2.43 },
     { name: "01/11/2025", value: 2.27 },
     { name: "03/11/2025", value: 2.12 },
     { name: "04/11/2025", value: 1.97 },
@@ -155,17 +144,6 @@ function DashboardPage() {
   ]);
 
   const data2 = [
-    { name: "20/10/2025", value: 1.7 },
-    { name: "21/10/2025", value: 1.7 },
-    { name: "22/10/2025", value: 2.0 },
-    { name: "23/10/2025", value: 1.9 },
-    { name: "24/10/2025", value: 3.04 },
-    { name: "25/10/2025", value: 2.9 },
-    { name: "27/10/2025", value: 2.3 },
-    { name: "28/10/2025", value: 2.1 },
-    { name: "29/10/2025", value: 2.0 },
-    { name: "30/10/2025", value: 2.0 },
-    { name: "31/10/2025", value: 2.1 },
     { name: "01/11/2025", value: 2.2 },
     { name: "03/11/2025", value: 2.8 },
     { name: "04/11/2025", value: 2.7 },
@@ -244,17 +222,6 @@ function DashboardPage() {
     { name: '16', value: 10, type: 'Holiday' }
   ]);
   const data3 = [
-    { name: "20/10/2025", value: 81.0 },
-    { name: "21/10/2025", value: 81.6 },
-    { name: "22/10/2025", value: 82.1 },
-    { name: "23/10/2025", value: 80.8 },
-    { name: "24/10/2025", value: 80.9 },
-    { name: "25/10/2025", value: 86.1 },
-    { name: "27/10/2025", value: 83.7 },
-    { name: "28/10/2025", value: 82.4 },
-    { name: "29/10/2025", value: 82.3 },
-    { name: "30/10/2025", value: 80.8 },
-    { name: "31/10/2025", value: 80.9 },
     { name: "01/11/2025", value: 83.8 },
     { name: "03/11/2025", value: 82.1 },
     { name: "04/11/2025", value: 83.5 },
@@ -332,17 +299,6 @@ function DashboardPage() {
   ]);
 
   const data4 = [
-    { name: "20/10/2025", value: 16.4 },
-    { name: "21/10/2025", value: 17.2 },
-    { name: "22/10/2025", value: 18.4 },
-    { name: "23/10/2025", value: 17.3 },
-    { name: "24/10/2025", value: 15.7 },
-    { name: "25/10/2025", value: 17.5 },
-    { name: "27/10/2025", value: 20.1 },
-    { name: "28/10/2025", value: 18.0 },
-    { name: "29/10/2025", value: 18.1 },
-    { name: "30/10/2025", value: 17.1 },
-    { name: "31/10/2025", value: 17.9 },
     { name: "01/11/2025", value: 15.7 },
     { name: "03/11/2025", value: 17.4 },
     { name: "04/11/2025", value: 18.1 },
@@ -356,7 +312,7 @@ function DashboardPage() {
     { name: "13/11/2025", value: 16.7 },
     { name: "14/11/2025", value: 17.1 },
     { name: "15/11/2025", value: 17.2 },
-    { name: "15/11/2025", value: 17.3 }
+    { name: "17/11/2025", value: 17.3 }
   ];
 
   const [DeliverymonthlyValues, setDeliverymonthlyValues] = useState([
@@ -421,17 +377,6 @@ function DashboardPage() {
   ]);
 
   const data5 = [
-    { name: "20/10/2025", value: 48.9 },
-    { name: "21/10/2025", value: 44.7 },
-    { name: "22/10/2025", value: 44.0 },
-    { name: "23/10/2025", value: 56.5 },
-    { name: "24/10/2025", value: 49.0 },
-    { name: "25/10/2025", value: 44.4 },
-    { name: "27/10/2025", value: 50.7 },
-    { name: "28/10/2025", value: 56.0 },
-    { name: "29/10/2025", value: 54.3 },
-    { name: "30/10/2025", value: 52.2 },
-    { name: "31/10/2025", value: 51.8 },
     { name: "01/11/2025", value: 46.9 },
     { name: "03/11/2025", value: 52.7 },
     { name: "04/11/2025", value: 55.6 },
@@ -511,17 +456,6 @@ function DashboardPage() {
 
   //Morale
   const data6 = [
-    { name: "20/10/2025", value: 91.9 },
-    { name: "21/10/2025", value: 93.9 },
-    { name: "22/10/2025", value: 94.1 },
-    { name: "23/10/2025", value: 94.2 },
-    { name: "24/10/2025", value: 94.7 },
-    { name: "25/10/2025", value: 89.0 },
-    { name: "27/10/2025", value: 91.1 },
-    { name: "28/10/2025", value: 94.7 },
-    { name: "29/10/2025", value: 94.8 },
-    { name: "30/10/2025", value: 94.1 },
-    { name: "31/10/2025", value: 94.7 },
     { name: "01/11/2025", value: 89.3 },
     { name: "03/11/2025", value: 90.7 },
     { name: "04/11/2025", value: 94.8 },
