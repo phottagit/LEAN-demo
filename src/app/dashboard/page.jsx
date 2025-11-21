@@ -182,8 +182,8 @@ function DashboardPage() {
   ]);
 
   const QualityhighlightValue = [
-    { highlight: "", date: "17/11/2025" },
     { highlight: "", date: "18/11/2025" },
+    { highlight: "", date: "17/11/2025" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
@@ -263,9 +263,9 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Technical issue", date: "17/11/2025" },
-    { highlight: "UNA issue @PRE", date: "18/11/2025" },
     { highlight: "Technical issue", date: "19/11/2025" },
+    { highlight: "UNA issue @PRE", date: "18/11/2025" },
+    { highlight: "Technical issue", date: "17/11/2025" },
     { highlight: "", date: "" },
   ];
 
