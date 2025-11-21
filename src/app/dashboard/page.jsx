@@ -182,8 +182,8 @@ function DashboardPage() {
   ]);
 
   const QualityhighlightValue = [
-    { highlight: "", date: "18/11/2025" },
     { highlight: "", date: "17/11/2025" },
+    { highlight: "", date: "18/11/2025" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
