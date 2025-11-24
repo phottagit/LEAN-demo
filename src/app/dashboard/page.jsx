@@ -82,7 +82,7 @@ function DashboardPage() {
     { name: "17/11/2025", value: 0.510 },
     { name: "18/11/2025", value: 0.508 },
     { name: "19/11/2025", value: 0.506 },
-    { name: "20/11/2025", value: 0.504 },
+    { name: "20/11/2025", value: 0.5051 },
     { name: "21/11/2025", value: 0.504 },
     { name: "22/11/2025", value: 0.504 }
   ];
@@ -98,7 +98,7 @@ function DashboardPage() {
     { month: 8, value: 0.404 },
     { month: 9, value: 0.356 },
     { month: 10, value: 0.535 },
-    { month: 11, value: 0.506 },
+    { month: 11, value: 0.504 },
     { month: 12, value: null },
   ]);
 
