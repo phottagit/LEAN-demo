@@ -453,9 +453,9 @@ function DashboardPage() {
     { name: '19', value: 10, type: 'Upper' },
     { name: '20', value: 10, type: 'Upper' },
     { name: '21', value: 10, type: 'Upper' },
-    { name: '22', value: 10, type: 'Lower' },
+    { name: '22', value: 10, type: 'Upper' },
     { name: '23', value: 10, type: 'Holiday' },
-    { name: '24', value: 10, type: 'Lower' },
+    { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: '' },
     { name: '26', value: 10, type: '' },
     { name: '27', value: 10, type: '' },
@@ -525,8 +525,8 @@ function DashboardPage() {
   ]);
  
   const MoralehighlightValue = [
-    { highlight: "The actual absenteeism rate is greater than the estimated rate", date: "22/11/2025" },
-    { highlight: "The actual absenteeism rate is greater than the estimated rate", date: "24/11/2025" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
 
@@ -535,7 +535,7 @@ function DashboardPage() {
   const target3 = 80.5;
   const target4 = 19.0;
   const target5 = 70.0;
-  const target6 = 92.0;
+  const target6 = 90.0;
 
   const [IFRtargetTable, setIFRtargetTable] = useState(0.59);
   const [QualitytargetTable, setQualitytargetTable] = useState(3.0);
