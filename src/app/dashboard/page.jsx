@@ -274,7 +274,6 @@ function DashboardPage() {
   const EfficiencyhighlightValue = [
     { highlight: "Learning curve for new Cocr product", date: "21/11/2025" },
     { highlight: "Mesmera and Stilla issue", date: "21/11/2025" },
-    { highlight: "Cocr training", date: "21/11/2025" },
     { highlight: "Utilization of plating", date: "21/11/2025" },
   ];
 
