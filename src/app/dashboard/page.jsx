@@ -105,8 +105,8 @@ function DashboardPage() {
 
   //IFR Action table
   const IFRhighlightValue = [
+    { highlight: "11:15 a.m.: Employee injured left ring finger by concrete mold; sent to hospital.", date: "21/11/2025" },
     { highlight: "พนักงานใหม่ไม่มีความชำนาญและเครื่องไม่มีระบบป้องกัน", date: "03/10/2025" },
-    { highlight: "", date: "" },
     { highlight: "", date: "" },
   ];
 
@@ -204,7 +204,7 @@ function DashboardPage() {
     { name: '21', value: 10, type: 'Lower' },
     { name: '22', value: 10, type: 'Upper' },
     { name: '23', value: 10, type: 'Holiday' },
-    { name: '24', value: 10, type: '' },
+    { name: '24', value: 10, type: 'Lower' },
     { name: '25', value: 10, type: '' },
     { name: '26', value: 10, type: '' },
     { name: '27', value: 10, type: '' },
@@ -252,7 +252,8 @@ function DashboardPage() {
     { name: "19/11/2025", value: 78.8 },
     { name: "20/11/2025", value: 80.8 },
     { name: "21/11/2025", value: 79.1 },
-    { name: "22/11/2025", value: 83.6 }
+    { name: "22/11/2025", value: 83.6 },
+    { name: "24/11/2025", value: 80.2 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -266,15 +267,15 @@ function DashboardPage() {
     { month: 8, value: 78.4 },
     { month: 9, value: 81.2 },
     { month: 10, value: 81.4 },
-    { month: 11, value: 82.3 },
+    { month: 11, value: 82.2 },
     { month: 12, value: null },
   ]);
 
   const EfficiencyhighlightValue = [
+    { highlight: "Learning curve for new Cocr product", date: "24/11/2025" },
+    { highlight: "Mesmera and Stilla issue", date: "24/11/2025" },
     { highlight: "Cocr training", date: "21/11/2025" },
     { highlight: "Utilization of plating", date: "21/11/2025" },
-    { highlight: "Technical issue", date: "19/11/2025" },
-    { highlight: "", date: "" },
   ];
 
   //Delevery
@@ -454,7 +455,7 @@ function DashboardPage() {
     { name: '21', value: 10, type: 'Upper' },
     { name: '22', value: 10, type: 'Lower' },
     { name: '23', value: 10, type: 'Holiday' },
-    { name: '24', value: 10, type: 'Upper' },
+    { name: '24', value: 10, type: 'Lower' },
     { name: '25', value: 10, type: '' },
     { name: '26', value: 10, type: '' },
     { name: '27', value: 10, type: '' },
@@ -505,7 +506,7 @@ function DashboardPage() {
     { name: "20/11/2025", value: 96.2 },
     { name: "21/11/2025", value: 95.5 },
     { name: "22/11/2025", value: 90.2 },
-    { name: "24/11/2025", value: 94.4 }
+    { name: "24/11/2025", value: 90.7 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
@@ -525,7 +526,7 @@ function DashboardPage() {
  
   const MoralehighlightValue = [
     { highlight: "The actual absenteeism rate is greater than the estimated rate", date: "22/11/2025" },
-    { highlight: "", date: "" },
+    { highlight: "The actual absenteeism rate is greater than the estimated rate", date: "24/11/2025" },
     { highlight: "", date: "" },
   ];
 
