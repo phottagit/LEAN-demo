@@ -519,7 +519,7 @@ function DashboardPage() {
     { month: 8, value: 94.2 },
     { month: 9, value: 93.8 },
     { month: 10, value: 93.4 },
-    { month: 11, value: 91.4 },
+    { month: 11, value: 92.5 },
     { month: 12, value: null },
   ]);
  
