@@ -204,7 +204,7 @@ function DashboardPage() {
     { name: '21', value: 10, type: 'Lower' },
     { name: '22', value: 10, type: 'Upper' },
     { name: '23', value: 10, type: 'Holiday' },
-    { name: '24', value: 10, type: 'Lower' },
+    { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: '' },
     { name: '26', value: 10, type: '' },
     { name: '27', value: 10, type: '' },
@@ -532,7 +532,7 @@ function DashboardPage() {
 
   const target1 = 0.59;
   const target2 = 3.0;
-  const target3 = 80.5;
+  const target3 = 80.0;
   const target4 = 19.0;
   const target5 = 70.0;
   const target6 = 90.0;
