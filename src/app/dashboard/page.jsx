@@ -192,7 +192,7 @@ function DashboardPage() {
   ]);
 
   const QualityhighlightValue = [
-    { highlight: "", date: "" },
+    { highlight: "ปัญหาการชุบร่อน", date: "26/11/2025" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
