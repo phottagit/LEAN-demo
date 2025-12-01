@@ -41,7 +41,7 @@ function DashboardPage() {
     { name: '27', value: 10, type: 'Upper' },
     { name: '28', value: 10, type: 'Upper' },
     { name: '29', value: 10, type: 'Upper' },
-    { name: '30', value: 10, type: '' },
+    { name: '30', value: 10, type: 'Holiday' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -130,7 +130,7 @@ function DashboardPage() {
     { name: '27', value: 10, type: 'Upper' },
     { name: '28', value: 10, type: 'Upper' },
     { name: '29', value: 10, type: 'Upper' },
-    { name: '30', value: 10, type: '' },
+    { name: '30', value: 10, type: 'Holiday' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -217,10 +217,10 @@ function DashboardPage() {
     { name: '24', value: 10, type: 'Upper' },
     { name: '25', value: 10, type: 'Upper' },
     { name: '26', value: 10, type: 'Upper' },
-    { name: '27', value: 10, type: '' },
-    { name: '28', value: 10, type: '' },
-    { name: '29', value: 10, type: '' },
-    { name: '30', value: 10, type: '' },
+    { name: '27', value: 10, type: 'Upper' },
+    { name: '28', value: 10, type: 'Lower' },
+    { name: '29', value: 10, type: 'Upper' },
+    { name: '30', value: 10, type: 'Holiday' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -265,7 +265,10 @@ function DashboardPage() {
     { name: "22/11/2025", value: 83.6 },
     { name: "24/11/2025", value: 80.2 },
     { name: "25/11/2025", value: 80.3 },
-    { name: "26/11/2025", value: 80.7 }
+    { name: "26/11/2025", value: 80.7 },
+    { name: "27/11/2025", value: 80.7 },
+    { name: "28/11/2025", value: 77.1 },
+    { name: "29/11/2025", value: 84.1 }
   ];
 
   const [EfficiencytableValue, setEfficiencytableValue] = useState([
@@ -279,7 +282,7 @@ function DashboardPage() {
     { month: 8, value: 78.4 },
     { month: 9, value: 81.2 },
     { month: 10, value: 81.4 },
-    { month: 11, value: 82.2 },
+    { month: 11, value: 81.0 },
     { month: 12, value: null },
   ]);
 
@@ -304,7 +307,7 @@ function DashboardPage() {
     { name: '27', value: 10, type: 'Upper' },
     { name: '28', value: 10, type: 'Upper' },
     { name: '29', value: 10, type: 'Upper' },
-    { name: '30', value: 10, type: '' },
+    { name: '30', value: 10, type: 'Holiday' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -391,7 +394,7 @@ function DashboardPage() {
     { name: '25', value: 10, type: 'Upper' },
     { name: '26', value: 10, type: 'Upper' },
     { name: '27', value: 10, type: 'Upper' },
-    { name: '28', value: 10, type: '' },
+    { name: '28', value: 10, type: 'Holiday' },
     { name: '29', value: 10, type: '' },
     { name: '30', value: 10, type: '' },
     { name: '31', value: 10, type: '' },
@@ -480,9 +483,9 @@ function DashboardPage() {
     { name: '25', value: 10, type: 'Lower' },
     { name: '26', value: 10, type: 'Upper' },
     { name: '27', value: 10, type: 'Upper' },
-    { name: '28', value: 10, type: '' },
-    { name: '29', value: 10, type: '' },
-    { name: '30', value: 10, type: '' },
+    { name: '28', value: 10, type: 'Upper' },
+    { name: '29', value: 10, type: 'Lower' },
+    { name: '30', value: 10, type: 'Holiday' },
     { name: '31', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
@@ -530,7 +533,9 @@ function DashboardPage() {
     { name: "24/11/2025", value: 90.7 },
     { name: "25/11/2025", value: 93.8 },
     { name: "26/11/2025", value: 95.6 },
-    { name: "27/11/2025", value: 94.6 }
+    { name: "27/11/2025", value: 95.4 },
+    { name: "28/11/2025", value: 94.1 },
+    { name: "29/11/2025", value: 35.0 }
   ];
 
   const [MoralemonthlyValues, setMoralemonthlyValues] = useState([
@@ -543,8 +548,8 @@ function DashboardPage() {
     { month: 7, value: 93.9 },
     { month: 8, value: 94.2 },
     { month: 9, value: 93.8 },
-    { month: 10, value: 93.4 },
-    { month: 11, value: 92.9 },
+    { month: 10, value: 93.3 },
+    { month: 11, value: 92.6 },
     { month: 12, value: null },
   ]);
  
