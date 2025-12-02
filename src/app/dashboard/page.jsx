@@ -510,7 +510,7 @@ function DashboardPage() {
   const target3 = 80.0;
   const target4 = 19.0;
   const target5 = 70.0;
-  const target6 = 94.0;
+  const target6 = 90.0;
 
   const [IFRtargetTable, setIFRtargetTable] = useState(0.59);
   const [QualitytargetTable, setQualitytargetTable] = useState(3.0);
