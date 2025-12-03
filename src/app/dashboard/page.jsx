@@ -48,7 +48,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
-    { name: '2', value: 10, type: '' },
+    { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: '' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
@@ -66,18 +66,6 @@ function DashboardPage() {
   ]);
 
   const data1 = [
-    { name: "01/11/2025", value: 0.533 },
-    { name: "03/11/2025", value: 0.531 },
-    { name: "04/11/2025", value: 0.529 },
-    { name: "05/11/2025", value: 0.528 },
-    { name: "06/11/2025", value: 0.526 },
-    { name: "07/11/2025", value: 0.524 },
-    { name: "08/11/2025", value: 0.522 },
-    { name: "10/11/2025", value: 0.520 },
-    { name: "11/11/2025", value: 0.417 },
-    { name: "12/11/2025", value: 0.415 },
-    { name: "13/11/2025", value: 0.414 },
-    { name: "14/11/2025", value: 0.412 },
     { name: "15/11/2025", value: 0.411 },
     { name: "17/11/2025", value: 0.410 },
     { name: "18/11/2025", value: 0.409 },
@@ -91,7 +79,8 @@ function DashboardPage() {
     { name: "27/11/2025", value: 0.494 },
     { name: "28/11/2025", value: 0.493 },
     { name: "29/11/2025", value: 0.491 },
-    { name: "01/12/2025", value: 0.490 }
+    { name: "01/12/2025", value: 0.489 },
+    { name: "02/12/2025", value: 0.488 }
   ];
 
   const [IFRmonthlyValues, setIFRmonthlyValues] = useState([
@@ -106,7 +95,7 @@ function DashboardPage() {
     { month: 9, value: 0.356 },
     { month: 10, value: 0.535 },
     { month: 11, value: 0.491 },
-    { month: 12, value: 0.490 },
+    { month: 12, value: 0.488 },
   ]);
 
   //IFR Action table
@@ -138,7 +127,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
-    { name: '2', value: 10, type: '' },
+    { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: '' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
@@ -169,7 +158,8 @@ function DashboardPage() {
     { name: "27/11/2025", value: 2.4 },
     { name: "28/11/2025", value: 2.4 },
     { name: "29/11/2025", value: 1.8 },
-    { name: "01/12/2025", value: 2.5 }
+    { name: "01/12/2025", value: 2.5 },
+    { name: "02/12/2025", value: 1.7 }
   ];
 
   const [QualitymonthlyValues, setQualitymonthlyValues] = useState([
@@ -184,7 +174,7 @@ function DashboardPage() {
     { month: 9, value: 2.4 },
     { month: 10, value: 2.1 },
     { month: 11, value: 2.6 },
-    { month: 12, value: 2.5 },
+    { month: 12, value: 1.8 },
   ]);
 
   const QualityhighlightValue = [
@@ -371,7 +361,7 @@ function DashboardPage() {
     { name: '', value: 10, type: '' },
     { name: '', value: 10, type: '' },
     { name: '1', value: 10, type: 'Upper' },
-    { name: '2', value: 10, type: '' },
+    { name: '2', value: 10, type: 'Upper' },
     { name: '3', value: 10, type: '' },
     { name: '4', value: 10, type: '' },
     { name: '5', value: 10, type: '' },
@@ -402,7 +392,8 @@ function DashboardPage() {
     { name: "27/11/2025", value: 45.7 },
     { name: "28/11/2025", value: 42.0 },
     { name: "29/11/2025", value: 35.0 },
-    { name: "01/12/2025", value: 49.5 }
+    { name: "01/12/2025", value: 49.5 },
+    { name: "02/12/2025", value: 54.4 }
   ];
 
   const [EnvironmentmonthlyValues, setEnvironmentmonthlyValues] = useState([
@@ -417,7 +408,7 @@ function DashboardPage() {
     { month: 9, value: 1.50 },
     { month: 10, value: 1.41 },
     { month: 11, value: 1.29 },
-    { month: 12, value: 0.05 },
+    { month: 12, value: 0.10 },
   ]);
 
   const EnvironmenthighlightValue = [
