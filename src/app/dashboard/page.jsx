@@ -182,7 +182,7 @@ function DashboardPage() {
   ]);
 
   const QualityhighlightValue = [
-    { highlight: "ปัญหาการชุบร่อน", date: "26/11/2025" },
+    { highlight: "", date: "" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
     { highlight: "", date: "" },
@@ -263,9 +263,9 @@ function DashboardPage() {
   ]);
 
   const EfficiencyhighlightValue = [
-    { highlight: "Learning curve for new Cocr product", date: "21/11/2025" },
-    { highlight: "Mesmera and Stilla issue", date: "21/11/2025" },
-    { highlight: "Utilization of plating", date: "21/11/2025" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
+    { highlight: "", date: "" },
   ];
 
   //Delevery
